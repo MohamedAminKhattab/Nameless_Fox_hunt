@@ -1,0 +1,10 @@
+tree("Root")
+	Fallback
+		Sequence
+			shouldMoveToPlayer
+			MoveToPlayer
+		Sequence
+			shouldFetch
+			MoveToTarget
+			ReturnToFollowing
+			MoveToPlayer
