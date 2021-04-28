@@ -80,7 +80,7 @@ public class FoxBehaviours : MonoBehaviour
     public void MoveToTarget()
     {
         agent.SetDestination(Target.position);
-        if(agent.remainingDistance<= agent.stoppingDistance)
+        if(agent.remainingDistance<= agent.stoppingDistance && !agent.pathPending)
         Task.current.Succeed();
     }
     #endregion
