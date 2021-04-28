@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Targeting : MonoBehaviour
 {
-    [SerializeField] GameObjectSO targetGOSO;
+    [SerializeField] TransformSO targetSO;
     private void Start()
     {
-        targetGOSO._gameObject = null;
+        targetSO.value = null;
     }
     private void Update()
     {
@@ -18,8 +18,8 @@ public class Targeting : MonoBehaviour
                 RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(touch.position);
                 if (Physics.Raycast(ray, out hit))
-                    targetGOSO._gameObject=(GameObject)hit.transform.gameObject;
-                print(targetGOSO._gameObject.name);
+                    targetSO.value=hit.transform;
+                print(targetSO.value.gameObject.name);
             }
         }
     }
