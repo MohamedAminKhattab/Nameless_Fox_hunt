@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 3058781270502996515}
   - component: {fileID: 3058781270502996514}
   - component: {fileID: 3058781270502996517}
+  - component: {fileID: 1536133282}
   m_Layer: 5
   m_Name: HUD_Canvas
   m_TagString: Untagged
@@ -243,6 +244,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1536133282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3058781270502996516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cb0992cf0ba58542b1c4449c713b6f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetGOSO: {fileID: 11400000, guid: b5b693f2e307a4b43a104d4ece972b1f, type: 2}
 --- !u!1 &3058781270512662065
 GameObject:
   m_ObjectHideFlags: 0
@@ -2126,7 +2140,6 @@ MonoBehaviour:
   joystick: {fileID: 2226563255188012698}
   joystickPad: {fileID: 5131477286609058088}
   position: {fileID: 11400000, guid: 61a25de74a3b8b544934569981d6ec9d, type: 2}
-  spawnArea: {fileID: 5956274562054394332}
   background: {fileID: 110622845551314125}
 --- !u!114 &1198466591
 MonoBehaviour:
