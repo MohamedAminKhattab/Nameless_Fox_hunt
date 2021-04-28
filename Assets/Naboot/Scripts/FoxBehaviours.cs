@@ -15,7 +15,8 @@ public class FoxBehaviours : MonoBehaviour
     [SerializeField] int followingRange = 2;
     private Vector2 distance;
     public Transform Target;
-    public TransformSO myCube;
+    //public TransformSO myCube;
+    public Transform myCube;
     private FoxState foxState;
     void Start()
     {
@@ -43,7 +44,8 @@ public class FoxBehaviours : MonoBehaviour
     {
         if (foxState == FoxState.gathering)
         {
-            Target = myCube.value;
+            //Target = myCube.value;
+            Target = myCube;
             return true;
         }
         else return false;

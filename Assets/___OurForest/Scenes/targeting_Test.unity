@@ -9815,6 +9815,10 @@ PrefabInstance:
       value: fox
       objectReference: {fileID: 0}
     - target: {fileID: 2941816272825408018, guid: e725e804ccbda2a4788600a5a6406277, type: 3}
+      propertyPath: myCube
+      value: 
+      objectReference: {fileID: 889732749}
+    - target: {fileID: 2941816272825408018, guid: e725e804ccbda2a4788600a5a6406277, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 895706047}
