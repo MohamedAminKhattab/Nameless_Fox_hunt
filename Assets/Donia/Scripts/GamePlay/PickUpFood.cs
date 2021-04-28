@@ -12,11 +12,11 @@ public class PickUpFood : MonoBehaviour
     BoolSO pickUpFood;
      void Start()
     {
-        pickUpFood.Bool_SO = false;  
+        pickUpFood.state = false;  
     }
      void Update()
     {
-        if (pickUpFood.Bool_SO)
+        if (pickUpFood.state)
             CanPickUpFood();
     }
     public void CanPickUpFood()
@@ -26,7 +26,7 @@ public class PickUpFood : MonoBehaviour
         if (canGet)
         {
             //Add to inventory
-            pickUpFood.Bool_SO = false;
+            pickUpFood.state= false;
             Destroy(this.gameObject);
         }
     }

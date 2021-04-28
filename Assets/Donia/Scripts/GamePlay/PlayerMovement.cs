@@ -20,8 +20,8 @@ public class PlayerMovement : MonoBehaviour
     
     void FixedUpdate()
     {
-        rb.velocity=movement.vec_3*speed.float_SO;
-        Vector3 movementDirection = movement.vec_3.normalized;
+        rb.velocity=movement.value*speed.float_SO;
+        Vector3 movementDirection = movement.value.normalized;
         if (movementDirection != Vector3.zero)
         {
             Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);

@@ -16,7 +16,7 @@ public class PlayerInput : MonoBehaviour
             inputManager = new InputHandler();
             // Debug.Log("nulll");
         }
-        pickUpFood.Bool_SO = false;
+        pickUpFood.state = false;
     }
 
     void Update()
@@ -41,7 +41,7 @@ public class PlayerInput : MonoBehaviour
         }
         if (inputManager.PickUpFood())
         {
-            pickUpFood.Bool_SO = true;
+            pickUpFood.state = true;
 
         }
         if (inputManager.CutWood())
@@ -49,7 +49,7 @@ public class PlayerInput : MonoBehaviour
             //Do something
 
         }
-        this.movement.vec_3 = movement;
+        this.movement.value = movement;
     }
 
 

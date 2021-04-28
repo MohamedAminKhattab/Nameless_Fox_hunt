@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af1562c19b867c247a053c89c122ab9f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1da0390731127c6469f9a58dafad1443, type: 3}
   m_Name: PickupFood
   m_EditorClassIdentifier: 
-  Bool_SO: 0
+  state: 0

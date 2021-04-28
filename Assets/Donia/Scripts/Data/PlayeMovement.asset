@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10ae21b6cb14f6b4d8bc6664d14a6c0f, type: 3}
+  m_Script: {fileID: 11500000, guid: 0348c74c7cd0cee4e82f2db9fe29411f, type: 3}
   m_Name: PlayeMovement
   m_EditorClassIdentifier: 
-  vec_3: {x: 0, y: 0, z: 0}
+  value: {x: 0, y: 0, z: 0}
