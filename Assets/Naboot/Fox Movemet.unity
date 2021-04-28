@@ -3933,6 +3933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1366862067}
   followingRange: 5
+  isIdle: 1
   Target: {fileID: 0}
   myCube: {fileID: 346687866}
 --- !u!1 &828609697
