@@ -4,30 +4,37 @@ using UnityEngine;
 
 public class PickUpFood : MonoBehaviour
 {
-    [SerializeField]
-    float range;
+
     [SerializeField]
     Transform player;
     [SerializeField]
     BoolSO pickUpFood;
-     void Start()
+    float timerCount = 0.1f;
+    void Start()
     {
-        pickUpFood.state = false;  
+        pickUpFood.state = false;
     }
-     void Update()
+    void Update()
     {
-        if (pickUpFood.state)
-            CanPickUpFood();
-    }
-    public void CanPickUpFood()
-    {
-        Debug.Log("In");
-        bool canGet = transform.position.magnitude - player.transform.position.magnitude <= range;
-        if (canGet)
+        timerCount -= Time.deltaTime;
+        if (timerCount <= 0)
         {
-            //Add to inventory
-            pickUpFood.state= false;
-            Destroy(this.gameObject);
+            pickUpFood.state = false;
+            timerCount = 0.1f;
+        }
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        //Debug.Log("Collided");
+        if (pickUpFood.state)
+        {
+            pickUpFood.state = false;
+
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                //Add To inventory
+                Destroy(this.gameObject);
+            }
         }
     }
 }
