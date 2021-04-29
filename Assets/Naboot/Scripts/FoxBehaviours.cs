@@ -10,12 +10,14 @@ public enum FoxState
 }
 public class FoxBehaviours : MonoBehaviour
 {
+    //I should call return to idle after every other leaf task cuz the tree is a fallback tree 
+
     NavMeshAgent agent;
     [SerializeField] Transform player;
     [SerializeField] int followingRange = 2;
     private Vector2 distance;
-    public Transform Target;
-    public Transform myCube;
+    private Transform Target;
+    public Transform PcikUP;
     private FoxState foxState;
     void Start()
     {
@@ -25,63 +27,80 @@ public class FoxBehaviours : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-           
-                foxState = FoxState.gathering;
-            
-            }
-        
+
+            foxState = FoxState.gathering;
+
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+
+            foxState = FoxState.idle;
+
+        }
+
     }
-   [Task]
-   public void ReturnToFollowing()
+    #region Public functions 
+    public void StartGathering()// to be called from the scriptabel event
+    {
+        //Target = SO.transform;
+        foxState = FoxState.gathering;
+    }
+
+    #endregion
+    
+    #region selectors checks
+
+    [Task] //should be a task or not??
+    public void ReturnToIdle() // better to be standing alone not in the end of followingtarget to be reused 
     {
         foxState = FoxState.idle;
         Task.current.Succeed();
     }
-    #region selectors
     [Task]
-    public bool shouldFetch()
+    public void shouldFetch()
     {
         if (foxState == FoxState.gathering)
         {
-            Target = myCube;
-            return true;
+            Target = PcikUP;
+            Task.current.Succeed();
         }
-        else return false;
+        else
+        {
+            Task.current.Fail();
+        }
     }
     [Task]
-    public bool shouldMoveToPlayer()
+    public void shouldMoveToPlayer()
     {
         distance.x = transform.position.x - player.position.x;
         distance.y = transform.position.z - player.position.z;
         //Todo create my own vector2 class to calculate the distance and other things if needed
-        if (foxState==FoxState.idle && Vector2.SqrMagnitude(distance) > followingRange * followingRange)
+        if (foxState == FoxState.idle && Vector2.SqrMagnitude(distance) > followingRange * followingRange)
         {
             Target = player;
             Task.current.Succeed();
-            return true;
+            //  return true;
 
         }
         else
         {
-            Task.current.Succeed();
-            return false;
+            Task.current.Fail();
+            // return false;
         }
     }
     #endregion
 
-    #region moving leafs
-    [Task]
-    public void MoveToPlayer()
-    {
-        agent.SetDestination(player.position);
-        Task.current.Succeed();
-    }
+    #region leafs
+ 
     [Task]
     public void MoveToTarget()
     {
+
+
         agent.SetDestination(Target.position);
-        if(agent.remainingDistance<= agent.stoppingDistance && !agent.pathPending)
-        Task.current.Succeed();
+        if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
+            Task.current.Succeed();
     }
     #endregion
 }
+
