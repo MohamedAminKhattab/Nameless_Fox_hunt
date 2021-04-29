@@ -1,4 +1,8 @@
 tree("Root")
 	fallback
-		while shouldFetch sequence MoveToTarget ReturnToIdle
+		while
+			shouldFetch
+			sequence
+				mute MoveToTarget
+				ReturnToIdle
 		while shouldMoveToPlayer MoveToTarget
