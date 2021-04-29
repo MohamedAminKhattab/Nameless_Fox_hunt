@@ -8,7 +8,6 @@ public class JoystickSpwaner : MonoBehaviour
     [SerializeField] Image joystick;
     [SerializeField] Image joystickPad;
     [SerializeField] Vector3SO position;
-    [SerializeField] Image spawnArea;
     [SerializeField] RectTransform background;
     Vector3 touchPosition;
 
