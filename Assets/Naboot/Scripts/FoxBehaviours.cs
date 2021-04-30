@@ -17,7 +17,7 @@ public class FoxBehaviours : MonoBehaviour
     [SerializeField] int followingRange = 2;
     private Vector2 distance;
     private Transform Target;
-    public Transform PcikUP;
+    public  PcikUP;
     private FoxState foxState;
     void Start()
     {
