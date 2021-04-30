@@ -6,8 +6,7 @@ public class AnimatorController : MonoBehaviour
 {
     Animator animator;
     Rigidbody rb;
-    float velocityZ = 0.0f;
-    float velocityX = 0.0f;
+    float velocity = 0.0f;
     [SerializeField]
     float acceleration = 2f;
     [SerializeField]
@@ -25,41 +24,21 @@ public class AnimatorController : MonoBehaviour
 
     void Update()
     {
-        if(movement.value.z== 1 && velocityZ<0.5)
-        {
-            velocityZ += Time.deltaTime * acceleration;
-        } 
-        if(movement.value.z== -1 && velocityZ>-0.5)
-        {
-            velocityZ += Time.deltaTime * acceleration;
-        } 
-        if(movement.value.x== 1 && velocityX< 0.5)
-        {
-            velocityX += Time.deltaTime * acceleration;
-        } 
-        if(movement.value.x== -1 && velocityX>-0.5)
-        {
-            velocityX += Time.deltaTime * acceleration;
-        }
+        bool pressForeward = movement.value.z == 1;
+        bool pressBackward = movement.value.z == -1;
+        bool rightPressed = movement.value.x == 1;
+        bool leftPressed = movement.value.x == -1;
 
-        if ((movement.value.z != 1 || movement.value.z != -1) && velocityZ >0)
+        if ((pressForeward || pressBackward || rightPressed || leftPressed))
         {
-            velocityZ -= Time.deltaTime * deceleration;
+            velocity += Time.deltaTime * acceleration;
         }
-        if ((movement.value.z != 1|| movement.value.z != -1) && velocityZ <0)
+        else
         {
-            velocityZ=0;
+            velocity -= Time.deltaTime * deceleration;
         }
-        if ((movement.value.x != 1 || movement.value.x != -1) && velocityX < 0)
-        {
-            velocityX += Time.deltaTime * deceleration;
-        }
-        if ((movement.value.x != 1 || movement.value.x != -1) && velocityX >0)
-        {
-            velocityX -= Time.deltaTime * acceleration;
-        }
-        else if((movement.value.x != 1 || movement.value.x != -1) && velocityX!=0 &&(velocityX>-0.05f && velocityX<-0.05f))
-        animator.SetFloat("VelocityZ", velocityZ);
-        animator.SetFloat("VelocityX", velocityX);
+        velocity = Mathf.Clamp(velocity, 0.0f, 1.0f);
+
+        animator.SetFloat("Velocity", velocity);
     }
 }
