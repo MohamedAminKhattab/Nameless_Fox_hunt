@@ -5,6 +5,7 @@ using UnityEngine;
 public class Targeting : MonoBehaviour
 {
     [SerializeField] TransformSO targetSO;
+    [SerializeField] LayerMask Mask;
     private void Start()
     {
         targetSO.value = null;
@@ -17,9 +18,11 @@ public class Targeting : MonoBehaviour
             {
                 RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(touch.position);
-                if (Physics.Raycast(ray, out hit))
-                    targetSO.value=hit.transform;
-                print(targetSO.value.gameObject.name);
+                if (Physics.Raycast(ray, out hit,Mask))
+                {
+                    targetSO.value = hit.transform;
+                    Debug.LogWarning($"{targetSO.value.gameObject.name}=>{targetSO.value.position}");
+                }
             }
         }
     }

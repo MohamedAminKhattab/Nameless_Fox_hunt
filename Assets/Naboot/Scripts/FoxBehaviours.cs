@@ -17,7 +17,7 @@ public class FoxBehaviours : MonoBehaviour
     [SerializeField] int followingRange = 2;
     private Vector2 distance;
     private Transform Target;
-    public  PcikUP;
+    [SerializeField]   TransformSO PcikUP;
     private FoxState foxState;
     void Start()
     {
@@ -44,6 +44,7 @@ public class FoxBehaviours : MonoBehaviour
     {
         //Target = SO.transform;
         foxState = FoxState.gathering;
+       // Debug.LogWarning(PcikUP.value.position);
     }
 
     #endregion
@@ -61,8 +62,15 @@ public class FoxBehaviours : MonoBehaviour
     {
         if (foxState == FoxState.gathering)
         {
-            Target = PcikUP;
+            if(PcikUP.value)
+            {
+            Target =(Transform) PcikUP.value;
             Task.current.Succeed();
+            }
+            else
+            {
+                Task.current.Fail();
+            }
         }
         else
         {
@@ -103,4 +111,3 @@ public class FoxBehaviours : MonoBehaviour
     }
     #endregion
 }
-
