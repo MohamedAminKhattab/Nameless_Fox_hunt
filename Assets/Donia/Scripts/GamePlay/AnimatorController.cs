@@ -14,6 +14,8 @@ public class AnimatorController : MonoBehaviour
     int velocityHash;
     [SerializeField]
     Vector3SO movement;
+    [SerializeField]
+    Vector2SO joyStickMove;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -24,10 +26,19 @@ public class AnimatorController : MonoBehaviour
 
     void Update()
     {
+        if (joyStickMove.value.x != 0 || joyStickMove.value.y != 0)
+        {
+            movement.value.x = joyStickMove.value.x;
+            movement.value.y = 0;
+            movement.value.z = joyStickMove.value.y;
+        }
+        Debug.Log(joyStickMove.value.x);
+        Debug.Log(joyStickMove.value.y);
         bool pressForeward = movement.value.z == 1;
         bool pressBackward = movement.value.z == -1;
         bool rightPressed = movement.value.x == 1;
         bool leftPressed = movement.value.x == -1;
+        
 
         if ((pressForeward || pressBackward || rightPressed || leftPressed))
         {

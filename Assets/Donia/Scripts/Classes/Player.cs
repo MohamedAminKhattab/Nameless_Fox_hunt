@@ -10,8 +10,7 @@ public class Player : MonoBehaviour
     FloatSO speedSO;
     void Start()
     {
-        speed = 5.0f;
-        speedSO.float_SO = speed;
+        speedSO.value = speed;
     }
 
     void Update()

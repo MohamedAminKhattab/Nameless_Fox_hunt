@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
     FloatSO speed;
     [SerializeField]
     float rotationSpeed;
+    [SerializeField]
+    Vector2SO joyStickMovement;
+    Vector3 moveVec;
     void Start()
     {
         rb = GetComponent<Rigidbody>();  
@@ -20,7 +23,11 @@ public class PlayerMovement : MonoBehaviour
     
     void FixedUpdate()
     {
-        rb.velocity=movement.value*speed.float_SO;
+        moveVec.x = joyStickMovement.value.x;
+        moveVec.z = joyStickMovement.value.y;
+        moveVec.y = 0;
+        rb.velocity=movement.value*speed.value;
+        rb.velocity=moveVec*speed.value;
         Vector3 movementDirection = movement.value.normalized;
         if (movementDirection != Vector3.zero)
         {
