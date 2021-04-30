@@ -1,10 +1,8 @@
 tree("Root")
-	Fallback
-		Sequence
-			shouldMoveToPlayer
-			MoveToPlayer
-		Sequence
+	fallback
+		while
 			shouldFetch
-			MoveToTarget
-			ReturnToFollowing
-			MoveToPlayer
+			sequence
+				mute MoveToTarget
+				ReturnToIdle
+		while shouldMoveToPlayer MoveToTarget

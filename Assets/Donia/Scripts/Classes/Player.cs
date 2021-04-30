@@ -8,14 +8,31 @@ public class Player : MonoBehaviour
     float speed;
     [SerializeField]
     FloatSO speedSO;
+    [SerializeField]
+    BoolSO pickUpFood;
     void Start()
     {
-        speed = 5.0f;
-        speedSO.float_SO = speed;
+        speedSO.value = speed;
     }
 
     void Update()
     {
         
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        Debug.Log("Foooooooooood");
+        if (pickUpFood.state)
+        {
+            if (collision.gameObject.CompareTag("Food"))
+            {
+                //Add To inventory
+                Destroy(collision.gameObject);
+            }
+        }
+    }
+    public void SetPickup()
+    {
+        pickUpFood.state = true;
     }
 }

@@ -6,5 +6,5 @@ using UnityEngine;
 public class FloatSO : ScriptableObject
 {
    
-   public float float_SO;
+   public float value;
 }
