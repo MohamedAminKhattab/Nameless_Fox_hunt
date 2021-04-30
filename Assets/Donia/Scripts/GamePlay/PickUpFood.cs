@@ -23,18 +23,5 @@ public class PickUpFood : MonoBehaviour
             timerCount = 0.1f;
         }
     }
-    private void OnCollisionStay(Collision collision)
-    {
-        //Debug.Log("Collided");
-        if (pickUpFood.state)
-        {
-            pickUpFood.state = false;
-
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                //Add To inventory
-                Destroy(this.gameObject);
-            }
-        }
-    }
+    
 }
