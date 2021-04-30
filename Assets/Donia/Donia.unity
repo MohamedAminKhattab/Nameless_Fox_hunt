@@ -550,7 +550,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1536133282, guid: 85539008418940d4d9c934ccccceacf1, type: 3}
       propertyPath: Mask.m_Bits
-      value: 23
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 3058781270502996512, guid: 85539008418940d4d9c934ccccceacf1, type: 3}
       propertyPath: m_Pivot.x
