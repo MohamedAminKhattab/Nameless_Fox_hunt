@@ -4,5 +4,6 @@ tree("Root")
 			shouldFetch
 			sequence
 				mute MoveToTarget
+				FinishFetching
 				ReturnToIdle
 		while shouldMoveToPlayer MoveToTarget
