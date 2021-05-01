@@ -8,6 +8,8 @@ public class PlayerInput : MonoBehaviour
     Vector3SO movement;
     [SerializeField]
     BoolSO pickUpFood;
+    [SerializeField]
+    BoolSO cutWood;
     void Start()
     {
 
@@ -42,12 +44,10 @@ public class PlayerInput : MonoBehaviour
         if (inputManager.PickUpFood())
         {
             pickUpFood.state = true;
-
         }
         if (inputManager.CutWood())
         {
-            //Do something
-
+            cutWood.state = true;
         }
         this.movement.value = movement;
     }

@@ -17,17 +17,18 @@ public class PlayerMovement : MonoBehaviour
     Vector3 moveVec;
     void Start()
     {
-        rb = GetComponent<Rigidbody>();  
+        rb = GetComponent<Rigidbody>();
     }
 
-    
+
     void FixedUpdate()
     {
         moveVec.x = joyStickMovement.value.x;
         moveVec.z = joyStickMovement.value.y;
         moveVec.y = 0;
-        rb.velocity=movement.value*speed.value;
-        rb.velocity=moveVec*speed.value;
+        rb.velocity = movement.value * speed.value;
+        if (moveVec.x != 0 || moveVec.z != 0)
+            rb.velocity = moveVec * speed.value;
         Vector3 movementDirection = movement.value.normalized;
         if (movementDirection != Vector3.zero)
         {

@@ -17,4 +17,4 @@ MonoBehaviour:
   rightCode: 275
   leftCode: 276
   pickupFoodCode: 102
-  cutWoodCode: 0
+  cutWoodCode: 103
