@@ -17,7 +17,7 @@ public class FoxBehaviours : MonoBehaviour
     [SerializeField] int followingRange = 2;
     private Vector2 distance;
     private Transform Target;
-    public Transform PcikUP;
+    [SerializeField] TransformSO PcikUP;
     private FoxState foxState;
     void Start()
     {
@@ -61,7 +61,7 @@ public class FoxBehaviours : MonoBehaviour
     {
         if (foxState == FoxState.gathering)
         {
-            Target = PcikUP;
+            Target = PcikUP.value;
             Task.current.Succeed();
         }
         else
