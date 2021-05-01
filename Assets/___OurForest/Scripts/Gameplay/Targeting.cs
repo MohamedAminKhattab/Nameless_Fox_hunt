@@ -6,6 +6,7 @@ public class Targeting : MonoBehaviour
 {
     [SerializeField] TransformSO targetSO;
     [SerializeField] LayerMask Mask;
+    [SerializeField] BoolSO hasTarget;
     private void Start()
     {
         targetSO.value = null;
@@ -18,9 +19,10 @@ public class Targeting : MonoBehaviour
             {
                 RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(touch.position);
-                if (Physics.Raycast(ray, out hit,Mask))
+                if (Physics.Raycast(ray, out hit,Mask)&&hasTarget.state==false)
                 {
                     targetSO.value = hit.transform;
+                    hasTarget.state = true;
                     Debug.LogWarning($"{targetSO.value.gameObject.name}=>{targetSO.value.position}");
                 }
             }
