@@ -321,7 +321,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpFood: {fileID: 11400000, guid: ff579a8efc2b7b044a0fcd2c2b8c5280, type: 2}
-  canPick: {fileID: 0}
 --- !u!65 &180299415
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -576,7 +575,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpFood: {fileID: 11400000, guid: ff579a8efc2b7b044a0fcd2c2b8c5280, type: 2}
-  canPick: {fileID: 11400000, guid: 7429bdd3cfd9d3f4cbb54830907a2eb5, type: 2}
 --- !u!65 &323378171
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -797,7 +795,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpFood: {fileID: 11400000, guid: ff579a8efc2b7b044a0fcd2c2b8c5280, type: 2}
-  canPick: {fileID: 11400000, guid: 7429bdd3cfd9d3f4cbb54830907a2eb5, type: 2}
 --- !u!65 &772899241
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1111,7 +1108,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
+  m_Size: {x: 4, y: 2, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1175005591
 MeshRenderer:
@@ -1189,7 +1186,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpFood: {fileID: 11400000, guid: ff579a8efc2b7b044a0fcd2c2b8c5280, type: 2}
-  canPick: {fileID: 11400000, guid: 7429bdd3cfd9d3f4cbb54830907a2eb5, type: 2}
 --- !u!1 &1211080786
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,7 +1219,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpFood: {fileID: 11400000, guid: ff579a8efc2b7b044a0fcd2c2b8c5280, type: 2}
-  canPick: {fileID: 11400000, guid: 7429bdd3cfd9d3f4cbb54830907a2eb5, type: 2}
 --- !u!65 &1211080788
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1452,7 +1447,6 @@ MonoBehaviour:
   movement: {fileID: 11400000, guid: 7d1d8042393840e439338507860fbe0f, type: 2}
   joyStickMove: {fileID: 11400000, guid: 8b4c0bf996bc8774cbfcccbf1c700fd5, type: 2}
   pickUpFood: {fileID: 11400000, guid: ff579a8efc2b7b044a0fcd2c2b8c5280, type: 2}
-  pickUp: {fileID: 11400000, guid: 7429bdd3cfd9d3f4cbb54830907a2eb5, type: 2}
 --- !u!1001 &1411269905
 PrefabInstance:
   m_ObjectHideFlags: 0
