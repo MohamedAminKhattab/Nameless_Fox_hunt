@@ -2789,6 +2789,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystick: {fileID: 5131477286609058088}
-  range: 50
+  range: 100
   movement: {fileID: 11400000, guid: 8b4c0bf996bc8774cbfcccbf1c700fd5, type: 2}
   position: {fileID: 11400000, guid: 61a25de74a3b8b544934569981d6ec9d, type: 2}

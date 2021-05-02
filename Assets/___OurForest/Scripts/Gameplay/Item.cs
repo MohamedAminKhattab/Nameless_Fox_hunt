@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Item : MonoBehaviour
+public enum ItemTypes
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    Rock,Wood,Vine,Trap,Weapon,Food
+}
+public class Item
+{
+    //    -ItemType: Enum
+    //-ItemCount: int 
+    //-Craftable: bool
+    //-Woodneeded: int
+    //-Rockneeded: int
+    //-Vinesneeded: int
 
-    // Update is called once per frame
-    void Update()
+    int itemcount;
+    bool craftable;
+    int woodNeeded;
+    int rockNeeded;
+    int vinesNeeded;
+ public void craft()
     {
-        
     }
 }
