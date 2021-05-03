@@ -16,10 +16,15 @@ public class AnimatorController : MonoBehaviour
     Vector3SO movement;
     [SerializeField]
     Vector2SO joyStickMove;
+    [SerializeField]
+    BoolSO pickUpFood;
+    //[SerializeField]
+    //BoolSO pickUp;
     void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        pickUpFood.state = false;
         velocityHash = Animator.StringToHash("VelocityX");
         velocityHash = Animator.StringToHash("VelocityZ");
     }
@@ -38,7 +43,7 @@ public class AnimatorController : MonoBehaviour
         bool pressBackward = movement.value.z == -1;
         bool rightPressed = movement.value.x == 1;
         bool leftPressed = movement.value.x == -1;
-        
+
 
         if ((pressForeward || pressBackward || rightPressed || leftPressed))
         {
@@ -51,5 +56,9 @@ public class AnimatorController : MonoBehaviour
         velocity = Mathf.Clamp(velocity, 0.0f, 1.0f);
 
         animator.SetFloat("Velocity", velocity);
+       // animator.SetBool("PickUp", pickUp.state);
+       // pickUp.state = false;
+
     }
+
 }
