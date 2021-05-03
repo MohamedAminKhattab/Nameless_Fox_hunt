@@ -17,6 +17,8 @@ public class InputHandler : IInputManager
     KeyCode pickupFoodCode;
     [SerializeField]
     KeyCode cutWoodCode;
+    [SerializeField]
+    KeyCode collectResource;
 
     public override bool CutWood()
     {
@@ -48,5 +50,9 @@ public class InputHandler : IInputManager
     public override bool PickUpFood()
     {
         return Input.GetKey(pickupFoodCode);
+    }
+    public override bool CollectResource()
+    {
+        return Input.GetKey(collectResource);
     }
 }

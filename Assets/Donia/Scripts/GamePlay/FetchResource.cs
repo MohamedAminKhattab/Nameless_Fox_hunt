@@ -2,26 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUpFood : MonoBehaviour
+public class FetchResource : MonoBehaviour
 {
     [SerializeField]
-    BoolSO pickUpFood;
+    BoolSO collectResource;
     float timerCount = 0.1f;
-    //[SerializeField]
-    //BoolSO canPick;
+
     void Start()
     {
-        pickUpFood.state = false;
-        //canPick.state = false;
+        collectResource.state = false;
     }
     void Update()
     {
         timerCount -= Time.deltaTime;
         if (timerCount <= 0)
         {
-            pickUpFood.state = false;
+            collectResource.state = false;
             timerCount = 0.1f;
         }
     }
- 
 }

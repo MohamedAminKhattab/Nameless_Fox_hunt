@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Food
   - Wood
+  - Resource
   layers:
   - Default
   - TransparentFX

@@ -7,7 +7,9 @@ public class PlayerInput : MonoBehaviour
     [SerializeField]
     Vector3SO movement;
     [SerializeField]
-    BoolSO pickUpFood;
+    BoolSO pickUpFood; 
+    [SerializeField]
+    BoolSO collectResource;
     [SerializeField]
     BoolSO cutWood;
     void Start()
@@ -19,6 +21,8 @@ public class PlayerInput : MonoBehaviour
             // Debug.Log("nulll");
         }
         pickUpFood.state = false;
+        collectResource.state = false;
+        cutWood.state = false;
     }
 
     void Update()
@@ -48,9 +52,24 @@ public class PlayerInput : MonoBehaviour
         if (inputManager.CutWood())
         {
             cutWood.state = true;
+        } 
+        if (inputManager.CollectResource())
+        {
+            collectResource.state = true;
         }
         this.movement.value = movement;
     }
-
+    public void WantToCutWood()
+    {
+        cutWood.state = true;
+    } 
+    public void WantToPickUpFood()
+    {
+        pickUpFood.state = true;
+    } 
+    public void WantToFetchResource()
+    {
+        collectResource.state = true;
+    }
 
 }
