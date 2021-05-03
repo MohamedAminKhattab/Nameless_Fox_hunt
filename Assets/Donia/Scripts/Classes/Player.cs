@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
     Vector3 collison;
     [SerializeField]
     BoolSO FetchAnim;
+    [SerializeField]
+    BoolSO CutAnim;
     void Start()
     {
         cutWood.state = false;
@@ -42,19 +44,15 @@ public class Player : MonoBehaviour
             collisionTag = layerHit.tag;
             if (collisionTag == "Resource")
                 CollectResource();
+            if (collisionTag == "Food")
+                PickUpFood();
+            if (collisionTag == "Wood")
+                CutWood();
         }
     }
     private void OnCollisionStay(Collision collision)
     {
-        if (pickUpFood.state)
-        {
-            if (collision.gameObject.CompareTag("Food"))
-            {
-                //Add To inventory
-                obj = collision.gameObject;
-                StartCoroutine(PickUpFood());
-            }
-        }  
+    
         if (cutWood.state)
         {
             if (collision.gameObject.CompareTag("Wood"))
@@ -67,28 +65,29 @@ public class Player : MonoBehaviour
             }
         }
     }
-    public void SetPickup()
+    public void PickUpFood()
     {
-        pickUpFood.state = true;
+      if(pickUpFood.state)
+        {
+            FetchAnim.state = true;
+            StartCoroutine(Fetching());
+        }
     } 
-    public void SetCutWood()
+    public void CutWood()
     {
-        cutWood.state = true;
+        if(cutWood.state)
+        {
+            CutAnim.state = true;
+            StartCoroutine(CuttingWood());
+        }
     }
     IEnumerator CuttingWood()
     {
-        var wait = new WaitForSeconds(5.0f);
+        var wait = new WaitForSeconds(8.0f);
         //Debug.Log("Wait");
         yield return wait;
         Destroy(obj);
     } 
-    IEnumerator PickUpFood()
-    {
-        var wait = new WaitForSeconds(2.0f);
-        //Debug.Log("Wait");
-        yield return wait;
-        Destroy(obj);
-    }
     void CollectResource()
     {
         if (collectResource.state)

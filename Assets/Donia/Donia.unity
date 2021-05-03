@@ -707,7 +707,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &323378172
 MeshRenderer:
@@ -1040,7 +1040,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &772899242
 MeshRenderer:
@@ -1560,7 +1560,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 2, z: 4}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1175005591
 MeshRenderer:
@@ -1682,7 +1682,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1211080789
 MeshRenderer:
@@ -1825,6 +1825,7 @@ MonoBehaviour:
     m_Bits: 0
   hitDistance: 2
   FetchAnim: {fileID: 11400000, guid: 876c0eb80b25ab244b311f74b1298887, type: 2}
+  CutAnim: {fileID: 11400000, guid: 4ff75f34f49cc054192429c14268e41f, type: 2}
 --- !u!4 &1349113591
 Transform:
   m_ObjectHideFlags: 0
@@ -1908,6 +1909,7 @@ MonoBehaviour:
   pickUpFood: {fileID: 11400000, guid: ff579a8efc2b7b044a0fcd2c2b8c5280, type: 2}
   FetchResource: {fileID: 11400000, guid: 6c7e708a05bfb214a9ab393a8beb93d8, type: 2}
   FetchAnim: {fileID: 11400000, guid: 876c0eb80b25ab244b311f74b1298887, type: 2}
+  CutAnim: {fileID: 11400000, guid: 4ff75f34f49cc054192429c14268e41f, type: 2}
 --- !u!1001 &1411269905
 PrefabInstance:
   m_ObjectHideFlags: 0

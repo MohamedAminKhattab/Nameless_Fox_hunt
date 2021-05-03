@@ -22,6 +22,8 @@ public class AnimatorController : MonoBehaviour
     BoolSO FetchResource;
     [SerializeField]
     BoolSO FetchAnim;
+    [SerializeField]
+    BoolSO CutAnim;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -58,8 +60,10 @@ public class AnimatorController : MonoBehaviour
         velocity = Mathf.Clamp(velocity, 0.0f, 1.0f);
 
         animator.SetFloat("Velocity", velocity);
-        animator.SetBool("PickUp", FetchAnim.state);
+        animator.SetBool("PickUp", FetchAnim.state); 
+        animator.SetBool("CutWood", CutAnim.state);
         FetchAnim.state = false;
+        CutAnim.state = false;
 
     }
 
