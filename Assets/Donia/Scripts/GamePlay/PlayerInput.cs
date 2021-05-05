@@ -11,7 +11,9 @@ public class PlayerInput : MonoBehaviour
     [SerializeField]
     BoolSO collectResource;
     [SerializeField]
-    BoolSO cutWood;
+    BoolSO cutWood; 
+    [SerializeField]
+    BoolSO pickUpWeapon;
     void Start()
     {
 
@@ -57,6 +59,10 @@ public class PlayerInput : MonoBehaviour
         {
             collectResource.state = true;
         }
+        if (inputManager.PickUpWeapon())
+        {
+            pickUpWeapon.state = true;
+        }
         this.movement.value = movement;
     }
     public void WantToCutWood()
@@ -68,6 +74,10 @@ public class PlayerInput : MonoBehaviour
         pickUpFood.state = true;
     } 
     public void WantToFetchResource()
+    {
+        collectResource.state = true;
+    }
+    public void WantToPickUpWeapon()
     {
         collectResource.state = true;
     }

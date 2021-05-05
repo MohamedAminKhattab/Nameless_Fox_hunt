@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     BoolSO collectResource;
     [SerializeField]
     BoolSO cutWood;
+    [SerializeField]
+    BoolSO pickUpWeapon;
     GameObject obj;
     GameObject layerHit;
     [SerializeField]
@@ -48,37 +50,47 @@ public class Player : MonoBehaviour
                 PickUpFood();
             if (collisionTag == "Wood")
                 CutWood();
+            if (collisionTag == "Weapon")
+                Craft();
         }
     }
-    private void OnCollisionStay(Collision collision)
-    {
-    
-        if (cutWood.state)
-        {
-            if (collision.gameObject.CompareTag("Wood"))
-            {
-                //Add To inventory
-                //  Debug.Log("cutting");
-                obj = collision.gameObject;
-                StartCoroutine(CuttingWood());
-                
-            }
-        }
-    }
-    public void PickUpFood()
+     void PickUpFood()
     {
       if(pickUpFood.state)
         {
             FetchAnim.state = true;
             StartCoroutine(Fetching());
+            //Add to inventory
         }
     } 
-    public void CutWood()
+     void CutWood()
     {
         if(cutWood.state)
         {
             CutAnim.state = true;
             StartCoroutine(CuttingWood());
+            //Add to inventory
+
+        }
+    }
+    void CollectResource()
+    {
+        if (collectResource.state)
+        {
+            FetchAnim.state = true;
+            StartCoroutine(Fetching());
+            //Add to inventory
+
+        }
+    }
+    void Craft()
+    {
+        if(pickUpWeapon.state)
+        {
+            FetchAnim.state = true;
+            StartCoroutine(Fetching());
+            //Add to inventory
+
         }
     }
     IEnumerator CuttingWood()
@@ -88,14 +100,7 @@ public class Player : MonoBehaviour
         yield return wait;
         Destroy(obj);
     } 
-    void CollectResource()
-    {
-        if (collectResource.state)
-        {
-            FetchAnim.state = true;
-            StartCoroutine(Fetching());
-        }
-    }
+   
     IEnumerator Fetching()
     {
         var wait = new WaitForSeconds(5.0f);
