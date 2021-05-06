@@ -763,6 +763,7 @@ GameObject:
   - component: {fileID: 8206137552142747868}
   - component: {fileID: 8206137552142747869}
   - component: {fileID: 8206137552142747870}
+  - component: {fileID: 231428082}
   m_Layer: 5
   m_Name: InventoryMenu_Canvas
   m_TagString: Untagged
@@ -851,6 +852,24 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &231428082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8206137552142747871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca19dc1f7a986343947a00c4d52bbfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodCount: {fileID: 8206137552727854504}
+  rockCount: {fileID: 8206137553378235466}
+  vinesCount: {fileID: 8206137552632271804}
+  trapsCount: {fileID: 8206137551896987211}
+  weaponsCount: {fileID: 8206137553077650647}
+  inventory: {fileID: 11400000, guid: b66c46661f4e2d24a882ca06858be07f, type: 2}
 --- !u!1 &8206137552215327102
 GameObject:
   m_ObjectHideFlags: 0

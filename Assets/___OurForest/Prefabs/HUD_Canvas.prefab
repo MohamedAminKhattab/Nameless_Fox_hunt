@@ -414,6 +414,7 @@ GameObject:
   - component: {fileID: 3058781270502996514}
   - component: {fileID: 3058781270502996517}
   - component: {fileID: 1536133282}
+  - component: {fileID: 3082764205813555159}
   m_Layer: 5
   m_Name: HUD_Canvas
   m_TagString: Untagged
@@ -529,6 +530,25 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 17
   hasTarget: {fileID: 11400000, guid: 0b5e8e33f6a1919438ef47f4a7b0482d, type: 2}
+--- !u!114 &3082764205813555159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3058781270502996516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6ad4ad4f89fbc44ae1652df761f589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hunterCount: {fileID: 3058781270644208580}
+  woodCount: {fileID: 3058781271804361605}
+  rockCount: {fileID: 3058781272332330417}
+  vinesCount: {fileID: 3058781272437715475}
+  trapsCount: {fileID: 3058781270486835600}
+  weaponsCount: {fileID: 3058781271534970399}
+  inventory: {fileID: 11400000, guid: b66c46661f4e2d24a882ca06858be07f, type: 2}
 --- !u!1 &3058781270512662065
 GameObject:
   m_ObjectHideFlags: 0
