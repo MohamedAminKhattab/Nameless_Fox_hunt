@@ -1,0 +1,9 @@
+tree("Root")
+	fallback
+		while
+			isIntrupted
+			DoNothingForNow
+		sequence
+			MoveToTarget
+			Shoot
+		
