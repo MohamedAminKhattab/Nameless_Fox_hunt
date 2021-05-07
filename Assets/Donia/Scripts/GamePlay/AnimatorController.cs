@@ -18,8 +18,12 @@ public class AnimatorController : MonoBehaviour
     Vector2SO joyStickMove;
     [SerializeField]
     BoolSO pickUpFood;
-    //[SerializeField]
-    //BoolSO pickUp;
+    [SerializeField]
+    BoolSO FetchResource;
+    [SerializeField]
+    BoolSO FetchAnim;
+    [SerializeField]
+    BoolSO CutAnim;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -56,8 +60,10 @@ public class AnimatorController : MonoBehaviour
         velocity = Mathf.Clamp(velocity, 0.0f, 1.0f);
 
         animator.SetFloat("Velocity", velocity);
-       // animator.SetBool("PickUp", pickUp.state);
-       // pickUp.state = false;
+        animator.SetBool("PickUp", FetchAnim.state); 
+        animator.SetBool("CutWood", CutAnim.state);
+        FetchAnim.state = false;
+        CutAnim.state = false;
 
     }
 

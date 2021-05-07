@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Food
   - Wood
+  - Resource
+  - Weapon
   layers:
   - Default
   - TransparentFX

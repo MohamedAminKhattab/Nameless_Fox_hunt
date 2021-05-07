@@ -6,17 +6,20 @@ public class CameraFollow : MonoBehaviour
 {
     [SerializeField]
     Transform target;
+    [Range(1f, 40f)]
     [SerializeField]
-    float smoothSpeed = 0.125f;
+    float laziness = 10f;
     [SerializeField]
     Vector3 offset;
-
+    Vector3 desiredPosition;
 
     void FixedUpdate()
     {
-        Vector3 desiredPosition = target.position + offset;
-        Vector3 smoothPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-        transform.position = smoothPosition;
+
+        desiredPosition = target.position + offset;
+        transform.position = Vector3.Lerp(transform.position, desiredPosition, 1 / laziness);
+
         transform.LookAt(target);
+
     }
 }
