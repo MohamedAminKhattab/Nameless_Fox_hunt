@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Food
-  - Ground
+  - Wood
   layers:
   - Default
   - TransparentFX
