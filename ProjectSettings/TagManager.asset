@@ -8,6 +8,7 @@ TagManager:
   - Wood
   - Resource
   - Weapon
+  - Ground
   layers:
   - Default
   - TransparentFX
