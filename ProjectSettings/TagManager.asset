@@ -9,6 +9,8 @@ TagManager:
   - Resource
   - Weapon
   - Ground
+  - Vine
+  - Rock
   layers:
   - Default
   - TransparentFX

@@ -28,11 +28,15 @@ public class Player : MonoBehaviour
     BoolSO FetchAnim;
     [SerializeField]
     BoolSO CutAnim;
+    [SerializeField]
+    InventorySO inventory;
+    string resource = "";
     void Start()
     {
         cutWood.state = false;
         speedSO.value = speed;
         FetchAnim.state = false;
+        inventory.Capacity = 0;
     }
 
     void Update()
@@ -44,8 +48,16 @@ public class Player : MonoBehaviour
             layerHit = hit.transform.gameObject;
             collison = hit.point;
             collisionTag = layerHit.tag;
-            if (collisionTag == "Resource")
+            if (collisionTag == "Vine")
+            {
                 CollectResource();
+                resource = "Vine";
+            }
+            if (collisionTag == "Rock")
+            {
+                CollectResource();
+                resource = "Rock";
+            }
             if (collisionTag == "Food")
                 PickUpFood();
             if (collisionTag == "Wood")
@@ -61,6 +73,8 @@ public class Player : MonoBehaviour
             FetchAnim.state = true;
             StartCoroutine(Fetching());
             //Add to inventory
+            inventory.AddItem(ItemTypes.Food);
+            //Debug.Log("Food");
         }
     } 
      void CutWood()
@@ -70,7 +84,7 @@ public class Player : MonoBehaviour
             CutAnim.state = true;
             StartCoroutine(CuttingWood());
             //Add to inventory
-
+            inventory.AddItem(ItemTypes.Wood);
         }
     }
     void CollectResource()
@@ -80,7 +94,11 @@ public class Player : MonoBehaviour
             FetchAnim.state = true;
             StartCoroutine(Fetching());
             //Add to inventory
-
+            if(resource=="Vine")
+            inventory.AddItem(ItemTypes.Vine);
+            else if(resource=="Rock")
+             inventory.AddItem(ItemTypes.Vine);
+            resource = "";
         }
     }
     void Craft()
@@ -90,6 +108,7 @@ public class Player : MonoBehaviour
             FetchAnim.state = true;
             StartCoroutine(Fetching());
             //Add to inventory
+            inventory.AddItem(ItemTypes.Weapon);
 
         }
     }
@@ -98,7 +117,7 @@ public class Player : MonoBehaviour
         var wait = new WaitForSeconds(8.0f);
         //Debug.Log("Wait");
         yield return wait;
-        Destroy(obj);
+        Destroy(layerHit);
     } 
    
     IEnumerator Fetching()

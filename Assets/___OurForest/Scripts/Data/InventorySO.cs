@@ -8,7 +8,7 @@ public class InventorySO : ScriptableObject
     int maxCapacity = 50;
     public List<Item> itemlist;
     UpdateUI updater;
-
+ 
     public int GetItemCount(ItemTypes type)
     {
         int itemcount = 0;
@@ -26,13 +26,16 @@ public class InventorySO : ScriptableObject
     {
         if (Capacity < maxCapacity)
         {
+            Debug.Log(itemlist.Count);
             foreach (var item in itemlist)
             {
+                Debug.Log("Add");
                 if (item.Type == type)
                 {
                     item.Itemcount += 1;
                     Capacity += 1;
                     updater.UpdateInGameUI();
+                    Debug.Log("Item Added");
                 }
             }
         }
