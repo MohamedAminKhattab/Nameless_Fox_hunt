@@ -5,10 +5,17 @@ using UnityEngine;
 public class InventorySO : ScriptableObject
 {
     public int Capacity;
-    int maxCapacity = 50;
-    public List<Item> itemlist;
-    UpdateUI updater;
-
+    [SerializeField]int maxCapacity = 50;
+    public List<Item> itemlist; 
+    private void OnEnable()
+    {
+        AddItem(ItemTypes.Wood);
+        AddItem(ItemTypes.Rock);
+        AddItem(ItemTypes.Vine);
+        AddItem(ItemTypes.Weapon);
+        AddItem(ItemTypes.Trap);
+        AddItem(ItemTypes.Food);
+    }
     public int GetItemCount(ItemTypes type)
     {
         int itemcount = 0;
@@ -28,11 +35,39 @@ public class InventorySO : ScriptableObject
         {
             foreach (var item in itemlist)
             {
-                if (item.Type == type)
+                if (itemlist.Count > 0)
                 {
-                    item.Itemcount += 1;
-                    Capacity += 1;
-                    updater.UpdateInGameUI();
+                    if (item.Type == type)
+                    {
+                        item.Itemcount += 1;
+                        Capacity += 1;
+                    }
+                }
+                else
+                {
+                    switch (type)
+                    {
+                        case ItemTypes.Rock:
+                            itemlist.Add(new Rock());
+                            break;
+                        case ItemTypes.Wood:
+                            itemlist.Add(new Wood());
+                            break;
+                        case ItemTypes.Vine:
+                            itemlist.Add(new Vine());
+                            break;
+                        case ItemTypes.Trap:
+                            itemlist.Add(new Trap());
+                            break;
+                        case ItemTypes.Weapon:
+                            itemlist.Add(new Weapon());
+                            break;
+                        case ItemTypes.Food:
+                            itemlist.Add(new Food());
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
         }
@@ -49,7 +84,6 @@ public class InventorySO : ScriptableObject
                     item.Itemcount -= count;
                     useSuccess = true;
                     Capacity -= 1;
-                    updater.UpdateInGameUI();
                 }
             }
         }

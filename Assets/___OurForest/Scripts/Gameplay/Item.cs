@@ -35,7 +35,7 @@ public abstract class Item:MonoBehaviour
     public int WoodNeeded { get => woodNeeded; }
     public int RockNeeded { get => rockNeeded; }
     public int VinesNeeded { get => vinesNeeded; }
-    public ItemTypes Type { get => type; }
+    public ItemTypes Type { get => type; set=> type=value; }
     public float Durability { get => durability;  set => durability = value; }
     public abstract void DestroyItem();
 

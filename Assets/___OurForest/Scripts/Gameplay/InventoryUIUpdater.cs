@@ -27,4 +27,8 @@ public class InventoryUIUpdater : MonoBehaviour
         woodCount.text = inventory.GetItemCount(ItemTypes.Wood).ToString();
         rockCount.text = inventory.GetItemCount(ItemTypes.Rock).ToString();
     }
+    private void Update()
+    {
+        UpdateInGameUI();
+    }
 }
