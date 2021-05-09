@@ -8,11 +8,15 @@ public class GameManager : MonoBehaviour
     Inventory inv;
 
     public Inventory Inv { get => inv;}
-
-    void Start()
+    private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
         inv = new Inventory();
+    }
+
+    void Start()
+    {
+
     }
 
     // Update is called once per frame

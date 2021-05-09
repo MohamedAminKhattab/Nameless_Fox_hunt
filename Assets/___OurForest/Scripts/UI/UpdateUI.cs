@@ -14,19 +14,19 @@ public class UpdateUI : MonoBehaviour
     [SerializeField] GameManager _GM;
     private void Start()
     {
-        weaponsCount.text = _GM.Inv.GetItemCount(ItemTypes.Weapon).ToString();
-        trapsCount.text = _GM.Inv.GetItemCount(ItemTypes.Trap).ToString();
-        vinesCount.text = _GM.Inv.GetItemCount(ItemTypes.Vine).ToString();
-        woodCount.text = _GM.Inv.GetItemCount(ItemTypes.Wood).ToString();
         rockCount.text = _GM.Inv.GetItemCount(ItemTypes.Rock).ToString();
+        woodCount.text = _GM.Inv.GetItemCount(ItemTypes.Wood).ToString();
+        vinesCount.text = _GM.Inv.GetItemCount(ItemTypes.Vine).ToString();
+        trapsCount.text = _GM.Inv.GetItemCount(ItemTypes.Trap).ToString();
+        weaponsCount.text = _GM.Inv.GetItemCount(ItemTypes.Weapon).ToString();
     }
     public void UpdateInGameUI()
     {
-        weaponsCount.text = _GM.Inv.GetItemCount(ItemTypes.Weapon).ToString();    
-        trapsCount.text = _GM.Inv.GetItemCount(ItemTypes.Trap).ToString();    
-        vinesCount.text = _GM.Inv.GetItemCount(ItemTypes.Vine).ToString();    
-        woodCount.text = _GM.Inv.GetItemCount(ItemTypes.Wood).ToString();    
         rockCount.text = _GM.Inv.GetItemCount(ItemTypes.Rock).ToString();    
+        woodCount.text = _GM.Inv.GetItemCount(ItemTypes.Wood).ToString();    
+        vinesCount.text = _GM.Inv.GetItemCount(ItemTypes.Vine).ToString();    
+        trapsCount.text = _GM.Inv.GetItemCount(ItemTypes.Trap).ToString();    
+        weaponsCount.text = _GM.Inv.GetItemCount(ItemTypes.Weapon).ToString();    
     }
     private void Update()
     {
