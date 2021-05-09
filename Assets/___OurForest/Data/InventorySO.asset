@@ -13,4 +13,11 @@ MonoBehaviour:
   m_Name: InventorySO
   m_EditorClassIdentifier: 
   Capacity: 0
-  itemlist: []
+  maxCapacity: 50
+  itemlist:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

@@ -4,21 +4,16 @@ using UnityEngine;
 
 public class Wood : Item
 {
-    private int itemcount = 1;
-    private bool craftable = false;
-    private bool fooditem = false;
-    private int healthincrease = 0;
-    private int woodNeeded = 0;
-    private int rockNeeded = 0;
-    private int vinesNeeded = 0;
-    private float durability = 0.0f;
-    private ItemTypes type = ItemTypes.Wood;
-    [SerializeField] InventorySO inventory;
-    public override void Craft()
+  public Wood()
     {
-    }
-
-    public override void DestroyItem()
-    {
+        Itemcount = 0;
+        Craftable = false;
+        Fooditem = false;
+        Healthincrease = 0;
+        WoodNeeded = 0;
+        RockNeeded = 0;
+        VinesNeeded = 0;
+        Durability = 0.0f;
+        Type = ItemTypes.Wood;
     }
 }

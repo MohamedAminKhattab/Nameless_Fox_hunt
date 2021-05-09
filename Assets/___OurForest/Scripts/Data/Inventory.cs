@@ -1,30 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(menuName = "Data/SO/InventorySO", fileName = "InventorySO")]
-public class InventorySO : ScriptableObject
+
+public class Inventory
 {
     public int Capacity;
-    [SerializeField]int maxCapacity = 50;
-    public List<Item> itemlist; 
-    private void OnEnable()
+    readonly int maxCapacity = 50;
+    List<Item> itemlist;
+ public Inventory()
     {
-        AddItem(ItemTypes.Wood);
-        AddItem(ItemTypes.Rock);
-        AddItem(ItemTypes.Vine);
-        AddItem(ItemTypes.Weapon);
-        AddItem(ItemTypes.Trap);
-        AddItem(ItemTypes.Food);
+        itemlist = new List<Item>(maxCapacity);
+        //itemlist.Clear();
+        itemlist.Add(new Rock());
+        itemlist.Add(new Wood());
+        itemlist.Add(new Food());
+        itemlist.Add(new Vine());
+        itemlist.Add(new Trap() { Itemcount=2});
+        itemlist.Add(new Weapon());
     }
     public int GetItemCount(ItemTypes type)
     {
         int itemcount = 0;
-        foreach (var item in itemlist)
+        if (itemlist.Count > 0)
         {
-            if (item.Type == type)
+            foreach (var item in itemlist)
             {
-                itemcount = item.Itemcount;
-                return itemcount;
+                if (item.Type == type)
+                {
+                    itemcount = item.Itemcount;
+                    return itemcount;
+                }
             }
         }
         return itemcount;

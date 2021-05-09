@@ -9,7 +9,6 @@ public class CloseButton : MonoBehaviour, IExecutable
     [SerializeField] BoolSO paused;
     public void Execute()
     {
-        Debug.Log("Pressed close");
         Gameui.SetActive(true);
         Inventory.SetActive(false);
         Time.timeScale = 1.0f;

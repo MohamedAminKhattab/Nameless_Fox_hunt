@@ -9,11 +9,12 @@ TagManager:
   - Resource
   - Weapon
   - Ground
+  - Trap
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Environment
   - Water
   - UI
   - 
