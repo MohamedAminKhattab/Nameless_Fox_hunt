@@ -1,9 +1,16 @@
 tree("Root")
-	fallback
-		while
-			isIntrupted
-			DoNothingForNow
+	repeat 
+		parallel
+			repeat mute tree("RaidHouse")
+			repeat mute tree("ChaseFox")
+		
+tree("RaidHouse")
+	while
+		not isIntrupted
+		MoveToTarget
+
+tree("ChaseFox")
+	while canSeeTheFox
 		sequence
 			MoveToTarget
 			Shoot
-		

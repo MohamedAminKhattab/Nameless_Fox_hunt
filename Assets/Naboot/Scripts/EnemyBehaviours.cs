@@ -3,38 +3,78 @@ using UnityEngine;
 using UnityEngine.AI;
 using Panda;
 
+enum HuntingState
+{
+    goingToHouse,
+    chasingFox
+}
 public class EnemyBehaviours : MonoBehaviour
 {
+    //Todo create world state
     NavMeshAgent agent;
-   [SerializeField] Transform target;
+    Transform target;
     [SerializeField] GameObject bullet;
+    [SerializeField] Transform Fox;
+    [SerializeField] Transform yelena;
+    [SerializeField] Transform DefaultGoal;
+    private Vector2 distance;
+    [SerializeField] int VisionRange = 2;
+    private HuntingState huntingState;
     float StartingTime;
     float currentTime;
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();    
+        agent = GetComponent<NavMeshAgent>();
+        target = DefaultGoal;
+        huntingState = HuntingState.goingToHouse;
     }
 
-    // Update is called once per frame
-    void Update()
+
+  
+
+    #region Panda Leafs
+    [Task]
+    public bool canSeeTheFox()
     {
-        
+        distance.x = transform.position.x - Fox.position.x;
+        distance.y = transform.position.z - Fox.position.z;
+        float actualDistance = Vector2.SqrMagnitude(distance);
+        Debug.Log(actualDistance);
+        if (actualDistance < VisionRange * VisionRange)
+        {
+            huntingState = HuntingState.chasingFox;
+            return true;
+        }
+        else
+        {
+            huntingState = HuntingState.goingToHouse;
+            return false;
+        }
     }
-
-    [Task] 
+    [Task]
     public void MoveToTarget()
     {
+        switch (huntingState)
+        {
+            case HuntingState.goingToHouse:
+                target = DefaultGoal;
+                break;
+            case HuntingState.chasingFox:
+                target = Fox;
+                break;
+        }
         agent.SetDestination(target.position);
         if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
             Task.current.Succeed();
-        else
-            Task.current.Fail();
+        //else
+        //    Task.current.Fail();
     }
     [Task]
-    public void isIntrupted()
+    public bool isIntrupted()
     {
-        Task.current.Fail();
-       
+
+        return huntingState!=HuntingState.goingToHouse;
+
     }
     [Task]
     public void DoNothingForNow()
@@ -50,7 +90,7 @@ public class EnemyBehaviours : MonoBehaviour
             Fire();
             StartingTime = Time.time;
 
-        Task.current.Succeed();
+           // Task.current.Succeed();
         }
     }
     void Fire()
@@ -58,5 +98,5 @@ public class EnemyBehaviours : MonoBehaviour
         GameObject go = Instantiate(bullet, transform.position, transform.rotation);
         go.AddComponent<Rigidbody>().AddForce(transform.forward * 500);
     }
-
+    #endregion
 }
