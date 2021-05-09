@@ -5,9 +5,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
+    Inventory inv;
+
+    public Inventory Inv { get => inv;}
+
     void Start()
     {
-        
+        DontDestroyOnLoad(this.gameObject);
+        inv = new Inventory();
     }
 
     // Update is called once per frame

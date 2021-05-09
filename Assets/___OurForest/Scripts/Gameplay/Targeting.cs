@@ -5,7 +5,7 @@ using UnityEngine;
 public class Targeting : MonoBehaviour
 {
     [SerializeField] TransformSO targetSO;
-    [SerializeField] LayerMask Mask;
+    [SerializeField] LayerMask mask;
     [SerializeField] BoolSO hasTarget;
     private void Start()
     {
@@ -20,7 +20,7 @@ public class Targeting : MonoBehaviour
             {
                 RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(touch.position);
-                if (Physics.Raycast(ray, out hit,Mask)&&hasTarget.state==false&&hit.collider.gameObject.tag!="Ground")
+                if (Physics.Raycast(ray, out hit,mask)&&hasTarget.state==false&&hit.collider.gameObject.tag!="Ground")
                 {
                     targetSO.value = hit.transform;
                     hasTarget.state = true;

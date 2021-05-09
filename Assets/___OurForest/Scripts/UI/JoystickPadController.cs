@@ -57,7 +57,6 @@ public class JoystickPadController : MonoBehaviour
 
     public void EndTouch()
     {
-        Debug.Log("End touch");
         is_dragged = false;
         joystick.rectTransform.position = origninalPosition;
         movement.value = Vector2.zero;
