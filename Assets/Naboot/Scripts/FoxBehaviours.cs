@@ -15,8 +15,8 @@ public class FoxBehaviours : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] int followingRange = 2;
     private Vector2 distance;
-    private Transform Target; 
-    [SerializeField]   TransformSO PickUp;
+    private Transform Target;
+    [SerializeField] TransformSO PickUp;
     [SerializeField] BoolSO hasTargetSo;
     private FoxState foxState;
     void Start()
@@ -44,11 +44,11 @@ public class FoxBehaviours : MonoBehaviour
     {
         //Target = SO.transform;
         foxState = FoxState.gathering;
-       // Debug.LogWarning(PcikUP.value.position);
+        // Debug.LogWarning(PcikUP.value.position);
     }
 
     #endregion
-    
+
     #region selectors checks
 
     [Task] //should be a task or not??
@@ -62,10 +62,10 @@ public class FoxBehaviours : MonoBehaviour
     {
         if (foxState == FoxState.gathering)
         {
-            if(PickUp.value)
+            if (PickUp.value)
             {
-            Target =(Transform) PickUp.value;
-            Task.current.Succeed();
+                Target = (Transform)PickUp.value;
+                Task.current.Succeed();
             }
             else
             {
@@ -86,21 +86,20 @@ public class FoxBehaviours : MonoBehaviour
         if (foxState == FoxState.idle && Vector2.SqrMagnitude(distance) > followingRange * followingRange)
         {
             Target = player;
+            agent.isStopped = false;
             Task.current.Succeed();
-            //  return true;
-
         }
         else
         {
             Task.current.Fail();
-            // return false;
+            agent.isStopped = true;
         }
     }
     #endregion
 
     #region leafs
- [Task]
- public void FinishFetching()
+    [Task]
+    public void FinishFetching()
     {
         hasTargetSo.state = false;
         PickUp.value = null;
