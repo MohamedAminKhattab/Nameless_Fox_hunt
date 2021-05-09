@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using Panda;
 using UnityEngine.AI;
-public enum FoxState
+public enum FoxState //should subtite with world States
 {
     idle,
     gathering
