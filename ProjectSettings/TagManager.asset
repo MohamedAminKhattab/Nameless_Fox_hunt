@@ -9,12 +9,9 @@ TagManager:
   - Resource
   - Weapon
   - Ground
-<<<<<<< HEAD
   - Vine
   - Rock
-=======
   - Trap
->>>>>>> TrapPlacement
   layers:
   - Default
   - TransparentFX
@@ -22,7 +19,7 @@ TagManager:
   - Environment
   - Water
   - UI
-  - 
+  - Items
   - 
   - 
   - 

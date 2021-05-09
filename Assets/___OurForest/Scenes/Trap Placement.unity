@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 164866108}
   - component: {fileID: 164866107}
   - component: {fileID: 164866106}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: food (4)
   m_TagString: Food
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 166452870}
   - component: {fileID: 166452869}
   - component: {fileID: 166452868}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: food (2)
   m_TagString: Food
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -590,6 +590,7 @@ MonoBehaviour:
   hitDistance: 2
   FetchAnim: {fileID: 11400000, guid: 876c0eb80b25ab244b311f74b1298887, type: 2}
   CutAnim: {fileID: 11400000, guid: 4ff75f34f49cc054192429c14268e41f, type: 2}
+  inventory: {fileID: 0}
 --- !u!4 &506918201
 Transform:
   m_ObjectHideFlags: 0
@@ -618,7 +619,7 @@ GameObject:
   - component: {fileID: 602850043}
   - component: {fileID: 602850042}
   - component: {fileID: 602850041}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wood
   m_TagString: Wood
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -728,7 +729,7 @@ GameObject:
   - component: {fileID: 712212033}
   - component: {fileID: 712212032}
   - component: {fileID: 712212031}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: food
   m_TagString: Food
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -1177,7 +1178,7 @@ GameObject:
   - component: {fileID: 795253171}
   - component: {fileID: 795253170}
   - component: {fileID: 795253169}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Weapon
   m_TagString: Weapon
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -1287,7 +1288,7 @@ GameObject:
   - component: {fileID: 1001855112}
   - component: {fileID: 1001855111}
   - component: {fileID: 1001855110}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: food (1)
   m_TagString: Food
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -1396,7 +1397,7 @@ GameObject:
   - component: {fileID: 1150924079}
   - component: {fileID: 1150924078}
   - component: {fileID: 1150924077}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Resource (3)
   m_TagString: Resource
   m_Icon: {fileID: 0}
@@ -1505,7 +1506,7 @@ GameObject:
   - component: {fileID: 1211608075}
   - component: {fileID: 1211608074}
   - component: {fileID: 1211608073}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: food (3)
   m_TagString: Food
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -1899,7 +1900,7 @@ GameObject:
   - component: {fileID: 1707912272}
   - component: {fileID: 1707912271}
   - component: {fileID: 1707912270}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Resource
   m_TagString: Resource
   m_Icon: {fileID: 0}
@@ -2008,7 +2009,7 @@ GameObject:
   - component: {fileID: 1913598485}
   - component: {fileID: 1913598484}
   - component: {fileID: 1913598483}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Resource (2)
   m_TagString: Resource
   m_Icon: {fileID: 0}
@@ -2327,7 +2328,7 @@ GameObject:
   - component: {fileID: 2073968039}
   - component: {fileID: 2073968038}
   - component: {fileID: 2073968037}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Resource (1)
   m_TagString: Resource
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
