@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Vine : Item
+public class Rock : Item
 {
-  public Vine()
+    public Rock()
     {
-        Itemcount = 0;
+        Itemcount = 1;
         Craftable = false;
         Fooditem = false;
         Healthincrease = 0;
@@ -14,6 +14,6 @@ public class Vine : Item
         RockNeeded = 0;
         VinesNeeded = 0;
         Durability = 0.0f;
-        Type = ItemTypes.Vine;
-    }
+        Type = ItemTypes.Rock;
+    } 
 }

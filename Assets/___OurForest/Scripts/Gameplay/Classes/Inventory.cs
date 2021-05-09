@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Inventory
 {
@@ -11,12 +12,66 @@ public class Inventory
     {
         itemlist = new List<Item>(maxCapacity);
         //itemlist.Clear();
-        itemlist.Add(new Rock());
-        itemlist.Add(new Wood());
-        itemlist.Add(new Food());
-        itemlist.Add(new Vine());
-        itemlist.Add(new Trap() { Itemcount=2});
+        itemlist.Add(new Rock() { Itemcount=10});
+        itemlist.Add(new Wood() { Itemcount = 10 });
+        itemlist.Add(new Food() { Itemcount = 10 });
+        itemlist.Add(new Vine() { Itemcount = 10 });
+        itemlist.Add(new Trap());
         itemlist.Add(new Weapon());
+    }
+    public int GetWoodneeded(ItemTypes type)
+    {
+        int woodneeded=0;
+        switch (type)
+        {
+            case ItemTypes.Trap:
+                Trap t = new Trap();
+                woodneeded = t.WoodNeeded;
+                break;
+            case ItemTypes.Weapon:
+                Weapon  w = new Weapon();
+                woodneeded = w.WoodNeeded;
+                break;
+            default:
+                break;
+        }
+        return woodneeded;
+    }
+    public int GetRockneeded(ItemTypes type)
+    {
+        int rockneeded = 0;
+        switch (type)
+        {
+            case ItemTypes.Trap:
+                Trap t = new Trap();
+                rockneeded = t.RockNeeded;
+                break;
+            case ItemTypes.Weapon:
+                Weapon w = new Weapon();
+                rockneeded = w.RockNeeded;
+                break;
+            default:
+                break;
+        }
+        return rockneeded;
+    }
+    public int GetVineneeded(ItemTypes type)
+    {
+        int vineneeded = 0;
+        switch (type)
+        {
+            case ItemTypes.Trap:
+                Trap t = new Trap();
+                vineneeded = t.VinesNeeded;
+                break;
+            case ItemTypes.Weapon:
+                Weapon w = new Weapon();
+                vineneeded = w.VinesNeeded;
+                break;
+            default:
+                break;
+        }
+        return vineneeded;
     }
     public int GetItemCount(ItemTypes type)
     {
@@ -93,5 +148,18 @@ public class Inventory
             }
         }
         return useSuccess;
+    }
+    public void Craft(Item item )
+    {
+        if(item.Craftable==true)
+        {
+            if(GetItemCount(ItemTypes.Wood)>=item.WoodNeeded&& GetItemCount(ItemTypes.Rock) >= item.RockNeeded && GetItemCount(ItemTypes.Vine) >= item.VinesNeeded)
+            {
+               if(UseItem(ItemTypes.Wood,item.WoodNeeded)&& UseItem(ItemTypes.Rock, item.RockNeeded) && UseItem(ItemTypes.Vine, item.VinesNeeded) )
+                {
+                    AddItem(item.Type);
+                }
+            }
+        }
     }
 }

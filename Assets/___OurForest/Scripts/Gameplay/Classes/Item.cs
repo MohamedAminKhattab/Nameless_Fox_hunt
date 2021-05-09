@@ -5,7 +5,7 @@ public enum ItemTypes
 {
     Rock,Wood,Vine,Trap,Weapon,Food
 }
-public abstract class Item
+public  abstract class Item
 {
     private int itemcount;
     private bool craftable;

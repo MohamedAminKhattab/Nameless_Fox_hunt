@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Food : Item
+public class Wood : Item
 {
-    public Food()
+  public Wood()
     {
-        Itemcount = 0;
+        Itemcount = 1;
         Craftable = false;
-        Fooditem = true;
-        Healthincrease = 10;
+        Fooditem = false;
+        Healthincrease = 0;
         WoodNeeded = 0;
         RockNeeded = 0;
         VinesNeeded = 0;
         Durability = 0.0f;
-        Type = ItemTypes.Food;
+        Type = ItemTypes.Wood;
     }
 }

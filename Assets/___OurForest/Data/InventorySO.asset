@@ -9,15 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d6ccd0b55083e243879f9eea29953ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a2f6020c4dd1834ca82572b7a6425d8, type: 3}
   m_Name: InventorySO
   m_EditorClassIdentifier: 
   Capacity: 0
-  maxCapacity: 50
-  itemlist:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}

@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trap : Item
+public class Weapon : Item
 {
- public Trap()
+    public Weapon()
     {
-        Itemcount = 0;
+        Itemcount = 1;
         Craftable = true;
         Fooditem = false;
         Healthincrease = 0;
-        WoodNeeded = 2;
+        WoodNeeded = 1;
         RockNeeded = 5;
         VinesNeeded = 1;
-        Durability = 20;
-        Type = ItemTypes.Trap;
+        Durability = 30;
+        Type = ItemTypes.Weapon;
     }
 }
