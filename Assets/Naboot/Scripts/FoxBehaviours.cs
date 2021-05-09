@@ -1,8 +1,9 @@
-
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Panda;
 using UnityEngine.AI;
-public enum FoxState //should subtite with world States
+public enum FoxState
 {
     idle,
     gathering
@@ -15,8 +16,9 @@ public class FoxBehaviours : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] int followingRange = 2;
     private Vector2 distance;
-    private Transform Target;
-    [SerializeField] TransformSO PcikUP;
+    private Transform Target; 
+    [SerializeField]   TransformSO PickUp;
+    [SerializeField] BoolSO hasTargetSo;
     private FoxState foxState;
     void Start()
     {
@@ -43,6 +45,7 @@ public class FoxBehaviours : MonoBehaviour
     {
         //Target = SO.transform;
         foxState = FoxState.gathering;
+       // Debug.LogWarning(PcikUP.value.position);
     }
 
     #endregion
@@ -60,8 +63,15 @@ public class FoxBehaviours : MonoBehaviour
     {
         if (foxState == FoxState.gathering)
         {
-            Target = PcikUP.value;
+            if(PickUp.value)
+            {
+            Target =(Transform) PickUp.value;
             Task.current.Succeed();
+            }
+            else
+            {
+                Task.current.Fail();
+            }
         }
         else
         {
@@ -90,7 +100,13 @@ public class FoxBehaviours : MonoBehaviour
     #endregion
 
     #region leafs
- 
+ [Task]
+ public void FinishFetching()
+    {
+        hasTargetSo.state = false;
+        PickUp.value = null;
+        Task.current.Succeed();
+    }
     [Task]
     public void MoveToTarget()
     {
@@ -102,4 +118,3 @@ public class FoxBehaviours : MonoBehaviour
     }
     #endregion
 }
-
