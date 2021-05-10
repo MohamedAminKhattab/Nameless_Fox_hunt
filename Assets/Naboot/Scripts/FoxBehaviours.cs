@@ -113,7 +113,13 @@ public class FoxBehaviours : MonoBehaviour
 
         agent.SetDestination(Target.position);
         if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
+        {
             Task.current.Succeed();
+        }
+        else
+        {
+            Task.current.Fail();
+        }
     }
     #endregion
 }
