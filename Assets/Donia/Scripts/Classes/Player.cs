@@ -29,14 +29,14 @@ public class Player : MonoBehaviour
     [SerializeField]
     BoolSO CutAnim;
     [SerializeField]
-    InventorySO inventory;
+    GameManager _GM;
     string resource = "";
     void Start()
     {
         cutWood.state = false;
         speedSO.value = speed;
         FetchAnim.state = false;
-        inventory.Capacity = 0;
+        //_GM.Inv.Capacity = 0;
     }
 
     void Update()
@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
             if (collisionTag == "Wood")
                 CutWood();
             if (collisionTag == "Weapon")
-                Craft();
+                PickUpWeapon();
         }
     }
      void PickUpFood()
@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
             FetchAnim.state = true;
             StartCoroutine(Fetching());
             //Add to inventory
-            inventory.AddItem(ItemTypes.Food);
+            _GM.Inv.AddItem(ItemTypes.Food);
             //Debug.Log("Food");
         }
     } 
@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
             CutAnim.state = true;
             StartCoroutine(CuttingWood());
             //Add to inventory
-            inventory.AddItem(ItemTypes.Wood);
+            _GM.Inv.AddItem(ItemTypes.Wood);
         }
     }
     void CollectResource()
@@ -95,20 +95,20 @@ public class Player : MonoBehaviour
             StartCoroutine(Fetching());
             //Add to inventory
             if(resource=="Vine")
-            inventory.AddItem(ItemTypes.Vine);
+                _GM.Inv.AddItem(ItemTypes.Vine);
             else if(resource=="Rock")
-             inventory.AddItem(ItemTypes.Vine);
+                _GM.Inv.AddItem(ItemTypes.Rock);
             resource = "";
         }
     }
-    void Craft()
+    void PickUpWeapon()
     {
         if(pickUpWeapon.state)
         {
             FetchAnim.state = true;
             StartCoroutine(Fetching());
             //Add to inventory
-            inventory.AddItem(ItemTypes.Weapon);
+            _GM.Inv.AddItem(ItemTypes.Weapon);
 
         }
     }

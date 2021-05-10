@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PickUpWeapon : MonoBehaviour
 {
+    Weapon weapon;
     [SerializeField]
     BoolSO pickUpWeapon;
     float timerCount = 0.1f;
 
     void Start()
     {
+        weapon = new Weapon();
         pickUpWeapon.state = false;
     }
     void Update()

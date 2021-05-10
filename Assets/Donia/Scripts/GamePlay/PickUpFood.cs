@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PickUpFood : MonoBehaviour
 {
+    Food f;
     [SerializeField]
     BoolSO pickUpFood;
     float timerCount = 0.1f;
@@ -11,6 +12,7 @@ public class PickUpFood : MonoBehaviour
     //BoolSO canPick;
     void Start()
     {
+        f = new Food();
         pickUpFood.state = false;
         //canPick.state = false;
     }
