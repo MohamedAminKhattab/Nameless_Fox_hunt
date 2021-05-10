@@ -586,7 +586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1513236768, guid: 85539008418940d4d9c934ccccceacf1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MoveToTarget
+      value: StartGathering
       objectReference: {fileID: 0}
     - target: {fileID: 1536133282, guid: 85539008418940d4d9c934ccccceacf1, type: 3}
       propertyPath: mask.m_Bits

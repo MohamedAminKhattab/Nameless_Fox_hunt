@@ -3,7 +3,7 @@ tree("Root")
 		while
 			shouldFetch
 			sequence
-				mute MoveToTarget
+				MoveToTarget
 				FinishFetching
 				ReturnToIdle
 		while shouldMoveToPlayer MoveToTarget

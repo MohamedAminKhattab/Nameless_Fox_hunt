@@ -65,6 +65,8 @@ public class FoxBehaviours : MonoBehaviour
         {
             if (PickUp.value)
             {
+                Debug.LogWarning(PickUp.value);
+                agent.isStopped = false;
                 Target = (Transform)PickUp.value;
                 Task.current.Succeed();
             }
@@ -110,15 +112,11 @@ public class FoxBehaviours : MonoBehaviour
     public void MoveToTarget()
     {
 
-
+     
         agent.SetDestination(Target.position);
         if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
         {
             Task.current.Succeed();
-        }
-        else
-        {
-            Task.current.Fail();
         }
     }
     #endregion

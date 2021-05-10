@@ -44,7 +44,7 @@ public class EnemyBehaviours : MonoBehaviour
         distance.x = transform.position.x - Fox.position.x;
         distance.y = transform.position.z - Fox.position.z;
         float actualDistance = Vector2.SqrMagnitude(distance);
-        Debug.Log(actualDistance);
+        //Debug.Log(actualDistance);
         if (actualDistance < VisionRange * VisionRange)
         {
             huntingState = HuntingState.chasingFox;

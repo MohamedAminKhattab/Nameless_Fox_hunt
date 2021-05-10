@@ -466,6 +466,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 699748600}
+    - target: {fileID: 9151201594120318510, guid: f1600080c5d346a47bf9f3175b199541, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1600080c5d346a47bf9f3175b199541, type: 3}
 --- !u!4 &1063881104 stripped
