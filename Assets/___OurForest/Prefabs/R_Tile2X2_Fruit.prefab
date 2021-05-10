@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1222843889258682803}
   m_Layer: 0
   m_Name: R_Tile2X2_Fruit
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 1222843889716066809}
   m_Layer: 0
   m_Name: tile2x2 (347)
-  m_TagString: Walkable
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

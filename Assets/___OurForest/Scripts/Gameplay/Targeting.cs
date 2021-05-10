@@ -21,11 +21,11 @@ public class Targeting : MonoBehaviour
             {
                 RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(touch.position);
-                if (Physics.Raycast(ray, out hit,mask)&&hasTarget.state==false&&hit.collider.gameObject.tag!="Ground" && !joystickField.rect.Contains(touch.position))
+                if (Physics.Raycast(ray, out hit,mask)&&hasTarget.state==false&&(hit.collider.gameObject.tag != "Ground"|| hit.collider.gameObject.tag != "Walkable") && !joystickField.rect.Contains(touch.position))
                 {
                     targetSO.value = hit.transform;
                     hasTarget.state = true;
-                    //Debug.LogWarning($"{targetSO.value.gameObject.name}=>{targetSO.value.position}");
+                    Debug.LogWarning($"{targetSO.value.gameObject.name}=>{targetSO.value.position}");
                 }
             }
         }
