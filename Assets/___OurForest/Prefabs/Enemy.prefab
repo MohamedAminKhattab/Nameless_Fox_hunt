@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 3637006437264765420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 55.3, y: 2.39, z: 18.7}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -110,7 +110,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 10
+  m_Speed: 11.23
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -157,8 +157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 2858946650027735335, guid: 117a9a42fd663f94d8a2107e9811174f, type: 3}
-  Fox: {fileID: 8751936773257088877, guid: f1600080c5d346a47bf9f3175b199541, type: 3}
-  yelena: {fileID: 6845774844251762928, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
+  Fox: {fileID: 0}
+  yelena: {fileID: 0}
   DefaultGoal: {fileID: 0}
   VisionRange: 2
 --- !u!54 &3637006437264765412

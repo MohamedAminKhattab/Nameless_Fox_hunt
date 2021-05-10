@@ -116,7 +116,7 @@ MonoBehaviour:
     m_Bits: 8
   needTrap: {fileID: 11400000, guid: 06689c3572e4ed94aaabfa80f39cc508, type: 2}
   joystickField: {fileID: 866903878230708404}
-  trapPrefab: {fileID: 103776297426415186, guid: edfabc9851139694a8f9a6c57f5da4bb, type: 3}
+  trapPrefab: {fileID: 4586435710400259806, guid: 6c608c118fef457448c09c42b3eee2cf, type: 3}
   trapLocation: {fileID: 11400000, guid: 0a71e172541139944b0f924235fee262, type: 2}
   _GM: {fileID: 0}
 --- !u!114 &976962946376176762

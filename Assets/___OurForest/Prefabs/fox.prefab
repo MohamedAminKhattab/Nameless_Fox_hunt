@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 9151201594120318504}
   m_Layer: 0
   m_Name: fox
-  m_TagString: Untagged
+  m_TagString: Fox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2df34197f9c5c74483357fb5a87e357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 6845774844251762928, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
+  player: {fileID: 0}
   followingRange: 3
   PickUp: {fileID: 11400000, guid: bfac95677aa908f46a00deaf667768cf, type: 2}
   hasTargetSo: {fileID: 11400000, guid: 0b5e8e33f6a1919438ef47f4a7b0482d, type: 2}

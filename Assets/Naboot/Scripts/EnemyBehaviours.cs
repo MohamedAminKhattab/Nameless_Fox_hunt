@@ -22,6 +22,11 @@ public class EnemyBehaviours : MonoBehaviour
     private HuntingState huntingState;
     float StartingTime;
     float currentTime;
+
+    public Transform Fox1 { get => Fox; set => Fox = value; }
+    public Transform Yelena { get => yelena; set => yelena = value; }
+    public Transform DefaultGoal1 { get => DefaultGoal; set => DefaultGoal = value; }
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();

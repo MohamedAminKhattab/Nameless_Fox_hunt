@@ -12,6 +12,11 @@ TagManager:
   - Vine
   - Rock
   - Trap
+  - enemy
+  - Walkable
+  - NotWalkable
+  - Fox
+  - Start
   layers:
   - Default
   - TransparentFX

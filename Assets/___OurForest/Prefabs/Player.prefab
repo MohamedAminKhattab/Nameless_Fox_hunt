@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6845774844251762941}
   - component: {fileID: 6845774844251762940}
   m_Layer: 0
-  m_Name: Player 1
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,11 +58,11 @@ MonoBehaviour:
   pickUpWeapon: {fileID: 11400000, guid: 887cc349ef7a28741933482870cc66aa, type: 2}
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   hitDistance: 2
   FetchAnim: {fileID: 11400000, guid: 876c0eb80b25ab244b311f74b1298887, type: 2}
   CutAnim: {fileID: 11400000, guid: 4ff75f34f49cc054192429c14268e41f, type: 2}
-  _GM: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
+  _GM: {fileID: 0}
 --- !u!114 &6845774844251762930
 MonoBehaviour:
   m_ObjectHideFlags: 0

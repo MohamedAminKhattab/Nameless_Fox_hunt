@@ -30,7 +30,7 @@ public class Trapping : MonoBehaviour
             {
                 RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(touch.position);
-                if (Physics.Raycast(ray, out hit,mask) && needTrap.state == false && hit.collider.gameObject.tag == "Ground"&&trapLocation.value==Vector3.zero&&!joystickField.rect.Contains(touch.position))
+                if (Physics.Raycast(ray, out hit,mask) && needTrap.state == false &&(hit.collider.gameObject.tag == "Ground"|| hit.collider.gameObject.tag == "Walkable") &&trapLocation.value==Vector3.zero&&!joystickField.rect.Contains(touch.position))
                 {
                     trapLocation.value = hit.point;
                 }

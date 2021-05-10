@@ -12,6 +12,11 @@ public class trapBehaviour : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag.Equals("enemy"))
-            other.gameObject.SetActive(false);
+        {
+            Destroy(other.gameObject);
+            Destroy(this.gameObject);
+        }
+            //other.gameObject.SetActive(false);
+       
     }
 }
