@@ -43,8 +43,8 @@ public class AnimatorController : MonoBehaviour
             movement.value.y = 0;
             movement.value.z = joyStickMove.value.y;
         }
-        Debug.Log(joyStickMove.value.x);
-        Debug.Log(joyStickMove.value.y);
+        //Debug.Log(joyStickMove.value.x);
+        //Debug.Log(joyStickMove.value.y);
         bool pressForeward = movement.value.z == 1;
         bool pressBackward = movement.value.z == -1;
         bool rightPressed = movement.value.x == 1;
@@ -62,7 +62,7 @@ public class AnimatorController : MonoBehaviour
         velocity = Mathf.Clamp(velocity, 0.0f, 1.0f);
 
         animator.SetFloat("Velocity", velocity);
-        animator.SetBool("PickUp", FetchAnim.state); 
+        animator.SetBool("PickUp", FetchAnim.state);
         animator.SetBool("CutWood", CutAnim.state);
         animator.SetBool("EatFood", EatAnim.state);
         FetchAnim.state = false;

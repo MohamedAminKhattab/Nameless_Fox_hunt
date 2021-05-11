@@ -78,9 +78,10 @@ public class Player : MonoBehaviour
         if (eatFood.state)
         {
             CanEat();
-             
+            eatFood.state = false;
+            Debug.Log(_GM.Inv.GetItemCount(ItemTypes.Food));
         }
-        Debug.Log(_GM.Inv.GetItemCount(ItemTypes.Food));
+        
     }
     void PickUpFood()
     {
