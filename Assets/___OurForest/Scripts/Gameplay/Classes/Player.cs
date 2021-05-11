@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     BoolSO cutWood;
     [SerializeField]
     BoolSO pickUpWeapon;
+    [SerializeField]
+    BoolSO eatFood;
     GameObject obj;
     GameObject layerHit;
     [SerializeField]
@@ -27,15 +29,20 @@ public class Player : MonoBehaviour
     [SerializeField]
     BoolSO FetchAnim;
     [SerializeField]
-    BoolSO CutAnim;
+    BoolSO CutAnim; 
+    [SerializeField]
+    BoolSO EatAnim;
     [SerializeField]
     GameManager _GM;
     string resource = "";
+    bool canEatFood;
     void Start()
     {
         cutWood.state = false;
         speedSO.value = speed;
         FetchAnim.state = false;
+        EatAnim.state = false;
+        canEatFood = false;
         //_GM.Inv.Capacity = 0;
     }
 
@@ -66,7 +73,16 @@ public class Player : MonoBehaviour
                 PickUpWeapon();
         }
     }
-     void PickUpFood()
+     void FixedUpdate()
+    {
+        if (eatFood.state)
+        {
+            CanEat();
+             
+        }
+        Debug.Log(_GM.Inv.GetItemCount(ItemTypes.Food));
+    }
+    void PickUpFood()
     {
       if(pickUpFood.state)
         {
@@ -112,6 +128,15 @@ public class Player : MonoBehaviour
 
         }
     }
+    void CanEat()
+    {
+        canEatFood = _GM.Inv.UseItem(ItemTypes.Food, 1);
+        if (canEatFood)
+        {
+            EatAnim.state = true;
+            StartCoroutine(Eating());
+        }
+    }
     IEnumerator CuttingWood()
     {
         var wait = new WaitForSeconds(8.0f);
@@ -126,6 +151,11 @@ public class Player : MonoBehaviour
         //Debug.Log("Wait");
         yield return wait;
         Destroy(layerHit);
+    }
+    IEnumerator Eating()
+    {
+        var wait = new WaitForSeconds(3.0f);
+        yield return wait;
     }
     private void OnDrawGizmos()
     {
