@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 public class Inventory
 {
     public int Capacity;
     readonly int maxCapacity = 50;
     List<Item> itemlist;
+    public EventHandler OnInvItemsChangeHandler;
  public Inventory()
     {
         itemlist = new List<Item>(maxCapacity);
@@ -16,7 +18,7 @@ public class Inventory
         itemlist.Add(new Wood() { Itemcount = 10 });
         itemlist.Add(new Food() { Itemcount = 10 });
         itemlist.Add(new Vine() { Itemcount = 10 });
-        itemlist.Add(new Trap());
+       itemlist.Add(new Trap());
         itemlist.Add(new Weapon());
     }
     public int GetWoodneeded(ItemTypes type)
@@ -131,6 +133,7 @@ public class Inventory
                 }
             }
         }
+        OnInvItemsChangeHandler?.Invoke(this, EventArgs.Empty);
     }
     public bool UseItem(ItemTypes type, int count)
     {
@@ -147,6 +150,7 @@ public class Inventory
                 }
             }
         }
+        OnInvItemsChangeHandler?.Invoke(this, EventArgs.Empty);
         return useSuccess;
     }
     public void Craft(Item item )

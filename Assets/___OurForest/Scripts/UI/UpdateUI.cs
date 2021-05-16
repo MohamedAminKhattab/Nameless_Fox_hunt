@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -19,17 +20,14 @@ public class UpdateUI : MonoBehaviour
         vinesCount.text = _GM.Inv.GetItemCount(ItemTypes.Vine).ToString();
         trapsCount.text = _GM.Inv.GetItemCount(ItemTypes.Trap).ToString();
         weaponsCount.text = _GM.Inv.GetItemCount(ItemTypes.Weapon).ToString();
+        _GM.Inv.OnInvItemsChangeHandler +=UpdateInGameUI;
     }
-    public void UpdateInGameUI()
+    public void UpdateInGameUI(object sender,EventArgs e)
     {
         rockCount.text = _GM.Inv.GetItemCount(ItemTypes.Rock).ToString();    
         woodCount.text = _GM.Inv.GetItemCount(ItemTypes.Wood).ToString();    
         vinesCount.text = _GM.Inv.GetItemCount(ItemTypes.Vine).ToString();    
         trapsCount.text = _GM.Inv.GetItemCount(ItemTypes.Trap).ToString();    
         weaponsCount.text = _GM.Inv.GetItemCount(ItemTypes.Weapon).ToString();    
-    }
-    private void Update()
-    {
-        UpdateInGameUI();
     }
 }

@@ -34,7 +34,7 @@ public class InventorySO : ScriptableObject
                 {
                     item.Itemcount += 1;
                     Capacity += 1;
-                    updater.UpdateInGameUI();
+                    //updater.UpdateInGameUI();
                     Debug.Log("Item Added");
                 }
             }
@@ -52,7 +52,7 @@ public class InventorySO : ScriptableObject
                     item.Itemcount -= count;
                     useSuccess = true;
                     Capacity -= 1;
-                    updater.UpdateInGameUI();
+                   // updater.UpdateInGameUI();
                 }
             }
         }

@@ -41,8 +41,6 @@ public class AnimatorController : MonoBehaviour
             movement.value.y = 0;
             movement.value.z = joyStickMove.value.y;
         }
-        Debug.Log(joyStickMove.value.x);
-        Debug.Log(joyStickMove.value.y);
         bool pressForeward = movement.value.z == 1;
         bool pressBackward = movement.value.z == -1;
         bool rightPressed = movement.value.x == 1;
