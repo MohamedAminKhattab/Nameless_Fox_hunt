@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     public Inventory Inv { get => inv;}
     List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
+    int LevelWaveCount = 3;
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);

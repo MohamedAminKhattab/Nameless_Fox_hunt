@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class SpawnPoint : MonoBehaviour
     [SerializeField] int spawnCount = 1;
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] int currentTroop;
+    [SerializeField] EventSO onEnemyDieEvent;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,5 +36,9 @@ public class SpawnPoint : MonoBehaviour
         Troop.GetComponent<EnemyBehaviours>().Yelena = yelena;
         Troop.GetComponent<EnemyBehaviours>().DefaultGoal1 = defaultgoal;
         currentTroop++;
+    }
+    public void Enemydied()
+    {
+        currentTroop--;
     }
 }
