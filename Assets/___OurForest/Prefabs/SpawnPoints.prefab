@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1245819525522711303}
   - component: {fileID: 1245819525522711296}
+  - component: {fileID: 2366593721128965011}
   m_Layer: 0
   m_Name: Point3
   m_TagString: Untagged
@@ -49,6 +50,35 @@ MonoBehaviour:
   spawnCount: 2
   enemyPrefab: {fileID: 3637006437264765420, guid: 95cf573ff3a554940840bf76cc164d87, type: 3}
   currentTroop: 0
+  onEnemyDieEvent: {fileID: 11400000, guid: 932e8ae6a0ba0cb4ba40d99db3cbac5b, type: 2}
+--- !u!114 &2366593721128965011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245819525522711302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f564d6ce0be49c943a561bfc80a57b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSo: {fileID: 11400000, guid: 932e8ae6a0ba0cb4ba40d99db3cbac5b, type: 2}
+  OnRaise:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1245819525522711296}
+        m_TargetAssemblyTypeName: SpawnPoint, Assembly-CSharp
+        m_MethodName: Enemydied
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1245819526184733989
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1245819527487461928}
   - component: {fileID: 1245819527487461929}
+  - component: {fileID: 8309245884805842440}
   m_Layer: 0
   m_Name: Point1
   m_TagString: Untagged
@@ -131,6 +162,35 @@ MonoBehaviour:
   spawnCount: 2
   enemyPrefab: {fileID: 3637006437264765420, guid: 95cf573ff3a554940840bf76cc164d87, type: 3}
   currentTroop: 0
+  onEnemyDieEvent: {fileID: 11400000, guid: 932e8ae6a0ba0cb4ba40d99db3cbac5b, type: 2}
+--- !u!114 &8309245884805842440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245819527487461935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f564d6ce0be49c943a561bfc80a57b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSo: {fileID: 11400000, guid: 932e8ae6a0ba0cb4ba40d99db3cbac5b, type: 2}
+  OnRaise:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1245819527487461929}
+        m_TargetAssemblyTypeName: SpawnPoint, Assembly-CSharp
+        m_MethodName: Enemydied
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1245819527593951810
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,6 +201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1245819527593951811}
   - component: {fileID: 1245819527593951836}
+  - component: {fileID: 4020520853406117844}
   m_Layer: 0
   m_Name: Point2
   m_TagString: Untagged
@@ -180,3 +241,32 @@ MonoBehaviour:
   spawnCount: 1
   enemyPrefab: {fileID: 3637006437264765420, guid: 95cf573ff3a554940840bf76cc164d87, type: 3}
   currentTroop: 0
+  onEnemyDieEvent: {fileID: 11400000, guid: 932e8ae6a0ba0cb4ba40d99db3cbac5b, type: 2}
+--- !u!114 &4020520853406117844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245819527593951810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f564d6ce0be49c943a561bfc80a57b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSo: {fileID: 11400000, guid: 932e8ae6a0ba0cb4ba40d99db3cbac5b, type: 2}
+  OnRaise:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1245819527593951836}
+        m_TargetAssemblyTypeName: SpawnPoint, Assembly-CSharp
+        m_MethodName: Enemydied
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

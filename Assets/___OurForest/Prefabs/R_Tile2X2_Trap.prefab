@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 674cb06fedccb2547b4959b9e4202475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyDied: {fileID: 11400000, guid: 932e8ae6a0ba0cb4ba40d99db3cbac5b, type: 2}
 --- !u!65 &4922312209312321223
 BoxCollider:
   m_ObjectHideFlags: 0

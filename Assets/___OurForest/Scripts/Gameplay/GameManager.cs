@@ -11,18 +11,20 @@ public class GameManager : MonoBehaviour
 
     public Inventory Inv { get => inv;}
     [SerializeField] Player player;
-    List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
+    [SerializeField] List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
     int LevelWaveCount = 3;
+    int currentwave;
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
         inv = new Inventory();
-        spawnPoints = GetComponents<SpawnPoint>().ToList<SpawnPoint>();
     }
 
     void Start()
     {
-        player = GetComponent<Player>();
+        player = FindObjectOfType<Player>();
+        spawnPoints = FindObjectsOfType<SpawnPoint>().ToList<SpawnPoint>();
+        currentwave = 1;
     }
 
     // Update is called once per frame
@@ -30,5 +32,12 @@ public class GameManager : MonoBehaviour
     {
         
         
+    }
+    public void onEnemyDied()
+    {
+        foreach (var sp in spawnPoints)
+        {
+            //if(sp.CurrentTroop==0&&)
+        }
     }
 }

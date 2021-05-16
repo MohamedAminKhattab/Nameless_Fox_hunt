@@ -5,6 +5,7 @@ using UnityEngine;
 public class trapBehaviour : MonoBehaviour
 {
     Trap t;
+    [SerializeField] EventSO EnemyDied;
     private void Start()
     {
         t = new Trap();
@@ -13,6 +14,7 @@ public class trapBehaviour : MonoBehaviour
     {
         if (other.tag.Equals("enemy"))
         {
+            EnemyDied.Raise();
             Destroy(other.gameObject);
             Destroy(this.gameObject);
         }

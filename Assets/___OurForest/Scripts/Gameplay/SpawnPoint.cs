@@ -11,34 +11,43 @@ public class SpawnPoint : MonoBehaviour
     [SerializeField] int spawnCount = 1;
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] int currentTroop;
-    [SerializeField] EventSO onEnemyDieEvent;
-    // Start is called before the first frame update
+    [SerializeField] List<GameObject> troops;
+
+    public int CurrentTroop { get => currentTroop; set => currentTroop = value; }
+    public List<GameObject> Troops { get => troops;}
+
     void Start()
     {
-        currentTroop = 0;
+        fox = GameObject.FindGameObjectWithTag("Fox").transform;
+        yelena = GameObject.FindGameObjectWithTag("Player").transform;
+        defaultgoal = GameObject.FindGameObjectWithTag("Start").transform;
+        troops = new List<GameObject>();
+        CurrentTroop = 0;
+        LaunchWave();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void LaunchWave()
     {
-        if (currentTroop<spawnCount)
+        if (CurrentTroop<spawnCount)
         {
             for (int i = 0; i < spawnCount; i++)
             {
-            SpawnEnemy();
+            Troops.Add(SpawnEnemy());
             }
         }
     }
-    public void SpawnEnemy()
+    public GameObject SpawnEnemy()
     {
         GameObject Troop= Instantiate(enemyPrefab, this.transform.position, Quaternion.identity, this.transform);
         Troop.GetComponent<EnemyBehaviours>().Fox1 = fox;
         Troop.GetComponent<EnemyBehaviours>().Yelena = yelena;
         Troop.GetComponent<EnemyBehaviours>().DefaultGoal1 = defaultgoal;
-        currentTroop++;
+        CurrentTroop++;
+        return Troop;
     }
     public void Enemydied()
     {
-        currentTroop--;
+        CurrentTroop--;
     }
 }
