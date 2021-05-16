@@ -336,7 +336,7 @@ PrefabInstance:
     - target: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 895260559}
+      objectReference: {fileID: 0}
     - target: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
       propertyPath: spawnPoints.Array.size
       value: 0
@@ -356,17 +356,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e06697e6d7ee8c94185bfab8b0820b8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &895260559 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6845774844251762929, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
-  m_PrefabInstance: {fileID: 699748599}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0eff5f858ce767244a5e9c879bf675ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &990992406

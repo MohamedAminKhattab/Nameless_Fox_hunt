@@ -23,13 +23,15 @@ public class SpawnPoint : MonoBehaviour
         defaultgoal = GameObject.FindGameObjectWithTag("Start").transform;
         troops = new List<GameObject>();
         CurrentTroop = 0;
+    }
+    private void Update()
+    {
         LaunchWave();
     }
 
-
     public void LaunchWave()
     {
-        if (CurrentTroop<spawnCount)
+        if (CurrentTroop==0)
         {
             for (int i = 0; i < spawnCount; i++)
             {
