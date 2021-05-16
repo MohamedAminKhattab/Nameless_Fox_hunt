@@ -386,7 +386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1982493905}
   laziness: 10
-  offset: {x: -0.37, y: 6.31, z: -2.92}
+  offset: {x: -2.09, y: 6.51, z: -4.77}
 --- !u!81 &1017275010
 AudioListener:
   m_ObjectHideFlags: 0
@@ -420,7 +420,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 65
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
