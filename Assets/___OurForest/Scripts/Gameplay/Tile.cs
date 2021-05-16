@@ -19,19 +19,20 @@ public  class Tile:MonoBehaviour
     private void Start()
     {
         Location = transform.position;
+        Bush = GetComponentInChildren<Bush>();
         if(resourceItem!=null)
         {
             has_resource = true;
             can_Trap = true;
             can_Hide = false;
         }
-        if(TryGetComponent<Bush>(out bush))
+       else if(bush)
         {
             can_Hide = true;
             has_resource = false;
             can_Trap = false;
         }
-        if(!TryGetComponent<Bush>(out bush)&&! resourceItem)
+       else
         {
             can_Hide = false;
             has_resource = false;

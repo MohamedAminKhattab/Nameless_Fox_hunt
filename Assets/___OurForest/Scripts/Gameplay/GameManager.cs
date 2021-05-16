@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     Inventory inv;
 
     public Inventory Inv { get => inv;}
+    [SerializeField] Player player;
     List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
     int LevelWaveCount = 3;
     private void Awake()
@@ -21,12 +22,13 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-
+        player = GetComponent<Player>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         
     }
 }

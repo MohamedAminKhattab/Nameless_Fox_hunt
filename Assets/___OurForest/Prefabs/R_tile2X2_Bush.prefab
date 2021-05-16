@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 7857830805559487472}
   - component: {fileID: 3365204322103280999}
   - component: {fileID: 6804314061327025792}
+  - component: {fileID: 7676463790455726927}
   m_Layer: 0
   m_Name: Bush
   m_TagString: Bush
@@ -126,6 +127,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7676463790455726927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9062705611446165541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 428139df7bb3e9d4dbd2626c497c3fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2060338021102253697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -133,6 +146,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2360080773359622977}
     m_Modifications:
+    - target: {fileID: -473799008166138813, guid: 80b04f1e1ca83e84ab83efb793d182d1, type: 3}
+      propertyPath: bush
+      value: 
+      objectReference: {fileID: 7676463790455726927}
     - target: {fileID: 4688968934547531175, guid: 80b04f1e1ca83e84ab83efb793d182d1, type: 3}
       propertyPath: m_RootOrder
       value: 0
