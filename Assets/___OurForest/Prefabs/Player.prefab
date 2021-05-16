@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 6845774844251762942}
   - component: {fileID: 6845774844251762941}
   - component: {fileID: 6845774844251762940}
+  - component: {fileID: 5501797777281361872}
+  - component: {fileID: 6414698090628605758}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -34,7 +36,7 @@ Transform:
   m_LocalPosition: {x: -0.16, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6380380825668287436}
+  - {fileID: 3979935776987378992}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -56,12 +58,14 @@ MonoBehaviour:
   collectResource: {fileID: 11400000, guid: 6c7e708a05bfb214a9ab393a8beb93d8, type: 2}
   cutWood: {fileID: 11400000, guid: 8cccd1807e390d24383e196f4a3a9155, type: 2}
   pickUpWeapon: {fileID: 11400000, guid: 887cc349ef7a28741933482870cc66aa, type: 2}
+  eatFood: {fileID: 0}
   layerMask:
     serializedVersion: 2
     m_Bits: 64
   hitDistance: 2
   FetchAnim: {fileID: 11400000, guid: 876c0eb80b25ab244b311f74b1298887, type: 2}
   CutAnim: {fileID: 11400000, guid: 4ff75f34f49cc054192429c14268e41f, type: 2}
+  EatAnim: {fileID: 0}
   _GM: {fileID: 0}
 --- !u!114 &6845774844251762930
 MonoBehaviour:
@@ -81,6 +85,7 @@ MonoBehaviour:
   collectResource: {fileID: 11400000, guid: 6c7e708a05bfb214a9ab393a8beb93d8, type: 2}
   cutWood: {fileID: 11400000, guid: 8cccd1807e390d24383e196f4a3a9155, type: 2}
   pickUpWeapon: {fileID: 11400000, guid: 887cc349ef7a28741933482870cc66aa, type: 2}
+  eatFood: {fileID: 0}
 --- !u!114 &6845774844251762931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,7 +133,15 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'mixamorig:Hips'\n\tTransform 'mixamorig:LeftFoot'\n\tTransform
+    'mixamorig:LeftHandThumb2'\n\tTransform 'mixamorig:LeftHandIndex1'\n\tTransform
+    'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform 'mixamorig:LeftHandThumb3'\n\tTransform
+    'mixamorig:RightArm'\n\tTransform 'mixamorig:LeftLeg'\n\tTransform 'mixamorig:LeftHandMiddle3'\n\tand
+    more ...\n\tFrom animation clip 'Idle'\n\tFrom animation clip 'Walk'\n\tFrom
+    animation clip 'Run'\n\tFrom animation clip 'PickUp'\n\tFrom animation clip 'Wood'\n\tFrom
+    animation clip 'Eating'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -166,69 +179,115 @@ MonoBehaviour:
   FetchResource: {fileID: 11400000, guid: 6c7e708a05bfb214a9ab393a8beb93d8, type: 2}
   FetchAnim: {fileID: 11400000, guid: 876c0eb80b25ab244b311f74b1298887, type: 2}
   CutAnim: {fileID: 11400000, guid: 4ff75f34f49cc054192429c14268e41f, type: 2}
---- !u!1001 &6845774843432311847
+  EatAnim: {fileID: 0}
+--- !u!33 &5501797777281361872
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6845774844251762932}
+  m_Mesh: {fileID: 8353998171132556020, guid: 63d115cfcaa6bb54682e5196cef08c2b, type: 3}
+--- !u!23 &6414698090628605758
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6845774844251762932}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &3508633953924682459
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 6845774844251762928}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 5c5ba2e3b49b63342b0b0e961f5aad64, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 63d115cfcaa6bb54682e5196cef08c2b, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5c5ba2e3b49b63342b0b0e961f5aad64, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 63d115cfcaa6bb54682e5196cef08c2b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.6
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5c5ba2e3b49b63342b0b0e961f5aad64, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 63d115cfcaa6bb54682e5196cef08c2b, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5c5ba2e3b49b63342b0b0e961f5aad64, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 63d115cfcaa6bb54682e5196cef08c2b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1.7999997
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5c5ba2e3b49b63342b0b0e961f5aad64, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 63d115cfcaa6bb54682e5196cef08c2b, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5c5ba2e3b49b63342b0b0e961f5aad64, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 63d115cfcaa6bb54682e5196cef08c2b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5c5ba2e3b49b63342b0b0e961f5aad64, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 63d115cfcaa6bb54682e5196cef08c2b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5c5ba2e3b49b63342b0b0e961f5aad64, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 63d115cfcaa6bb54682e5196cef08c2b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5c5ba2e3b49b63342b0b0e961f5aad64, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 63d115cfcaa6bb54682e5196cef08c2b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5c5ba2e3b49b63342b0b0e961f5aad64, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 63d115cfcaa6bb54682e5196cef08c2b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5c5ba2e3b49b63342b0b0e961f5aad64, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 63d115cfcaa6bb54682e5196cef08c2b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 5c5ba2e3b49b63342b0b0e961f5aad64, type: 3}
+    - target: {fileID: 919132149155446097, guid: 63d115cfcaa6bb54682e5196cef08c2b, type: 3}
       propertyPath: m_Name
-      value: Ch03_nonPBR(1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5866666021909216657, guid: 5c5ba2e3b49b63342b0b0e961f5aad64, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      value: Yelena_test_06
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5c5ba2e3b49b63342b0b0e961f5aad64, type: 3}
---- !u!4 &6380380825668287436 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 63d115cfcaa6bb54682e5196cef08c2b, type: 3}
+--- !u!4 &3979935776987378992 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5c5ba2e3b49b63342b0b0e961f5aad64, type: 3}
-  m_PrefabInstance: {fileID: 6845774843432311847}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 63d115cfcaa6bb54682e5196cef08c2b, type: 3}
+  m_PrefabInstance: {fileID: 3508633953924682459}
   m_PrefabAsset: {fileID: 0}
