@@ -23,11 +23,15 @@ public class AnimatorController : MonoBehaviour
     [SerializeField]
     BoolSO FetchAnim;
     [SerializeField]
+    BoolSO crouch;
+    [SerializeField]
     BoolSO CutAnim;
     [SerializeField]
     BoolSO EatAnim;
     [SerializeField]
     BoolSO HideAnim;
+    [SerializeField]
+    BoolSO crouchAnim;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -35,6 +39,8 @@ public class AnimatorController : MonoBehaviour
         pickUpFood.state = false;
         velocityHash = Animator.StringToHash("VelocityX");
         velocityHash = Animator.StringToHash("VelocityZ");
+        crouchAnim.state = false;
+        crouch.state = false;
     }
 
     void Update()
@@ -67,7 +73,16 @@ public class AnimatorController : MonoBehaviour
         animator.SetBool("PickUp", FetchAnim.state);
         animator.SetBool("CutWood", CutAnim.state);
         animator.SetBool("EatFood", EatAnim.state);
+        Debug.Log(crouchAnim.state);
+
+        if (crouch.state)
+            crouchAnim.state = true;
+        
+        else
+            crouchAnim.state = false; 
+
         animator.SetBool("Hiding", HideAnim.state);
+        animator.SetBool("crouch", crouchAnim.state);
         FetchAnim.state = false;
         CutAnim.state = false;
         EatAnim.state = false;

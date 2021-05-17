@@ -912,17 +912,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1582149486}
     - target: {fileID: 6845774844251762929, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845774844251762929, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
       propertyPath: HideAnim
       value: 
       objectReference: {fileID: 11400000, guid: 7187870772591e54f811f34aca372dc6, type: 2}
+    - target: {fileID: 6845774844251762930, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
+      propertyPath: crouch
+      value: 
+      objectReference: {fileID: 11400000, guid: 128a9cd780d740048b301994ad707d73, type: 2}
     - target: {fileID: 6845774844251762932, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6845774844251762940, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
+      propertyPath: crouch
+      value: 
+      objectReference: {fileID: 11400000, guid: 128a9cd780d740048b301994ad707d73, type: 2}
+    - target: {fileID: 6845774844251762940, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
       propertyPath: HideAnim
       value: 
       objectReference: {fileID: 11400000, guid: 7187870772591e54f811f34aca372dc6, type: 2}
+    - target: {fileID: 6845774844251762940, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
+      propertyPath: crouchAnim
+      value: 
+      objectReference: {fileID: 11400000, guid: b81e2d550a85b3942aa6ba72f5b039db, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
 --- !u!4 &1982493905 stripped
