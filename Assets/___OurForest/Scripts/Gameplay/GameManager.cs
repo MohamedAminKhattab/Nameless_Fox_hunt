@@ -12,8 +12,11 @@ public class GameManager : MonoBehaviour
     public Inventory Inv { get => inv;}
     [SerializeField] Player player;
     [SerializeField] List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
-    int LevelWaveCount = 3;
-    int currentwave;
+    [SerializeField] BoolSO playerWon;
+    [SerializeField] BoolSO gameOver;
+    [SerializeField] int LevelWaveCount = 3;
+    [SerializeField] int deadpoints = 0;
+    [SerializeField] int currentwave=0;
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -24,6 +27,8 @@ public class GameManager : MonoBehaviour
     {
         player = FindObjectOfType<Player>();
         spawnPoints = FindObjectsOfType<SpawnPoint>().ToList<SpawnPoint>();
+        playerWon.state = false;
+        gameOver.state = false;
         currentwave = 1;
     }
 
@@ -33,11 +38,32 @@ public class GameManager : MonoBehaviour
         
         
     }
+    public void OnPlayerDied()
+    {
+        playerWon.state = false;
+        gameOver.state = true;
+    }
     public void onEnemyDied()
     {
         foreach (var sp in spawnPoints)
         {
-            //if(sp.CurrentTroop==0&&)
+            if(sp.CurrentTroop==0)
+            {
+                deadpoints++;
+            }
+        }
+        if(deadpoints==spawnPoints.Count)
+        {
+            if(currentwave<LevelWaveCount)
+            {
+                currentwave++;
+                foreach (var sp in spawnPoints)
+                {
+                    sp.LaunchWave();
+                }
+            }
+            playerWon.state = true;
+            gameOver.state = true;
         }
     }
 }

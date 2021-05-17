@@ -50,7 +50,7 @@ MonoBehaviour:
   spawnCount: 2
   enemyPrefab: {fileID: 3637006437264765420, guid: 95cf573ff3a554940840bf76cc164d87, type: 3}
   currentTroop: 0
-  onEnemyDieEvent: {fileID: 11400000, guid: 932e8ae6a0ba0cb4ba40d99db3cbac5b, type: 2}
+  troops: []
 --- !u!114 &2366593721128965011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,6 +70,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1245819525522711296}
         m_TargetAssemblyTypeName: SpawnPoint, Assembly-CSharp
         m_MethodName: Enemydied
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: onEnemyDied
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -162,7 +174,7 @@ MonoBehaviour:
   spawnCount: 2
   enemyPrefab: {fileID: 3637006437264765420, guid: 95cf573ff3a554940840bf76cc164d87, type: 3}
   currentTroop: 0
-  onEnemyDieEvent: {fileID: 11400000, guid: 932e8ae6a0ba0cb4ba40d99db3cbac5b, type: 2}
+  troops: []
 --- !u!114 &8309245884805842440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +194,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1245819527487461929}
         m_TargetAssemblyTypeName: SpawnPoint, Assembly-CSharp
         m_MethodName: Enemydied
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: onEnemyDied
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -241,7 +265,7 @@ MonoBehaviour:
   spawnCount: 1
   enemyPrefab: {fileID: 3637006437264765420, guid: 95cf573ff3a554940840bf76cc164d87, type: 3}
   currentTroop: 0
-  onEnemyDieEvent: {fileID: 11400000, guid: 932e8ae6a0ba0cb4ba40d99db3cbac5b, type: 2}
+  troops: []
 --- !u!114 &4020520853406117844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,6 +285,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1245819527593951836}
         m_TargetAssemblyTypeName: SpawnPoint, Assembly-CSharp
         m_MethodName: Enemydied
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: onEnemyDied
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
