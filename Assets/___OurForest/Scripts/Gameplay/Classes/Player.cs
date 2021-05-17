@@ -29,9 +29,11 @@ public class Player : MonoBehaviour
     [SerializeField]
     BoolSO FetchAnim;
     [SerializeField]
-    BoolSO CutAnim; 
+    BoolSO CutAnim;
     [SerializeField]
     BoolSO EatAnim;
+    [SerializeField]
+    BoolSO HideAnim;
     [SerializeField]
     GameManager _GM;
     string resource = "";
@@ -43,6 +45,7 @@ public class Player : MonoBehaviour
         FetchAnim.state = false;
         EatAnim.state = false;
         canEatFood = false;
+        HideAnim.state = false;
         //_GM.Inv.Capacity = 0;
     }
 
@@ -50,7 +53,7 @@ public class Player : MonoBehaviour
     {
         Ray ray = new Ray(this.transform.position, this.transform.forward);
         RaycastHit hit;
-        if(Physics.Raycast(ray,out hit, hitDistance))
+        if (Physics.Raycast(ray, out hit, hitDistance))
         {
             layerHit = hit.transform.gameObject;
             collison = hit.point;
@@ -73,7 +76,13 @@ public class Player : MonoBehaviour
                 PickUpWeapon();
         }
     }
-     void FixedUpdate()
+    void OnTriggerEnter(Collider other)
+    {
+        //Debug.Log("Trigger Entered");
+        if (other.gameObject.tag == "Hiding Area")
+            HideAnim.state = true;
+    }
+    void FixedUpdate()
     {
         if (eatFood.state)
         {
@@ -81,11 +90,11 @@ public class Player : MonoBehaviour
             eatFood.state = false;
             Debug.Log(_GM.Inv.GetItemCount(ItemTypes.Food));
         }
-        
+
     }
     void PickUpFood()
     {
-      if(pickUpFood.state)
+        if (pickUpFood.state)
         {
             FetchAnim.state = true;
             StartCoroutine(Fetching());
@@ -93,10 +102,10 @@ public class Player : MonoBehaviour
             _GM.Inv.AddItem(ItemTypes.Food);
             //Debug.Log("Food");
         }
-    } 
-     void CutWood()
+    }
+    void CutWood()
     {
-        if(cutWood.state)
+        if (cutWood.state)
         {
             CutAnim.state = true;
             StartCoroutine(CuttingWood());
@@ -111,16 +120,16 @@ public class Player : MonoBehaviour
             FetchAnim.state = true;
             StartCoroutine(Fetching());
             //Add to inventory
-            if(resource=="Vine")
+            if (resource == "Vine")
                 _GM.Inv.AddItem(ItemTypes.Vine);
-            else if(resource=="Rock")
+            else if (resource == "Rock")
                 _GM.Inv.AddItem(ItemTypes.Rock);
             resource = "";
         }
     }
     void PickUpWeapon()
     {
-        if(pickUpWeapon.state)
+        if (pickUpWeapon.state)
         {
             FetchAnim.state = true;
             StartCoroutine(Fetching());
@@ -144,8 +153,8 @@ public class Player : MonoBehaviour
         //Debug.Log("Wait");
         yield return wait;
         Destroy(layerHit);
-    } 
-   
+    }
+
     IEnumerator Fetching()
     {
         var wait = new WaitForSeconds(5.0f);
@@ -161,6 +170,7 @@ public class Player : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(collison,0.2f);
-     }
+        Gizmos.DrawWireSphere(collison, 0.2f);
+    }
+
 }

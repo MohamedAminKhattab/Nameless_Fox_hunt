@@ -16,6 +16,8 @@ public class PlayerInput : MonoBehaviour
     BoolSO pickUpWeapon; 
     [SerializeField]
     BoolSO eatFood;
+    [SerializeField]
+    BoolSO crouch;
     void Start()
     {
 
@@ -28,12 +30,12 @@ public class PlayerInput : MonoBehaviour
         collectResource.state = false;
         cutWood.state = false;
         eatFood.state = false;
+        crouch.state = false;
     }
 
     void Update()
     {
         Vector3 movement = Vector3.zero;
-
         if (inputManager.GetForword())
         {
             movement.z++;
@@ -70,6 +72,11 @@ public class PlayerInput : MonoBehaviour
         {
             eatFood.state = true;
         }
+        if (inputManager.Crouch())
+        {
+            crouch.state = !crouch.state;
+           // Debug.Log("Crouch");
+        }
         this.movement.value = movement;
     }
     public void WantToCutWood()
@@ -91,6 +98,10 @@ public class PlayerInput : MonoBehaviour
     public void WantToEatFood()
     {
         eatFood.state = true;
+    }
+    public void WantToCrouch()
+    {
+        crouch.state = !crouch.state;
     }
 
 }
