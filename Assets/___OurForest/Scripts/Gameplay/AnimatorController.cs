@@ -26,6 +26,8 @@ public class AnimatorController : MonoBehaviour
     BoolSO CutAnim;
     [SerializeField]
     BoolSO EatAnim;
+    [SerializeField]
+    BoolSO HideAnim;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -65,10 +67,14 @@ public class AnimatorController : MonoBehaviour
         animator.SetBool("PickUp", FetchAnim.state);
         animator.SetBool("CutWood", CutAnim.state);
         animator.SetBool("EatFood", EatAnim.state);
+        animator.SetBool("Hiding", HideAnim.state);
         FetchAnim.state = false;
         CutAnim.state = false;
         EatAnim.state = false;
 
     }
-
+    void OnTriggerExit(Collider other)
+    {
+        HideAnim.state = false;
+    }
 }

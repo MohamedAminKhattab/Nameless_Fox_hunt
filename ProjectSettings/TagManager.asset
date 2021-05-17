@@ -17,6 +17,7 @@ TagManager:
   - NotWalkable
   - Fox
   - Start
+  - Hiding Area
   layers:
   - Default
   - TransparentFX
