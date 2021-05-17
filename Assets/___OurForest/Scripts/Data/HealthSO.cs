@@ -7,6 +7,8 @@ public class HealthSO : ScriptableObject
 {
     public float initialHealth;
     public float currentHealth;
+    public float CurrentHealth { get { return currentHealth; } }
+
 
     public void ApplyDamage(float Damage)
     {
