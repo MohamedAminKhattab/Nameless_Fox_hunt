@@ -73,7 +73,7 @@ public class AnimatorController : MonoBehaviour
         animator.SetBool("PickUp", FetchAnim.state);
         animator.SetBool("CutWood", CutAnim.state);
         animator.SetBool("EatFood", EatAnim.state);
-        Debug.Log(crouchAnim.state);
+       // Debug.Log(crouchAnim.state);
 
         if (crouch.state)
             crouchAnim.state = true;
