@@ -25,6 +25,7 @@ public class EnvironmentManager : MonoBehaviour
         int.TryParse(Number, out int number);
         currentLevel = Instantiate(LevelPrefabs[number], transform);
         tiles = GetComponentsInChildren<Tile>().ToList<Tile>();
+        _GM.StartLevel();
     }
     public List<Tile> GetResourceTiles()
     {

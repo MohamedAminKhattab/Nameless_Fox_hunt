@@ -5,9 +5,8 @@ using UnityEngine.UI;
 
 public class Trapping : MonoBehaviour
 {
-    [SerializeField] LayerMask mask;
+
     [SerializeField] BoolSO needTrap;
-    [SerializeField] RectTransform joystickField;
     [SerializeField] GameObject trapPrefab;
     [SerializeField] Vector3SO trapLocation;
     [SerializeField] GameManager _GM;

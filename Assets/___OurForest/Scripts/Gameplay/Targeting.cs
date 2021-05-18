@@ -6,8 +6,6 @@ using UnityEngine;
 public class Targeting : MonoBehaviour
 {
     [SerializeField] TransformSO targetSO;
-    [SerializeField] LayerMask mask;
-    [SerializeField] RectTransform joystickField;
     [SerializeField] BoolSO hasTarget;
     private void Start()
     {
@@ -21,7 +19,7 @@ public class Targeting : MonoBehaviour
             foreach (var touch in Input.touches)
             {
                 Ray ray = Camera.main.ScreenPointToRay(touch.position);
-                Physics.Raycast(ray, out RaycastHit hit, mask);
+                Physics.Raycast(ray, out RaycastHit hit);
                 if (hasTarget.state==false&&FCompareTag(hit.collider.gameObject.tag))
                 {
                     targetSO.value = hit.transform;

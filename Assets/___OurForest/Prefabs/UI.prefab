@@ -111,14 +111,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeaac5b70431388409b1f5b0a58e6b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mask:
-    serializedVersion: 2
-    m_Bits: 8
   needTrap: {fileID: 11400000, guid: 06689c3572e4ed94aaabfa80f39cc508, type: 2}
-  joystickField: {fileID: 866903878230708404}
   trapPrefab: {fileID: 4586435710400259806, guid: 6c608c118fef457448c09c42b3eee2cf, type: 3}
   trapLocation: {fileID: 11400000, guid: 0a71e172541139944b0f924235fee262, type: 2}
   _GM: {fileID: 0}
+--- !u!114 &903148161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2881221582775807581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16107bf2ed0454b4abe4033c4b149816, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemytargetSO: {fileID: 11400000, guid: 6f00ffae9c325fc40b69e985447679d0, type: 2}
+  hasEnemyTarget: {fileID: 11400000, guid: 78c6080c85526a04a92d8ea535447bc9, type: 2}
 --- !u!114 &976962946376176762
 MonoBehaviour:
   m_ObjectHideFlags: 0

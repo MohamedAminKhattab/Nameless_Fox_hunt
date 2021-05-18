@@ -12,12 +12,14 @@ public class SpawnPoint : MonoBehaviour
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] int currentTroop;
     [SerializeField] List<GameObject> troops;
+    [SerializeField] GameManager _GM;
 
     public int CurrentTroop { get => currentTroop; set => currentTroop = value; }
     public List<GameObject> Troops { get => troops;}
 
     void Start()
     {
+        _GM = FindObjectOfType<GameManager>();
         fox = GameObject.FindGameObjectWithTag("Fox").transform;
         yelena = GameObject.FindGameObjectWithTag("Player").transform;
         defaultgoal = GameObject.FindGameObjectWithTag("Start").transform;
@@ -41,10 +43,12 @@ public class SpawnPoint : MonoBehaviour
         Troop.GetComponent<EnemyBehaviours>().Yelena = yelena;
         Troop.GetComponent<EnemyBehaviours>().DefaultGoal1 = defaultgoal;
         CurrentTroop++;
+        _GM.CurrentTroopCount++;
         return Troop;
     }
     public void Enemydied()
     {
         CurrentTroop--;
+        _GM.CurrentTroopCount++;
     }
 }

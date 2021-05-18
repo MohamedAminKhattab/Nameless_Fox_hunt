@@ -9,33 +9,43 @@ public class GameManager : MonoBehaviour
 
     Inventory inv;
 
-    public Inventory Inv { get => inv;}
+    public Inventory Inv { get => inv; }
+    public int CurrentTroopCount { get => currentTroopCount; set => currentTroopCount = value; }
+
     [SerializeField] Player player;
     [SerializeField] List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
     [SerializeField] BoolSO playerWon;
     [SerializeField] BoolSO gameOver;
+    [SerializeField] EnvironmentManager _EM;
     [SerializeField] int LevelWaveCount = 3;
-    [SerializeField] int deadpoints = 0;
-    [SerializeField] int currentwave=0;
+    [SerializeField] int currentwave = 0;
+    [SerializeField] int currentTroopCount = 0;
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
         inv = new Inventory();
     }
-
     void Start()
     {
         player = FindObjectOfType<Player>();
-        spawnPoints = FindObjectsOfType<SpawnPoint>().ToList<SpawnPoint>();
+        _EM = FindObjectOfType<EnvironmentManager>();
         playerWon.state = false;
         gameOver.state = false;
-        currentwave = 1;
-    }
 
+    }
     void Update()
     {
-        
-        
+
+
+    }
+    public void StartLevel()
+    {
+        spawnPoints = _EM.GetComponentsInChildren<SpawnPoint>().ToList<SpawnPoint>();
+        currentwave = 1;
+        foreach (var sp in spawnPoints)
+        {
+            sp.LaunchWave();
+        }
     }
     public void OnPlayerDied()
     {
@@ -44,23 +54,16 @@ public class GameManager : MonoBehaviour
     }
     public void onEnemyDied()
     {
-        foreach (var sp in spawnPoints)
+        if (currentTroopCount == 0 && currentwave < LevelWaveCount)
         {
-            if(sp.CurrentTroop==0)
+            foreach (var sp in spawnPoints)
             {
-                deadpoints++;
+                sp.LaunchWave();
             }
+            currentwave++;
         }
-        if(deadpoints==spawnPoints.Count)
+        else if (currentTroopCount == 0 && currentwave == LevelWaveCount)
         {
-            if(currentwave<LevelWaveCount)
-            {
-                currentwave++;
-                foreach (var sp in spawnPoints)
-                {
-                    sp.LaunchWave();
-                }
-            }
             playerWon.state = true;
             gameOver.state = true;
         }

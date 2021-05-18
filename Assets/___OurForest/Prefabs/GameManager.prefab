@@ -47,3 +47,6 @@ MonoBehaviour:
   spawnPoints: []
   playerWon: {fileID: 11400000, guid: 5bba911e0fcb0f94185c7c1b054f4eb6, type: 2}
   gameOver: {fileID: 11400000, guid: 9f64f56becb26a24da4d1af74e89493b, type: 2}
+  LevelWaveCount: 3
+  currentwave: 1
+  currentTroopCount: 0
