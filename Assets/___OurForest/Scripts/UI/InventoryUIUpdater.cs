@@ -11,6 +11,7 @@ public class InventoryUIUpdater : MonoBehaviour
     [SerializeField] TMP_Text vinesCount;
     [SerializeField] TMP_Text trapsCount;
     [SerializeField] TMP_Text weaponsCount;
+    [SerializeField] TMP_Text foodCount;
     [SerializeField] GameManager _GM;
     private void Start()
     {
@@ -19,6 +20,7 @@ public class InventoryUIUpdater : MonoBehaviour
         vinesCount.text = _GM.Inv.GetItemCount(ItemTypes.Vine).ToString();
         woodCount.text = _GM.Inv.GetItemCount(ItemTypes.Wood).ToString();
         rockCount.text = _GM.Inv.GetItemCount(ItemTypes.Rock).ToString();
+        foodCount.text = _GM.Inv.GetItemCount(ItemTypes.Food).ToString();
         _GM.Inv.OnInvItemsChangeHandler += UpdateInGameUI;
     }
     public void UpdateInGameUI(object sender, EventArgs e)
@@ -28,5 +30,6 @@ public class InventoryUIUpdater : MonoBehaviour
         vinesCount.text = _GM.Inv.GetItemCount(ItemTypes.Vine).ToString();
         woodCount.text = _GM.Inv.GetItemCount(ItemTypes.Wood).ToString();
         rockCount.text = _GM.Inv.GetItemCount(ItemTypes.Rock).ToString();
+        foodCount.text = _GM.Inv.GetItemCount(ItemTypes.Food).ToString();
     }
 }

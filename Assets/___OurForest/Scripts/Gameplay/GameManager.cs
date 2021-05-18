@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     public Inventory Inv { get => inv; }
     public int CurrentTroopCount { get => currentTroopCount; set => currentTroopCount = value; }
+    public List<SpawnPoint> SpawnPoints { get => spawnPoints;}
 
     [SerializeField] Player player;
     [SerializeField] List<SpawnPoint> spawnPoints = new List<SpawnPoint>();

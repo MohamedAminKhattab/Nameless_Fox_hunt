@@ -13,9 +13,11 @@ public class SpawnPoint : MonoBehaviour
     [SerializeField] int currentTroop;
     [SerializeField] List<GameObject> troops;
     [SerializeField] GameManager _GM;
+    [SerializeField] EventSO enemyCountChange;
 
     public int CurrentTroop { get => currentTroop; set => currentTroop = value; }
     public List<GameObject> Troops { get => troops;}
+    public EventSO EnemyCountChange { get => enemyCountChange;}
 
     void Start()
     {
@@ -44,11 +46,13 @@ public class SpawnPoint : MonoBehaviour
         Troop.GetComponent<EnemyBehaviours>().DefaultGoal1 = defaultgoal;
         CurrentTroop++;
         _GM.CurrentTroopCount++;
+        enemyCountChange.Raise();
         return Troop;
     }
     public void Enemydied()
     {
         CurrentTroop--;
         _GM.CurrentTroopCount++;
+        enemyCountChange.Raise();
     }
 }
