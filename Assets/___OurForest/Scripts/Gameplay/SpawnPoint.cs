@@ -24,11 +24,6 @@ public class SpawnPoint : MonoBehaviour
         troops = new List<GameObject>();
         CurrentTroop = 0;
     }
-    private void Update()
-    {
-        LaunchWave();
-    }
-
     public void LaunchWave()
     {
         if (CurrentTroop==0)
