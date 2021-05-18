@@ -17,7 +17,9 @@ public class PlayerInput : MonoBehaviour
     [SerializeField]
     BoolSO eatFood;
     [SerializeField]
-    BoolSO crouch;
+    BoolSO crouch;  
+    [SerializeField]
+    BoolSO attack;
     void Start()
     {
 
@@ -77,6 +79,10 @@ public class PlayerInput : MonoBehaviour
             crouch.state = !crouch.state;
            // Debug.Log("Crouch");
         }
+        if (inputManager.SteelthAttack())
+        {
+            attack.state =true;
+        }
         this.movement.value = movement;
     }
     public void WantToCutWood()
@@ -102,6 +108,10 @@ public class PlayerInput : MonoBehaviour
     public void WantToCrouch()
     {
         crouch.state = !crouch.state;
+    }  
+    public void WantToAttack()
+    {
+        crouch.state = true;
     }
 
 }

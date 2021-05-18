@@ -32,6 +32,10 @@ public class AnimatorController : MonoBehaviour
     BoolSO HideAnim;
     [SerializeField]
     BoolSO crouchAnim;
+    [SerializeField]
+    BoolSO attackAnim; 
+    [SerializeField]
+    BoolSO attack;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -41,6 +45,8 @@ public class AnimatorController : MonoBehaviour
         velocityHash = Animator.StringToHash("VelocityZ");
         crouchAnim.state = false;
         crouch.state = false;
+        attack.state = false;
+        attackAnim.state = false;
     }
 
     void Update()
@@ -81,11 +87,15 @@ public class AnimatorController : MonoBehaviour
         else
             crouchAnim.state = false; 
 
+
         animator.SetBool("Hiding", HideAnim.state);
         animator.SetBool("crouch", crouchAnim.state);
+        animator.SetBool("Attack", attackAnim.state);
         FetchAnim.state = false;
         CutAnim.state = false;
         EatAnim.state = false;
+        attackAnim.state = false;
+        attack.state = false;
 
     }
     void OnTriggerExit(Collider other)

@@ -18,6 +18,7 @@ TagManager:
   - Fox
   - Start
   - Hiding Area
+  - Arrow
   layers:
   - Default
   - TransparentFX

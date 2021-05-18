@@ -79,7 +79,7 @@ public class Player : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         //Debug.Log("Trigger Entered");
-        if (other.gameObject.tag == "Hiding Area")
+        if (other.gameObject.tag == "Bush")
             HideAnim.state = true;
     }
     void FixedUpdate()
