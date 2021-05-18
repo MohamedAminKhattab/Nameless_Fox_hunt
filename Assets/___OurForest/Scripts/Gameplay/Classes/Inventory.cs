@@ -14,11 +14,11 @@ public class Inventory
     {
         itemlist = new List<Item>(maxCapacity);
         //itemlist.Clear();
-        itemlist.Add(new Rock() { Itemcount=10});
-        itemlist.Add(new Wood() { Itemcount = 10 });
-        itemlist.Add(new Food() { Itemcount = 10 });
-        itemlist.Add(new Vine() { Itemcount = 10 });
-       itemlist.Add(new Trap());
+        itemlist.Add(new Rock() { Itemcount=100});
+        itemlist.Add(new Wood() { Itemcount = 100 });
+        itemlist.Add(new Food() { Itemcount = 100 });
+        itemlist.Add(new Vine() { Itemcount = 100 });
+       itemlist.Add(new Trap() { Itemcount = 100 });
         itemlist.Add(new Weapon());
     }
     public int GetWoodneeded(ItemTypes type)

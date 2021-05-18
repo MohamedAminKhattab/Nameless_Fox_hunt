@@ -20,7 +20,8 @@ public class Targeting : MonoBehaviour
             foreach (var touch in Input.touches)
             {
                 RaycastHit hit;
-                Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                Vector3 touchposition = new Vector3(touch.position.x, touch.position.y,0.0f);
+                Ray ray = Camera.main.ScreenPointToRay(touchposition);
                 if (Physics.Raycast(ray, out hit,mask)&&hasTarget.state==false&&(hit.collider.gameObject.tag != "Ground"|| hit.collider.gameObject.tag != "Walkable") && !joystickField.rect.Contains(touch.position))
                 {
                     targetSO.value = hit.transform;
