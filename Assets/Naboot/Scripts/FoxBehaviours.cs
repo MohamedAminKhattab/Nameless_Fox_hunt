@@ -5,7 +5,8 @@ using UnityEngine.AI;
 public enum FoxState //should subtite with world States
 {
     idle,
-    gathering
+    gathering,
+    luring
 }
 public class FoxBehaviours : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class FoxBehaviours : MonoBehaviour
     private Transform Target;
     [SerializeField] TransformSO PickUp;
     [SerializeField] BoolSO hasTargetSo;
+    [SerializeField] Transform Enemy;
     private FoxState foxState;
     void Start()
     {
@@ -37,7 +39,12 @@ public class FoxBehaviours : MonoBehaviour
             foxState = FoxState.idle;
 
         }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
 
+            foxState = FoxState.luring;
+
+        }
     }
     #region Public functions 
     public void StartGathering()// to be called from the scriptabel event
@@ -47,16 +54,16 @@ public class FoxBehaviours : MonoBehaviour
         // Debug.LogWarning(PcikUP.value.position);
     }
 
+
+
+    /// <summary>
+    /// /////////////////////////////
+    /// </summary>
     #endregion
 
     #region selectors checks
 
-    [Task] //should be a task or not??
-    public void ReturnToIdle() // better to be standing alone not in the end of followingtarget to be reused 
-    {
-        foxState = FoxState.idle;
-        Task.current.Succeed();
-    }
+    
     [Task]
     public void shouldFetch()
     {
@@ -86,13 +93,27 @@ public class FoxBehaviours : MonoBehaviour
         if (foxState == FoxState.idle && Vector2.SqrMagnitude(distance) > followingRange * followingRange)
         {
             Target = player;
-            agent.isStopped = false;
             Task.current.Succeed();
         }
         else
         {
             Task.current.Fail();
             agent.isStopped = true;
+        }
+    }
+
+    [Task]
+    public void shouldLure()
+    {
+        if(foxState==FoxState.luring) //check if the enemy is valid 
+        {
+            Target = Enemy;
+            Task.current.Succeed();
+        }
+        else
+        {
+            Task.current.Fail();
+            agent.isStopped=true;
         }
     }
     #endregion
@@ -105,14 +126,23 @@ public class FoxBehaviours : MonoBehaviour
         PickUp.value = null;
         Task.current.Succeed();
     }
+
     [Task]
     public void MoveToTarget()
     {
 
+        agent.isStopped = false;
 
         agent.SetDestination(Target.position);
         if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
             Task.current.Succeed();
+    }
+
+    [Task] //should be a task or not??
+    public void ReturnToIdle() // better to be standing alone not in the end of followingtarget to be reused 
+    {
+        foxState = FoxState.idle;
+        Task.current.Succeed();
     }
     #endregion
 }

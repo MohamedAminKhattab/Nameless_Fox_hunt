@@ -6,4 +6,9 @@ tree("Root")
 				mute MoveToTarget
 				FinishFetching
 				ReturnToIdle
+		while
+			shouldLure 
+			sequence
+				mute MoveToTarget
+				ReturnToIdle
 		while shouldMoveToPlayer MoveToTarget
