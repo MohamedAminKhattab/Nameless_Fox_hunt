@@ -3,35 +3,32 @@ using UnityEngine;
 using UnityEngine.AI;
 using Panda;
 
-enum HuntingState
+public enum EnemyState
 {
     goingToHouse,
-    chasingFox
+    chasingFox,
+    shooting
 }
 public class EnemyBehaviours : MonoBehaviour
 {
     //Todo create world state
     NavMeshAgent agent;
     Transform target;
+    private SoundSystem soundSystem;
     [SerializeField] GameObject bullet;
-    [SerializeField] Transform Fox;
+    [SerializeField] Transform fox;
     [SerializeField] Transform yelena;
     [SerializeField] Transform DefaultGoal;
-    private Vector2 distance;
-    [SerializeField] int VisionRange = 2;
-    private HuntingState huntingState;
+    [SerializeField] int VisionRange = 4;
+    private EnemyState enemyState;
     float StartingTime;
     float currentTime;
-
-    public Transform Fox1 { get => Fox; set => Fox = value; }
-    public Transform Yelena { get => yelena; set => yelena = value; }
-    public Transform DefaultGoal1 { get => DefaultGoal; set => DefaultGoal = value; }
-
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         target = DefaultGoal;
-        huntingState = HuntingState.goingToHouse;
+        enemyState = EnemyState.goingToHouse;
+        soundSystem = GetComponent<SoundSystem>(); //GetInParent
     }
 
 
@@ -41,31 +38,32 @@ public class EnemyBehaviours : MonoBehaviour
     [Task]
     public bool canSeeTheFox()
     {
-        distance.x = transform.position.x - Fox.position.x;
-        distance.y = transform.position.z - Fox.position.z;
-        float actualDistance = Vector2.SqrMagnitude(distance);
-        //Debug.Log(actualDistance);
-        if (actualDistance < VisionRange * VisionRange)
+      
+        if (Measurements.isInRange(transform,fox,VisionRange))
         {
-            huntingState = HuntingState.chasingFox;
+            enemyState = EnemyState.chasingFox;
+            soundSystem.PlayEnemySound(enemyState);
+
             return true;
         }
         else
         {
-            huntingState = HuntingState.goingToHouse;
+            enemyState = EnemyState.goingToHouse; // should be removed when the tree gets bigger
             return false;
         }
     }
     [Task]
     public void MoveToTarget()
     {
-        switch (huntingState)
+     
+
+        switch (enemyState)
         {
-            case HuntingState.goingToHouse:
+            case EnemyState.goingToHouse:
                 target = DefaultGoal;
                 break;
-            case HuntingState.chasingFox:
-                target = Fox;
+            case EnemyState.chasingFox:
+                target = fox;
                 break;
         }
         agent.SetDestination(target.position);
@@ -77,8 +75,9 @@ public class EnemyBehaviours : MonoBehaviour
     [Task]
     public bool isIntrupted()
     {
-
-        return huntingState!=HuntingState.goingToHouse;
+        if (enemyState == EnemyState.goingToHouse)
+            soundSystem.PlayEnemySound(enemyState);
+        return enemyState !=EnemyState.goingToHouse;
 
     }
     [Task]
@@ -87,7 +86,7 @@ public class EnemyBehaviours : MonoBehaviour
         Task.current.Succeed();
     }
     [Task]
-    void Shoot()
+    public void Shoot()
     {
         currentTime = Time.time;
         if (currentTime - StartingTime >= 1)
