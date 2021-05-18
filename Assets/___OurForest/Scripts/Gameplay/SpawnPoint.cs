@@ -37,7 +37,7 @@ public class SpawnPoint : MonoBehaviour
     public GameObject SpawnEnemy()
     {
         GameObject Troop= Instantiate(enemyPrefab, this.transform.position, Quaternion.identity, this.transform);
-        Troop.GetComponent<EnemyBehaviours>().Fox1 = fox;
+        Troop.GetComponent<EnemyBehaviours>().Fox = fox;
         Troop.GetComponent<EnemyBehaviours>().Yelena = yelena;
         Troop.GetComponent<EnemyBehaviours>().DefaultGoal1 = defaultgoal;
         CurrentTroop++;

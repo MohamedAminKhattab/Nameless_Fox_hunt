@@ -11,39 +11,46 @@ public class Trapping : MonoBehaviour
     [SerializeField] GameObject trapPrefab;
     [SerializeField] Vector3SO trapLocation;
     [SerializeField] GameManager _GM;
+    Ray r;
     // Start is called before the first frame update
     void Start()
     {
         trapLocation.value = Vector3.zero;
         needTrap.state = false;
     }
-    public void NeedTrap()
-    {
-        needTrap.state = true;
-    }
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.touchCount > 0)
         {
             foreach (var touch in Input.touches)
             {
-                RaycastHit hit;
-                Vector3 touchposition = new Vector3(touch.position.x, touch.position.y,0.0f);
-                Ray ray = Camera.main.ScreenPointToRay(touchposition);
-                if (Physics.Raycast(ray, out hit,mask) && needTrap.state == false &&(hit.collider.gameObject.tag == "Ground"|| hit.collider.gameObject.tag == "Walkable") &&trapLocation.value==Vector3.zero&&!joystickField.rect.Contains(touch.position))
+                Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                Physics.Raycast(ray, out RaycastHit hit);
+                if (needTrap.state == false && TCompareTag(hit.collider.gameObject.tag))
                 {
-                    trapLocation.value = hit.point;
+                    trapLocation.value = hit.transform.position;
+                    needTrap.state = true;
                 }
             }
         }
-        if (needTrap.state==true&&_GM.Inv.GetItemCount(ItemTypes.Trap)>0)
+    }
+    public void NeedTrap()
+    {
+        if (needTrap.state == true && _GM.Inv.GetItemCount(ItemTypes.Trap) > 0)
         {
             Instantiate(trapPrefab, trapLocation.value, Quaternion.identity);
             _GM.Inv.UseItem(ItemTypes.Trap, 1);
             trapLocation.value = Vector3.zero;
             needTrap.state = false;
         }
-        
+    }
+    private bool TCompareTag(string tag)
+    {
+        return tag switch
+        {
+            "Walkable" => true,
+            "Ground" => true,
+            _ => false
+        };
     }
 }

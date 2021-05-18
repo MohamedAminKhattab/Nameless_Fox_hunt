@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,16 +20,27 @@ public class Targeting : MonoBehaviour
         {
             foreach (var touch in Input.touches)
             {
-                RaycastHit hit;
-                Vector3 touchposition = new Vector3(touch.position.x, touch.position.y,0.0f);
-                Ray ray = Camera.main.ScreenPointToRay(touchposition);
-                if (Physics.Raycast(ray, out hit,mask)&&hasTarget.state==false&&(hit.collider.gameObject.tag != "Ground"|| hit.collider.gameObject.tag != "Walkable") && !joystickField.rect.Contains(touch.position))
+                Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                Physics.Raycast(ray, out RaycastHit hit, mask);
+                if (hasTarget.state==false&&FCompareTag(hit.collider.gameObject.tag))
                 {
                     targetSO.value = hit.transform;
                     hasTarget.state = true;
-                    Debug.LogWarning($"{targetSO.value.gameObject.name}=>{targetSO.value.position}");
+                   // Debug.LogWarning($"{targetSO.value.gameObject.name}=>{targetSO.value.position}");
                 }
             }
         }
+    }
+
+    private bool FCompareTag(string tag)
+    {
+        return tag switch
+        {
+            "Wood" => true,
+            "Rock" => true,
+            "Vine" => true,
+            "Food" => true,
+            _ => false
+        };
     }
 }
