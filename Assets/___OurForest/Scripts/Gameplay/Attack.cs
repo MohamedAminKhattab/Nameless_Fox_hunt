@@ -39,8 +39,8 @@ public class Attack : MonoBehaviour
         var wait = new WaitForSeconds(1f);
         yield return wait;
         _GM.Inv.UseItem(ItemTypes.Weapon,1);
-        GameObject arrowInst = Instantiate(arrowPrefab, arrowSpawn.position, Quaternion.identity);
-        arrowInst.transform.rotation = Quaternion.Euler(90, 0, 0);
+        GameObject arrowInst = Instantiate(arrowPrefab, arrowSpawn.position, arrowSpawn.rotation);
+        //arrowInst.transform.rotation = Quaternion.Euler(90, 0, 0);
         Rigidbody rb = arrowInst.GetComponent<Rigidbody>();
         rb.velocity = player.transform.forward * shootForce;
         attack.state = false;
