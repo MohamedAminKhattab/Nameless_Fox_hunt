@@ -19,7 +19,7 @@ public class FoxBehaviours : MonoBehaviour
     private Transform Target;
     [SerializeField] TransformSO PickUp;
     [SerializeField] BoolSO hasTargetSo;
-    [SerializeField] Transform Enemy;
+    [SerializeField] TransformSO Enemy;
     private FoxState foxState;
     void Start()
     {
@@ -107,7 +107,7 @@ public class FoxBehaviours : MonoBehaviour
     {
         if(foxState==FoxState.luring) //check if the enemy is valid 
         {
-            Target = Enemy;
+            Target = Enemy.value;
             Task.current.Succeed();
         }
         else

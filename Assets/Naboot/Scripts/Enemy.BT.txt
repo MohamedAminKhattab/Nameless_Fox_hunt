@@ -3,6 +3,7 @@ tree("Root")
 		parallel
 			repeat mute tree("RaidHouse")
 			repeat mute tree("ChaseFox")
+			repeat mute tree("Shoot")
 		
 tree("RaidHouse")
 	while
@@ -10,7 +11,15 @@ tree("RaidHouse")
 		MoveToTarget
 
 tree("ChaseFox")
-	while canSeeTheFox
-		sequence
+		while
+			canSeeTheFox
 			MoveToTarget
-			
+
+tree("Shoot")
+		while
+			ShouldShoot 
+			repeat 
+				sequence
+					Fire
+					Wait 2.0
+					

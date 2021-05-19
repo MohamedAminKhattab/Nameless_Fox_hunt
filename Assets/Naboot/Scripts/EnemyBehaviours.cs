@@ -36,21 +36,37 @@ public class EnemyBehaviours : MonoBehaviour
 
     #region Panda Leafs
     [Task]
-    public bool canSeeTheFox()
+    public void canSeeTheFox()
     {
       
         if (Measurements.isInRange(transform,fox,VisionRange))
         {
-            enemyState = EnemyState.chasingFox;
-            soundSystem.PlayEnemySound(enemyState);
-
-            return true;
+            if (Measurements.isInRange(transform, fox, (int)agent.stoppingDistance))
+            {
+                enemyState = EnemyState.shooting;
+                Task.current.Fail();
+                return;
+            }
+            else
+            {
+                enemyState = EnemyState.chasingFox;
+                soundSystem.PlayEnemySound(enemyState);
+                Task.current.Succeed();
+                return;
+            }
         }
         else
         {
             enemyState = EnemyState.goingToHouse; // should be removed when the tree gets bigger
-            return false;
         }
+    }
+    [Task]
+    void ShouldShoot()
+    {
+        if (enemyState == EnemyState.shooting)
+            Task.current.Succeed();
+        else
+            Task.current.Fail();
     }
     [Task]
     public void MoveToTarget()
@@ -73,7 +89,7 @@ public class EnemyBehaviours : MonoBehaviour
         //    Task.current.Fail();
     }
     [Task]
-    public bool isIntrupted()
+    public bool isIntrupted()// i don't like this method at all seems stupid 
     {
         if (enemyState == EnemyState.goingToHouse)
             soundSystem.PlayEnemySound(enemyState);
@@ -85,22 +101,15 @@ public class EnemyBehaviours : MonoBehaviour
     {
         Task.current.Succeed();
     }
+   
     [Task]
-    public void Shoot()
+    public void Fire()
     {
-        currentTime = Time.time;
-        if (currentTime - StartingTime >= 1)
-        {
-            Fire();
-            StartingTime = Time.time;
-
-           // Task.current.Succeed();
-        }
-    }
-    void Fire()
-    {
+        
+        soundSystem.PlayEnemySound(enemyState);
         GameObject go = Instantiate(bullet, transform.position, transform.rotation);
         go.AddComponent<Rigidbody>().AddForce(transform.forward * 500);
+        Task.current.Succeed();
     }
     #endregion
 }
