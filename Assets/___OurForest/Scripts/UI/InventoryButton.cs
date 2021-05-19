@@ -30,9 +30,9 @@ public class InventoryButton : MonoBehaviour, IExecutable
     }
     public void Execute()
     {
+        paused.state = true;
         Gameui.SetActive(false);
         Inventory.SetActive(true);
         Time.timeScale = 0.0f;
-        paused.state = true;
     }
 }

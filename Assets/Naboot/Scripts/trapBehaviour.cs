@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class trapBehaviour : MonoBehaviour
+public class TrapBehaviour : MonoBehaviour
 {
     Trap t;
     [SerializeField] EventSO EnemyDied;
@@ -12,13 +12,13 @@ public class trapBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag.Equals("enemy"))
+        Debug.LogWarning("EnemyOntrap");
+        if (other.CompareTag("enemy"))
         {
+            Debug.LogWarning("EnemyOntrap");
             EnemyDied.Raise();
             Destroy(other.gameObject);
             Destroy(this.gameObject);
         }
-            //other.gameObject.SetActive(false);
-       
     }
 }

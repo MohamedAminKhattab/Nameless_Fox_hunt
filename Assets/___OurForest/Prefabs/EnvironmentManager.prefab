@@ -49,6 +49,7 @@ MonoBehaviour:
   - {fileID: 1890736165300317665, guid: 4878b459121874a45ba41d3205e3d55c, type: 3}
   - {fileID: 1890736165300317665, guid: 4878b459121874a45ba41d3205e3d55c, type: 3}
   - {fileID: 1890736165300317665, guid: 4878b459121874a45ba41d3205e3d55c, type: 3}
+  spawnPoints: []
   levelNumber: 0
   currentLevel: {fileID: 0}
   _GM: {fileID: 0}

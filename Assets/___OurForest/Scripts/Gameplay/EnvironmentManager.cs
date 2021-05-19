@@ -19,9 +19,6 @@ public class EnvironmentManager : MonoBehaviour
         spawnPoints = new List<SpawnPoint>();
         Load(LevelNumber);
     }
-    private void Update()
-    {
-    }
     private void Load(string Number)
     {
         int.TryParse(Number, out int number);
