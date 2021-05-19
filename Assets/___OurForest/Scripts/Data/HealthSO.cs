@@ -18,7 +18,7 @@ public class HealthSO : ScriptableObject
     }
     public void Healing(float healingPoints)
     {
-        currentHealth -= healingPoints;
+        currentHealth += healingPoints;
         if (currentHealth > initialHealth)
             currentHealth = initialHealth;
     }
