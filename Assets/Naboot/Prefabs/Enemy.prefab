@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 2858946650027735335, guid: ae0b62ced8c03ec4bbddc0ada4a62a91, type: 3}
-  Fox: {fileID: 0}
+  fox: {fileID: 0}
   yelena: {fileID: 0}
   DefaultGoal: {fileID: 0}
   VisionRange: 2

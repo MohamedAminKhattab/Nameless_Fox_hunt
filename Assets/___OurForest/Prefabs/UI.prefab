@@ -1094,15 +1094,15 @@ PrefabInstance:
     - target: {fileID: 217723746, guid: 85539008418940d4d9c934ccccceacf1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6845774844251762930, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
     - target: {fileID: 217723746, guid: 85539008418940d4d9c934ccccceacf1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6845774844251762930, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
     - target: {fileID: 217723746, guid: 85539008418940d4d9c934ccccceacf1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6845774844251762930, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
     - target: {fileID: 471573412, guid: 85539008418940d4d9c934ccccceacf1, type: 3}
       propertyPath: range
       value: 50
@@ -1112,12 +1112,40 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8965769930273081193}
     - target: {fileID: 1513236768, guid: 85539008418940d4d9c934ccccceacf1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513236768, guid: 85539008418940d4d9c934ccccceacf1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513236768, guid: 85539008418940d4d9c934ccccceacf1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 9151201594120318504, guid: f1600080c5d346a47bf9f3175b199541, type: 3}
+    - target: {fileID: 1513236768, guid: 85539008418940d4d9c934ccccceacf1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 9151201594120318504, guid: f1600080c5d346a47bf9f3175b199541, type: 3}
+    - target: {fileID: 1513236768, guid: 85539008418940d4d9c934ccccceacf1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1513236768, guid: 85539008418940d4d9c934ccccceacf1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: StartGathering
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513236768, guid: 85539008418940d4d9c934ccccceacf1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: shouldLure
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513236768, guid: 85539008418940d4d9c934ccccceacf1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: FoxBehaviours, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513236768, guid: 85539008418940d4d9c934ccccceacf1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1536133282, guid: 85539008418940d4d9c934ccccceacf1, type: 3}
       propertyPath: mask.m_Bits
@@ -1127,6 +1155,10 @@ PrefabInstance:
       propertyPath: joystickField
       value: 
       objectReference: {fileID: 866903878230708404}
+    - target: {fileID: 1826369228413231669, guid: 85539008418940d4d9c934ccccceacf1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6845774844251762930, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
     - target: {fileID: 1826369228413231669, guid: 85539008418940d4d9c934ccccceacf1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: WantToEatFood

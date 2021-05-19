@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: fox_1x6_6
-  m_Shader: {fileID: 4800000, guid: 16d465b4e3c448e46af94971e2d67527, type: 3}
+  m_Shader: {fileID: 4800000, guid: 86c1faaef2100c84aa62f3ab54322cef, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
@@ -60,7 +60,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureSample2:
-        m_Texture: {fileID: 2800000, guid: 3304c1a0c6d6ca54581ea20e4ad9987d, type: 3}
+        m_Texture: {fileID: 2800000, guid: ff6519c117233244d9fb03f745b79290, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:

@@ -13,6 +13,8 @@ public class CameraFollow : MonoBehaviour
     Vector3 offset;
     Vector3 desiredPosition;
 
+    public Transform Target { get => target; set => target = value; }
+
     void FixedUpdate()
     {
 

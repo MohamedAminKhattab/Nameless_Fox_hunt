@@ -18,13 +18,14 @@ public class SpawnPoint : MonoBehaviour
     public int CurrentTroop { get => currentTroop; set => currentTroop = value; }
     public List<GameObject> Troops { get => troops;}
     public EventSO EnemyCountChange { get => enemyCountChange;}
+    public Transform Fox { get => fox; set => fox = value; }
+    public Transform Yelena { get => yelena; set => yelena = value; }
+    public Transform Defaultgoal { get => defaultgoal; set => defaultgoal = value; }
+    public GameManager GM { get => _GM; set => _GM = value; }
 
     void Start()
     {
         _GM = FindObjectOfType<GameManager>();
-        fox = GameObject.FindGameObjectWithTag("Fox").transform;
-        yelena = GameObject.FindGameObjectWithTag("Player").transform;
-        defaultgoal = GameObject.FindGameObjectWithTag("Start").transform;
         troops = new List<GameObject>();
         CurrentTroop = 0;
     }
@@ -34,7 +35,8 @@ public class SpawnPoint : MonoBehaviour
         {
             for (int i = 0; i < spawnCount; i++)
             {
-            Troops.Add(SpawnEnemy());
+                //Troops.Add(SpawnEnemy());
+                SpawnEnemy();
             }
         }
     }

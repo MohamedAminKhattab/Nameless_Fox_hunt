@@ -48,10 +48,10 @@ MonoBehaviour:
   yelena: {fileID: 0}
   defaultgoal: {fileID: 0}
   spawnCount: 2
-  enemyPrefab: {fileID: 3637006437264765420, guid: 95cf573ff3a554940840bf76cc164d87, type: 3}
+  enemyPrefab: {fileID: 3637006437264765420, guid: 02da3718dc34e0449ac313de1d4c890c, type: 3}
   currentTroop: 0
   troops: []
-  _GM: {fileID: 0}
+  _GM: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
   enemyCountChange: {fileID: 11400000, guid: 3410f905c6c90834b9cfb0496dd05f4d, type: 2}
 --- !u!114 &2366593721128965011
 MonoBehaviour:
@@ -174,10 +174,10 @@ MonoBehaviour:
   yelena: {fileID: 0}
   defaultgoal: {fileID: 0}
   spawnCount: 2
-  enemyPrefab: {fileID: 3637006437264765420, guid: 95cf573ff3a554940840bf76cc164d87, type: 3}
+  enemyPrefab: {fileID: 3637006437264765420, guid: 02da3718dc34e0449ac313de1d4c890c, type: 3}
   currentTroop: 0
   troops: []
-  _GM: {fileID: 0}
+  _GM: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
   enemyCountChange: {fileID: 11400000, guid: 3410f905c6c90834b9cfb0496dd05f4d, type: 2}
 --- !u!114 &8309245884805842440
 MonoBehaviour:
@@ -267,10 +267,10 @@ MonoBehaviour:
   yelena: {fileID: 0}
   defaultgoal: {fileID: 0}
   spawnCount: 1
-  enemyPrefab: {fileID: 3637006437264765420, guid: 95cf573ff3a554940840bf76cc164d87, type: 3}
+  enemyPrefab: {fileID: 3637006437264765420, guid: 02da3718dc34e0449ac313de1d4c890c, type: 3}
   currentTroop: 0
   troops: []
-  _GM: {fileID: 0}
+  _GM: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
   enemyCountChange: {fileID: 11400000, guid: 3410f905c6c90834b9cfb0496dd05f4d, type: 2}
 --- !u!114 &4020520853406117844
 MonoBehaviour:

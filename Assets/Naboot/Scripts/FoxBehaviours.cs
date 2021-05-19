@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using Panda;
 using UnityEngine.AI;
@@ -19,8 +18,11 @@ public class FoxBehaviours : MonoBehaviour
     private Transform Target;
     [SerializeField] TransformSO PickUp;
     [SerializeField] BoolSO hasTargetSo;
-    [SerializeField] Transform Enemy;
+    [SerializeField] TransformSO Enemy;
     private FoxState foxState;
+
+    public Transform Player { get => player; set => player = value; }
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -63,7 +65,7 @@ public class FoxBehaviours : MonoBehaviour
 
     #region selectors checks
 
-    
+
     [Task]
     public void shouldFetch()
     {
@@ -105,15 +107,15 @@ public class FoxBehaviours : MonoBehaviour
     [Task]
     public void shouldLure()
     {
-        if(foxState==FoxState.luring) //check if the enemy is valid 
+        if (foxState == FoxState.luring) //check if the enemy is valid 
         {
-            Target = Enemy;
+            Target = Enemy.value;
             Task.current.Succeed();
         }
         else
         {
             Task.current.Fail();
-            agent.isStopped=true;
+            agent.isStopped = true;
         }
     }
     #endregion
