@@ -46,6 +46,8 @@ public class Player : MonoBehaviour
     float damagePoints = 5;
     [SerializeField]
     EventSO playerDeath;
+    [SerializeField]
+    BoolSO deadAnim;
     string resource = "";
     bool canEatFood;
     void Start()
@@ -94,8 +96,13 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Bush")
             HideAnim.state = true;
         if (other.gameObject.tag == "Bullet")
-            playerHealth.ApplyDamage(damagePoints,playerDeath);
-        //Debug.Log(playerHealth.currentHealth);
+        {
+            playerHealth.ApplyDamage(damagePoints, playerDeath);
+            //Debug.Log(playerHealth.currentHealth);
+            if (playerHealth.dead) {
+                deadAnim.state = true;
+            }
+        }
         
     }
     void FixedUpdate()

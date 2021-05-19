@@ -32,6 +32,8 @@ public class AnimatorController : MonoBehaviour
     BoolSO HideAnim;
     [SerializeField]
     BoolSO crouchAnim;
+    [SerializeField]
+    BoolSO deadAnim;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -41,6 +43,7 @@ public class AnimatorController : MonoBehaviour
         velocityHash = Animator.StringToHash("VelocityZ");
         crouchAnim.state = false;
         crouch.state = false;
+        deadAnim.state = false;
     }
 
     void Update()
@@ -73,6 +76,7 @@ public class AnimatorController : MonoBehaviour
         animator.SetBool("PickUp", FetchAnim.state);
         animator.SetBool("CutWood", CutAnim.state);
         animator.SetBool("EatFood", EatAnim.state);
+        animator.SetBool("Dead", deadAnim.state);
        // Debug.Log(crouchAnim.state);
 
         if (crouch.state)
