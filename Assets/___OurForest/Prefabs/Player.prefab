@@ -24,7 +24,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6845774844251762928
 Transform:
   m_ObjectHideFlags: 0
@@ -67,9 +67,12 @@ MonoBehaviour:
   CutAnim: {fileID: 11400000, guid: 4ff75f34f49cc054192429c14268e41f, type: 2}
   EatAnim: {fileID: 11400000, guid: ef44062f63d3f9140a4b56e03a46d1cf, type: 2}
   HideAnim: {fileID: 11400000, guid: 7187870772591e54f811f34aca372dc6, type: 2}
-  _GM: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
+  _GM: {fileID: 0}
   playerHealth: {fileID: 11400000, guid: 995eb8ff6ee44984f9945bb81080d729, type: 2}
   initialHealth: 100
+  healingPoints: 15
+  damagePoints: 5
+  playerDeath: {fileID: 11400000, guid: bed96d6d2f8732b459a068d36f9f4c9b, type: 2}
 --- !u!114 &6845774844251762930
 MonoBehaviour:
   m_ObjectHideFlags: 0
