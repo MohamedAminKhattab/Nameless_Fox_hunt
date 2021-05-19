@@ -55,7 +55,10 @@ public class FoxBehaviours : MonoBehaviour
         foxState = FoxState.gathering;
         // Debug.LogWarning(PcikUP.value.position);
     }
-
+    public void StartLuring()
+    {
+        foxState = FoxState.luring;
+    }
 
 
     /// <summary>

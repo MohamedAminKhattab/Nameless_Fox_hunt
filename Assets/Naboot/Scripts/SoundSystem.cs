@@ -26,6 +26,11 @@ public class SoundSystem : MonoBehaviour
                 if(!source.isPlaying)
                 source.Play();
                 break;
+            case EnemyState.shooting:
+                source.clip = EnemyStatements[2];
+                if (!source.isPlaying)
+                    source.Play();
+                break;
 
         }
     }
