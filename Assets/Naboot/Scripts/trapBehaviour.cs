@@ -10,6 +10,10 @@ public class TrapBehaviour : MonoBehaviour
     {
         t = new Trap();
     }
+    private void Update()
+    {
+        
+    }
     private void OnCollisionEnter(Collision collision)
     {
             Debug.LogWarning(collision.gameObject.name);
@@ -18,6 +22,17 @@ public class TrapBehaviour : MonoBehaviour
             Debug.LogWarning("EnemyOntrap");
             EnemyDied.Raise();
             Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.LogWarning(other.gameObject.name);
+        if (other.gameObject.CompareTag("enemy"))
+        {
+            Debug.LogWarning("EnemyOntrap");
+            EnemyDied.Raise();
+            Destroy(other.gameObject);
             Destroy(this.gameObject);
         }
     }
