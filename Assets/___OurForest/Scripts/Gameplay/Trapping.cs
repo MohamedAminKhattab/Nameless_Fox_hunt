@@ -8,31 +8,14 @@ public class Trapping : MonoBehaviour
 {
 
     [SerializeField] BoolSO needTrap;
-    [SerializeField] GameObject trapPrefab;
     [SerializeField] Vector3SO trapLocation;
+    [SerializeField] GameObject trapPrefab;
     [SerializeField] GameManager _GM;
     // Start is called before the first frame update
     void Start()
     {
         trapLocation.value = Vector3.zero;
         needTrap.state = false;
-    }
-    private void Update()
-    {
-
-        if (Input.touchCount > 0)
-        {
-            foreach (var touch in Input.touches)
-            {
-                Ray ray = Camera.main.ScreenPointToRay(touch.position);
-                Physics.Raycast(ray, out RaycastHit hit);
-                if (needTrap.state == false && TCompareTag(hit.collider.gameObject.tag))
-                {
-                    trapLocation.value = hit.transform.position;
-                    needTrap.state = true;
-                }
-            }
-        }
     }
     public void NeedTrap()
     {
@@ -43,14 +26,5 @@ public class Trapping : MonoBehaviour
             trapLocation.value = Vector3.zero;
             needTrap.state = false;
         }
-    }
-    private bool TCompareTag(string tag)
-    {
-        return tag switch
-        {
-            "Walkable" => true,
-            "Ground" => true,
-            _ => false
-        };
     }
 }

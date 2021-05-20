@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public  class Tile:MonoBehaviour
+using UnityEngine.EventSystems;
+public class Tile : MonoBehaviour
 {
-    [SerializeField]private Vector3 location;
-    [SerializeField] private bool has_resource=false;
+    [SerializeField] private Vector3 location;
+    [SerializeField] private bool has_resource = false;
     [SerializeField] private bool can_Trap = false;
-    [SerializeField] private bool can_Hide=false;
+    [SerializeField] private bool can_Hide = false;
     [SerializeField] private GameObject resourceItem;
     [SerializeField] private Bush bush;
-    public Vector3 Location { get =>location; set =>location=value; }
+    [SerializeField] BoolSO needTrap;
+    [SerializeField] Vector3SO trapLocation;
+    public Vector3 Location { get => location; set => location = value; }
     public bool Has_Resource { get => has_resource; set => has_resource = value; }
     public bool Can_Trap { get => can_Trap; set => can_Trap = value; }
     public GameObject ResourceItem { get => resourceItem; set => resourceItem = value; }
@@ -20,23 +22,32 @@ public  class Tile:MonoBehaviour
     {
         Location = transform.position;
         Bush = GetComponentInChildren<Bush>();
-        if(resourceItem!=null)
+        if (resourceItem != null)
         {
             has_resource = true;
             can_Trap = true;
             can_Hide = false;
         }
-       else if(bush)
+        else if (bush)
         {
             can_Hide = true;
             has_resource = false;
             can_Trap = false;
         }
-       else
+        else
         {
             can_Hide = false;
             has_resource = false;
             can_Trap = true;
+        }
+    }
+    public void EventPointerdown()
+    {
+        Debug.LogWarning("CheckingTile");
+        if (Can_Trap == true&&needTrap.state==false)
+        {
+            trapLocation.value = location;
+            needTrap.state = true;
         }
     }
 }
