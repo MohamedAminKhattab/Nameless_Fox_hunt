@@ -38,6 +38,9 @@ public class Player : MonoBehaviour
     GameManager _GM;
     string resource = "";
     bool canEatFood;
+
+    public GameManager GM { get => _GM; set => _GM = value; }
+
     void Start()
     {
         cutWood.state = false;

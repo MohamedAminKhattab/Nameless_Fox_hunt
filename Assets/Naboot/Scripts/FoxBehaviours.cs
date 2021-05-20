@@ -113,8 +113,15 @@ public class FoxBehaviours : MonoBehaviour
     {
         if (foxState == FoxState.luring) //check if the enemy is valid 
         {
+            if(Enemy.value)
+            { 
             Target = Enemy.value;
             Task.current.Succeed();
+            }
+            else
+            {
+                Task.current.Fail();
+            }
         }
         else
         {

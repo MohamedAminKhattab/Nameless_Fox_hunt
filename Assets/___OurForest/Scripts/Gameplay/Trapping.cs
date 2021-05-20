@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Trapping : MonoBehaviour
@@ -9,9 +10,7 @@ public class Trapping : MonoBehaviour
     [SerializeField] BoolSO needTrap;
     [SerializeField] GameObject trapPrefab;
     [SerializeField] Vector3SO trapLocation;
-    [SerializeField] RectTransform joystickLocation;
     [SerializeField] GameManager _GM;
-    Ray r;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,13 +19,14 @@ public class Trapping : MonoBehaviour
     }
     private void Update()
     {
+
         if (Input.touchCount > 0)
         {
             foreach (var touch in Input.touches)
             {
                 Ray ray = Camera.main.ScreenPointToRay(touch.position);
                 Physics.Raycast(ray, out RaycastHit hit);
-                if (needTrap.state == false && TCompareTag(hit.collider.gameObject.tag)&&!joystickLocation.rect.Contains(touch.position))
+                if (needTrap.state == false && TCompareTag(hit.collider.gameObject.tag))
                 {
                     trapLocation.value = hit.transform.position;
                     needTrap.state = true;

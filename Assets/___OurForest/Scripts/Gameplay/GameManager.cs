@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour
         _EM = FindObjectOfType<EnvironmentManager>();
         playerWon.state = false;
         gameOver.state = false;
-
     }
     void Update()
     {
@@ -47,6 +46,7 @@ public class GameManager : MonoBehaviour
     public void StartLevel()
     {
         player = Instantiate(playerPrefab,transform.position,Quaternion.identity).GetComponent<Player>();
+        player.GM = this;
         fox=Instantiate(foxPrefab, transform.position, Quaternion.identity);
         fox.GetComponent<FoxBehaviours>().Player = player.transform;
         spawnPoints = _EM.GetComponentsInChildren<SpawnPoint>().ToList<SpawnPoint>();
@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
         currentwave = 1;
         foreach (var sp in spawnPoints)
         {
+            sp.GM = this;
             sp.Fox = fox.transform;
             sp.Yelena = player.transform;
         }
@@ -70,8 +71,9 @@ public class GameManager : MonoBehaviour
         playerWon.state = false;
         gameOver.state = true;
     }
-    public void onEnemyDied()
+    public void OnEnemyDied()
     {
+        spawnPoints = _EM.GetComponentsInChildren<SpawnPoint>().ToList<SpawnPoint>();
         if (currentTroopCount == 0 && currentwave < LevelWaveCount)
         {
             foreach (var sp in spawnPoints)

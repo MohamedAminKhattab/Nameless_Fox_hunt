@@ -10,16 +10,18 @@ public class Inventory
     readonly int maxCapacity = 50;
     List<Item> itemlist;
     public EventHandler OnInvItemsChangeHandler;
- public Inventory()
+
+    public int MaxCapacity => maxCapacity;
+
+    public Inventory()
     {
         itemlist = new List<Item>(maxCapacity);
-        //itemlist.Clear();
-        itemlist.Add(new Rock() { Itemcount=100});
-        itemlist.Add(new Wood() { Itemcount = 100 });
-        itemlist.Add(new Food() { Itemcount = 100 });
-        itemlist.Add(new Vine() { Itemcount = 100 });
-       itemlist.Add(new Trap() { Itemcount = 100 });
-        itemlist.Add(new Weapon());
+        itemlist.Add(new Rock() { Itemcount=0});
+        itemlist.Add(new Wood() { Itemcount = 0 });
+        itemlist.Add(new Weapon() { Itemcount = 0 });
+        itemlist.Add(new Vine() { Itemcount = 0 });
+        itemlist.Add(new Trap() { Itemcount = 0 });
+        itemlist.Add(new Food() { Itemcount = 0 });
     }
     public int GetWoodneeded(ItemTypes type)
     {

@@ -12,6 +12,8 @@ public class InventoryUIUpdater : MonoBehaviour
     [SerializeField] TMP_Text trapsCount;
     [SerializeField] TMP_Text weaponsCount;
     [SerializeField] TMP_Text foodCount;
+    [SerializeField] TMP_Text Capacity;
+    [SerializeField] TMP_Text fullcapacity;
     [SerializeField] GameManager _GM;
     private void Start()
     {
@@ -21,6 +23,8 @@ public class InventoryUIUpdater : MonoBehaviour
         woodCount.text = _GM.Inv.GetItemCount(ItemTypes.Wood).ToString();
         rockCount.text = _GM.Inv.GetItemCount(ItemTypes.Rock).ToString();
         foodCount.text = _GM.Inv.GetItemCount(ItemTypes.Food).ToString();
+        Capacity.text = _GM.Inv.Capacity.ToString();
+        fullcapacity.text = _GM.Inv.MaxCapacity.ToString();
         _GM.Inv.OnInvItemsChangeHandler += UpdateInGameUI;
     }
     public void UpdateInGameUI(object sender, EventArgs e)
@@ -31,5 +35,7 @@ public class InventoryUIUpdater : MonoBehaviour
         woodCount.text = _GM.Inv.GetItemCount(ItemTypes.Wood).ToString();
         rockCount.text = _GM.Inv.GetItemCount(ItemTypes.Rock).ToString();
         foodCount.text = _GM.Inv.GetItemCount(ItemTypes.Food).ToString();
+        Capacity.text = _GM.Inv.Capacity.ToString();
+        fullcapacity.text = _GM.Inv.MaxCapacity.ToString();
     }
 }

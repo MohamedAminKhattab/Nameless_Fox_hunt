@@ -34,13 +34,5 @@ public class LevelResult : MonoBehaviour
             lostCanvas.gameObject.SetActive(true);
             gameUI.gameObject.SetActive(false);
         }
-        if (gameOver.state == false&&playerWon.state==false)
-        {
-            Time.timeScale = 1.0f;
-            gamePaused.state = false;
-            lostCanvas.gameObject.SetActive(false);
-            clearCanvas.gameObject.SetActive(false);
-            gameUI.gameObject.SetActive(true);
-        }
     }
 }
