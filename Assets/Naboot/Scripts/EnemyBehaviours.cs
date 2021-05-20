@@ -49,6 +49,7 @@ public class EnemyBehaviours : MonoBehaviour
             if (Measurements.isInRange(transform, fox, (int)agent.stoppingDistance))
             {
                 enemyState = EnemyState.shooting;
+                agent.isStopped = true;
                 Task.current.Fail();
                 return;
             }
@@ -63,6 +64,7 @@ public class EnemyBehaviours : MonoBehaviour
         else
         {
             enemyState = EnemyState.goingToHouse; // should be removed when the tree gets bigger
+            Task.current.Fail();
         }
     }
     [Task]
@@ -76,8 +78,8 @@ public class EnemyBehaviours : MonoBehaviour
     [Task]
     public void MoveToTarget()
     {
-     
 
+        agent.isStopped = false;
         switch (enemyState)
         {
             case EnemyState.goingToHouse:

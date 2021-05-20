@@ -14,7 +14,7 @@ public class trapBehaviour : MonoBehaviour
     {
         if (other.tag.Equals("enemy"))
         {
-            EnemyDied.Raise();
+            //EnemyDied.Raise();
             Destroy(other.gameObject);
             Destroy(this.gameObject);
         }

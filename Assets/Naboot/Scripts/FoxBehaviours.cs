@@ -82,6 +82,7 @@ public class FoxBehaviours : MonoBehaviour
             else
             {
                 Task.current.Fail();
+                agent.isStopped = true;
             }
         }
         else
