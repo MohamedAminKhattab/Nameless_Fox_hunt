@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 5969780956883519138}
   - component: {fileID: 7311373766022400263}
   - component: {fileID: 4797390208153746893}
-  - component: {fileID: 7858306148247160793}
-  - component: {fileID: 21436582938816872}
+  - component: {fileID: 2437506943773581394}
+  - component: {fileID: 3957825015410962456}
   m_Layer: 0
   m_Name: trap
   m_TagString: Trap
@@ -114,20 +114,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7858306148247160793
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6454569255217093656}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: -0.0000003054738, y: 0.04413921, z: 0.00000016391277}
---- !u!114 &21436582938816872
+--- !u!114 &2437506943773581394
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,6 +127,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyDied: {fileID: 11400000, guid: 932e8ae6a0ba0cb4ba40d99db3cbac5b, type: 2}
+--- !u!65 &3957825015410962456
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6454569255217093656}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &5116559734816001028
 PrefabInstance:
   m_ObjectHideFlags: 0
