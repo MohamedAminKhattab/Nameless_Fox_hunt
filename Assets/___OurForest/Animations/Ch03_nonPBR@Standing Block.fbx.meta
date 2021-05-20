@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 00ae87b8d2cd6e94cb58cffbf8018ef9
+guid: 4d1ebaddfd9a5f5439af9ce757af444b
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Crouch Idle 01
+    second: Attack
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -19,14 +19,7 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
-      copied configuration does not match position in animation file:\n\t'mixamorig:LeftUpLeg'
-      : position error = 65.553757 mm\n\t'mixamorig:LeftLeg' : position error = 30.032230
-      mm\n\t'mixamorig:LeftFoot' : position error = 268.323975 mm\n\t'mixamorig:LeftToeBase'
-      : position error = 34.272320 mm\n\t'mixamorig:RightUpLeg' : position error
-      = 66.605156 mm\n\t'mixamorig:RightLeg' : position error = 30.557835 mm\n\t'mixamorig:RightFoot'
-      : position error = 267.853790 mm\n\t'mixamorig:RightToeBase' : position error
-      = 33.262596 mm\n"
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -42,26 +35,26 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Crouch Idle 01
+      name: Attack
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 200
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
-      level: 0.2
+      level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
-      loopBlendPositionY: 1
+      loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
-      keepOriginalPositionY: 0
+      keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
-      heightFromFeet: 1
+      heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []

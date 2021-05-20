@@ -17,8 +17,8 @@ TagManager:
   - NotWalkable
   - Fox
   - Start
-  - Bush
-  - Bullet
+  - Hiding Area
+  - Arrow
   layers:
   - Default
   - TransparentFX

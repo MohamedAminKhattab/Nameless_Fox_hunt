@@ -25,6 +25,8 @@ public class InputHandler : IInputManager
     KeyCode eatFood; 
     [SerializeField]
     KeyCode crouch;
+    [SerializeField]
+    KeyCode attack;
 
     public override bool CutWood()
     {
@@ -73,5 +75,9 @@ public class InputHandler : IInputManager
     public override bool Crouch()
     {
         return Input.GetKey(crouch);
+    }  
+    public override bool SteelthAttack()
+    {
+        return Input.GetKey(attack);
     }
 }

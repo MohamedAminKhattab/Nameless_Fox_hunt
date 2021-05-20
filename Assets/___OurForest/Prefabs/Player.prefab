@@ -1,5 +1,84 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3546819068114139263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3345472398383160638}
+  - component: {fileID: 2334820694511919870}
+  m_Layer: 0
+  m_Name: Hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3345472398383160638
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3546819068114139263}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.36, y: 1.095, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1759470589889199628}
+  m_Father: {fileID: 6845774844251762928}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2334820694511919870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3546819068114139263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76c71f17fee7544b886593458ccc1ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 6845774844251762932}
+  arrowPrefab: {fileID: 5097509116877586291, guid: cbcacd25ff6d0c04e8970c01a34e436e, type: 3}
+  arrowSpawn: {fileID: 1759470589889199628}
+  shootForce: 20
+  attack: {fileID: 11400000, guid: 260ff84e78d53af4ca8536bd4f8b6c50, type: 2}
+--- !u!1 &6681545930317205851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1759470589889199628}
+  m_Layer: 0
+  m_Name: ArrowSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1759470589889199628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6681545930317205851}
+  m_LocalRotation: {x: 0.8014756, y: -0, z: -0, w: -0.5980276}
+  m_LocalPosition: {x: 0.00000035762787, y: -0.07000005, z: -0.304}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3345472398383160638}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 253.45801, y: 0, z: 0}
 --- !u!1 &6845774844251762932
 GameObject:
   m_ObjectHideFlags: 0
@@ -37,6 +116,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3979935776987378992}
+  - {fileID: 3345472398383160638}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eff5f858ce767244a5e9c879bf675ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 5
   speedSO: {fileID: 11400000, guid: 40a5c7c9ea53a574881119d477ea6634, type: 2}
   pickUpFood: {fileID: 11400000, guid: ff579a8efc2b7b044a0fcd2c2b8c5280, type: 2}
   collectResource: {fileID: 11400000, guid: 6c7e708a05bfb214a9ab393a8beb93d8, type: 2}
@@ -68,12 +148,6 @@ MonoBehaviour:
   EatAnim: {fileID: 11400000, guid: ef44062f63d3f9140a4b56e03a46d1cf, type: 2}
   HideAnim: {fileID: 11400000, guid: 7187870772591e54f811f34aca372dc6, type: 2}
   _GM: {fileID: 0}
-  playerHealth: {fileID: 11400000, guid: 995eb8ff6ee44984f9945bb81080d729, type: 2}
-  initialHealth: 5
-  healingPoints: 15
-  damagePoints: 5
-  playerDeath: {fileID: 11400000, guid: bed96d6d2f8732b459a068d36f9f4c9b, type: 2}
-  deadAnim: {fileID: 11400000, guid: ae05d4ad6b51a8f46b34c25ab383c42b, type: 2}
 --- !u!114 &6845774844251762930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,6 +168,7 @@ MonoBehaviour:
   pickUpWeapon: {fileID: 11400000, guid: 887cc349ef7a28741933482870cc66aa, type: 2}
   eatFood: {fileID: 11400000, guid: 171fb1345c0d49543982c1c3cca7a03d, type: 2}
   crouch: {fileID: 11400000, guid: 128a9cd780d740048b301994ad707d73, type: 2}
+  attack: {fileID: 11400000, guid: 260ff84e78d53af4ca8536bd4f8b6c50, type: 2}
 --- !u!114 &6845774844251762931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +258,8 @@ MonoBehaviour:
   EatAnim: {fileID: 11400000, guid: ef44062f63d3f9140a4b56e03a46d1cf, type: 2}
   HideAnim: {fileID: 11400000, guid: 7187870772591e54f811f34aca372dc6, type: 2}
   crouchAnim: {fileID: 11400000, guid: b81e2d550a85b3942aa6ba72f5b039db, type: 2}
-  deadAnim: {fileID: 11400000, guid: ae05d4ad6b51a8f46b34c25ab383c42b, type: 2}
+  attackAnim: {fileID: 11400000, guid: cbd281dd82f80d1478e42d7b658e3410, type: 2}
+  attack: {fileID: 11400000, guid: 260ff84e78d53af4ca8536bd4f8b6c50, type: 2}
 --- !u!33 &5501797777281361872
 MeshFilter:
   m_ObjectHideFlags: 0
