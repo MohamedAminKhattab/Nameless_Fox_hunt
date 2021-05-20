@@ -52,6 +52,11 @@ public class GameManager : MonoBehaviour
         spawnPoints = _EM.GetComponentsInChildren<SpawnPoint>().ToList<SpawnPoint>();
         cfollow.Target = player.transform;
         currentwave = 1;
+        inv.AddItem(ItemTypes.Trap);
+        inv.AddItem(ItemTypes.Trap);
+        inv.AddItem(ItemTypes.Trap);
+        inv.AddItem(ItemTypes.Trap);
+        inv.AddItem(ItemTypes.Trap);
         foreach (var sp in spawnPoints)
         {
             sp.GM = this;
@@ -74,8 +79,9 @@ public class GameManager : MonoBehaviour
     public void OnEnemyDied()
     {
         spawnPoints = _EM.GetComponentsInChildren<SpawnPoint>().ToList<SpawnPoint>();
-        if (currentTroopCount == 0 && currentwave < LevelWaveCount)
+        if (currentTroopCount <1 && currentwave < LevelWaveCount)
         {
+            Debug.LogWarning("All enemies died making new ones");
             foreach (var sp in spawnPoints)
             {
                 sp.LaunchWave();
@@ -85,7 +91,7 @@ public class GameManager : MonoBehaviour
         else if (currentTroopCount == 0 && currentwave == LevelWaveCount)
         {
             playerWon.state = true;
-            gameOver.state = true;
+            gameOver.state = false;
         }
     }
 }

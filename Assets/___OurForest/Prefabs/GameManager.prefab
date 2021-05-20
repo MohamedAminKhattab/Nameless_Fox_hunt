@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8530145609774373357}
   - component: {fileID: 8530145609774373358}
-  - component: {fileID: -3175550930309290948}
   - component: {fileID: 7342326961803000935}
   - component: {fileID: 8404798601930685678}
   - component: {fileID: 582448560369363392}
@@ -62,34 +61,6 @@ MonoBehaviour:
   LevelWaveCount: 3
   currentwave: 1
   currentTroopCount: 0
---- !u!114 &-3175550930309290948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8530145609774373359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f564d6ce0be49c943a561bfc80a57b78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventSo: {fileID: 11400000, guid: 932e8ae6a0ba0cb4ba40d99db3cbac5b, type: 2}
-  OnRaise:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8530145609774373358}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: OnEnemyDied
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &7342326961803000935
 MonoBehaviour:
   m_ObjectHideFlags: 0

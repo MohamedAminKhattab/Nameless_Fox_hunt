@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnvironmentManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class EnvironmentManager : MonoBehaviour
     [SerializeField] string levelNumber;
     [SerializeField] GameObject currentLevel;
     [SerializeField] GameManager _GM;
+    [SerializeField] NavMeshSurface surface;
 
     public string LevelNumber { get => levelNumber; set => levelNumber = value; }
 
@@ -29,6 +31,7 @@ public class EnvironmentManager : MonoBehaviour
         {
             sp.GM = _GM;
         }
+        surface.BuildNavMesh();
         _GM.StartLevel();
         _GM.SpawnEnemies();
     }

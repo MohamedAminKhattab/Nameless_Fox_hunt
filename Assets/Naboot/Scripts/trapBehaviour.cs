@@ -5,20 +5,36 @@ using UnityEngine;
 public class trapBehaviour : MonoBehaviour
 {
     Trap t;
-    [SerializeField] EventSO EnemyDied;
+    [SerializeField] EventSO EnemyDied1;
+    [SerializeField] EventSO EnemyDied2;
+    [SerializeField] EventSO EnemyDied3;
     private void Start()
     {
         t = new Trap();
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag.Equals("enemy"))
+        if (other.CompareTag("enemy"))
         {
-            //EnemyDied.Raise();
+            string name = other.GetComponentInParent<SpawnPoint>().name;
+            switch (name)
+            {
+                case "Point1":
+                    EnemyDied1.Raise();
+                    break;
+                case "Point2":
+                    EnemyDied2.Raise();
+                    break;
+                case "Point3":
+                    EnemyDied3.Raise();
+                    break;
+                default:
+                    break;
+            }
             Destroy(other.gameObject);
             Destroy(this.gameObject);
         }
-            //other.gameObject.SetActive(false);
-       
+        //other.gameObject.SetActive(false);
+
     }
 }

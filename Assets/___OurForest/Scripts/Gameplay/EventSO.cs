@@ -7,6 +7,7 @@ public class EventSO : ScriptableObject
     List<SOListener> listeners = new List<SOListener>();
     public void Raise()
     {
+        //Debug.LogWarning(name + "Raised");
         for (int i = 0; i < listeners.Count; i++)
         {
             listeners[i].OnEventRaised();
