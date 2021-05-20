@@ -18,7 +18,7 @@ TagManager:
   - Fox
   - Start
   - Bush
-  - UI
+  - Bullet
   layers:
   - Default
   - TransparentFX

@@ -36,6 +36,18 @@ public class Player : MonoBehaviour
     BoolSO HideAnim;
     [SerializeField]
     GameManager _GM;
+    [SerializeField]
+    HealthSO playerHealth;
+    [SerializeField]
+    float initialHealth = 100;
+    [SerializeField]
+    float healingPoints = 15;
+    [SerializeField]
+    float damagePoints = 5;
+    [SerializeField]
+    EventSO playerDeath;
+    [SerializeField]
+    BoolSO deadAnim;
     string resource = "";
     bool canEatFood;
 
@@ -49,6 +61,8 @@ public class Player : MonoBehaviour
         EatAnim.state = false;
         canEatFood = false;
         HideAnim.state = false;
+        playerHealth.initialHealth = initialHealth;
+        
         //_GM.Inv.Capacity = 0;
     }
 
@@ -84,6 +98,15 @@ public class Player : MonoBehaviour
         //Debug.Log("Trigger Entered");
         if (other.gameObject.tag == "Bush")
             HideAnim.state = true;
+        if (other.gameObject.tag == "Bullet")
+        {
+            playerHealth.ApplyDamage(damagePoints, playerDeath);
+            //Debug.Log(playerHealth.currentHealth);
+            if (playerHealth.dead) {
+                deadAnim.state = true;
+            }
+        }
+        
     }
     void FixedUpdate()
     {
@@ -143,11 +166,19 @@ public class Player : MonoBehaviour
     }
     void CanEat()
     {
-        canEatFood = _GM.Inv.UseItem(ItemTypes.Food, 1);
+        canEatFood = _GM.Inv.GetItemCount(ItemTypes.Food) > 0;
+       // Debug.Log(playerHealth.currentHealth);
         if (canEatFood)
         {
-            EatAnim.state = true;
-            StartCoroutine(Eating());
+            //playerHealth.currentHealth = 50;
+            if (playerHealth.currentHealth < playerHealth.initialHealth)
+            {
+                _GM.Inv.UseItem(ItemTypes.Food, 1);
+                playerHealth.Healing(healingPoints);
+                EatAnim.state = true;
+                StartCoroutine(Eating());
+               // Debug.Log(playerHealth.currentHealth);
+            }
         }
     }
     IEnumerator CuttingWood()
@@ -169,6 +200,7 @@ public class Player : MonoBehaviour
     {
         var wait = new WaitForSeconds(3.0f);
         yield return wait;
+
     }
     private void OnDrawGizmos()
     {
