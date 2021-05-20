@@ -10,16 +10,17 @@ public class Arrow : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        transform.rotation = Quaternion.LookRotation(rb.velocity);
+       transform.rotation = Quaternion.LookRotation(rb.velocity);
         StartCoroutine(DestroyArrow());
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(rb.velocity);
         if (!hitSomething)
-        {
-            transform.rotation = Quaternion.LookRotation(rb.velocity);
+        {   
+            transform.rotation = Quaternion.LookRotation(rb.velocity.normalized);
         }
     }
     void OnCollisionEnter(Collision collision)
