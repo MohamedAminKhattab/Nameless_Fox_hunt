@@ -22,7 +22,7 @@ public class HealthSO : ScriptableObject
         {
             Death.Raise();
             dead = true;
-            Debug.Log("DEAD");
+           // Debug.Log("DEAD");
         }
            
     }

@@ -36,6 +36,10 @@ public class AnimatorController : MonoBehaviour
     BoolSO attackAnim; 
     [SerializeField]
     BoolSO attack;
+    [SerializeField]
+    BoolSO deathAnim;
+    [SerializeField]
+    HealthSO playerHealth;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -47,6 +51,8 @@ public class AnimatorController : MonoBehaviour
         crouch.state = false;
         attack.state = false;
         attackAnim.state = false;
+        deathAnim.state = false;
+
     }
 
     void Update()
@@ -75,19 +81,20 @@ public class AnimatorController : MonoBehaviour
         }
         velocity = Mathf.Clamp(velocity, 0.0f, 1.0f);
 
-        animator.SetFloat("Velocity", velocity);
-        animator.SetBool("PickUp", FetchAnim.state);
-        animator.SetBool("CutWood", CutAnim.state);
-        animator.SetBool("EatFood", EatAnim.state);
+     
        // Debug.Log(crouchAnim.state);
 
         if (crouch.state)
             crouchAnim.state = true;
         
         else
-            crouchAnim.state = false; 
+            crouchAnim.state = false;
 
-
+        animator.SetFloat("Velocity", velocity);
+        animator.SetBool("PickUp", FetchAnim.state);
+        animator.SetBool("CutWood", CutAnim.state);
+        animator.SetBool("EatFood", EatAnim.state);
+        animator.SetBool("Dead", playerHealth.dead);
         animator.SetBool("Hiding", HideAnim.state);
         animator.SetBool("crouch", crouchAnim.state);
         animator.SetBool("Attack", attackAnim.state);
@@ -95,8 +102,7 @@ public class AnimatorController : MonoBehaviour
         CutAnim.state = false;
         EatAnim.state = false;
         attackAnim.state = false;
-        attack.state = false;
-
+       
     }
     void OnTriggerExit(Collider other)
     {

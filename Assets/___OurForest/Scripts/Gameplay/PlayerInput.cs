@@ -20,6 +20,8 @@ public class PlayerInput : MonoBehaviour
     BoolSO crouch;  
     [SerializeField]
     BoolSO attack;
+    [SerializeField]
+    BoolSO inInput;
     void Start()
     {
 
@@ -33,6 +35,7 @@ public class PlayerInput : MonoBehaviour
         cutWood.state = false;
         eatFood.state = false;
         crouch.state = false;
+        inInput.state = false;
     }
 
     void Update()
@@ -57,19 +60,23 @@ public class PlayerInput : MonoBehaviour
         if (inputManager.PickUpFood())
         {
             pickUpFood.state = true;
+            inInput.state = true;
         }
         if (inputManager.CutWood())
         {
             cutWood.state = true;
-        } 
+            inInput.state = true;
+        }
         if (inputManager.CollectResource())
         {
             collectResource.state = true;
+            inInput.state = true;
         }
         if (inputManager.PickUpWeapon())
         {
             pickUpWeapon.state = true;
-        }   
+            inInput.state = true;
+        }
         if (inputManager.EatFood())
         {
             eatFood.state = true;
@@ -88,19 +95,24 @@ public class PlayerInput : MonoBehaviour
     public void WantToCutWood()
     {
         cutWood.state = true;
-    } 
+        inInput.state = true;
+    }
     public void WantToPickUpFood()
     {
         pickUpFood.state = true;
-    } 
+        inInput.state = true;
+    }
     public void WantToFetchResource()
     {
         collectResource.state = true;
+        inInput.state = true;
     }
     public void WantToPickUpWeapon()
     {
         collectResource.state = true;
-    }   
+        inInput.state = true;
+    }
+
     public void WantToEatFood()
     {
         eatFood.state = true;
@@ -111,7 +123,7 @@ public class PlayerInput : MonoBehaviour
     }  
     public void WantToAttack()
     {
-        crouch.state = true;
+        attack.state = true;
     }
 
 }

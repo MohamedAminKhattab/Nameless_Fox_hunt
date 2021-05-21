@@ -19,12 +19,6 @@ public class Player : MonoBehaviour
     [SerializeField]
     BoolSO eatFood;
     GameObject obj;
-    GameObject layerHit;
-    [SerializeField]
-    LayerMask layerMask;
-    [SerializeField]
-    float hitDistance;
-    string collisionTag;
     Vector3 collison;
     [SerializeField]
     BoolSO FetchAnim;
@@ -46,11 +40,10 @@ public class Player : MonoBehaviour
     float damagePoints = 5;
     [SerializeField]
     EventSO playerDeath;
-    [SerializeField]
-    BoolSO deadAnim;
     string resource = "";
     bool canEatFood;
-
+    [SerializeField]
+    BoolSO inInput;
     public GameManager GM { get => _GM; set => _GM = value; }
 
     void Start()
@@ -68,30 +61,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Ray ray = new Ray(this.transform.position, this.transform.forward);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, hitDistance))
-        {
-            layerHit = hit.transform.gameObject;
-            collison = hit.point;
-            collisionTag = layerHit.tag;
-            if (collisionTag == "Vine")
-            {
-                CollectResource();
-                resource = "Vine";
-            }
-            if (collisionTag == "Rock")
-            {
-                CollectResource();
-                resource = "Rock";
-            }
-            if (collisionTag == "Food")
-                PickUpFood();
-            if (collisionTag == "Wood")
-                CutWood();
-            if (collisionTag == "Weapon")
-                PickUpWeapon();
-        }
+        
     }
     void OnTriggerEnter(Collider other)
     {
@@ -102,11 +72,35 @@ public class Player : MonoBehaviour
         {
             playerHealth.ApplyDamage(damagePoints, playerDeath);
             //Debug.Log(playerHealth.currentHealth);
-            if (playerHealth.dead) {
-                deadAnim.state = true;
-            }
         }
         
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (inInput.state)
+        {
+            if (collision.gameObject.tag == "Vine")
+            {
+                CollectResource();
+                resource = "Vine";
+            }
+            if (collision.gameObject.tag == "Rock")
+            {
+                CollectResource();
+                resource = "Rock";
+            }
+            if (collision.gameObject.tag == "Food")
+                PickUpFood();
+
+            if (collision.gameObject.tag == "Wood")
+                CutWood();
+
+            if (collision.gameObject.tag == "Weapon")
+                PickUpWeapon();
+
+            obj = collision.gameObject;
+        }
     }
     void FixedUpdate()
     {
@@ -122,17 +116,21 @@ public class Player : MonoBehaviour
     {
         if (pickUpFood.state)
         {
+            pickUpFood.state = false;
+            inInput.state = false;
             FetchAnim.state = true;
             StartCoroutine(Fetching());
             //Add to inventory
             _GM.Inv.AddItem(ItemTypes.Food);
-            //Debug.Log("Food");
+            //Debug.Log("pick up Food");
         }
     }
     void CutWood()
     {
         if (cutWood.state)
         {
+            cutWood.state = false;
+            inInput.state = false;
             CutAnim.state = true;
             StartCoroutine(CuttingWood());
             //Add to inventory
@@ -143,6 +141,8 @@ public class Player : MonoBehaviour
     {
         if (collectResource.state)
         {
+            collectResource.state = false;
+            inInput.state = false;
             FetchAnim.state = true;
             StartCoroutine(Fetching());
             //Add to inventory
@@ -157,6 +157,8 @@ public class Player : MonoBehaviour
     {
         if (pickUpWeapon.state)
         {
+            pickUpWeapon.state = false;
+            inInput.state = false;
             FetchAnim.state = true;
             StartCoroutine(Fetching());
             //Add to inventory
@@ -170,7 +172,6 @@ public class Player : MonoBehaviour
        // Debug.Log(playerHealth.currentHealth);
         if (canEatFood)
         {
-            //playerHealth.currentHealth = 50;
             if (playerHealth.currentHealth < playerHealth.initialHealth)
             {
                 _GM.Inv.UseItem(ItemTypes.Food, 1);
@@ -186,7 +187,7 @@ public class Player : MonoBehaviour
         var wait = new WaitForSeconds(8.0f);
         //Debug.Log("Wait");
         yield return wait;
-        Destroy(layerHit);
+        Destroy(obj);
     }
 
     IEnumerator Fetching()
@@ -194,7 +195,9 @@ public class Player : MonoBehaviour
         var wait = new WaitForSeconds(5.0f);
         //Debug.Log("Wait");
         yield return wait;
-        Destroy(layerHit);
+        Destroy(obj);
+       // Debug.Log(obj.tag);
+        
     }
     IEnumerator Eating()
     {
