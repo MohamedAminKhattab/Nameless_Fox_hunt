@@ -102,6 +102,7 @@ public class AnimatorController : MonoBehaviour
         CutAnim.state = false;
         EatAnim.state = false;
         attackAnim.state = false;
+        crouch.state = false;
        
     }
     void OnTriggerExit(Collider other)

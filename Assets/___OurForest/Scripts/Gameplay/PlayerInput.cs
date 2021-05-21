@@ -83,7 +83,7 @@ public class PlayerInput : MonoBehaviour
         }
         if (inputManager.Crouch())
         {
-            crouch.state = !crouch.state;
+            crouch.state = true;
            // Debug.Log("Crouch");
         }
         if (inputManager.SteelthAttack())
@@ -119,8 +119,8 @@ public class PlayerInput : MonoBehaviour
     }
     public void WantToCrouch()
     {
-        crouch.state = !crouch.state;
-    }  
+        crouch.state = true;
+    }
     public void WantToAttack()
     {
         attack.state = true;
