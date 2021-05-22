@@ -35,6 +35,7 @@ public class Attack : MonoBehaviour
     }
     IEnumerator Attacking()
     {
+       // Debug.Log("Attacking");
         attackAnim.state = true;
         var wait = new WaitForSeconds(1f);
         yield return wait;

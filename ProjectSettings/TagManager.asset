@@ -19,6 +19,9 @@ TagManager:
   - Start
   - Hiding Area
   - Arrow
+  - Bush
+  - UI
+  - Bullet
   layers:
   - Default
   - TransparentFX

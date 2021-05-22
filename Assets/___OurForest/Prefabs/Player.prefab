@@ -49,8 +49,8 @@ MonoBehaviour:
   arrowSpawn: {fileID: 1759470589889199628}
   shootForce: 20
   attack: {fileID: 11400000, guid: 260ff84e78d53af4ca8536bd4f8b6c50, type: 2}
-  _GM: {fileID: 0}
-  attackAnim: {fileID: 0}
+  _GM: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
+  attackAnim: {fileID: 11400000, guid: cbd281dd82f80d1478e42d7b658e3410, type: 2}
 --- !u!1 &6681545930317205851
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,28 +134,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eff5f858ce767244a5e9c879bf675ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   speedSO: {fileID: 11400000, guid: 40a5c7c9ea53a574881119d477ea6634, type: 2}
   pickUpFood: {fileID: 11400000, guid: ff579a8efc2b7b044a0fcd2c2b8c5280, type: 2}
   collectResource: {fileID: 11400000, guid: 6c7e708a05bfb214a9ab393a8beb93d8, type: 2}
   cutWood: {fileID: 11400000, guid: 8cccd1807e390d24383e196f4a3a9155, type: 2}
   pickUpWeapon: {fileID: 11400000, guid: 887cc349ef7a28741933482870cc66aa, type: 2}
   eatFood: {fileID: 11400000, guid: 171fb1345c0d49543982c1c3cca7a03d, type: 2}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  hitDistance: 2
   FetchAnim: {fileID: 11400000, guid: 876c0eb80b25ab244b311f74b1298887, type: 2}
   CutAnim: {fileID: 11400000, guid: 4ff75f34f49cc054192429c14268e41f, type: 2}
   EatAnim: {fileID: 11400000, guid: ef44062f63d3f9140a4b56e03a46d1cf, type: 2}
   HideAnim: {fileID: 11400000, guid: 7187870772591e54f811f34aca372dc6, type: 2}
-  _GM: {fileID: 0}
+  _GM: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
   playerHealth: {fileID: 11400000, guid: 995eb8ff6ee44984f9945bb81080d729, type: 2}
   initialHealth: 100
   healingPoints: 15
   damagePoints: 5
   playerDeath: {fileID: 11400000, guid: bed96d6d2f8732b459a068d36f9f4c9b, type: 2}
-  deadAnim: {fileID: 11400000, guid: ae05d4ad6b51a8f46b34c25ab383c42b, type: 2}
+  inInput: {fileID: 11400000, guid: 95ead26868e851644a1773ca7ddb2107, type: 2}
 --- !u!114 &6845774844251762930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +173,7 @@ MonoBehaviour:
   eatFood: {fileID: 11400000, guid: 171fb1345c0d49543982c1c3cca7a03d, type: 2}
   crouch: {fileID: 11400000, guid: 128a9cd780d740048b301994ad707d73, type: 2}
   attack: {fileID: 11400000, guid: 260ff84e78d53af4ca8536bd4f8b6c50, type: 2}
+  inInput: {fileID: 11400000, guid: 95ead26868e851644a1773ca7ddb2107, type: 2}
 --- !u!114 &6845774844251762931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +265,8 @@ MonoBehaviour:
   crouchAnim: {fileID: 11400000, guid: b81e2d550a85b3942aa6ba72f5b039db, type: 2}
   attackAnim: {fileID: 11400000, guid: cbd281dd82f80d1478e42d7b658e3410, type: 2}
   attack: {fileID: 11400000, guid: 260ff84e78d53af4ca8536bd4f8b6c50, type: 2}
+  deathAnim: {fileID: 11400000, guid: ae05d4ad6b51a8f46b34c25ab383c42b, type: 2}
+  playerHealth: {fileID: 11400000, guid: 995eb8ff6ee44984f9945bb81080d729, type: 2}
 --- !u!33 &5501797777281361872
 MeshFilter:
   m_ObjectHideFlags: 0
