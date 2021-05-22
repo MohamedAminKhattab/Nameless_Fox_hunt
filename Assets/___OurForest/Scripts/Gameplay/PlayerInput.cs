@@ -24,6 +24,7 @@ public class PlayerInput : MonoBehaviour
     BoolSO inInput;
     void Start()
     {
+        
 
         if (null == inputManager)
         {

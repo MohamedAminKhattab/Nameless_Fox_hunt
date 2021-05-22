@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
         canEatFood = false;
         HideAnim.state = false;
         playerHealth.initialHealth = initialHealth;
-        
+
         //_GM.Inv.Capacity = 0;
     }
 
