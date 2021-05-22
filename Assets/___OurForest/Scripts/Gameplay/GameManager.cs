@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         _EM = FindObjectOfType<EnvironmentManager>();
+        cfollow = FindObjectOfType<CameraFollow>();
         playerWon.state = false;
         gameOver.state = false;
     }
