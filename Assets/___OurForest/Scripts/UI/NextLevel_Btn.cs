@@ -14,6 +14,7 @@ public class NextLevel_Btn : MonoBehaviour, IExecutable
     {
         selectedLevel.value++;
         SceneManager.LoadScene("Integrated GamePlay");
+        Time.timeScale = 1.0f;
         clear.gameObject.SetActive(false);
         hud.gameObject.SetActive(true);
     }
