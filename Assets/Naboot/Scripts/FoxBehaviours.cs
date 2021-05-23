@@ -19,13 +19,29 @@ public class FoxBehaviours : MonoBehaviour
     [SerializeField] TransformSO PickUp;
     [SerializeField] BoolSO hasTargetSo;
     [SerializeField] TransformSO Enemy;
+    [SerializeField] BoolSO isPlayerHidden;
+    [SerializeField] HealthSO foxHealth;
     private FoxState foxState;
-
+   
     public Transform Player { get => player; set => player = value; }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag.Equals("bullet"))
+        {
+            foxHealth.ApplyDamage(5);
+        }
+    }
+
+
+    public void Heal() //for khattab to call when collects vine
+    {
+        foxHealth.Healing(10);
+    }
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        foxHealth.initialHealth = 100;
     }
     private void Update()
     {
@@ -58,6 +74,10 @@ public class FoxBehaviours : MonoBehaviour
     public void StartLuring()
     {
         foxState = FoxState.luring;
+    }
+    public void Flee()
+    {
+        foxState = FoxState.idle;
     }
 
 
@@ -93,6 +113,14 @@ public class FoxBehaviours : MonoBehaviour
     [Task]
     public void shouldMoveToPlayer()
     {
+        if (isPlayerHidden.state)
+        {
+            Target = Player;
+            agent.stoppingDistance = .1f;
+            Task.current.Succeed();
+            return;
+
+        }
         distance.x = transform.position.x - player.position.x;
         distance.y = transform.position.z - player.position.z;
         //Todo create my own vector2 class to calculate the distance and other things if needed
@@ -111,12 +139,12 @@ public class FoxBehaviours : MonoBehaviour
     [Task]
     public void shouldLure()
     {
-        if (foxState == FoxState.luring) //check if the enemy is valid 
+        if (foxState == FoxState.luring && foxHealth.currentHealth >= 40f) //check if the enemy is valid 
         {
-            if(Enemy.value)
-            { 
-            Target = Enemy.value;
-            Task.current.Succeed();
+            if (Enemy.value)
+            {
+                Target = Enemy.value;
+                Task.current.Succeed();
             }
             else
             {
