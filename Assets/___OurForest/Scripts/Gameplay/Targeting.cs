@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Targeting : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Targeting : MonoBehaviour
     }
     private void Update()
     {
+        if(SceneManager.GetActiveScene().name=="Integrated GamePlay")
+        {
         if (Input.touchCount > 0)
         {
             foreach (var touch in Input.touches)
@@ -27,6 +30,7 @@ public class Targeting : MonoBehaviour
                    // Debug.LogWarning($"{targetSO.value.gameObject.name}=>{targetSO.value.position}");
                 }
             }
+        }
         }
     }
 

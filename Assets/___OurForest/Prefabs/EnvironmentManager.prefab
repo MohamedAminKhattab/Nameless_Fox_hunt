@@ -47,12 +47,14 @@ MonoBehaviour:
   tiles: []
   LevelPrefabs:
   - {fileID: 1890736165300317665, guid: 4878b459121874a45ba41d3205e3d55c, type: 3}
-  - {fileID: 1890736165300317665, guid: 4878b459121874a45ba41d3205e3d55c, type: 3}
-  - {fileID: 1890736165300317665, guid: 4878b459121874a45ba41d3205e3d55c, type: 3}
-  - {fileID: 1890736165300317665, guid: 4878b459121874a45ba41d3205e3d55c, type: 3}
+  - {fileID: 1890736165300317665, guid: fc65bdf260ddde44190dc237309f5706, type: 3}
+  - {fileID: 1890736165300317665, guid: 98c8fa853389d57409f0801c96328fc1, type: 3}
+  - {fileID: 1890736165300317665, guid: 2da94133f2353364c9c2108a9f8c2dc6, type: 3}
+  - {fileID: 1890736165300317665, guid: 4b5d4faa759aac24582042ce40333e60, type: 3}
   spawnPoints: []
-  levelNumber: 0
+  selectedLevel: {fileID: 11400000, guid: 133a7d7efb8597c42a03ca7844681da8, type: 2}
   currentLevel: {fileID: 0}
+  LevelLoadedEvent: {fileID: 11400000, guid: 4f66b16f9fe4584428f523303f5c83a6, type: 2}
   _GM: {fileID: 0}
   surface: {fileID: 8425850781698972550}
 --- !u!1 &3617548983758419354

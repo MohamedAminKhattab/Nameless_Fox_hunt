@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 217723746}
   m_Layer: 5
   m_Name: Fetch
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6845774844251762930, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
         m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
         m_MethodName: WantToCutWood
         m_Mode: 1
@@ -133,7 +133,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6845774844251762930, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
         m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
         m_MethodName: WantToFetchResource
         m_Mode: 1
@@ -145,7 +145,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6845774844251762930, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
         m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
         m_MethodName: WantToPickUpFood
         m_Mode: 1
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 2018761869}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 3058781270486835600}
   m_Layer: 5
   m_Name: TrapCount_Text
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -438,13 +438,14 @@ GameObject:
   - component: {fileID: 3058781270502996514}
   - component: {fileID: 3058781270502996517}
   - component: {fileID: 3082764205813555159}
+  - component: {fileID: 83149710}
   m_Layer: 5
   m_Name: HUD_Canvas
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3058781270502996512
 RectTransform:
   m_ObjectHideFlags: 0
@@ -556,6 +557,34 @@ MonoBehaviour:
   weaponsCount: {fileID: 3058781271534970399}
   FoodCount: {fileID: 7971190361743413032}
   _GM: {fileID: 0}
+--- !u!114 &83149710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3058781270502996516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f564d6ce0be49c943a561bfc80a57b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSo: {fileID: 11400000, guid: 3410f905c6c90834b9cfb0496dd05f4d, type: 2}
+  OnRaise:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3082764205813555159}
+        m_TargetAssemblyTypeName: UpdateUI, Assembly-CSharp
+        m_MethodName: UpdateHunterCount
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3058781270512662065
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,7 +598,7 @@ GameObject:
   - component: {fileID: 3058781270512662031}
   m_Layer: 5
   m_Name: Hunter_Img
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -645,7 +674,7 @@ GameObject:
   - component: {fileID: 3058781270644208580}
   m_Layer: 5
   m_Name: HunterCount_Text
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -779,7 +808,7 @@ GameObject:
   - component: {fileID: 3058781270749258196}
   m_Layer: 5
   m_Name: Fox_Img
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -855,7 +884,7 @@ GameObject:
   - component: {fileID: 5817687084617241746}
   m_Layer: 5
   m_Name: Knife_Img
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -910,7 +939,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 010236b7b3b14c64782f4502913dfeb9, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -975,7 +1004,7 @@ GameObject:
   - component: {fileID: 3058781270975417996}
   m_Layer: 5
   m_Name: Inv_Img
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1050,7 +1079,7 @@ GameObject:
   - component: {fileID: 3058781271070777338}
   m_Layer: 5
   m_Name: Leaf_Img
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1126,7 +1155,7 @@ GameObject:
   - component: {fileID: 3058781271375467168}
   m_Layer: 5
   m_Name: Hud_Img
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1204,7 +1233,7 @@ GameObject:
   - component: {fileID: 3058781271512159779}
   m_Layer: 5
   m_Name: Wood_Img
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1280,7 +1309,7 @@ GameObject:
   - component: {fileID: 3058781271534970399}
   m_Layer: 5
   m_Name: WeaponCount_Text
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1414,7 +1443,7 @@ GameObject:
   - component: {fileID: 3058781271798484233}
   m_Layer: 5
   m_Name: Rock_Img
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1490,7 +1519,7 @@ GameObject:
   - component: {fileID: 3058781271804361605}
   m_Layer: 5
   m_Name: woodCount_Text
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1622,9 +1651,11 @@ GameObject:
   - component: {fileID: 3058781271899772661}
   - component: {fileID: 3058781271899772659}
   - component: {fileID: 3058781271899772658}
+  - component: {fileID: 2119263543402485196}
+  - component: {fileID: 6632253825626772149}
   m_Layer: 5
   m_Name: Pause_Img
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1686,6 +1717,77 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2119263543402485196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3058781271899772660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d728630a9b9b5479ffdf7e54eee751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamepause: {fileID: 11400000, guid: 3ecb782c486c87647b380bd3cfe0b4d6, type: 2}
+  gameUI: {fileID: 3058781270502996515}
+  pausemenu: {fileID: 0}
+--- !u!114 &6632253825626772149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3058781271899772660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 3058781271899772658}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2119263543402485196}
+        m_TargetAssemblyTypeName: PauseButton, Assembly-CSharp
+        m_MethodName: Execute
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3058781272049945569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,7 +1803,7 @@ GameObject:
   - component: {fileID: 620333305}
   m_Layer: 5
   m_Name: Inv_Button
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1848,7 +1950,7 @@ GameObject:
   - component: {fileID: 3058781272113031320}
   m_Layer: 5
   m_Name: Timer_Text
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1983,7 +2085,7 @@ GameObject:
   - component: {fileID: 2147687178598165238}
   m_Layer: 5
   m_Name: Trap_Img
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2005,7 +2107,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 129.99991, y: 120}
+  m_AnchoredPosition: {x: 130, y: 120}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3058781272263001079
@@ -2038,7 +2140,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: f079884cb2242cc418b954ff966a041b, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2089,7 +2191,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3058781272263001078}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Trapping, Assembly-CSharp
+        m_MethodName: NeedTrap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3058781272297346887
 GameObject:
   m_ObjectHideFlags: 0
@@ -2102,9 +2216,10 @@ GameObject:
   - component: {fileID: 3058781272297346882}
   - component: {fileID: 3058781272297346885}
   - component: {fileID: 1513236768}
+  - component: {fileID: 3462059984591193888}
   m_Layer: 5
   m_Name: Fox_Button
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2211,9 +2326,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: FoxBehaviours, Assembly-CSharp
-        m_MethodName: StartGathering
+      - m_Target: {fileID: 3462059984591193888}
+        m_TargetAssemblyTypeName: LureOrFetch, Assembly-CSharp
+        m_MethodName: RaiseEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2223,6 +2338,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3462059984591193888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3058781272297346887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85f968fd5ac06f14684897cea5131028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foxlureevent: {fileID: 11400000, guid: b1f908c870128854cb3471f45bb98bdb, type: 2}
+  foxfetchevent: {fileID: 11400000, guid: ea16c8ef9317da14c8081a4d8174f896, type: 2}
+  enemytarget: {fileID: 11400000, guid: 6f00ffae9c325fc40b69e985447679d0, type: 2}
+  target: {fileID: 11400000, guid: bfac95677aa908f46a00deaf667768cf, type: 2}
 --- !u!1 &3058781272332330419
 GameObject:
   m_ObjectHideFlags: 0
@@ -2236,7 +2367,7 @@ GameObject:
   - component: {fileID: 3058781272332330417}
   m_Layer: 5
   m_Name: RockCount_Text
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2370,7 +2501,7 @@ GameObject:
   - component: {fileID: 3058781272437715475}
   m_Layer: 5
   m_Name: LeafCount_Text
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2504,7 +2635,7 @@ GameObject:
   - component: {fileID: 3058781272471161669}
   m_Layer: 5
   m_Name: Clock_Img
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2581,7 +2712,7 @@ GameObject:
   - component: {fileID: 1826369228413231669}
   m_Layer: 5
   m_Name: FoodIcon
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2688,13 +2819,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 6845774844251762930, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
+        m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
+        m_MethodName: WantToEatFood
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2713,7 +2844,7 @@ GameObject:
   - component: {fileID: 7971190361743413032}
   m_Layer: 5
   m_Name: FoodCount_Text
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2849,7 +2980,7 @@ GameObject:
   - component: {fileID: 1198466591}
   m_Layer: 5
   m_Name: Floating_Joystick
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3022,7 +3153,7 @@ GameObject:
   - component: {fileID: 2226563255188012698}
   m_Layer: 5
   m_Name: OuterArea
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3099,7 +3230,7 @@ GameObject:
   - component: {fileID: 471573412}
   m_Layer: 5
   m_Name: JoystickPad
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3174,6 +3305,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystick: {fileID: 5131477286609058088}
-  range: 100
+  range: 50
   movement: {fileID: 11400000, guid: 8b4c0bf996bc8774cbfcccbf1c700fd5, type: 2}
   position: {fileID: 11400000, guid: 61a25de74a3b8b544934569981d6ec9d, type: 2}

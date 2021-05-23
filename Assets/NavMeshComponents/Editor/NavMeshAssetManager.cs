@@ -27,6 +27,7 @@ namespace UnityEditor.AI
 
         List<SavedPrefabNavMeshData> m_PrefabNavMeshDataAssets = new List<SavedPrefabNavMeshData>();
 
+  
         static string GetAndEnsureTargetPath(NavMeshSurface surface)
         {
             // Create directory for the asset if it does not exist yet.

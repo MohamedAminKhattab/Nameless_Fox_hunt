@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TargetingEnemy : MonoBehaviour
 {
@@ -13,17 +14,20 @@ public class TargetingEnemy : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.touchCount > 0)
+        if (SceneManager.GetActiveScene().name == "Integrated GamePlay")
         {
-            foreach (var touch in Input.touches)
+            if (Input.touchCount > 0)
             {
-                Ray ray = Camera.main.ScreenPointToRay(touch.position);
-                Physics.Raycast(ray, out RaycastHit hit);
-                if (hasEnemyTarget.state == false && FCompareTag(hit.collider.gameObject.tag))
+                foreach (var touch in Input.touches)
                 {
-                    enemytargetSO.value = hit.transform;
-                    hasEnemyTarget.state = true;
-                    Debug.LogWarning($"{enemytargetSO.value.gameObject.name}=>{enemytargetSO.value.position}");
+                    Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                    Physics.Raycast(ray, out RaycastHit hit);
+                    if (hasEnemyTarget.state == false && FCompareTag(hit.collider.gameObject.tag))
+                    {
+                        enemytargetSO.value = hit.transform;
+                        hasEnemyTarget.state = true;
+                        Debug.LogWarning($"{enemytargetSO.value.gameObject.name}=>{enemytargetSO.value.position}");
+                    }
                 }
             }
         }

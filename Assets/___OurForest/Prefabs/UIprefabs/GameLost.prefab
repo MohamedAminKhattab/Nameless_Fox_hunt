@@ -94,7 +94,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 69.4
+  m_fontSize: 69.45
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 1161338468615286992}
   - component: {fileID: 6527090886179631065}
   - component: {fileID: 5203507515477795490}
+  - component: {fileID: 4631737941558068606}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -256,7 +257,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6527090886179631065}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4631737941558068606}
+        m_TargetAssemblyTypeName: Restart_Btn, Assembly-CSharp
+        m_MethodName: Execute
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4631737941558068606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042973603430339102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f5d739f2c16f9408c96a7799835bde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lost: {fileID: 3036997140915910105}
+  hud: {fileID: 0}
+  gamepaused: {fileID: 11400000, guid: 3ecb782c486c87647b380bd3cfe0b4d6, type: 2}
+  restart: {fileID: 11400000, guid: e07554cc2993bb2489103a301de1ec1a, type: 2}
 --- !u!1 &4193990837985869292
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5592059615004797215
 RectTransform:
   m_ObjectHideFlags: 0
@@ -371,6 +400,7 @@ GameObject:
   - component: {fileID: 8792355299191897890}
   - component: {fileID: 547813594310029133}
   - component: {fileID: 2046243356674435580}
+  - component: {fileID: 1957625820849555329}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -479,7 +509,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 547813594310029133}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1957625820849555329}
+        m_TargetAssemblyTypeName: PauseQuit, Assembly-CSharp
+        m_MethodName: Execute
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1957625820849555329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395593995428331211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec4a2f91c04224b4e8d2f6b29ac97515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tolevelSelection: {fileID: 11400000, guid: 6925afb96096d0a4b941b4e75c5b3110, type: 2}
+  gamepaused: {fileID: 11400000, guid: 3ecb782c486c87647b380bd3cfe0b4d6, type: 2}
+  pause: {fileID: 3036997140915910105}
+  levelselection: {fileID: 0}
 --- !u!1 &5887812751780379940
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,7 +768,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 69.4
+  m_fontSize: 69.45
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

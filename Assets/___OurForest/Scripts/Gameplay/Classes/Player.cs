@@ -63,6 +63,14 @@ public class Player : MonoBehaviour
     {
         
     }
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.gameObject.tag == "Bullet")
+        {
+            playerHealth.ApplyDamage(damagePoints, playerDeath);
+            //Debug.Log(playerHealth.currentHealth);
+        }
+    }
     void OnTriggerEnter(Collider other)
     {
         //Debug.Log("Trigger Entered");
