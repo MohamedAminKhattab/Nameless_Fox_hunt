@@ -7,11 +7,11 @@ using UnityEngine.AI;
 
 public class EnvironmentManager : MonoBehaviour
 {
-    [SerializeField]List<Tile> tiles = new List<Tile>(1500);
-    [SerializeField] GameObject [] LevelPrefabs= new GameObject[10];
+    [SerializeField] List<Tile> tiles = new List<Tile>(1500);
+    [SerializeField] GameObject[] LevelPrefabs = new GameObject[10];
     [SerializeField] List<SpawnPoint> spawnPoints;
     [SerializeField] IntegerSO selectedLevel;
-    [SerializeField]  GameObject currentLevel;
+    [SerializeField] GameObject currentLevel;
     [SerializeField] EventSO LevelLoadedEvent;
     [SerializeField] GameManager _GM;
     [SerializeField] NavMeshSurface surface;

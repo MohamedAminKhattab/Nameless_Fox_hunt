@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] int currentTroopCount = 0;
     [SerializeField] EventSO onPlayerWon;
     [SerializeField] EventSO onPlayerLost;
+    [SerializeField] EventSO changecountenemy;
     private static GameManager instance;
     private void Awake()
     {
@@ -61,20 +62,28 @@ public class GameManager : MonoBehaviour
         player.GM = this;
         fox = Instantiate(foxPrefab, transform.position, Quaternion.identity);
         fox.GetComponent<FoxBehaviours>().Player = player.transform;
+        fox.GetComponent<FoxInventory>().Gm = this;
         spawnPoints = _EM.GetComponentsInChildren<SpawnPoint>().ToList<SpawnPoint>();
         cfollow.Target = player.transform;
         currentwave = 1;
+        currentTroopCount = 0;
         inv.AddItem(ItemTypes.Trap);
         inv.AddItem(ItemTypes.Trap);
         inv.AddItem(ItemTypes.Trap);
         inv.AddItem(ItemTypes.Trap);
         inv.AddItem(ItemTypes.Trap);
+        inv.AddItem(ItemTypes.Weapon);
+        inv.AddItem(ItemTypes.Weapon);
+        inv.AddItem(ItemTypes.Weapon);
+        inv.AddItem(ItemTypes.Weapon);
+        inv.AddItem(ItemTypes.Weapon);
         foreach (var sp in spawnPoints)
         {
             sp.GM = this;
             sp.Fox = fox.transform;
             sp.Yelena = player.transform;
         }
+        Debug.LogWarning("instart");
         StartCoroutine(WaitForWave());
     }
     public void SpawnEnemies()
@@ -83,6 +92,7 @@ public class GameManager : MonoBehaviour
         {
             sp.LaunchWave();
         }
+        changecountenemy.Raise();
     }
     public void OnPlayerDied()
     {
@@ -92,6 +102,7 @@ public class GameManager : MonoBehaviour
     }
     public void OnEnemyDied()
     {
+        Debug.LogWarning("inenemydied");
         spawnPoints = _EM.GetComponentsInChildren<SpawnPoint>().ToList<SpawnPoint>();
         if (currentTroopCount < 1 && currentwave < LevelWaveCount)
         {

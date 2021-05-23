@@ -990,7 +990,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3058781270974003076}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6845774844251762930, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
+        m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
+        m_MethodName: WantToAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3058781270975417998
 GameObject:
   m_ObjectHideFlags: 0

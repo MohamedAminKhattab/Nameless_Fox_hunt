@@ -55,7 +55,8 @@ public class Player : MonoBehaviour
         canEatFood = false;
         HideAnim.state = false;
         playerHealth.initialHealth = initialHealth;
-
+        playerHealth.Death = playerDeath;
+        playerHealth.dead = false;
         //_GM.Inv.Capacity = 0;
     }
 
@@ -65,20 +66,20 @@ public class Player : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.gameObject.tag == "Bullet")
+        if (collision.collider.gameObject.CompareTag("bullet"))
         {
-            playerHealth.ApplyDamage(damagePoints, playerDeath);
+            playerHealth.ApplyDamage(damagePoints);
             //Debug.Log(playerHealth.currentHealth);
         }
     }
     void OnTriggerEnter(Collider other)
     {
         //Debug.Log("Trigger Entered");
-        if (other.gameObject.tag == "Bush")
+        if (other.gameObject.CompareTag("Bush"))
             HideAnim.state = true;
-        if (other.gameObject.tag == "Bullet")
+        if (other.gameObject.CompareTag("bullet"))
         {
-            playerHealth.ApplyDamage(damagePoints, playerDeath);
+            playerHealth.ApplyDamage(damagePoints);
             //Debug.Log(playerHealth.currentHealth);
         }
         
@@ -88,23 +89,23 @@ public class Player : MonoBehaviour
     {
         if (inInput.state)
         {
-            if (collision.gameObject.tag == "Vine")
+            if (collision.gameObject.CompareTag("Vine"))
             {
                 CollectResource();
                 resource = "Vine";
             }
-            if (collision.gameObject.tag == "Rock")
+            if (collision.gameObject.CompareTag("Rock"))
             {
                 CollectResource();
                 resource = "Rock";
             }
-            if (collision.gameObject.tag == "Food")
+            if (collision.gameObject.CompareTag("Food"))
                 PickUpFood();
 
-            if (collision.gameObject.tag == "Wood")
+            if (collision.gameObject.CompareTag("Wood"))
                 CutWood();
 
-            if (collision.gameObject.tag == "Weapon")
+            if (collision.gameObject.CompareTag("Weapon"))
                 PickUpWeapon();
 
             obj = collision.gameObject;

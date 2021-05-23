@@ -8,7 +8,6 @@ public class Restart_Btn : MonoBehaviour, IExecutable
     [SerializeField] Canvas lost;
     [SerializeField] Canvas hud;
     [SerializeField] BoolSO gamepaused;
-    [SerializeField] EventSO restart;
     public void Execute()
     {
         SceneManager.LoadScene("Integrated GamePlay");
@@ -16,6 +15,5 @@ public class Restart_Btn : MonoBehaviour, IExecutable
         Time.timeScale = 1.0f;
         lost.gameObject.SetActive(false);
         hud.gameObject.SetActive(true);
-        restart.Raise();
     }
 }

@@ -57,6 +57,7 @@ MonoBehaviour:
   LevelLoadedEvent: {fileID: 11400000, guid: 4f66b16f9fe4584428f523303f5c83a6, type: 2}
   _GM: {fileID: 0}
   surface: {fileID: 8425850781698972550}
+  enemycountchange: {fileID: 11400000, guid: 3410f905c6c90834b9cfb0496dd05f4d, type: 2}
 --- !u!1 &3617548983758419354
 GameObject:
   m_ObjectHideFlags: 0
