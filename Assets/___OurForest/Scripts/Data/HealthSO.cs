@@ -7,6 +7,8 @@ public class HealthSO : ScriptableObject
 {
     public float initialHealth;
     public float currentHealth;
+    public EventSO Death;
+
     public bool dead;
     public float CurrentHealth { get { return currentHealth; } }
 
@@ -15,16 +17,16 @@ public class HealthSO : ScriptableObject
         currentHealth = initialHealth;
         dead = false;
     }
-    public void ApplyDamage(float Damage,EventSO Death)
+    public void ApplyDamage(float Damage)
     {
         currentHealth -= Damage;
         if (currentHealth <= 0)
         {
             Death.Raise();
             dead = true;
-           // Debug.Log("DEAD");
+            Debug.Log("DEAD");
         }
-           
+
     }
     public void Healing(float healingPoints)
     {
