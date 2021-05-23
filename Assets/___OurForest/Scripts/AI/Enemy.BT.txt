@@ -18,8 +18,8 @@ tree("ChaseFox")
 tree("Shoot")
 		while
 			ShouldShoot 
-			repeat 
-				sequence
-					Fire
-					Wait 2.0
+			sequence
+				Aim
+				Fire
+				Wait 2.0
 					

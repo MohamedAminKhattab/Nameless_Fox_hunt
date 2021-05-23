@@ -7,18 +7,30 @@ public class HealthSO : ScriptableObject
 {
     public float initialHealth;
     public float currentHealth;
+    public EventSO Death;
+
+    public bool dead;
     public float CurrentHealth { get { return currentHealth; } }
 
-
+    void OnEnable()
+    {
+        currentHealth = initialHealth;
+        dead = false;
+    }
     public void ApplyDamage(float Damage)
     {
         currentHealth -= Damage;
-        //if(currentHealth<=0)
-        //Call event listener for player death
+        if (currentHealth <= 0)
+        {
+            Death.Raise();
+            dead = true;
+            Debug.Log("DEAD");
+        }
+
     }
     public void Healing(float healingPoints)
     {
-        currentHealth -= healingPoints;
+        currentHealth += healingPoints;
         if (currentHealth > initialHealth)
             currentHealth = initialHealth;
     }
