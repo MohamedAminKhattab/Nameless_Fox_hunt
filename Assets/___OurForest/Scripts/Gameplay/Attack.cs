@@ -18,17 +18,20 @@ public class Attack : MonoBehaviour
     GameManager _GM;
     [SerializeField]
     BoolSO attackAnim;
+
+    public GameManager GM { get => _GM; set => _GM = value; }
+
     void Start()
     {
-        
     }
 
     void Update()
     {
-        if (attack.state)
+        if (attack.state==true)
         {
             if (_GM.Inv.GetItemCount(ItemTypes.Weapon) > 0)
             {
+                Debug.LogWarning($"ArrowAmount{_GM.Inv.GetItemCount(ItemTypes.Weapon)}");
                 StartCoroutine(Attacking());
             }
         }

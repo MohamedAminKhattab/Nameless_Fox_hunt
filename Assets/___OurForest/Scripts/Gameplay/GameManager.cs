@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
         _UM.SetUI();
         player = Instantiate(playerPrefab, transform.position, Quaternion.identity).GetComponent<Player>();
         player.GM = this;
+        player.GetComponentInChildren<Attack>().GM = this;
         fox = Instantiate(foxPrefab, transform.position, Quaternion.identity);
         fox.GetComponent<FoxBehaviours>().Player = player.transform;
         fox.GetComponent<FoxInventory>().Gm = this;
