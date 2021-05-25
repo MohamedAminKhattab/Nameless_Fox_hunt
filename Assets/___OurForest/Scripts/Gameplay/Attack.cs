@@ -31,7 +31,7 @@ public class Attack : MonoBehaviour
         {
             if (_GM.Inv.GetItemCount(ItemTypes.Weapon) > 0)
             {
-                Debug.LogWarning($"ArrowAmount{_GM.Inv.GetItemCount(ItemTypes.Weapon)}");
+               // Debug.LogWarning($"ArrowAmount{_GM.Inv.GetItemCount(ItemTypes.Weapon)}");
                 StartCoroutine(Attacking());
             }
         }

@@ -125,7 +125,7 @@ public class PlayerInput : MonoBehaviour
     public void WantToAttack()
     {
         attack.state = true;
-        Debug.LogWarning("Attacking");
+        //Debug.LogWarning("Attacking");
     }
 
 }
