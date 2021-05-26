@@ -11,7 +11,7 @@ public class Attack : MonoBehaviour
     [SerializeField]
     Transform arrowSpawn;
     [SerializeField]
-    float shootForce=20f;
+    float shootForce = 20f;
     [SerializeField]
     BoolSO attack;
     [SerializeField]
@@ -27,25 +27,28 @@ public class Attack : MonoBehaviour
 
     void Update()
     {
-        if (attack.state==true)
+        if (attack.state)
         {
-            if (_GM.Inv.GetItemCount(ItemTypes.Weapon) > 0)
-            {
-               // Debug.LogWarning($"ArrowAmount{_GM.Inv.GetItemCount(ItemTypes.Weapon)}");
-                StartCoroutine(Attacking());
-            }
+            attack.state = false;
+            StartCoroutine(Attacking());
         }
     }
+  
     IEnumerator Attacking()
     {
        // Debug.Log("Attacking");
         attackAnim.state = true;
         var wait = new WaitForSeconds(1f);
         yield return wait;
-        _GM.Inv.UseItem(ItemTypes.Weapon,1);
-        GameObject arrowInst = Instantiate(arrowPrefab, arrowSpawn.position, arrowSpawn.rotation);
-        Rigidbody rb = arrowInst.GetComponent<Rigidbody>();
-        rb.velocity = player.transform.forward * shootForce;
-        attack.state = false;
+        if (_GM.Inv.GetItemCount(ItemTypes.Weapon) > 0)
+        {
+            Debug.LogWarning($"ArrowAmount {_GM.Inv.GetItemCount(ItemTypes.Weapon)}");
+            _GM.Inv.UseItem(ItemTypes.Weapon, 1);
+            GameObject arrowInst = Instantiate(arrowPrefab, arrowSpawn.position, arrowSpawn.rotation);
+            Rigidbody rb = arrowInst.GetComponent<Rigidbody>();
+            rb.velocity = player.transform.forward * shootForce;
+        }
+
+        // attack.state = false;
     }
 }

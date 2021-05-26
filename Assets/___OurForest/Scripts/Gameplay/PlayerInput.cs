@@ -39,7 +39,7 @@ public class PlayerInput : MonoBehaviour
         inInput.state = false;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Vector3 movement = Vector3.zero;
         if (inputManager.GetForword())
@@ -90,6 +90,7 @@ public class PlayerInput : MonoBehaviour
         if (inputManager.SteelthAttack())
         {
             attack.state =true;
+            //Debug.LogWarning("Attacking");
         }
         this.movement.value = movement;
     }
@@ -125,7 +126,7 @@ public class PlayerInput : MonoBehaviour
     public void WantToAttack()
     {
         attack.state = true;
-        //Debug.LogWarning("Attacking");
+       // Debug.LogWarning("Attacking");
     }
 
 }
