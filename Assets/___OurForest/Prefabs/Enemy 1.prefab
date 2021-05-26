@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e70ae3de096051b4aa9e7513bc147d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 2858946650027735335, guid: ae0b62ced8c03ec4bbddc0ada4a62a91, type: 3}
+  bullet: {fileID: 2858946650027735335, guid: 117a9a42fd663f94d8a2107e9811174f, type: 3}
   fox: {fileID: 0}
   yelena: {fileID: 0}
   DefaultGoal: {fileID: 0}
