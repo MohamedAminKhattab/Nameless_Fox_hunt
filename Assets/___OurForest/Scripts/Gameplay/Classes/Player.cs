@@ -75,11 +75,6 @@ public class Player : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         //Debug.Log("Trigger Entered");
-        if (other.gameObject.CompareTag("Bush"))
-        {
-            HideAnim.state = true;
-            Debug.Log("hiding");
-        }
         if (other.gameObject.CompareTag("bullet"))
         {
             playerHealth.ApplyDamage(damagePoints);

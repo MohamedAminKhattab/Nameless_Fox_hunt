@@ -95,15 +95,24 @@ public class AnimatorController : MonoBehaviour
         animator.SetBool("CutWood", CutAnim.state);
         animator.SetBool("EatFood", EatAnim.state);
         animator.SetBool("Dead", playerHealth.dead);
-        animator.SetBool("Hiding", HideAnim.state);
         animator.SetBool("crouch", crouchAnim.state);
         animator.SetBool("Attack", attackAnim.state);
+        animator.SetBool("Hiding", HideAnim.state);
         FetchAnim.state = false;
         CutAnim.state = false;
         EatAnim.state = false;
         attackAnim.state = false;
         crouch.state = false;
        
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Bush"))
+        {
+            HideAnim.state = true;
+            animator.SetBool("Hiding", HideAnim.state);
+            Debug.Log("hiding");
+        }
     }
     void OnTriggerExit(Collider other)
     {
