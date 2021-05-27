@@ -27,7 +27,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 3965764662290901727}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46,10 +47,74 @@ MonoBehaviour:
   tiles: []
   LevelPrefabs:
   - {fileID: 1890736165300317665, guid: 4878b459121874a45ba41d3205e3d55c, type: 3}
-  - {fileID: 1890736165300317665, guid: 4878b459121874a45ba41d3205e3d55c, type: 3}
-  - {fileID: 1890736165300317665, guid: 4878b459121874a45ba41d3205e3d55c, type: 3}
-  - {fileID: 1890736165300317665, guid: 4878b459121874a45ba41d3205e3d55c, type: 3}
+  - {fileID: 1890736165300317665, guid: fc65bdf260ddde44190dc237309f5706, type: 3}
+  - {fileID: 1890736165300317665, guid: 98c8fa853389d57409f0801c96328fc1, type: 3}
+  - {fileID: 1890736165300317665, guid: 2da94133f2353364c9c2108a9f8c2dc6, type: 3}
+  - {fileID: 1890736165300317665, guid: 4b5d4faa759aac24582042ce40333e60, type: 3}
   spawnPoints: []
-  levelNumber: 0
+  selectedLevel: {fileID: 11400000, guid: 133a7d7efb8597c42a03ca7844681da8, type: 2}
   currentLevel: {fileID: 0}
+  LevelLoadedEvent: {fileID: 11400000, guid: 4f66b16f9fe4584428f523303f5c83a6, type: 2}
   _GM: {fileID: 0}
+  surface: {fileID: 8425850781698972550}
+  enemycountchange: {fileID: 11400000, guid: 3410f905c6c90834b9cfb0496dd05f4d, type: 2}
+--- !u!1 &3617548983758419354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3965764662290901727}
+  - component: {fileID: 8425850781698972550}
+  m_Layer: 3
+  m_Name: Navmesh
+  m_TagString: Walkable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3965764662290901727
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3617548983758419354}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2363840395412855821}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8425850781698972550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3617548983758419354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 23800000, guid: 4416f7b7cec8e2c4f91f55277a370739, type: 2}

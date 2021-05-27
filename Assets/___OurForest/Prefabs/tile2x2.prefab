@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4688968934547531175}
   - component: {fileID: 1605927657721438725}
   - component: {fileID: 4105975057345630304}
-  - component: {fileID: 1160785110694005629}
   - component: {fileID: -473799008166138813}
+  - component: {fileID: 3252904260483695303}
+  - component: {fileID: 2728255098325187212}
   m_Layer: 3
   m_Name: tile2x2
   m_TagString: Walkable
@@ -83,19 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1160785110694005629
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6764633727289613450}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 0, z: 2}
-  m_Center: {x: -1, y: 0, z: -1}
 --- !u!114 &-473799008166138813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,3 +102,48 @@ MonoBehaviour:
   can_Hide: 0
   resourceItem: {fileID: 0}
   bush: {fileID: 0}
+  needTrap: {fileID: 11400000, guid: 06689c3572e4ed94aaabfa80f39cc508, type: 2}
+  trapLocation: {fileID: 11400000, guid: 0a71e172541139944b0f924235fee262, type: 2}
+--- !u!114 &3252904260483695303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6764633727289613450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -473799008166138813}
+          m_TargetAssemblyTypeName: Tile, Assembly-CSharp
+          m_MethodName: EventPointerdown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!64 &2728255098325187212
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6764633727289613450}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2219616852896107380, guid: 9803669e7797fd04fa6bf7edd388d3e6, type: 3}

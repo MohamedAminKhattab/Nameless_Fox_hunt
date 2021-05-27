@@ -6,6 +6,7 @@ public class LureOrFetch : MonoBehaviour
 {
     [SerializeField] EventSO foxlureevent;
     [SerializeField] EventSO foxfetchevent;
+    [SerializeField] EventSO foxfleeevent;
     [SerializeField] TransformSO enemytarget;
     [SerializeField] TransformSO target;
     public void RaiseEvent()
@@ -17,6 +18,10 @@ public class LureOrFetch : MonoBehaviour
         if(enemytarget.value)
         {
             foxlureevent.Raise();
+        }
+        if(enemytarget.value==null&&target.value==null)
+        {
+            foxfleeevent.Raise();
         }
     }
 

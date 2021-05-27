@@ -17,9 +17,14 @@ public class PlayerInput : MonoBehaviour
     [SerializeField]
     BoolSO eatFood;
     [SerializeField]
-    BoolSO crouch;
+    BoolSO crouch;  
+    [SerializeField]
+    BoolSO attack;
+    [SerializeField]
+    BoolSO inInput;
     void Start()
     {
+        
 
         if (null == inputManager)
         {
@@ -31,9 +36,10 @@ public class PlayerInput : MonoBehaviour
         cutWood.state = false;
         eatFood.state = false;
         crouch.state = false;
+        inInput.state = false;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Vector3 movement = Vector3.zero;
         if (inputManager.GetForword())
@@ -55,53 +61,72 @@ public class PlayerInput : MonoBehaviour
         if (inputManager.PickUpFood())
         {
             pickUpFood.state = true;
+            inInput.state = true;
         }
         if (inputManager.CutWood())
         {
             cutWood.state = true;
-        } 
+            inInput.state = true;
+        }
         if (inputManager.CollectResource())
         {
             collectResource.state = true;
+            inInput.state = true;
         }
         if (inputManager.PickUpWeapon())
         {
             pickUpWeapon.state = true;
-        }   
+            inInput.state = true;
+        }
         if (inputManager.EatFood())
         {
             eatFood.state = true;
         }
         if (inputManager.Crouch())
         {
-            crouch.state = !crouch.state;
+            crouch.state = true;
            // Debug.Log("Crouch");
+        }
+        if (inputManager.SteelthAttack())
+        {
+            attack.state =true;
+            //Debug.LogWarning("Attacking");
         }
         this.movement.value = movement;
     }
     public void WantToCutWood()
     {
         cutWood.state = true;
-    } 
+        inInput.state = true;
+    }
     public void WantToPickUpFood()
     {
         pickUpFood.state = true;
-    } 
+        inInput.state = true;
+    }
     public void WantToFetchResource()
     {
         collectResource.state = true;
+        inInput.state = true;
     }
     public void WantToPickUpWeapon()
     {
         collectResource.state = true;
-    }   
+        inInput.state = true;
+    }
+
     public void WantToEatFood()
     {
         eatFood.state = true;
     }
     public void WantToCrouch()
     {
-        crouch.state = !crouch.state;
+        crouch.state = true;
+    }
+    public void WantToAttack()
+    {
+        attack.state = true;
+       // Debug.LogWarning("Attacking");
     }
 
 }

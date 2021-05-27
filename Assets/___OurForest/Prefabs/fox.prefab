@@ -17,6 +17,9 @@ GameObject:
   - component: {fileID: 6539303604943064300}
   - component: {fileID: -2712835236045928207}
   - component: {fileID: 807035284571191933}
+  - component: {fileID: -1197770406822406551}
+  - component: {fileID: 1391084813055244160}
+  - component: {fileID: -2583254906996918007}
   m_Layer: 0
   m_Name: fox
   m_TagString: Fox
@@ -101,12 +104,12 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 3
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 0.16
-  m_BaseOffset: -0.04
+  m_BaseOffset: -1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &9151201594120318505
@@ -217,5 +220,64 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.40287647, y: 0.8955714, z: 2.7989573}
-  m_Center: {x: 0, y: 0.44778565, z: -0.7609654}
+  m_Size: {x: 1, y: 1, z: 4}
+  m_Center: {x: 0, y: 0.44778565, z: 0}
+--- !u!114 &-1197770406822406551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8232281656054683095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f564d6ce0be49c943a561bfc80a57b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSo: {fileID: 11400000, guid: c5a9d16d3a86c0d4b8e8320aaf09c632, type: 2}
+  OnRaise:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9151201594120318504}
+        m_TargetAssemblyTypeName: FoxBehaviours, Assembly-CSharp
+        m_MethodName: Flee
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1391084813055244160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8232281656054683095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7406271409cd9b344b9d4e9e6560b156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gm: {fileID: 0}
+  target: {fileID: 11400000, guid: bfac95677aa908f46a00deaf667768cf, type: 2}
+  hastarget: {fileID: 11400000, guid: 0b5e8e33f6a1919438ef47f4a7b0482d, type: 2}
+--- !u!54 &-2583254906996918007
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8232281656054683095}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

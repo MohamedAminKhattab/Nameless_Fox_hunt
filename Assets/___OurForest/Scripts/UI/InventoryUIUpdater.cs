@@ -15,8 +15,12 @@ public class InventoryUIUpdater : MonoBehaviour
     [SerializeField] TMP_Text Capacity;
     [SerializeField] TMP_Text fullcapacity;
     [SerializeField] GameManager _GM;
+
+    public GameManager GM { get => _GM; set => _GM = value; }
+
     private void Start()
     {
+        GM = FindObjectOfType<GameManager>();
         weaponsCount.text = _GM.Inv.GetItemCount(ItemTypes.Weapon).ToString();
         trapsCount.text = _GM.Inv.GetItemCount(ItemTypes.Trap).ToString();
         vinesCount.text = _GM.Inv.GetItemCount(ItemTypes.Vine).ToString();

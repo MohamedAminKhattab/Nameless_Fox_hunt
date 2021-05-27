@@ -14,4 +14,5 @@ public abstract class IInputManager : ScriptableObject
     public abstract bool PickUpWeapon();
     public abstract bool EatFood();
     public abstract bool Crouch();
+    public abstract bool SteelthAttack();
 }

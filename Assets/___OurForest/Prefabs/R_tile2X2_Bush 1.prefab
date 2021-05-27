@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2360080773359622977}
   m_Layer: 0
-  m_Name: R_tile2X2_Bush
+  m_Name: R_tile2X2_Bush 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,7 +125,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7676463790455726927
 MonoBehaviour:

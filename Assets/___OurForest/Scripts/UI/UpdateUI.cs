@@ -14,8 +14,12 @@ public class UpdateUI : MonoBehaviour
     [SerializeField] TMP_Text weaponsCount;
     [SerializeField] TMP_Text FoodCount;
     [SerializeField] GameManager _GM;
+
+    public GameManager GM { get => _GM; set => _GM = value; }
+
     private void Start()
     {
+        GM = FindObjectOfType<GameManager>();
         rockCount.text = _GM.Inv.GetItemCount(ItemTypes.Rock).ToString();
         woodCount.text = _GM.Inv.GetItemCount(ItemTypes.Wood).ToString();
         vinesCount.text = _GM.Inv.GetItemCount(ItemTypes.Vine).ToString();

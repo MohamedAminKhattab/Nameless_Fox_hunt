@@ -1,36 +1,40 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnvironmentManager : MonoBehaviour
 {
-    [SerializeField]List<Tile> tiles = new List<Tile>(1500);
-    [SerializeField] GameObject [] LevelPrefabs= new GameObject[10];
+    [SerializeField] List<Tile> tiles = new List<Tile>(1500);
+    [SerializeField] GameObject[] LevelPrefabs = new GameObject[10];
     [SerializeField] List<SpawnPoint> spawnPoints;
-    [SerializeField] string levelNumber;
+    [SerializeField] IntegerSO selectedLevel;
     [SerializeField] GameObject currentLevel;
+    [SerializeField] EventSO LevelLoadedEvent;
     [SerializeField] GameManager _GM;
+    [SerializeField] NavMeshSurface surface;
 
-    public string LevelNumber { get => levelNumber; set => levelNumber = value; }
+    public GameManager GM { get => _GM; set => _GM = value; }
 
     private void Start()
     {
+        GM = FindObjectOfType<GameManager>();
         spawnPoints = new List<SpawnPoint>();
-        Load(LevelNumber);
+        Load();
     }
-    private void Load(string Number)
+    private void Load()
     {
-        int.TryParse(Number, out int number);
-        currentLevel = Instantiate(LevelPrefabs[number], transform);
+        currentLevel = Instantiate(LevelPrefabs[selectedLevel.value], transform);
         tiles = GetComponentsInChildren<Tile>().ToList<Tile>();
         spawnPoints = GetComponentsInChildren<SpawnPoint>().ToList<SpawnPoint>();
         foreach (var sp in spawnPoints)
         {
             sp.GM = _GM;
         }
-        _GM.StartLevel();
-        _GM.SpawnEnemies();
+        surface.BuildNavMesh();
+        LevelLoadedEvent.Raise();
     }
     public List<Tile> GetResourceTiles()
     {

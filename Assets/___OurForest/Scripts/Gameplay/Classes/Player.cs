@@ -19,12 +19,6 @@ public class Player : MonoBehaviour
     [SerializeField]
     BoolSO eatFood;
     GameObject obj;
-    GameObject layerHit;
-    [SerializeField]
-    LayerMask layerMask;
-    [SerializeField]
-    float hitDistance;
-    string collisionTag;
     Vector3 collison;
     [SerializeField]
     BoolSO FetchAnim;
@@ -36,9 +30,20 @@ public class Player : MonoBehaviour
     BoolSO HideAnim;
     [SerializeField]
     GameManager _GM;
+    [SerializeField]
+    HealthSO playerHealth;
+    [SerializeField]
+    float initialHealth = 100;
+    [SerializeField]
+    float healingPoints = 15;
+    [SerializeField]
+    float damagePoints = 5;
+    [SerializeField]
+    EventSO playerDeath;
     string resource = "";
     bool canEatFood;
-
+    [SerializeField]
+    BoolSO inInput;
     public GameManager GM { get => _GM; set => _GM = value; }
 
     void Start()
@@ -49,41 +54,65 @@ public class Player : MonoBehaviour
         EatAnim.state = false;
         canEatFood = false;
         HideAnim.state = false;
+        playerHealth.initialHealth = initialHealth;
+        playerHealth.Death = playerDeath;
+        playerHealth.dead = false;
         //_GM.Inv.Capacity = 0;
     }
 
     void Update()
     {
-        Ray ray = new Ray(this.transform.position, this.transform.forward);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, hitDistance))
+        
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.gameObject.CompareTag("bullet"))
         {
-            layerHit = hit.transform.gameObject;
-            collison = hit.point;
-            collisionTag = layerHit.tag;
-            if (collisionTag == "Vine")
-            {
-                CollectResource();
-                resource = "Vine";
-            }
-            if (collisionTag == "Rock")
-            {
-                CollectResource();
-                resource = "Rock";
-            }
-            if (collisionTag == "Food")
-                PickUpFood();
-            if (collisionTag == "Wood")
-                CutWood();
-            if (collisionTag == "Weapon")
-                PickUpWeapon();
+            playerHealth.ApplyDamage(damagePoints);
+            //Debug.Log(playerHealth.currentHealth);
         }
     }
     void OnTriggerEnter(Collider other)
     {
         //Debug.Log("Trigger Entered");
-        if (other.gameObject.tag == "Bush")
+        if (other.gameObject.CompareTag("Bush"))
+        {
             HideAnim.state = true;
+            Debug.Log("hiding");
+        }
+        if (other.gameObject.CompareTag("bullet"))
+        {
+            playerHealth.ApplyDamage(damagePoints);
+            //Debug.Log(playerHealth.currentHealth);
+        }
+        
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (inInput.state)
+        {
+            if (collision.gameObject.CompareTag("Vine"))
+            {
+                CollectResource();
+                resource = "Vine";
+            }
+            if (collision.gameObject.CompareTag("Rock"))
+            {
+                CollectResource();
+                resource = "Rock";
+            }
+            if (collision.gameObject.CompareTag("Food"))
+                PickUpFood();
+
+            if (collision.gameObject.CompareTag("Wood"))
+                CutWood();
+
+            if (collision.gameObject.CompareTag("Weapon"))
+                PickUpWeapon();
+
+            obj = collision.gameObject;
+        }
     }
     void FixedUpdate()
     {
@@ -99,17 +128,21 @@ public class Player : MonoBehaviour
     {
         if (pickUpFood.state)
         {
+            pickUpFood.state = false;
+            inInput.state = false;
             FetchAnim.state = true;
             StartCoroutine(Fetching());
             //Add to inventory
             _GM.Inv.AddItem(ItemTypes.Food);
-            //Debug.Log("Food");
+            //Debug.Log("pick up Food");
         }
     }
     void CutWood()
     {
         if (cutWood.state)
         {
+            cutWood.state = false;
+            inInput.state = false;
             CutAnim.state = true;
             StartCoroutine(CuttingWood());
             //Add to inventory
@@ -120,6 +153,8 @@ public class Player : MonoBehaviour
     {
         if (collectResource.state)
         {
+            collectResource.state = false;
+            inInput.state = false;
             FetchAnim.state = true;
             StartCoroutine(Fetching());
             //Add to inventory
@@ -134,6 +169,8 @@ public class Player : MonoBehaviour
     {
         if (pickUpWeapon.state)
         {
+            pickUpWeapon.state = false;
+            inInput.state = false;
             FetchAnim.state = true;
             StartCoroutine(Fetching());
             //Add to inventory
@@ -143,11 +180,18 @@ public class Player : MonoBehaviour
     }
     void CanEat()
     {
-        canEatFood = _GM.Inv.UseItem(ItemTypes.Food, 1);
+        canEatFood = _GM.Inv.GetItemCount(ItemTypes.Food) > 0;
+       // Debug.Log(playerHealth.currentHealth);
         if (canEatFood)
         {
-            EatAnim.state = true;
-            StartCoroutine(Eating());
+            if (playerHealth.currentHealth < playerHealth.initialHealth)
+            {
+                _GM.Inv.UseItem(ItemTypes.Food, 1);
+                playerHealth.Healing(healingPoints);
+                EatAnim.state = true;
+                StartCoroutine(Eating());
+               // Debug.Log(playerHealth.currentHealth);
+            }
         }
     }
     IEnumerator CuttingWood()
@@ -155,7 +199,7 @@ public class Player : MonoBehaviour
         var wait = new WaitForSeconds(8.0f);
         //Debug.Log("Wait");
         yield return wait;
-        Destroy(layerHit);
+        Destroy(obj);
     }
 
     IEnumerator Fetching()
@@ -163,12 +207,15 @@ public class Player : MonoBehaviour
         var wait = new WaitForSeconds(5.0f);
         //Debug.Log("Wait");
         yield return wait;
-        Destroy(layerHit);
+        Destroy(obj);
+       // Debug.Log(obj.tag);
+        
     }
     IEnumerator Eating()
     {
         var wait = new WaitForSeconds(3.0f);
         yield return wait;
+
     }
     private void OnDrawGizmos()
     {

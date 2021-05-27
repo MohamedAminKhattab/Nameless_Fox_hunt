@@ -10,7 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8530145609774373357}
   - component: {fileID: 8530145609774373358}
-  - component: {fileID: -3175550930309290948}
+  - component: {fileID: 7342326961803000935}
+  - component: {fileID: 8404798601930685678}
+  - component: {fileID: 582448560369363392}
+  - component: {fileID: 746464935}
+  - component: {fileID: 6329380623858850815}
+  - component: {fileID: 847930812}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -52,14 +57,64 @@ MonoBehaviour:
   - {fileID: 0}
   playerWon: {fileID: 11400000, guid: 5bba911e0fcb0f94185c7c1b054f4eb6, type: 2}
   gameOver: {fileID: 11400000, guid: 9f64f56becb26a24da4d1af74e89493b, type: 2}
+  togamePlay: {fileID: 11400000, guid: cea3b9addbb29e048bd07592e7796300, type: 2}
   foxPrefab: {fileID: 8232281656054683095, guid: f1600080c5d346a47bf9f3175b199541, type: 3}
   fox: {fileID: 0}
   playerPrefab: {fileID: 6845774844251762932, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
   _EM: {fileID: 0}
+  spawnrate: 1
+  _UM: {fileID: 0}
   LevelWaveCount: 3
   currentwave: 1
   currentTroopCount: 0
---- !u!114 &-3175550930309290948
+  onPlayerWon: {fileID: 11400000, guid: 09cae5c3fe051434e9f6f6d669309f06, type: 2}
+  onPlayerLost: {fileID: 11400000, guid: 59ba0f51fa3cb3f41bb79aad46b85258, type: 2}
+  changecountenemy: {fileID: 11400000, guid: 3410f905c6c90834b9cfb0496dd05f4d, type: 2}
+--- !u!114 &7342326961803000935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8530145609774373359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeaac5b70431388409b1f5b0a58e6b16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  needTrap: {fileID: 11400000, guid: 06689c3572e4ed94aaabfa80f39cc508, type: 2}
+  trapLocation: {fileID: 11400000, guid: 0a71e172541139944b0f924235fee262, type: 2}
+  trapPrefab: {fileID: 4586435710400259806, guid: 6c608c118fef457448c09c42b3eee2cf, type: 3}
+  _GM: {fileID: 8530145609774373358}
+--- !u!114 &8404798601930685678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8530145609774373359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16107bf2ed0454b4abe4033c4b149816, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemytargetSO: {fileID: 11400000, guid: 6f00ffae9c325fc40b69e985447679d0, type: 2}
+  hasEnemyTarget: {fileID: 11400000, guid: 78c6080c85526a04a92d8ea535447bc9, type: 2}
+--- !u!114 &582448560369363392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8530145609774373359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cb0992cf0ba58542b1c4449c713b6f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSO: {fileID: 11400000, guid: bfac95677aa908f46a00deaf667768cf, type: 2}
+  hasTarget: {fileID: 11400000, guid: 0b5e8e33f6a1919438ef47f4a7b0482d, type: 2}
+--- !u!114 &746464935
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,13 +126,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f564d6ce0be49c943a561bfc80a57b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventSo: {fileID: 11400000, guid: 932e8ae6a0ba0cb4ba40d99db3cbac5b, type: 2}
+  eventSo: {fileID: 11400000, guid: 4f66b16f9fe4584428f523303f5c83a6, type: 2}
   OnRaise:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8530145609774373358}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: OnEnemyDied
+        m_MethodName: StartLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6329380623858850815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8530145609774373359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f564d6ce0be49c943a561bfc80a57b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSo: {fileID: 11400000, guid: bed96d6d2f8732b459a068d36f9f4c9b, type: 2}
+  OnRaise:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8530145609774373358}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: OnPlayerDied
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &847930812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8530145609774373359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f564d6ce0be49c943a561bfc80a57b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSo: {fileID: 11400000, guid: b0b55919835c4d04b93e5cfe4e44d932, type: 2}
+  OnRaise:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8530145609774373358}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: OnPlayerDied
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
