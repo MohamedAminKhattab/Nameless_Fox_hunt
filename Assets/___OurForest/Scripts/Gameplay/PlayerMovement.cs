@@ -15,10 +15,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     Vector2SO joyStickMovement;
     Vector3 moveVec;
+    Vector3 movementDirection;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
+        moveVec = Vector3.zero;
     }
 
 
@@ -26,11 +27,16 @@ public class PlayerMovement : MonoBehaviour
     {
         moveVec.x = joyStickMovement.value.x;
         moveVec.z = joyStickMovement.value.y;
-        moveVec.y = 0;
-        rb.velocity = movement.value * speed.value;
         if (moveVec.x != 0 || moveVec.z != 0)
+        {
             rb.velocity = moveVec * speed.value;
-        Vector3 movementDirection = movement.value.normalized;
+            movementDirection = moveVec.normalized;
+        }
+        else
+        {
+            rb.velocity = movement.value * speed.value;
+            movementDirection = movement.value.normalized;
+        }
         if (movementDirection != Vector3.zero)
         {
             Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
