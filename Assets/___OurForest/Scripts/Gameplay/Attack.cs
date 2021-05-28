@@ -36,11 +36,12 @@ public class Attack : MonoBehaviour
             StartCoroutine(Attacking());
         }
     }
-  
+
     IEnumerator Attacking()
     {
-       // Debug.Log("Attacking");
+        // Debug.Log("Attacking");
         attackAnim.state = true;
+        //Debug.Log(attackAnim.state);
         var wait = new WaitForSeconds(1f);
         yield return wait;
         if (_GM.Inv.GetItemCount(ItemTypes.Weapon) > 0)

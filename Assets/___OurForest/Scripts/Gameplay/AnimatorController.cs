@@ -33,7 +33,7 @@ public class AnimatorController : MonoBehaviour
     [SerializeField]
     BoolSO crouchAnim;
     [SerializeField]
-    BoolSO attackAnim; 
+    BoolSO attackAnim;
     [SerializeField]
     BoolSO attack;
     [SerializeField]
@@ -81,12 +81,12 @@ public class AnimatorController : MonoBehaviour
         }
         velocity = Mathf.Clamp(velocity, 0.0f, 1.0f);
 
-     
-       // Debug.Log(crouchAnim.state);
+
+        // Debug.Log(crouchAnim.state);
 
         if (crouch.state)
             crouchAnim.state = true;
-        
+
         else
             crouchAnim.state = false;
 
@@ -98,13 +98,14 @@ public class AnimatorController : MonoBehaviour
         animator.SetBool("crouch", crouchAnim.state);
         animator.SetBool("Attack", attackAnim.state);
         animator.SetBool("Hiding", HideAnim.state);
+        Debug.Log(attackAnim.state);
+
         FetchAnim.state = false;
         CutAnim.state = false;
         EatAnim.state = false;
         attackAnim.state = false;
         crouch.state = false;
-        Debug.Log(attackAnim.state);
-       
+
     }
     void OnTriggerEnter(Collider other)
     {
