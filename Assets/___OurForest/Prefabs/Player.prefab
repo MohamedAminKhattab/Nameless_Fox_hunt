@@ -51,6 +51,7 @@ MonoBehaviour:
   attack: {fileID: 11400000, guid: 260ff84e78d53af4ca8536bd4f8b6c50, type: 2}
   _GM: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
   attackAnim: {fileID: 11400000, guid: cbd281dd82f80d1478e42d7b658e3410, type: 2}
+  attackSound: {fileID: 11400000, guid: 92e55bdcd4691bd41a4af3ab53999aaf, type: 2}
 --- !u!1 &6681545930317205851
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,6 +101,7 @@ GameObject:
   - component: {fileID: 5501797777281361872}
   - component: {fileID: 6414698090628605758}
   - component: {fileID: 8609958561429769038}
+  - component: {fileID: -5174629986372226722}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -148,11 +150,14 @@ MonoBehaviour:
   HideAnim: {fileID: 11400000, guid: 7187870772591e54f811f34aca372dc6, type: 2}
   _GM: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
   playerHealth: {fileID: 11400000, guid: 995eb8ff6ee44984f9945bb81080d729, type: 2}
-  initialHealth: 100
+  initialHealth: 5
   healingPoints: 15
   damagePoints: 5
   playerDeath: {fileID: 11400000, guid: bed96d6d2f8732b459a068d36f9f4c9b, type: 2}
   inInput: {fileID: 11400000, guid: 95ead26868e851644a1773ca7ddb2107, type: 2}
+  eatingSound: {fileID: 11400000, guid: 9702d34104401b5408fe06376a94c0dc, type: 2}
+  fetchingSound: {fileID: 11400000, guid: aa8039585c2bd11478cda83e2ebf1b70, type: 2}
+  playerDeathSound: {fileID: 11400000, guid: 8ebcb618a9928284699e895efe6e8201, type: 2}
 --- !u!114 &6845774844251762930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,6 +338,27 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.03, y: 0.81, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &-5174629986372226722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6845774844251762932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dc3b483edead804db25aaa514b7ae75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSound: {fileID: 11400000, guid: 92e55bdcd4691bd41a4af3ab53999aaf, type: 2}
+  eatingSound: {fileID: 11400000, guid: 9702d34104401b5408fe06376a94c0dc, type: 2}
+  enemyDeathSound: {fileID: 11400000, guid: ff71b8f5477a9df4384828e31932dfca, type: 2}
+  fetchingSound: {fileID: 11400000, guid: aa8039585c2bd11478cda83e2ebf1b70, type: 2}
+  enemyFootSound: {fileID: 11400000, guid: 332b5356e478e684eb5424d9feef032f, type: 2}
+  foxLuringSound: {fileID: 11400000, guid: 4209e8bc39a654946aadeda23ddf98f0, type: 2}
+  winningSound: {fileID: 11400000, guid: 5bba911e0fcb0f94185c7c1b054f4eb6, type: 2}
+  playerDeathSound: {fileID: 11400000, guid: 8ebcb618a9928284699e895efe6e8201, type: 2}
+  craftingSound: {fileID: 11400000, guid: 50b92ec5840ada040b1d78859d8b025e, type: 2}
 --- !u!1001 &3508633953924682459
 PrefabInstance:
   m_ObjectHideFlags: 0

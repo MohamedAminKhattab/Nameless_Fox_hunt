@@ -45,8 +45,137 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Background
-    clip: {fileID: 8300000, guid: a8353c6697e11bd4196a605a3ac3b8e7, type: 3}
+    clip: {fileID: 8300000, guid: ae974498122cbba4f9f50e2d50ed85f6, type: 3}
     volume: 0.992
-    pitch: 0.1
+    pitch: 1
+    loop: 1
+    spatialBlend: 0
+    output: {fileID: 24300002, guid: c94d04526468f08409c7cd480da89459, type: 2}
+    volumeRolloff: 1
+    source: {fileID: 0}
+  - name: Arrow
+    clip: {fileID: 8300000, guid: f295554109554324aad15b3c719d83f8, type: 3}
+    volume: 0.815
+    pitch: 1
     loop: 0
+    spatialBlend: 1
+    output: {fileID: 24300002, guid: c94d04526468f08409c7cd480da89459, type: 2}
+    volumeRolloff: 1
+    source: {fileID: 0}
+  - name: Eating
+    clip: {fileID: 8300000, guid: 6c00b517c2f0444408d4be8f9298ba48, type: 3}
+    volume: 0.992
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    output: {fileID: 24300002, guid: c94d04526468f08409c7cd480da89459, type: 2}
+    volumeRolloff: 1
+    source: {fileID: 0}
+  - name: EnemyDeath
+    clip: {fileID: 8300000, guid: ef444d339be5f264c9553e8068941d71, type: 3}
+    volume: 0.992
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    output: {fileID: 24300002, guid: c94d04526468f08409c7cd480da89459, type: 2}
+    volumeRolloff: 1
+    source: {fileID: 0}
+  - name: Fetch
+    clip: {fileID: 8300000, guid: f956b2a949477bc46877a1f19c33cd68, type: 3}
+    volume: 0.992
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    output: {fileID: 24300002, guid: c94d04526468f08409c7cd480da89459, type: 2}
+    volumeRolloff: 1
+    source: {fileID: 0}
+  - name: PlayerFoot
+    clip: {fileID: 8300000, guid: fde4ecd1ef12c3940afe98ca82fd6baa, type: 3}
+    volume: 0.5
+    pitch: 0.45
+    loop: 0
+    spatialBlend: 1
+    output: {fileID: 24300002, guid: c94d04526468f08409c7cd480da89459, type: 2}
+    volumeRolloff: 1
+    source: {fileID: 0}
+  - name: EnemyFoot
+    clip: {fileID: 8300000, guid: fde4ecd1ef12c3940afe98ca82fd6baa, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    output: {fileID: 24300002, guid: c94d04526468f08409c7cd480da89459, type: 2}
+    volumeRolloff: 1
+    source: {fileID: 0}
+  - name: Fox
+    clip: {fileID: 8300000, guid: 5f644d5cd46b01143aa164724102292c, type: 3}
+    volume: 0.759
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    output: {fileID: 24300002, guid: c94d04526468f08409c7cd480da89459, type: 2}
+    volumeRolloff: 1
+    source: {fileID: 0}
+  - name: GameOver
+    clip: {fileID: 8300000, guid: ae974498122cbba4f9f50e2d50ed85f6, type: 3}
+    volume: 0.992
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    output: {fileID: 24300002, guid: c94d04526468f08409c7cd480da89459, type: 2}
+    volumeRolloff: 1
+    source: {fileID: 0}
+  - name: Grass
+    clip: {fileID: 8300000, guid: d9e35155f4708384f8feea5bd302e340, type: 3}
+    volume: 0.791
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    output: {fileID: 24300002, guid: c94d04526468f08409c7cd480da89459, type: 2}
+    volumeRolloff: 1
+    source: {fileID: 0}
+  - name: Gun
+    clip: {fileID: 8300000, guid: 857f7d3f3b8d1714d8e49034950870e6, type: 3}
+    volume: 0.992
+    pitch: 1
+    loop: 0
+    spatialBlend: 1
+    output: {fileID: 24300002, guid: c94d04526468f08409c7cd480da89459, type: 2}
+    volumeRolloff: 1
+    source: {fileID: 0}
+  - name: Win
+    clip: {fileID: 8300000, guid: e56e5c57f79b452429326b44fc05c858, type: 3}
+    volume: 0.992
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    output: {fileID: 24300002, guid: c94d04526468f08409c7cd480da89459, type: 2}
+    volumeRolloff: 1
+    source: {fileID: 0}
+  - name: Wind
+    clip: {fileID: 8300000, guid: 52aaab178c2db4544a824af7c48b6038, type: 3}
+    volume: 0.33
+    pitch: 0.45
+    loop: 1
+    spatialBlend: 1
+    output: {fileID: 24300002, guid: c94d04526468f08409c7cd480da89459, type: 2}
+    volumeRolloff: 1
+    source: {fileID: 0}
+  - name: YelenaDeath
+    clip: {fileID: 8300000, guid: e6f32d98fc6744f43a2b136b3a7d4e98, type: 3}
+    volume: 0.871
+    pitch: 1.11
+    loop: 0
+    spatialBlend: 1
+    output: {fileID: 24300002, guid: c94d04526468f08409c7cd480da89459, type: 2}
+    volumeRolloff: 1
+    source: {fileID: 0}
+  - name: Craft
+    clip: {fileID: 8300000, guid: dfc13cfe572b9e440a2de0972cfca04e, type: 3}
+    volume: 1
+    pitch: 1.48
+    loop: 0
+    spatialBlend: 1
+    output: {fileID: 24300002, guid: c94d04526468f08409c7cd480da89459, type: 2}
+    volumeRolloff: 1
     source: {fileID: 0}

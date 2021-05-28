@@ -11,6 +11,10 @@ public class Sound
     [Range(0.1f, 3f)]
     public float pitch;
     public bool loop;
+    [Range(0f, 1f)]
+    public float spatialBlend;
+    public AudioMixerGroup output;
+    public AudioRolloffMode volumeRolloff;
     [HideInInspector]
     public AudioSource source;
 
