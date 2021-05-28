@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.gameObject.CompareTag("bullet"))
+        if (collision.collider.gameObject.CompareTag("Bullet"))
         {
             playerHealth.ApplyDamage(damagePoints);
             //Debug.Log(playerHealth.currentHealth);
