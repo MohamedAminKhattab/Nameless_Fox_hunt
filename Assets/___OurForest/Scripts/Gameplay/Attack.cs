@@ -20,12 +20,14 @@ public class Attack : MonoBehaviour
     BoolSO attackAnim;
     [SerializeField]
     BoolSO attackSound;
+    bool instantiateArrow;
 
     public GameManager GM { get => _GM; set => _GM = value; }
 
     void Start()
     {
         attackSound.state = false;
+        instantiateArrow = false;
     }
 
     void Update()
@@ -34,7 +36,21 @@ public class Attack : MonoBehaviour
         {
             attack.state = false;
             StartCoroutine(Attacking());
+            if (instantiateArrow)
+            {
+                instantiateArrow = false;
+                if (_GM.Inv.GetItemCount(ItemTypes.Weapon) > 0)
+                {
+                    attackSound.state = true;
+                    Debug.LogWarning($"ArrowAmount {_GM.Inv.GetItemCount(ItemTypes.Weapon)}");
+                    _GM.Inv.UseItem(ItemTypes.Weapon, 1);
+                    GameObject arrowInst = Instantiate(arrowPrefab, arrowSpawn.position, Quaternion.identity);
+                    Rigidbody rb = arrowInst.GetComponent<Rigidbody>();
+                    rb.velocity = player.transform.forward * shootForce;
+                }
+            }
         }
+    
     }
 
     IEnumerator Attacking()
@@ -42,18 +58,9 @@ public class Attack : MonoBehaviour
         // Debug.Log("Attacking");
         attackAnim.state = true;
         //Debug.Log(attackAnim.state);
-        var wait = new WaitForSeconds(1f);
+        var wait = new WaitForSeconds(1.5f);
         yield return wait;
-        if (_GM.Inv.GetItemCount(ItemTypes.Weapon) > 0)
-        {
-            attackSound.state = true;
-            //Debug.LogWarning($"ArrowAmount {_GM.Inv.GetItemCount(ItemTypes.Weapon)}");
-            _GM.Inv.UseItem(ItemTypes.Weapon, 1);
-            GameObject arrowInst = Instantiate(arrowPrefab, arrowSpawn.position, arrowSpawn.rotation);
-            Rigidbody rb = arrowInst.GetComponent<Rigidbody>();
-            rb.velocity = player.transform.forward * shootForce;
-        }
-
+        instantiateArrow = true;
         // attack.state = false;
     }
 }
