@@ -44,6 +44,12 @@ public class Player : MonoBehaviour
     bool canEatFood;
     [SerializeField]
     BoolSO inInput;
+    [SerializeField]
+    BoolSO eatingSound;
+    [SerializeField]
+    BoolSO fetchingSound;
+    [SerializeField]
+    BoolSO playerDeathSound;
     public GameManager GM { get => _GM; set => _GM = value; }
 
     void Start()
@@ -62,7 +68,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        
+        if (playerHealth.dead)
+            playerDeathSound.state = true;
     }
     void OnCollisionEnter(Collision collision)
     {
@@ -75,12 +82,12 @@ public class Player : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         //Debug.Log("Trigger Entered");
-        if (other.gameObject.CompareTag("bullet"))
+        if (other.gameObject.CompareTag("Bullet"))
         {
             playerHealth.ApplyDamage(damagePoints);
             //Debug.Log(playerHealth.currentHealth);
         }
-        
+
     }
 
     private void OnCollisionStay(Collision collision)
@@ -126,6 +133,7 @@ public class Player : MonoBehaviour
             pickUpFood.state = false;
             inInput.state = false;
             FetchAnim.state = true;
+            fetchingSound.state = true;
             StartCoroutine(Fetching());
             //Add to inventory
             _GM.Inv.AddItem(ItemTypes.Food);
@@ -139,6 +147,7 @@ public class Player : MonoBehaviour
             cutWood.state = false;
             inInput.state = false;
             CutAnim.state = true;
+            fetchingSound.state = true;
             StartCoroutine(CuttingWood());
             //Add to inventory
             _GM.Inv.AddItem(ItemTypes.Wood);
@@ -151,6 +160,7 @@ public class Player : MonoBehaviour
             collectResource.state = false;
             inInput.state = false;
             FetchAnim.state = true;
+            fetchingSound.state = true;
             StartCoroutine(Fetching());
             //Add to inventory
             if (resource == "Vine")
@@ -176,7 +186,7 @@ public class Player : MonoBehaviour
     void CanEat()
     {
         canEatFood = _GM.Inv.GetItemCount(ItemTypes.Food) > 0;
-       // Debug.Log(playerHealth.currentHealth);
+        // Debug.Log(playerHealth.currentHealth);
         if (canEatFood)
         {
             if (playerHealth.currentHealth < playerHealth.initialHealth)
@@ -184,8 +194,9 @@ public class Player : MonoBehaviour
                 _GM.Inv.UseItem(ItemTypes.Food, 1);
                 playerHealth.Healing(healingPoints);
                 EatAnim.state = true;
+                eatingSound.state = true;
                 StartCoroutine(Eating());
-               // Debug.Log(playerHealth.currentHealth);
+                // Debug.Log(playerHealth.currentHealth);
             }
         }
     }
@@ -203,8 +214,8 @@ public class Player : MonoBehaviour
         //Debug.Log("Wait");
         yield return wait;
         Destroy(obj);
-       // Debug.Log(obj.tag);
-        
+        // Debug.Log(obj.tag);
+
     }
     IEnumerator Eating()
     {

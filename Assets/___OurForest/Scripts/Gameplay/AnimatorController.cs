@@ -103,6 +103,7 @@ public class AnimatorController : MonoBehaviour
         EatAnim.state = false;
         attackAnim.state = false;
         crouch.state = false;
+        Debug.Log(attackAnim.state);
        
     }
     void OnTriggerEnter(Collider other)

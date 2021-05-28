@@ -18,11 +18,14 @@ public class Attack : MonoBehaviour
     GameManager _GM;
     [SerializeField]
     BoolSO attackAnim;
+    [SerializeField]
+    BoolSO attackSound;
 
     public GameManager GM { get => _GM; set => _GM = value; }
 
     void Start()
     {
+        attackSound.state = false;
     }
 
     void Update()
@@ -42,7 +45,8 @@ public class Attack : MonoBehaviour
         yield return wait;
         if (_GM.Inv.GetItemCount(ItemTypes.Weapon) > 0)
         {
-            Debug.LogWarning($"ArrowAmount {_GM.Inv.GetItemCount(ItemTypes.Weapon)}");
+            attackSound.state = true;
+            //Debug.LogWarning($"ArrowAmount {_GM.Inv.GetItemCount(ItemTypes.Weapon)}");
             _GM.Inv.UseItem(ItemTypes.Weapon, 1);
             GameObject arrowInst = Instantiate(arrowPrefab, arrowSpawn.position, arrowSpawn.rotation);
             Rigidbody rb = arrowInst.GetComponent<Rigidbody>();
