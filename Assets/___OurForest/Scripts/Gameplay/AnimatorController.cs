@@ -98,7 +98,7 @@ public class AnimatorController : MonoBehaviour
         animator.SetBool("crouch", crouchAnim.state);
         animator.SetBool("Attack", attackAnim.state);
         animator.SetBool("Hiding", HideAnim.state);
-        Debug.Log(attackAnim.state);
+       // Debug.Log(attackAnim.state);
 
         FetchAnim.state = false;
         CutAnim.state = false;
@@ -113,7 +113,7 @@ public class AnimatorController : MonoBehaviour
         {
             HideAnim.state = true;
             animator.SetBool("Hiding", HideAnim.state);
-            Debug.Log("hiding");
+            //Debug.Log("hiding");
         }
     }
     void OnTriggerExit(Collider other)
