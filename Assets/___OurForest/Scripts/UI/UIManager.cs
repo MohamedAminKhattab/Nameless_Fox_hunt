@@ -123,6 +123,7 @@ public class UIManager : MonoBehaviour
     {
         if (playerWon.state == true)
         {
+            StartCoroutine(WaitforDead());
             Time.timeScale = 0.0f;
             gamePaused.state = true;
             clearCanvas.gameObject.SetActive(true);
@@ -134,10 +135,15 @@ public class UIManager : MonoBehaviour
     {
         if (gameOver.state == true)
         {
+            StartCoroutine(WaitforDead());
             Time.timeScale = 0.0f;
             gamePaused.state = true;
             lostCanvas.gameObject.SetActive(true);
             gameUI.gameObject.SetActive(false);
         }
+    }
+    IEnumerator WaitforDead()
+    {
+        yield return new WaitForSeconds(3);
     }
 }

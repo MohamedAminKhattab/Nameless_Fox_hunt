@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public int CurrentTroopCount { get => currentTroopCount; set => currentTroopCount = value; }
     public List<SpawnPoint> SpawnPoints { get => spawnPoints; }
 
+    [SerializeField] Camera UICamera;
     [SerializeField] Player player;
     [SerializeField] CameraFollow cfollow;
     [SerializeField] List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
@@ -66,6 +67,7 @@ public class GameManager : MonoBehaviour
         fox.GetComponent<FoxInventory>().Gm = this;
         spawnPoints = _EM.GetComponentsInChildren<SpawnPoint>().ToList<SpawnPoint>();
         cfollow.Target = player.transform;
+        UICamera.gameObject.SetActive(false);
         currentwave = 1;
         currentTroopCount = 0;
         inv.AddItem(ItemTypes.Trap);

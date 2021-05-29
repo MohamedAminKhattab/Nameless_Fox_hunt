@@ -34,7 +34,5 @@ public class trapBehaviour : MonoBehaviour
            
             Destroy(this.gameObject);
         }
-        //other.gameObject.SetActive(false);
-
     }
 }

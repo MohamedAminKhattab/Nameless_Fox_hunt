@@ -282,7 +282,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1376610830437040698, guid: 7ef86da57d56f0845853002ec7f1c292, type: 3}
       propertyPath: m_Name
-      value: Main Camera (3)
+      value: Main Camera
       objectReference: {fileID: 0}
     - target: {fileID: 5696029072918637929, guid: 7ef86da57d56f0845853002ec7f1c292, type: 3}
       propertyPath: m_Pivot.x
