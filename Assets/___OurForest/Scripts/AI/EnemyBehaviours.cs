@@ -46,6 +46,7 @@ public class EnemyBehaviours : MonoBehaviour
     private void Update()
     {
         anim.SetBool("speed", !agent.isStopped);
+        anim.SetBool("chase", enemyState==EnemyState.chasingFox);
         if (Input.GetKeyDown(KeyCode.Space))
             Die();
 
@@ -58,9 +59,10 @@ public class EnemyBehaviours : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag.Equals("Arrow")) //todo run animations 
+        if(other.tag.Equals("Arrow")|| other.tag.Equals("Trap")) 
         {
-           
+            Debug.Log("Dead");
+            Die();
         }
     }
 
@@ -87,6 +89,7 @@ public class EnemyBehaviours : MonoBehaviour
             {
                 enemyState = EnemyState.chasingFox;
                 agent.speed = 3;
+                
                 //soundSystem.PlayEnemySound(enemyState);
                 Task.current.Succeed();
                 return;
@@ -103,9 +106,15 @@ public class EnemyBehaviours : MonoBehaviour
     public void ShouldShoot()
     {
         if (enemyState == EnemyState.shooting)
+        {
             Task.current.Succeed();
+            anim.SetBool("shooting", true);
+        }
         else
+        {
+            anim.SetBool("shooting", false);
             Task.current.Fail();
+        }
     }
     [Task]
     public void MoveToTarget()
@@ -138,11 +147,7 @@ public class EnemyBehaviours : MonoBehaviour
         return enemyState !=EnemyState.goingToHouse;
 
     }
-    [Task]
-    public void DoNothingForNow()
-    {
-        Task.current.Succeed();
-    }
+   
     [Task]
     public void Aim()
     {
@@ -170,7 +175,7 @@ public class EnemyBehaviours : MonoBehaviour
         
         soundSystem.PlayEnemySound(enemyState);
         GameObject go = Instantiate(bullet, Gun.position, transform.rotation);
-        go.AddComponent<Rigidbody>().AddForce(transform.forward * 500);
+        go.AddComponent<Rigidbody>().AddForce(Gun.transform.forward * 500);
         Task.current.Succeed();
     }
     #endregion

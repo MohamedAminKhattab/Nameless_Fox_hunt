@@ -31,7 +31,7 @@ public class trapBehaviour : MonoBehaviour
                 default:
                     break;
             }
-            Destroy(other.gameObject);
+           
             Destroy(this.gameObject);
         }
         //other.gameObject.SetActive(false);
