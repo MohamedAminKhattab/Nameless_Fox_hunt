@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e06697e6d7ee8c94185bfab8b0820b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UICamera: {fileID: 0}
   player: {fileID: 0}
   cfollow: {fileID: 0}
   spawnPoints:

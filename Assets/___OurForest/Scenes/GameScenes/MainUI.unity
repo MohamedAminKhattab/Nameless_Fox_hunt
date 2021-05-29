@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &255608199 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2363840395412855820, guid: 5090474621cd98b40b6b24366f3125da, type: 3}
+  m_PrefabInstance: {fileID: 399991773}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f276cf3870526ed40a52613867586d4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &399991773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,6 +141,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2363840395412855820, guid: 5090474621cd98b40b6b24366f3125da, type: 3}
+      propertyPath: _GM
+      value: 
+      objectReference: {fileID: 610625923}
     - target: {fileID: 2363840395412855821, guid: 5090474621cd98b40b6b24366f3125da, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -232,9 +247,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
+      propertyPath: _EM
+      value: 
+      objectReference: {fileID: 255608199}
+    - target: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
       propertyPath: _UM
       value: 
       objectReference: {fileID: 1567165433}
+    - target: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
+      propertyPath: UICamera
+      value: 
+      objectReference: {fileID: 516245983}
     - target: {fileID: 8530145609774373359, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
       propertyPath: m_Name
       value: GameManager

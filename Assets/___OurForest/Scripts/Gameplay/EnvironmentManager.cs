@@ -8,9 +8,7 @@ using UnityEngine.AI;
 public class EnvironmentManager : MonoBehaviour
 {
     [SerializeField] List<Tile> tiles = new List<Tile>(1500);
-    [SerializeField] GameObject[] LevelPrefabs = new GameObject[10];
     [SerializeField] List<SpawnPoint> spawnPoints;
-    [SerializeField] IntegerSO selectedLevel;
     [SerializeField] GameObject currentLevel;
     [SerializeField] EventSO LevelLoadedEvent;
     [SerializeField] GameManager _GM;
@@ -26,15 +24,15 @@ public class EnvironmentManager : MonoBehaviour
     }
     private void Load()
     {
-        currentLevel = Instantiate(LevelPrefabs[selectedLevel.value], transform);
+        currentLevel = FindObjectOfType<Level>().gameObject;
         tiles = GetComponentsInChildren<Tile>().ToList<Tile>();
-        spawnPoints = GetComponentsInChildren<SpawnPoint>().ToList<SpawnPoint>();
+        spawnPoints = currentLevel.GetComponent<Level>().Spawners;
         foreach (var sp in spawnPoints)
         {
             sp.GM = _GM;
         }
         surface.BuildNavMesh();
-        LevelLoadedEvent.Raise();
+       // LevelLoadedEvent.Raise();
     }
     public List<Tile> GetResourceTiles()
     {
