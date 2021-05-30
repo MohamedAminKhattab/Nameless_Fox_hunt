@@ -8,6 +8,7 @@ public class Targeting : MonoBehaviour
 {
     [SerializeField] TransformSO targetSO;
     [SerializeField] BoolSO hasTarget;
+    [SerializeField] IntegerSO selectedLevel;
     private void Start()
     {
         targetSO.value = null;
@@ -15,7 +16,7 @@ public class Targeting : MonoBehaviour
     }
     private void Update()
     {
-        if(SceneManager.GetActiveScene().name.Contains("Level"))
+        if(SceneManager.GetSceneByName($"Level {selectedLevel.value}").isLoaded)
         {
         if (Input.touchCount > 0)
         {

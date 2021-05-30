@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemytargetSO: {fileID: 11400000, guid: 6f00ffae9c325fc40b69e985447679d0, type: 2}
   hasEnemyTarget: {fileID: 11400000, guid: 78c6080c85526a04a92d8ea535447bc9, type: 2}
+  selectedLevel: {fileID: 11400000, guid: 133a7d7efb8597c42a03ca7844681da8, type: 2}
 --- !u!114 &582448560369363392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,6 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetSO: {fileID: 11400000, guid: bfac95677aa908f46a00deaf667768cf, type: 2}
   hasTarget: {fileID: 11400000, guid: 0b5e8e33f6a1919438ef47f4a7b0482d, type: 2}
+  selectedLevel: {fileID: 11400000, guid: 133a7d7efb8597c42a03ca7844681da8, type: 2}
 --- !u!114 &746464935
 MonoBehaviour:
   m_ObjectHideFlags: 0

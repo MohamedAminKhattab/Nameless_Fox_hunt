@@ -7,6 +7,7 @@ public class TargetingEnemy : MonoBehaviour
 {
     [SerializeField] TransformSO enemytargetSO;
     [SerializeField] BoolSO hasEnemyTarget;
+    [SerializeField] IntegerSO selectedLevel;
     private void Start()
     {
         enemytargetSO.value = null;
@@ -14,7 +15,7 @@ public class TargetingEnemy : MonoBehaviour
     }
     private void Update()
     {
-        if (SceneManager.GetActiveScene().name.Contains("Level"))
+        if (SceneManager.GetSceneByName($"Level {selectedLevel.value}").isLoaded)
         {
             if (Input.touchCount > 0)
             {
