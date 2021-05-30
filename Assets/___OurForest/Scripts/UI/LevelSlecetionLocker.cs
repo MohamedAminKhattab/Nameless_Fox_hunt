@@ -10,7 +10,11 @@ public class LevelSlecetionLocker : MonoBehaviour
     [SerializeField] int levelnumber;
     private void Update()
     {
-        if(levelnumber>save.LastClearedLevel)
+        if(levelnumber<=save.LastClearedLevel)
+        {
+            levelbtn.interactable = true;
+        }
+        else
         {
             levelbtn.interactable = false;
         }

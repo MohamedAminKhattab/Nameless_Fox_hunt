@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PlayerSaveSO
   m_EditorClassIdentifier: 
   lastClearedLevel: 0
-  playerhealth: 95
-  foxhealth: 0
+  playerhealth: 100
+  foxhealth: 100
