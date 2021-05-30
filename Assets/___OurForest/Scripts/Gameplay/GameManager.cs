@@ -116,10 +116,9 @@ public class GameManager : MonoBehaviour
     }
     public void OnEnemyDied()
     {
-        spawnPoints = _EM.GetComponentsInChildren<SpawnPoint>().ToList<SpawnPoint>();
+        spawnPoints = FindObjectsOfType<SpawnPoint>().ToList<SpawnPoint>();
         if (currentTroopCount < 1 && currentwave < LevelWaveCount)
         {
-            Debug.LogWarning("All enemies died making new ones");      
             StartCoroutine(WaitForWave());
             currentwave++;
         }
@@ -132,8 +131,9 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator WaitForWave()
     {
+        Debug.LogWarning("All enemies died making new ones");
         yield return new WaitForSeconds(spawnrate * 60);
         SpawnEnemies();
-       Debug.LogWarning("new ones");
+        Debug.LogWarning("new ones");
     }
 }
