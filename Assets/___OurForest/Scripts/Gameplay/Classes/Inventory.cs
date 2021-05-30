@@ -13,6 +13,8 @@ public class Inventory
 
     public int MaxCapacity => maxCapacity;
 
+    public List<Item> Itemlist { get => itemlist; set => itemlist = value; }
+
     public Inventory()
     {
         itemlist = new List<Item>(maxCapacity);

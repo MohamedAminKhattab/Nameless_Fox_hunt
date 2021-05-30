@@ -71,6 +71,10 @@ MonoBehaviour:
   onPlayerWon: {fileID: 11400000, guid: 09cae5c3fe051434e9f6f6d669309f06, type: 2}
   onPlayerLost: {fileID: 11400000, guid: 59ba0f51fa3cb3f41bb79aad46b85258, type: 2}
   changecountenemy: {fileID: 11400000, guid: 3410f905c6c90834b9cfb0496dd05f4d, type: 2}
+  save: {fileID: 11400000, guid: 877d53cba0375a04a866fea1a8c523bb, type: 2}
+  selectedLevel: 0
+  foxhealth: {fileID: 11400000, guid: cb84ffe3b29e677448a641a76784c73f, type: 2}
+  playerhealth: {fileID: 11400000, guid: 995eb8ff6ee44984f9945bb81080d729, type: 2}
 --- !u!114 &7342326961803000935
 MonoBehaviour:
   m_ObjectHideFlags: 0

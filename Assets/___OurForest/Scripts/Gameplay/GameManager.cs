@@ -32,6 +32,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] EventSO onPlayerWon;
     [SerializeField] EventSO onPlayerLost;
     [SerializeField] EventSO changecountenemy;
+    [SerializeField] PlayerSaveSO save;
+    [SerializeField] int selectedLevel;
+    [SerializeField] HealthSO foxhealth;
+    [SerializeField] HealthSO playerhealth;
     private static GameManager instance;
     private void Awake()
     {
@@ -40,6 +44,16 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
             inv = new Inventory();
+            inv.AddItem(ItemTypes.Trap);
+            inv.AddItem(ItemTypes.Trap);
+            inv.AddItem(ItemTypes.Trap);
+            inv.AddItem(ItemTypes.Trap);
+            inv.AddItem(ItemTypes.Trap);
+            inv.AddItem(ItemTypes.Weapon);
+            inv.AddItem(ItemTypes.Weapon);
+            inv.AddItem(ItemTypes.Weapon);
+            inv.AddItem(ItemTypes.Weapon);
+            inv.AddItem(ItemTypes.Weapon);
         }
         else if (instance != this)
         {
@@ -82,16 +96,7 @@ public class GameManager : MonoBehaviour
         cfollow.Target = player.transform;
         currentwave = 1;
         currentTroopCount = 0;
-        inv.AddItem(ItemTypes.Trap);
-        inv.AddItem(ItemTypes.Trap);
-        inv.AddItem(ItemTypes.Trap);
-        inv.AddItem(ItemTypes.Trap);
-        inv.AddItem(ItemTypes.Trap);
-        inv.AddItem(ItemTypes.Weapon);
-        inv.AddItem(ItemTypes.Weapon);
-        inv.AddItem(ItemTypes.Weapon);
-        inv.AddItem(ItemTypes.Weapon);
-        inv.AddItem(ItemTypes.Weapon);
+        save.Load(playerhealth, foxhealth, Inv.Itemlist, selectedLevel);
         foreach (var sp in spawnPoints)
         {
             sp.GM = this;
@@ -112,6 +117,7 @@ public class GameManager : MonoBehaviour
     {
         playerWon.state = false;
         gameOver.state = true;
+        save.Save(playerhealth, foxhealth, Inv.Itemlist, false);
         onPlayerLost.Raise();
     }
     public void OnEnemyDied()
@@ -126,6 +132,7 @@ public class GameManager : MonoBehaviour
         {
             playerWon.state = true;
             gameOver.state = false;
+            save.Save(playerhealth, foxhealth, Inv.Itemlist, true);
             onPlayerWon.Raise();
         }
     }
