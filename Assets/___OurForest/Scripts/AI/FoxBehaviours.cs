@@ -42,6 +42,7 @@ public class FoxBehaviours : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         foxHealth.initialHealth = 100;
+        foxHealth.currentHealth = 100;
         foxHealth.dead = false;
     }
     private void Update()

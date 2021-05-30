@@ -19,7 +19,7 @@ public class PauseButton : MonoBehaviour,IExecutable
         gameUI.gameObject.SetActive(false);
         pausemenu.gameObject.SetActive(true);
         gamepause.state = true;
-        Time.timeScale = 1.0f;
+        Time.timeScale = 0.0f;
     }
 
 }

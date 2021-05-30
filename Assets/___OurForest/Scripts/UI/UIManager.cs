@@ -22,6 +22,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] Canvas levelSelection;
     [SerializeField] Canvas storyBoard;
     [SerializeField] Canvas inventory;
+    [Header("SelectedLevel")]
+    [SerializeField] IntegerSO selectedLevel;
     private static UIManager instance;
     void Awake()
     {
@@ -50,7 +52,7 @@ public class UIManager : MonoBehaviour
 
     public void SetUI()
     {
-        if (SceneManager.GetActiveScene().name == "Integrated GamePlay")
+        if (SceneManager.GetSceneByName($"Level {selectedLevel.value}").isLoaded)
         {
             togameplay.state = true;
             if (togameplay.state == true)
@@ -80,7 +82,7 @@ public class UIManager : MonoBehaviour
                 gameUI.gameObject.SetActive(false);
                 inventory.gameObject.SetActive(false);
             }
-            else
+            else if(togameplay.state==false)
             {
                 mainmenu.gameObject.SetActive(true);
                 levelSelection.gameObject.SetActive(false);
@@ -109,7 +111,7 @@ public class UIManager : MonoBehaviour
                 {
                     Application.Quit();
                 }
-                if (SceneManager.GetActiveScene().name == "Integrated GamePlay")
+                if (SceneManager.GetActiveScene().name.Contains("Level"))
                 {
                     gameUI.gameObject.SetActive(false);
                     pausemenu.gameObject.SetActive(true);

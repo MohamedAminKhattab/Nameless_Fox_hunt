@@ -8,7 +8,12 @@ public class SFXController : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] Toggle sfxToggle;
     [SerializeField] Slider sfxSlider;
+
     void Start()
+    {
+        FindSource();
+    }
+    public void FindSource()
     {
         audioSource = FindObjectOfType<AudioSource>();
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
+    public Transform Target { get => target; set => target = value; }
     [SerializeField]
     Transform target;
     [Range(1f, 40f)]
@@ -13,15 +14,26 @@ public class CameraFollow : MonoBehaviour
     Vector3 offset;
     Vector3 desiredPosition;
 
-    public Transform Target { get => target; set => target = value; }
-
+    private static CameraFollow instance;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
     void FixedUpdate()
     {
-
-        desiredPosition = target.position + offset;
-        transform.position = Vector3.Lerp(transform.position, desiredPosition, 1 / laziness);
-
-        transform.LookAt(target);
-
+        if (target)
+        {
+            desiredPosition = target.position + offset;
+            transform.position = Vector3.Lerp(transform.position, desiredPosition, 1 / laziness);
+            transform.LookAt(target);
+        }
     }
 }

@@ -297,6 +297,7 @@ MonoBehaviour:
   lost: {fileID: 3036997140915910105}
   hud: {fileID: 0}
   gamepaused: {fileID: 11400000, guid: 3ecb782c486c87647b380bd3cfe0b4d6, type: 2}
+  selectedLevel: {fileID: 11400000, guid: 133a7d7efb8597c42a03ca7844681da8, type: 2}
 --- !u!1 &4193990837985869292
 GameObject:
   m_ObjectHideFlags: 0

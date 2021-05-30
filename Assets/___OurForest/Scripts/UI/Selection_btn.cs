@@ -14,7 +14,6 @@ public class Selection_btn : MonoBehaviour, IExecutable
     public void Execute()
     {
         togameplay.state = true;
-        //SceneManager.LoadScene("Integrated GamePlay");
         SceneManager.LoadScene($"Level {selectedlevel.value}", LoadSceneMode.Additive);
     }
 }

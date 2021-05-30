@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 746464935}
   - component: {fileID: 6329380623858850815}
   - component: {fileID: 847930812}
+  - component: {fileID: 853755422}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -49,7 +50,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e06697e6d7ee8c94185bfab8b0820b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UICamera: {fileID: 0}
   player: {fileID: 0}
   cfollow: {fileID: 0}
   spawnPoints:
@@ -63,7 +63,7 @@ MonoBehaviour:
   fox: {fileID: 0}
   playerPrefab: {fileID: 6845774844251762932, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
   _EM: {fileID: 0}
-  spawnrate: 1
+  spawnrate: 0
   _UM: {fileID: 0}
   LevelWaveCount: 3
   currentwave: 1
@@ -190,6 +190,34 @@ MonoBehaviour:
       - m_Target: {fileID: 8530145609774373358}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: OnPlayerDied
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &853755422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8530145609774373359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f564d6ce0be49c943a561bfc80a57b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSo: {fileID: 11400000, guid: c93ed589859f41c4c80de903a0d43795, type: 2}
+  OnRaise:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8530145609774373358}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Removeoldinstance
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

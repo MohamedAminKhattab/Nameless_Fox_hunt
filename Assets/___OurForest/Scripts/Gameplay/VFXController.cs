@@ -2,34 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class VFXController : MonoBehaviour
 {
-    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioManager am;
+    [SerializeField] Sound bgm;
     [SerializeField] Toggle vfxToggle;
     [SerializeField] Slider vfxSlider;
     void Start()
     {
-        audioSource = FindObjectOfType<AudioSource>();
+        am = FindObjectOfType<AudioManager>();
+        bgm = am.GetComponentsInChildren<Sound>().ToList().ElementAt<Sound>(0);
     }
     private void Update()
     {
-         vfxSlider.value= audioSource.volume ;
+         vfxSlider.value= bgm.volume ;
     }
     public void SetVFXVolume()
     {
-          audioSource.volume= vfxSlider.value;
+        bgm.volume = vfxSlider.value;
     }
     public void ToggleVFX()
     {
         if (vfxToggle.isOn == true)
         {
-            audioSource.enabled = false;
+            bgm.source.enabled = false;
             vfxToggle.isOn = false;
         }
         else
         {
-            audioSource.enabled = false;
+            bgm.source.enabled = false;
             vfxToggle.isOn = false;
         }
     }

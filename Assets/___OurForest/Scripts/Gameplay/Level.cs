@@ -6,6 +6,7 @@ using UnityEngine;
 public class Level : MonoBehaviour
 {
     [SerializeField] List<SpawnPoint> spawners;
+    [SerializeField] EventSO levelLoadedEvent;
 
     public List<SpawnPoint> Spawners { get => spawners; set => spawners = value; }
 
@@ -13,6 +14,7 @@ public class Level : MonoBehaviour
     void Start()
     {
         spawners = GetComponentsInChildren<SpawnPoint>().ToList<SpawnPoint>();
+        levelLoadedEvent.Raise();
     }
 
     // Update is called once per frame

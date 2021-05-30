@@ -283,6 +283,7 @@ MonoBehaviour:
   toLevelSelection: {fileID: 11400000, guid: 6925afb96096d0a4b941b4e75c5b3110, type: 2}
   current: {fileID: 2743065442813911273}
   levelselection: {fileID: 0}
+  selectedLevel: {fileID: 11400000, guid: 133a7d7efb8597c42a03ca7844681da8, type: 2}
 --- !u!1 &5550539079727471040
 GameObject:
   m_ObjectHideFlags: 0

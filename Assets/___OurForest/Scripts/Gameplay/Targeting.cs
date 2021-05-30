@@ -15,7 +15,7 @@ public class Targeting : MonoBehaviour
     }
     private void Update()
     {
-        if(SceneManager.GetActiveScene().name=="Integrated GamePlay")
+        if(SceneManager.GetActiveScene().name.Contains("Level"))
         {
         if (Input.touchCount > 0)
         {

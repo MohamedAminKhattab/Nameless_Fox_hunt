@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/___OurForest/Scenes/GameScenes/MainUI.unity
     guid: 49e00ee033e01b54095a7fa5ab5d999d
   - enabled: 1
-    path: Assets/___OurForest/Scenes/GameScenes/Integrated GamePlay.unity
-    guid: d9192846bd28a374f94560c71e8b27d3
-  - enabled: 1
     path: Assets/___OurForest/Scenes/GameScenes/Level 0.unity
     guid: 5ad7c4ebd701f5844b0292a0c6ac7af7
   - enabled: 1
