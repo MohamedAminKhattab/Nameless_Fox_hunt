@@ -22,7 +22,7 @@ public class TargetingEnemy : MonoBehaviour
                 {
                     Ray ray = Camera.main.ScreenPointToRay(touch.position);
                     Physics.Raycast(ray, out RaycastHit hit);
-                    if (hasEnemyTarget.state == false && FCompareTag(hit.collider.gameObject.tag))
+                    if (hasEnemyTarget.state == false && FCompareTag(hit.collider.gameObject.tag)&&hit.collider.isTrigger)
                     {
                         enemytargetSO.value = hit.transform;
                         hasEnemyTarget.state = true;

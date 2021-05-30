@@ -98,7 +98,6 @@ public class GameManager : MonoBehaviour
             sp.Fox = fox.transform;
             sp.Yelena = player.transform;
         }
-        Debug.LogWarning("instart");
         StartCoroutine(WaitForWave());
     }
     public void SpawnEnemies()
@@ -117,11 +116,10 @@ public class GameManager : MonoBehaviour
     }
     public void OnEnemyDied()
     {
-        Debug.LogWarning("inenemydied");
         spawnPoints = _EM.GetComponentsInChildren<SpawnPoint>().ToList<SpawnPoint>();
         if (currentTroopCount < 1 && currentwave < LevelWaveCount)
         {
-            Debug.LogWarning("All enemies died making new ones");
+            Debug.LogWarning("All enemies died making new ones");      
             StartCoroutine(WaitForWave());
             currentwave++;
         }
@@ -136,5 +134,6 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(spawnrate * 60);
         SpawnEnemies();
+       Debug.LogWarning("new ones");
     }
 }

@@ -16,6 +16,7 @@ public class trapBehaviour : MonoBehaviour
     {
         if (other.CompareTag("enemy"))
         {
+            other.GetComponent<CapsuleCollider>().enabled = false;
             string name = other.GetComponentInParent<SpawnPoint>().name;
             switch (name)
             {
