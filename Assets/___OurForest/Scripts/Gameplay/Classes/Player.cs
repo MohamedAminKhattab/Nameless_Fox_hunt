@@ -90,30 +90,30 @@ public class Player : MonoBehaviour
 
     }
 
-    private void OnCollisionStay(Collision collision)
+    void OnTriggerStay(Collider other)
     {
         if (inInput.state)
         {
-            if (collision.gameObject.CompareTag("Vine"))
+            if (other.gameObject.CompareTag("Vine"))
             {
                 CollectResource();
                 resource = "Vine";
             }
-            if (collision.gameObject.CompareTag("Rock"))
+            if (other.gameObject.CompareTag("Rock"))
             {
                 CollectResource();
                 resource = "Rock";
             }
-            if (collision.gameObject.CompareTag("Food"))
+            if (other.gameObject.CompareTag("Food"))
                 PickUpFood();
 
-            if (collision.gameObject.CompareTag("Wood"))
+            if (other.gameObject.CompareTag("Wood"))
                 CutWood();
 
-            if (collision.gameObject.CompareTag("Weapon"))
+            if (other.gameObject.CompareTag("Weapon"))
                 PickUpWeapon();
 
-            obj = collision.gameObject;
+            obj = other.gameObject;
         }
     }
     void FixedUpdate()
