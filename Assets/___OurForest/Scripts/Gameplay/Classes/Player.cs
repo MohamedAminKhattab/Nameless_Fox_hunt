@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Player : MonoBehaviour
 {
@@ -50,6 +51,7 @@ public class Player : MonoBehaviour
     BoolSO fetchingSound;
     [SerializeField]
     BoolSO playerDeathSound;
+    NavMeshObstacle obstacle;
     public GameManager GM { get => _GM; set => _GM = value; }
 
     void Start()
@@ -64,6 +66,7 @@ public class Player : MonoBehaviour
         playerHealth.Death = playerDeath;
         playerHealth.dead = false;
         //_GM.Inv.Capacity = 0;
+        obstacle = GetComponent<NavMeshObstacle>();
     }
 
     void Update()
@@ -87,7 +90,10 @@ public class Player : MonoBehaviour
             playerHealth.ApplyDamage(damagePoints);
             //Debug.Log(playerHealth.currentHealth);
         }
-
+        if (other.gameObject.CompareTag("Bush"))
+        {
+            obstacle.enabled = false;
+        }
     }
 
     void OnTriggerStay(Collider other)
@@ -114,6 +120,13 @@ public class Player : MonoBehaviour
                 PickUpWeapon();
 
             obj = other.gameObject;
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Bush"))
+        {
+            obstacle.enabled = true;
         }
     }
     void FixedUpdate()
