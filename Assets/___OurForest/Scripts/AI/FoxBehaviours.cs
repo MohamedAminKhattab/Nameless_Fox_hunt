@@ -34,10 +34,6 @@ public class FoxBehaviours : MonoBehaviour
     }
 
 
-    public void Heal() //for khattab to call when collects vine
-    {
-        foxHealth.Healing(10);
-    }
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -67,6 +63,11 @@ public class FoxBehaviours : MonoBehaviour
         }
     }
     #region Public functions 
+
+    public void Heal() //for khattab to call when collects vine
+    {
+        foxHealth.Healing(10);
+    }
     public void StartGathering()// to be called from the scriptabel event
     {
         //Target = SO.transform;
@@ -77,7 +78,7 @@ public class FoxBehaviours : MonoBehaviour
     {
         foxState = FoxState.luring;
     }
-    public void Flee()
+    public void Flee() //be called from khattab after collecting the pickup
     {
         foxState = FoxState.idle;
     }
@@ -99,6 +100,7 @@ public class FoxBehaviours : MonoBehaviour
             if (PickUp.value)
             {
                 Target = (Transform)PickUp.value;
+                //agent.stoppingDistance = 3f; //Todo change elsewhere
                 Task.current.Succeed();
             }
             else
@@ -173,12 +175,17 @@ public class FoxBehaviours : MonoBehaviour
     [Task]
     public void MoveToTarget()
     {
-
-        agent.isStopped = false;
-
+        if (Task.isInspected)
+            Task.current.debugInfo = string.Format("t={0:0.00}", Time.time);
+       
+            agent.isStopped = false;
         agent.SetDestination(Target.position);
         if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
+        {
+            Debug.Log("Arrived");
             Task.current.Succeed();
+        }
+        
     }
 
     [Task] //should be a task or not??
