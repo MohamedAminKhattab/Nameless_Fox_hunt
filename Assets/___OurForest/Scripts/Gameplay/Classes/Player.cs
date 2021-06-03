@@ -82,6 +82,7 @@ public class Player : MonoBehaviour
             //Debug.Log(playerHealth.currentHealth);
         }
     }
+
     void OnTriggerEnter(Collider other)
     {
         //Debug.Log("Trigger Entered");
