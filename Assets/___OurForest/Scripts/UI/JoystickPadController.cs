@@ -6,11 +6,12 @@ using UnityEngine.UI;
 
 public class JoystickPadController : MonoBehaviour
 {
-
+    [SerializeField] Image outerJoystick;
     [SerializeField] Image joystick;
+    [SerializeField] Vector3 position;
     [SerializeField] float range = 50;
     [SerializeField] Vector2SO movement;
-    [SerializeField] Vector3SO position;
+    [SerializeField] Vector3SO positionSO;
     Touch _touch;
     Vector3 origninalPosition;
     Vector3 touchPosition;
@@ -18,7 +19,8 @@ public class JoystickPadController : MonoBehaviour
     bool is_dragged = false;
     void Start()
     {
-        origninalPosition = position.value;
+        //origninalPosition = positionSO.value;
+        origninalPosition = outerJoystick.rectTransform.position;
     }
 
     void Update()
@@ -28,10 +30,12 @@ public class JoystickPadController : MonoBehaviour
             movement.value = Vector2.zero;
             _touch = Input.GetTouch(0);
             touchPosition = _touch.position;
-            origninalPosition = position.value;
+            // origninalPosition = positionSO.value;
+            origninalPosition = outerJoystick.rectTransform.position;
             touchPosition.z = 0.0f;
             Touchdisplacment = origninalPosition - touchPosition;
-            if (Touchdisplacment.magnitude < range && _touch.phase == TouchPhase.Began || _touch.phase == TouchPhase.Stationary)
+            position = joystick.rectTransform.position;
+            if (Touchdisplacment.magnitude < range && _touch.phase == TouchPhase.Began /*|| _touch.phase == TouchPhase.Stationary*/)
             {
                 is_dragged = true;
             }
