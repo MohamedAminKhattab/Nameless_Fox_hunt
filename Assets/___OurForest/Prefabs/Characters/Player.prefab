@@ -53,6 +53,8 @@ MonoBehaviour:
   attackAnim: {fileID: 11400000, guid: cbd281dd82f80d1478e42d7b658e3410, type: 2}
   attackSound: {fileID: 11400000, guid: 92e55bdcd4691bd41a4af3ab53999aaf, type: 2}
   Enemy: {fileID: 11400000, guid: 6f00ffae9c325fc40b69e985447679d0, type: 2}
+  HasTarget: {fileID: 11400000, guid: 78c6080c85526a04a92d8ea535447bc9, type: 2}
+  bow: {fileID: 0}
 --- !u!1 &6681545930317205851
 GameObject:
   m_ObjectHideFlags: 0

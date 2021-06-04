@@ -21,6 +21,7 @@ public class Attack : MonoBehaviour
     [SerializeField]
     BoolSO attackSound;
     [SerializeField] TransformSO Enemy;
+    [SerializeField] BoolSO HasTarget;
     [SerializeField]
     GameObject bow;
     bool instantiateArrow;
@@ -57,7 +58,8 @@ public class Attack : MonoBehaviour
                         direction.y = player.transform.position.y;
                         player.transform.forward = direction;
                         rb.velocity = direction* shootForce;
-                        //Enemy.value = null;
+                        Enemy.value = null;
+                        HasTarget.state = false;
                         if (attackAnim.state)
                         {
                             bow.GetComponent<Animation>().Play();
