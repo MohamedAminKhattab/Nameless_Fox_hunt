@@ -20,31 +20,35 @@ public class FoxInventory : MonoBehaviour
                 case "Food":
                     Debug.LogWarning("Food");
                     _gm.Inv.AddItem(ItemTypes.Food);
-                    target.value = null;
-                    hastarget.state = false;
-                    Destroy(other.gameObject);
+                    //target.value = null;
+                   // hastarget.state = false;
+                   // Destroy(other.gameObject);
+                    other.gameObject.SetActive(false);
 
                     break;
                 case "Wood":
                     Debug.LogWarning("Wood");
                     _gm.Inv.AddItem(ItemTypes.Wood);
-                    target.value = null;
-                    hastarget.state = false;
-                    Destroy(other.gameObject);
+                   // target.value = null;
+                    //hastarget.state = false;
+                    //Destroy(other.gameObject);
+                    other.gameObject.SetActive(false);
                     break;
                 case "Rock":
                     Debug.LogWarning("Rock");
                     _gm.Inv.AddItem(ItemTypes.Rock);
-                    target.value = null;
-                    hastarget.state = false;
-                    Destroy(other.gameObject);
+                  //  target.value = null;
+                    //hastarget.state = false;
+                    //Destroy(other.gameObject);
+                    other.gameObject.SetActive(false);
                     break;
                 case "Vine":
                     Debug.LogWarning("Vine");
                     _gm.Inv.AddItem(ItemTypes.Vine);
-                    target.value = null;
-                    hastarget.state = false;
-                    Destroy(other.gameObject);
+                   // target.value = null;
+                   // hastarget.state = false;
+                    // Destroy(other.gameObject);
+                    other.gameObject.SetActive(false);
                     break;
                 default:
                     break;
