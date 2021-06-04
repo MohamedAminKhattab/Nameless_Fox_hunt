@@ -23,7 +23,6 @@ public class HealthSO : ScriptableObject
         currentHealth -= Damage;
         if (currentHealth <= 0)
         {
-            Death.Raise();
             dead = true;
            // Debug.Log("DEAD");
         }

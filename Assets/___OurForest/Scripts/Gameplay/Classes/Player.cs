@@ -71,8 +71,13 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (playerHealth.dead)
+        if (playerHealth.dead && !playerDeathSound.state)
             playerDeathSound.state = true;
+       // Debug.Log(playerDeathSound.state);
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    playerHealth.ApplyDamage(200);
+        //}
     }
     void OnCollisionEnter(Collision collision)
     {
