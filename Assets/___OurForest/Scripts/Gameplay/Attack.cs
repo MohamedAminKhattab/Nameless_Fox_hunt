@@ -57,7 +57,7 @@ public class Attack : MonoBehaviour
                         Vector3 direction = Enemy.value.position - arrowSpawn.position;
                         direction.y = player.transform.position.y;
                         player.transform.forward = direction;
-                        rb.velocity = direction* shootForce;
+                        rb.velocity = direction * shootForce;
                         Enemy.value = null;
                         HasTarget.state = false;
                         if (attackAnim.state)
