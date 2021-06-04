@@ -52,6 +52,7 @@ MonoBehaviour:
   _GM: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
   attackAnim: {fileID: 11400000, guid: cbd281dd82f80d1478e42d7b658e3410, type: 2}
   attackSound: {fileID: 11400000, guid: 92e55bdcd4691bd41a4af3ab53999aaf, type: 2}
+  Enemy: {fileID: 11400000, guid: 6f00ffae9c325fc40b69e985447679d0, type: 2}
 --- !u!1 &6681545930317205851
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,13 +76,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6681545930317205851}
-  m_LocalRotation: {x: 0.8014756, y: -0, z: -0, w: -0.5980276}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.00000035762787, y: -0.07000005, z: -0.304}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3345472398383160638}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 253.45801, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6845774844251762932
 GameObject:
   m_ObjectHideFlags: 0

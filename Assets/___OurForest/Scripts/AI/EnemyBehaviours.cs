@@ -61,6 +61,7 @@ public class EnemyBehaviours : MonoBehaviour
     {
         if(other.tag.Equals("Arrow")|| other.tag.Equals("Trap")) 
         {
+            Debug.Log(other.name);
             Die();
         }
     }

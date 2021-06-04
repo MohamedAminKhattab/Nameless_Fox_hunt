@@ -25,11 +25,16 @@ public class Arrow : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
+        Debug.Log($"{collision.gameObject.name} arrow script");
         if (collision.collider.tag!= "Arrow")
         {
             hitSomething = true;
             Stick();
         }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log($"{other.gameObject.name} arrow script");
     }
     void Stick()
     {

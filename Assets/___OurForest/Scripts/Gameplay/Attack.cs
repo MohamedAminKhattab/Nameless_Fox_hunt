@@ -11,7 +11,7 @@ public class Attack : MonoBehaviour
     [SerializeField]
     Transform arrowSpawn;
     [SerializeField]
-    float shootForce = 20f;
+    float shootForce = 10;
     [SerializeField]
     BoolSO attack;
     [SerializeField]
@@ -20,6 +20,8 @@ public class Attack : MonoBehaviour
     BoolSO attackAnim;
     [SerializeField]
     BoolSO attackSound;
+    [SerializeField] TransformSO Enemy;
+
     bool instantiateArrow;
 
     public GameManager GM { get => _GM; set => _GM = value; }
@@ -28,29 +30,38 @@ public class Attack : MonoBehaviour
     {
         attackSound.state = false;
         instantiateArrow = false;
+        Enemy.value = null;
     }
 
     void Update()
     {
-        if (attack.state)
+        if (attack.state && Enemy.value)
         {
+
             attack.state = false;
-            StartCoroutine(Attacking());
-            if (instantiateArrow)
+            if (_GM.Inv.GetItemCount(ItemTypes.Weapon) > 0)
             {
-                instantiateArrow = false;
-                if (_GM.Inv.GetItemCount(ItemTypes.Weapon) > 0)
+                StartCoroutine(Attacking());
+                if (instantiateArrow)
                 {
-                    attackSound.state = true;
-                    Debug.LogWarning($"ArrowAmount {_GM.Inv.GetItemCount(ItemTypes.Weapon)}");
-                    _GM.Inv.UseItem(ItemTypes.Weapon, 1);
-                    GameObject arrowInst = Instantiate(arrowPrefab, arrowSpawn.position, Quaternion.identity);
-                    Rigidbody rb = arrowInst.GetComponent<Rigidbody>();
-                    rb.velocity = player.transform.forward * shootForce;
+                    instantiateArrow = false;
+
+                    {
+                        attackSound.state = true;
+                        //Debug.LogWarning($"ArrowAmount {_GM.Inv.GetItemCount(ItemTypes.Weapon)}");
+                        _GM.Inv.UseItem(ItemTypes.Weapon, 1);
+                        GameObject arrowInst = Instantiate(arrowPrefab, arrowSpawn.position, arrowSpawn.rotation);
+                        Rigidbody rb = arrowInst.GetComponent<Rigidbody>();
+                        Vector3 direction = Enemy.value.position - arrowSpawn.position;
+                        direction.y = player.transform.position.y;
+                        player.transform.forward = direction;
+                        rb.velocity = direction* shootForce;
+                        //Enemy.value = null;
+                    }
                 }
             }
         }
-    
+
     }
 
     IEnumerator Attacking()

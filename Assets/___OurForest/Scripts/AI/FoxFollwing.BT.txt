@@ -10,6 +10,6 @@ tree("Root")
 			shouldLure 
 			sequence
 				mute MoveToTarget
-				FinishFetching
+				FinishLuring
 				ReturnToIdle
 		while shouldMoveToPlayer MoveToTarget
