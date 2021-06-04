@@ -148,6 +148,7 @@ public class FoxBehaviours : MonoBehaviour
             if (Enemy.value)
             {
                 Target = Enemy.value;
+                agent.stoppingDistance = 2; 
                 Task.current.Succeed();
             }
             else
@@ -169,6 +170,12 @@ public class FoxBehaviours : MonoBehaviour
     {
         hasTargetSo.state = false;
         PickUp.value = null;
+        Task.current.Succeed();
+    } [Task]
+    public void FinishLuring()
+    {
+        hasTargetSo.state = false;
+        Enemy.value = null;
         Task.current.Succeed();
     }
 
