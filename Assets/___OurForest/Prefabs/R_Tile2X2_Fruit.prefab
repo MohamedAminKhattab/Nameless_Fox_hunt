@@ -151,6 +151,10 @@ PrefabInstance:
       propertyPath: resourceItem
       value: 
       objectReference: {fileID: 1242302321177572313}
+    - target: {fileID: 2728255098325187212, guid: 80b04f1e1ca83e84ab83efb793d182d1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4688968934547531175, guid: 80b04f1e1ca83e84ab83efb793d182d1, type: 3}
       propertyPath: m_RootOrder
       value: 0

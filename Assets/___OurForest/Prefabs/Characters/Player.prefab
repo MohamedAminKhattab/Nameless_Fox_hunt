@@ -52,6 +52,23 @@ MonoBehaviour:
   _GM: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
   attackAnim: {fileID: 11400000, guid: cbd281dd82f80d1478e42d7b658e3410, type: 2}
   attackSound: {fileID: 11400000, guid: 92e55bdcd4691bd41a4af3ab53999aaf, type: 2}
+  bow: {fileID: 6230429868934725718}
+--- !u!111 &1476591492257490335
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6230429868934725718}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 1827226128182048838, guid: 3692c69ea11986f4a8028a2ac5bdcf28, type: 3}
+  m_Animations:
+  - {fileID: 1827226128182048838, guid: 3692c69ea11986f4a8028a2ac5bdcf28, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &6681545930317205851
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,6 +290,7 @@ MonoBehaviour:
   attack: {fileID: 11400000, guid: 260ff84e78d53af4ca8536bd4f8b6c50, type: 2}
   deathAnim: {fileID: 11400000, guid: ae05d4ad6b51a8f46b34c25ab383c42b, type: 2}
   playerHealth: {fileID: 11400000, guid: 995eb8ff6ee44984f9945bb81080d729, type: 2}
+  bow: {fileID: 6230429868934725718}
 --- !u!33 &5501797777281361872
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -421,4 +439,71 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 63d115cfcaa6bb54682e5196cef08c2b, type: 3}
   m_PrefabInstance: {fileID: 3508633953924682459}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7677879983199258392 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6502182839619065283, guid: 63d115cfcaa6bb54682e5196cef08c2b, type: 3}
+  m_PrefabInstance: {fileID: 3508633953924682459}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6536841979213102343
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7677879983199258392}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 3692c69ea11986f4a8028a2ac5bdcf28, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3692c69ea11986f4a8028a2ac5bdcf28, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.064
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3692c69ea11986f4a8028a2ac5bdcf28, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3692c69ea11986f4a8028a2ac5bdcf28, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.719
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3692c69ea11986f4a8028a2ac5bdcf28, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.09785074
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3692c69ea11986f4a8028a2ac5bdcf28, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.63241774
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3692c69ea11986f4a8028a2ac5bdcf28, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.76234496
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3692c69ea11986f4a8028a2ac5bdcf28, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.09645284
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3692c69ea11986f4a8028a2ac5bdcf28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 181.335
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3692c69ea11986f4a8028a2ac5bdcf28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 15.738998
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3692c69ea11986f4a8028a2ac5bdcf28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 100.459
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3692c69ea11986f4a8028a2ac5bdcf28, type: 3}
+      propertyPath: m_Name
+      value: Bow animated
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3692c69ea11986f4a8028a2ac5bdcf28, type: 3}
+--- !u!1 &6230429868934725718 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3692c69ea11986f4a8028a2ac5bdcf28, type: 3}
+  m_PrefabInstance: {fileID: 6536841979213102343}
   m_PrefabAsset: {fileID: 0}
