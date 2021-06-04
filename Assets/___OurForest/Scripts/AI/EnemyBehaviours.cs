@@ -61,7 +61,6 @@ public class EnemyBehaviours : MonoBehaviour
     {
         if(other.tag.Equals("Arrow")|| other.tag.Equals("Trap")) 
         {
-            Debug.Log("Dead");
             Die();
         }
     }
@@ -71,7 +70,7 @@ public class EnemyBehaviours : MonoBehaviour
     [Task]
     public void canSeeTheFox()
     {
-      if(isPlayerHidden.state)
+      if(isPlayerHidden.state||enemyState==EnemyState.dead)
         {
             Task.current.Fail();
             return;
@@ -130,6 +129,8 @@ public class EnemyBehaviours : MonoBehaviour
                 target = fox;
                 break;
         }
+        //Debug.Log(agent.pathPending);
+        Debug.Log(agent.isStopped);
         agent.SetDestination(target.position);
         if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
         {
@@ -142,12 +143,17 @@ public class EnemyBehaviours : MonoBehaviour
     [Task]
     public bool isIntrupted()// i don't like this method at all seems stupid 
     {
-        //if (enemyState == EnemyState.goingToHouse)
+        //  if (enemyState == EnemyState.goingToHouse)
         //    soundSystem.PlayEnemySound(enemyState);
         return enemyState !=EnemyState.goingToHouse;
 
     }
-   
+   //[Task]
+   //public void LookAround()
+   // {
+   //     agent.isStopped = true;
+   //     if(anim.is().)
+   // }
     [Task]
     public void Aim()
     {

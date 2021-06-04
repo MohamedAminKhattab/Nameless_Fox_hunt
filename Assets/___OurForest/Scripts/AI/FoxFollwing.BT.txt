@@ -3,12 +3,13 @@ tree("Root")
 		while
 			shouldFetch
 			sequence
-				MoveToTarget
+				mute MoveToTarget
 				FinishFetching
 				ReturnToIdle
 		while
 			shouldLure 
 			sequence
 				mute MoveToTarget
+				FinishFetching
 				ReturnToIdle
 		while shouldMoveToPlayer MoveToTarget
