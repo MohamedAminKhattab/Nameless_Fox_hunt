@@ -20,6 +20,9 @@ public class FoxBehaviours : MonoBehaviour
     [SerializeField] BoolSO hasTargetSo;
     [SerializeField] TransformSO Enemy;
     [SerializeField] BoolSO isPlayerHidden;
+    [SerializeField] BoolSO isLuringSound
+        ;
+    
     [SerializeField] HealthSO foxHealth;
     private FoxState foxState;
    
@@ -77,6 +80,7 @@ public class FoxBehaviours : MonoBehaviour
     public void StartLuring()
     {
         foxState = FoxState.luring;
+        isLuringSound.state = true;
     }
     public void Flee() //be called from khattab after collecting the pickup
     {
@@ -148,6 +152,7 @@ public class FoxBehaviours : MonoBehaviour
             if (Enemy.value)
             {
                 Target = Enemy.value;
+                agent.stoppingDistance = 2; 
                 Task.current.Succeed();
             }
             else
@@ -169,6 +174,13 @@ public class FoxBehaviours : MonoBehaviour
     {
         hasTargetSo.state = false;
         PickUp.value = null;
+        Task.current.Succeed();
+    } [Task]
+    public void FinishLuring()
+    {
+        hasTargetSo.state = false;
+        Enemy.value = null;
+        isLuringSound.state = false;
         Task.current.Succeed();
     }
 

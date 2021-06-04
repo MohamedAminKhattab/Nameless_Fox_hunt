@@ -3,6 +3,7 @@ tree("Root")
 		parallel
 			repeat mute tree("RaidHouse")
 			repeat mute tree("ChaseFox")
+			repeat mute tree("ChaseYelena")
 			repeat mute tree("Shoot")
 		
 tree("RaidHouse")
@@ -22,4 +23,8 @@ tree("Shoot")
 				Aim
 				Fire
 				Wait 2.0
-					
+				
+tree("ChaseYelena")
+		while
+			canSeeThePlayer
+			MoveToTarget

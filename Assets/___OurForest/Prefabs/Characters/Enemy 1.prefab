@@ -97,7 +97,7 @@ MonoBehaviour:
   - isFoldout: 1
     breakPoints: 
     breakPointStatuses: 
-    collapsedLines: 09000000
+    collapsedLines: 
     btScript: 
 --- !u!114 &3637006437264765415
 MonoBehaviour:
@@ -120,6 +120,8 @@ MonoBehaviour:
   isPlayerHidden: {fileID: 11400000, guid: 7187870772591e54f811f34aca372dc6, type: 2}
   Gun: {fileID: 8227694999909875326}
   raidingSpeed: 1
+  isenemyDeadSound: {fileID: 11400000, guid: ff71b8f5477a9df4384828e31932dfca, type: 2}
+  isenemymovingSound: {fileID: 11400000, guid: 332b5356e478e684eb5424d9feef032f, type: 2}
 --- !u!54 &3637006437264765412
 Rigidbody:
   m_ObjectHideFlags: 0

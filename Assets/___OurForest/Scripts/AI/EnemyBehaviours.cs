@@ -8,6 +8,7 @@ public enum EnemyState
     goingToHouse,
     chasingFox,
     shooting,
+    chasingYelena,
     dead
 }
 public class EnemyBehaviours : MonoBehaviour
@@ -26,6 +27,8 @@ public class EnemyBehaviours : MonoBehaviour
     private EnemyState enemyState;
      [SerializeField]Transform Gun;
     [SerializeField] float raidingSpeed = 1;
+    [SerializeField] BoolSO isenemyDeadSound;
+    [SerializeField] BoolSO isenemymovingSound;
     Animator anim;
 
 
@@ -47,8 +50,13 @@ public class EnemyBehaviours : MonoBehaviour
     {
         anim.SetBool("speed", !agent.isStopped);
         anim.SetBool("chase", enemyState==EnemyState.chasingFox);
-        if (Input.GetKeyDown(KeyCode.Space))
-            Die();
+        isenemymovingSound.state = !agent.isStopped;
+        
+
+    }
+    private void OnDestroy()
+    {
+        isenemyDeadSound.state = true; //genius 
 
     }
     private void Die()
@@ -56,11 +64,13 @@ public class EnemyBehaviours : MonoBehaviour
         agent.isStopped = true;
         enemyState = EnemyState.dead;
         anim.SetTrigger("die");
+        isenemyDeadSound.state = true;
     }
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag.Equals("Arrow")|| other.tag.Equals("Trap")) 
         {
+
             Die();
         }
     }
@@ -87,6 +97,39 @@ public class EnemyBehaviours : MonoBehaviour
             else
             {
                 enemyState = EnemyState.chasingFox;
+                agent.speed = 3;
+                
+                //soundSystem.PlayEnemySound(enemyState);
+                Task.current.Succeed();
+                return;
+            }
+        }
+        else
+        {
+            enemyState = EnemyState.goingToHouse; // should be removed when the tree gets bigger
+            agent.speed = raidingSpeed;
+            Task.current.Fail();
+        }
+    } [Task]
+    public void canSeeThePlayer()
+    {
+      if(isPlayerHidden.state||enemyState==EnemyState.dead)
+        {
+            Task.current.Fail();
+            return;
+        }
+        if (Measurements.isInRange(transform,yelena,VisionRange))
+        {
+            if (Measurements.isInRange(transform, yelena, (int)agent.stoppingDistance)) //can switch 
+            {
+                enemyState = EnemyState.shooting;
+                agent.isStopped = true;
+                Task.current.Fail();
+                return;
+            }
+            else
+            {
+                enemyState = EnemyState.chasingYelena;
                 agent.speed = 3;
                 
                 //soundSystem.PlayEnemySound(enemyState);
@@ -128,9 +171,12 @@ public class EnemyBehaviours : MonoBehaviour
             case EnemyState.chasingFox:
                 target = fox;
                 break;
+            case EnemyState.chasingYelena:
+                target = yelena;
+                break;
         }
         //Debug.Log(agent.pathPending);
-        Debug.Log(agent.isStopped);
+
         agent.SetDestination(target.position);
         if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
         {
@@ -158,12 +204,12 @@ public class EnemyBehaviours : MonoBehaviour
     public void Aim()
     {
         Vector3 direction = target.position - this.transform.position;
-       
-        
 
-        this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
-                                                Quaternion.LookRotation(direction),
-                                                Time.deltaTime * 5);
+        transform.forward = direction;
+
+        //this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
+        //                                        Quaternion.LookRotation(direction),
+        //                                        Time.deltaTime * 5);
         if (Task.isInspected)
             Task.current.debugInfo = string.Format("angle={0}",
                 Vector3.Angle(this.transform.forward, direction));
@@ -180,6 +226,7 @@ public class EnemyBehaviours : MonoBehaviour
     {
         
         soundSystem.PlayEnemySound(enemyState);
+        FindObjectOfType<AudioManager>().PlayeSound("Gun");
         GameObject go = Instantiate(bullet, Gun.position, transform.rotation);
         go.AddComponent<Rigidbody>().AddForce(Gun.transform.forward * 500);
         Task.current.Succeed();
