@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class SFXController : MonoBehaviour
 {
-    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioMixerGroup Audiomixer;
     [SerializeField] Toggle sfxToggle;
     [SerializeField] Slider sfxSlider;
 
@@ -15,26 +16,26 @@ public class SFXController : MonoBehaviour
     }
     public void FindSource()
     {
-        audioSource = FindObjectOfType<AudioSource>();
+        Audiomixer = FindObjectOfType<AudioMixerGroup>();
     }
     private void Update()
     {
-         sfxSlider.value= audioSource.volume ;
+         //sfxSlider.value= Audiomixer.audioMixer ;
     }
     public void SetSFXVolume()
     {
-        audioSource.volume = sfxSlider.value;
+       // Audiomixer.volume = sfxSlider.value;
     }
     public void ToggleSFX()
     {
         if(sfxToggle.isOn==true)
         {
-            audioSource.enabled = false;
+            //audioSource.enabled = false;
             sfxToggle.isOn = false;
         }
         else
         {
-            audioSource.enabled = false;
+          //  audioSource.enabled = false;
             sfxToggle.isOn = false;
         }
     }
