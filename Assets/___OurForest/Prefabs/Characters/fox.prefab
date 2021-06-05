@@ -109,7 +109,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 0.16
-  m_BaseOffset: -1
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &9151201594120318505
@@ -152,6 +152,7 @@ MonoBehaviour:
   hasTargetSo: {fileID: 11400000, guid: 0b5e8e33f6a1919438ef47f4a7b0482d, type: 2}
   Enemy: {fileID: 11400000, guid: 6f00ffae9c325fc40b69e985447679d0, type: 2}
   isPlayerHidden: {fileID: 11400000, guid: 7187870772591e54f811f34aca372dc6, type: 2}
+  isLuringSound: {fileID: 0}
   foxHealth: {fileID: 11400000, guid: cb84ffe3b29e677448a641a76784c73f, type: 2}
 --- !u!114 &6539303604943064300
 MonoBehaviour:

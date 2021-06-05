@@ -56,6 +56,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   playerWon: {fileID: 11400000, guid: 5bba911e0fcb0f94185c7c1b054f4eb6, type: 2}
   gameOver: {fileID: 11400000, guid: 9f64f56becb26a24da4d1af74e89493b, type: 2}
   togamePlay: {fileID: 11400000, guid: cea3b9addbb29e048bd07592e7796300, type: 2}
@@ -89,6 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   needTrap: {fileID: 11400000, guid: 06689c3572e4ed94aaabfa80f39cc508, type: 2}
   trapLocation: {fileID: 11400000, guid: 0a71e172541139944b0f924235fee262, type: 2}
+  level: {fileID: 0}
   trapPrefab: {fileID: 4586435710400259806, guid: 6c608c118fef457448c09c42b3eee2cf, type: 3}
   _GM: {fileID: 8530145609774373358}
 --- !u!114 &8404798601930685678

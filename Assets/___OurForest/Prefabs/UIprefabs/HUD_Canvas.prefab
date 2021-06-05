@@ -2989,7 +2989,7 @@ GameObject:
   - component: {fileID: 110622845551314125}
   - component: {fileID: 4831374579626626945}
   - component: {fileID: 5956274562054394332}
-  - component: {fileID: 1198466591}
+  - component: {fileID: 3607200384987814370}
   m_Layer: 5
   m_Name: Floating_Joystick
   m_TagString: UI
@@ -3055,7 +3055,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1198466591
+--- !u!114 &3607200384987814370
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3064,10 +3064,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5042457309530563060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 9805a7df0a3f5f645a0ea4a61344ce8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  JoystickDirection: 2
+  Background: {fileID: 7732719102375011971}
+  Handle: {fileID: 3846752041618879306}
+  movementSO: {fileID: 11400000, guid: 8b4c0bf996bc8774cbfcccbf1c700fd5, type: 2}
+  HandleLimit: 1
 --- !u!1 &5810845644853351364
 GameObject:
   m_ObjectHideFlags: 0
@@ -3155,7 +3159,6 @@ GameObject:
   - component: {fileID: 3846752041618879306}
   - component: {fileID: 739579235273154920}
   - component: {fileID: 5131477286609058088}
-  - component: {fileID: 471573412}
   m_Layer: 5
   m_Name: JoystickPad
   m_TagString: UI
@@ -3220,21 +3223,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &471573412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7149275130927115752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30e9dd424586ad64ca7ae0847943b928, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outerJoystick: {fileID: 2226563255188012698}
-  joystick: {fileID: 5131477286609058088}
-  position: {x: 0, y: 0, z: 0}
-  range: 50
-  movement: {fileID: 11400000, guid: 8b4c0bf996bc8774cbfcccbf1c700fd5, type: 2}
-  positionSO: {fileID: 11400000, guid: 61a25de74a3b8b544934569981d6ec9d, type: 2}

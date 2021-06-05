@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Tree
-  m_Shader: {fileID: 4800000, guid: 2e7525a9b11dbeb448a4e5d7657a40f3, type: 3}
+  m_Shader: {fileID: 4800000, guid: d935776ff3b050f4296ce489306c3e3a, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -72,6 +72,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _AlphaCutoff: 0.5
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -103,6 +104,8 @@ Material:
     - _TransStrength: 1
     - _TransmissionShadow: 0.5
     - _UVSec: 0
+    - _WindOffset: 0.5222908
+    - _Windpower: 5
     - _ZWrite: 1
     - __dirty: 0
     - _bend: 0

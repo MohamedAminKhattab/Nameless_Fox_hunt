@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1245819525522711302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.77, y: 0, z: -28.4}
+  m_LocalPosition: {x: -40.8, y: 0, z: 36.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1245819526184733990}
@@ -49,7 +49,6 @@ MonoBehaviour:
   defaultgoal: {fileID: 0}
   spawnCount: 2
   enemyPrefab: {fileID: 3637006437264765420, guid: 02da3718dc34e0449ac313de1d4c890c, type: 3}
-  currentTroop: 0
   troops: []
   _GM: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
   enemyCountChange: {fileID: 11400000, guid: 3410f905c6c90834b9cfb0496dd05f4d, type: 2}
@@ -111,6 +110,7 @@ Transform:
   - {fileID: 1245819527487461928}
   - {fileID: 1245819527593951811}
   - {fileID: 1245819525522711303}
+  - {fileID: 6017484025012905048}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -140,7 +140,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1245819527487461935}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.19, y: 0, z: 23.59}
+  m_LocalPosition: {x: 13.5, y: 0, z: 28.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1245819526184733990}
@@ -163,7 +163,6 @@ MonoBehaviour:
   defaultgoal: {fileID: 0}
   spawnCount: 2
   enemyPrefab: {fileID: 3637006437264765420, guid: 02da3718dc34e0449ac313de1d4c890c, type: 3}
-  currentTroop: 0
   troops: []
   _GM: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
   enemyCountChange: {fileID: 11400000, guid: 3410f905c6c90834b9cfb0496dd05f4d, type: 2}
@@ -221,7 +220,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1245819527593951810}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.49, y: 0, z: -6.86}
+  m_LocalPosition: {x: -9.1, y: 0, z: 49.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1245819526184733990}
@@ -244,7 +243,6 @@ MonoBehaviour:
   defaultgoal: {fileID: 0}
   spawnCount: 1
   enemyPrefab: {fileID: 3637006437264765420, guid: 02da3718dc34e0449ac313de1d4c890c, type: 3}
-  currentTroop: 0
   troops: []
   _GM: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
   enemyCountChange: {fileID: 11400000, guid: 3410f905c6c90834b9cfb0496dd05f4d, type: 2}
@@ -265,6 +263,86 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1245819527593951836}
+        m_TargetAssemblyTypeName: SpawnPoint, Assembly-CSharp
+        m_MethodName: Enemydied
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &5196939399459613463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6017484025012905048}
+  - component: {fileID: 699041433057435976}
+  - component: {fileID: 920777072438001082}
+  m_Layer: 0
+  m_Name: Point4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6017484025012905048
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5196939399459613463}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -35.2, y: 0, z: -19.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1245819526184733990}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &699041433057435976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5196939399459613463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba5486b924fb00429d27f86a867f970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fox: {fileID: 0}
+  yelena: {fileID: 0}
+  defaultgoal: {fileID: 0}
+  spawnCount: 1
+  enemyPrefab: {fileID: 3637006437264765420, guid: 02da3718dc34e0449ac313de1d4c890c, type: 3}
+  troops: []
+  _GM: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
+  enemyCountChange: {fileID: 11400000, guid: 3410f905c6c90834b9cfb0496dd05f4d, type: 2}
+--- !u!114 &920777072438001082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5196939399459613463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f564d6ce0be49c943a561bfc80a57b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSo: {fileID: 11400000, guid: ad5145a6b4b891044b810679720e2b02, type: 2}
+  OnRaise:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 699041433057435976}
         m_TargetAssemblyTypeName: SpawnPoint, Assembly-CSharp
         m_MethodName: Enemydied
         m_Mode: 1

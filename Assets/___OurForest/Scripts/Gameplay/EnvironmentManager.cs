@@ -42,9 +42,9 @@ public class EnvironmentManager : MonoBehaviour
             sp.GM = _GM;
         }
     }
-    public List<Tile> GetResourceTiles()
-    {
-        var t = tiles.Where<Tile>(a => a.Has_Resource == true).ToList();
-        return t;
-    }
+    //public List<Tile> GetResourceTiles()
+    //{
+    //    var t = tiles.Where<Tile>(a => a.Has_Resource == true).ToList();
+    //    return t;
+    //}
 }

@@ -8,6 +8,7 @@ public class trapBehaviour : MonoBehaviour
     [SerializeField] EventSO EnemyDied1;
     [SerializeField] EventSO EnemyDied2;
     [SerializeField] EventSO EnemyDied3;
+    [SerializeField] EventSO EnemyDied4;
     private void Start()
     {
         t = new Trap();
@@ -28,6 +29,9 @@ public class trapBehaviour : MonoBehaviour
                     break;
                 case "Point3":
                     EnemyDied3.Raise();
+                    break;
+                case "Point4":
+                    EnemyDied4.Raise();
                     break;
                 default:
                     break;

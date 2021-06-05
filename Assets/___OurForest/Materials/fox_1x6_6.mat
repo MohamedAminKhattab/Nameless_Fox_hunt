@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: fox_1x6_6
-  m_Shader: {fileID: 4800000, guid: 86c1faaef2100c84aa62f3ab54322cef, type: 3}
+  m_Shader: {fileID: 4800000, guid: 16d465b4e3c448e46af94971e2d67527, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
@@ -43,6 +43,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Flowmap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: eee0c039abe4c6344a1f7f2c0a539744, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -59,8 +63,16 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _TextureSample2:
-        m_Texture: {fileID: 2800000, guid: ff6519c117233244d9fb03f745b79290, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2be318aef59f66047b8134a0efafa962, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -68,6 +80,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _Alpha: 0
+    - _AlphaCutoff: 0.5
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -76,6 +90,8 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
+    - _GlowIntesity: 0
+    - _GlowIntesity_falloff: 0
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -89,6 +105,7 @@ Material:
     - _TessMin: 10
     - _TessPhongStrength: 0.5
     - _TessValue: 16
+    - _TileFlowA: 1
     - _TransAmbient: 0.1
     - _TransDirect: 0.9
     - _TransNormal: 0.334
@@ -104,10 +121,12 @@ Material:
     - _disolve: 0.46
     - _disolve2: -0.032403048
     - _disolve3: -0.77
+    - _speed: 1
     m_Colors:
     - _Color: {r: 0, g: 1, b: 1, a: 1}
     - _Color0: {r: 0, g: 0.6942835, b: 1, a: 1}
     - _EmissionColor: {r: 0.27647737, g: 0.5377358, b: 0.44716102, a: 1}
+    - _GlowColor: {r: 0, g: 1, b: 0.7863998, a: 1}
     - _Vector0: {r: 0, g: 0.5, b: 0, a: 0}
     - _Vector1: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _scaler: {r: 1, g: 1, b: 0, a: 0}
