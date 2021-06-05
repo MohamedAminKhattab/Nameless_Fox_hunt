@@ -11,7 +11,7 @@ public class JoystickPadController : MonoBehaviour
     [SerializeField] Vector3 position;
     [SerializeField] float range = 50;
     [SerializeField] Vector2SO movement;
-    [SerializeField] Vector3SO positionSO;
+    //[SerializeField] Vector3SO positionSO;
     Touch _touch;
     Vector3 origninalPosition;
     Vector3 touchPosition;

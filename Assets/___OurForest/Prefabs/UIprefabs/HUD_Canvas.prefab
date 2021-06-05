@@ -3232,7 +3232,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e9dd424586ad64ca7ae0847943b928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outerJoystick: {fileID: 2226563255188012698}
   joystick: {fileID: 5131477286609058088}
+  position: {x: 0, y: 0, z: 0}
   range: 50
   movement: {fileID: 11400000, guid: 8b4c0bf996bc8774cbfcccbf1c700fd5, type: 2}
-  position: {fileID: 11400000, guid: 61a25de74a3b8b544934569981d6ec9d, type: 2}
+  positionSO: {fileID: 11400000, guid: 61a25de74a3b8b544934569981d6ec9d, type: 2}
