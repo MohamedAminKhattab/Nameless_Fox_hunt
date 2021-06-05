@@ -22,13 +22,13 @@ public class FloatingJoystick : MonoBehaviour, IDragHandler, IPointerDownHandler
     public void OnDrag(PointerEventData eventdata)
     {
         Vector2 JoyDriection = eventdata.position - JoyPosition;
-        movementSO.value = (JoyDriection.magnitude > Background.sizeDelta.x / 2f) ? JoyDriection.normalized :
-            JoyDriection / (Background.sizeDelta.x / 2f);
+        movementSO.value = (JoyDriection.magnitude > Background.sizeDelta.x / 3f) ? JoyDriection.normalized :
+            JoyDriection / (Background.sizeDelta.x / 3f);
         if (JoystickDirection == JoyStickDirection.Horizontal)
         movementSO.value= new Vector2(movementSO.value.x, 0f);
         if (JoystickDirection == JoyStickDirection.Vertical)
             movementSO.value = new Vector2(0f,movementSO.value.y);
-        Handle.anchoredPosition = (movementSO.value * Background.sizeDelta.x / 2f) * HandleLimit;
+        Handle.anchoredPosition = (movementSO.value * Background.sizeDelta.x / 3f) * HandleLimit;
     }
     public void OnPointerUp(PointerEventData eventdata)
     {
