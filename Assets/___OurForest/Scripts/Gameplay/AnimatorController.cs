@@ -5,13 +5,11 @@ using UnityEngine;
 public class AnimatorController : MonoBehaviour
 {
     Animator animator;
-    Rigidbody rb;
     float velocity = 0.0f;
     [SerializeField]
     float acceleration = 2f;
     [SerializeField]
     float deceleration = 2f;
-    int velocityHash;
     [SerializeField]
     Vector3SO movement;
     [SerializeField]
@@ -43,16 +41,14 @@ public class AnimatorController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody>();
         pickUpFood.state = false;
-        velocityHash = Animator.StringToHash("VelocityX");
-        velocityHash = Animator.StringToHash("VelocityZ");
         crouchAnim.state = false;
         crouch.state = false;
         attack.state = false;
         attackAnim.state = false;
         deathAnim.state = false;
-
+        joyStickMove.value = Vector2.zero;
+        movement.value = Vector3.zero;
     }
 
     void Update()
@@ -63,15 +59,13 @@ public class AnimatorController : MonoBehaviour
             movement.value.y = 0;
             movement.value.z = joyStickMove.value.y;
         }
-        //Debug.Log(joyStickMove.value.x);
-        //Debug.Log(joyStickMove.value.y);
-        bool pressForeward = movement.value.z == 1;
-        bool pressBackward = movement.value.z == -1;
-        bool rightPressed = movement.value.x == 1;
-        bool leftPressed = movement.value.x == -1;
-
-
-        if ((pressForeward || pressBackward || rightPressed || leftPressed))
+  
+        bool pressForeward = movement.value.z > 0;
+        bool pressBackward = movement.value.z <0;
+        bool rightPressed = movement.value.x > 0;
+        bool leftPressed = movement.value.x <0;
+    
+        if (pressForeward || pressBackward || rightPressed || leftPressed)
         {
             velocity += Time.deltaTime * acceleration;
         }
@@ -80,9 +74,7 @@ public class AnimatorController : MonoBehaviour
             velocity -= Time.deltaTime * deceleration;
         }
         velocity = Mathf.Clamp(velocity, 0.0f, 1.0f);
-
-
-        // Debug.Log(crouchAnim.state);
+    
 
         if (crouch.state)
             crouchAnim.state = true;
@@ -98,7 +90,7 @@ public class AnimatorController : MonoBehaviour
         animator.SetBool("crouch", crouchAnim.state);
         animator.SetBool("Attack", attackAnim.state);
         animator.SetBool("Hiding", HideAnim.state);
-       // Debug.Log(attackAnim.state);
+        // Debug.Log(attackAnim.state);
 
         FetchAnim.state = false;
         CutAnim.state = false;
