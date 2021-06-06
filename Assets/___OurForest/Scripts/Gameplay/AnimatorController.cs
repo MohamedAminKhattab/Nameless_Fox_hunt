@@ -68,13 +68,14 @@ public class AnimatorController : MonoBehaviour
         if (pressForeward || pressBackward || rightPressed || leftPressed)
         {
             velocity += Time.deltaTime * acceleration;
+           
         }
         else
         {
             velocity -= Time.deltaTime * deceleration;
         }
         velocity = Mathf.Clamp(velocity, 0.0f, 1.0f);
-    
+        Debug.Log(velocity);
 
         if (crouch.state)
             crouchAnim.state = true;
