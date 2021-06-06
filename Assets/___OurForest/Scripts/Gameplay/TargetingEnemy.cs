@@ -22,12 +22,14 @@ public class TargetingEnemy : MonoBehaviour
                 foreach (var touch in Input.touches)
                 {
                     Ray ray = Camera.main.ScreenPointToRay(touch.position);
-                    Physics.Raycast(ray, out RaycastHit hit);
-                    if (hasEnemyTarget.state == false && FCompareTag(hit.collider.gameObject.tag)&&hit.collider.isTrigger)
+                    if (Physics.Raycast(ray, out RaycastHit hit))
                     {
-                        enemytargetSO.value = hit.transform;
-                        hasEnemyTarget.state = true;
-                        Debug.LogWarning($"{enemytargetSO.value.gameObject.name}=>{enemytargetSO.value.position}");
+                        if (hasEnemyTarget.state == false && FCompareTag(hit.collider.gameObject.tag) && hit.collider.isTrigger)
+                        {
+                            enemytargetSO.value = hit.transform;
+                            hasEnemyTarget.state = true;
+                            Debug.LogWarning($"{enemytargetSO.value.gameObject.name}=>{enemytargetSO.value.position}");
+                        }
                     }
                 }
             }

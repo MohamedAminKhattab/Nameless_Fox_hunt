@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7604778722052138716}
   - component: {fileID: 173961006396627269}
   - component: {fileID: 9042313114644975209}
+  - component: {fileID: 7728629955496621966}
   m_Layer: 3
   m_Name: bush_03
   m_TagString: Bush
@@ -94,3 +95,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 428139df7bb3e9d4dbd2626c497c3fdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &7728629955496621966
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9204167069148485810}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2593846, y: 0.87170357, z: 1.2905731}
+  m_Center: {x: -7.1885805, y: 0.43585178, z: -20.024927}

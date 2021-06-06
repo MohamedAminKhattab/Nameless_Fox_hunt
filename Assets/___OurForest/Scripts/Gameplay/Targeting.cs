@@ -12,26 +12,28 @@ public class Targeting : MonoBehaviour
     private void Start()
     {
         targetSO.value = null;
-        hasTarget.state =false;
+        hasTarget.state = false;
     }
     private void Update()
     {
-        if(SceneManager.GetSceneByName($"Level {selectedLevel.value}").isLoaded)
+        if (SceneManager.GetSceneByName($"Level {selectedLevel.value}").isLoaded)
         {
-        if (Input.touchCount > 0)
-        {
-            foreach (var touch in Input.touches)
+            if (Input.touchCount > 0)
             {
-                Ray ray = Camera.main.ScreenPointToRay(touch.position);
-                Physics.Raycast(ray, out RaycastHit hit);
-                if (hasTarget.state==false&&FCompareTag(hit.collider.gameObject.tag))
+                foreach (var touch in Input.touches)
                 {
-                    targetSO.value = hit.transform;
-                    hasTarget.state = true;
-                   Debug.LogWarning($"{targetSO.value.gameObject.name}=>{targetSO.value.position}");
+                    Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                    if (Physics.Raycast(ray, out RaycastHit hit))
+                    {
+                        if (hasTarget.state == false && FCompareTag(hit.collider.gameObject.tag))
+                        {
+                            targetSO.value = hit.transform;
+                            hasTarget.state = true;
+                            //Debug.LogWarning($"{targetSO.value.gameObject.name}=>{targetSO.value.position}");
+                        }
+                    }
                 }
             }
-        }
         }
     }
 
