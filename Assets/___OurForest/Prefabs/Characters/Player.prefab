@@ -52,6 +52,8 @@ MonoBehaviour:
   _GM: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
   attackAnim: {fileID: 11400000, guid: cbd281dd82f80d1478e42d7b658e3410, type: 2}
   attackSound: {fileID: 11400000, guid: 92e55bdcd4691bd41a4af3ab53999aaf, type: 2}
+  Enemy: {fileID: 0}
+  HasTarget: {fileID: 0}
   bow: {fileID: 6230429868934725718}
 --- !u!111 &1476591492257490335
 Animation:
@@ -167,7 +169,7 @@ MonoBehaviour:
   HideAnim: {fileID: 11400000, guid: 7187870772591e54f811f34aca372dc6, type: 2}
   _GM: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
   playerHealth: {fileID: 11400000, guid: 995eb8ff6ee44984f9945bb81080d729, type: 2}
-  initialHealth: 5
+  initialHealth: 100
   healingPoints: 15
   damagePoints: 5
   playerDeath: {fileID: 11400000, guid: bed96d6d2f8732b459a068d36f9f4c9b, type: 2}
@@ -290,7 +292,6 @@ MonoBehaviour:
   attack: {fileID: 11400000, guid: 260ff84e78d53af4ca8536bd4f8b6c50, type: 2}
   deathAnim: {fileID: 11400000, guid: ae05d4ad6b51a8f46b34c25ab383c42b, type: 2}
   playerHealth: {fileID: 11400000, guid: 995eb8ff6ee44984f9945bb81080d729, type: 2}
-  bow: {fileID: 6230429868934725718}
 --- !u!33 &5501797777281361872
 MeshFilter:
   m_ObjectHideFlags: 0

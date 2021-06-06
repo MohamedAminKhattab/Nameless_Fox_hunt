@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
     {
         if (playerHealth.dead && !playerDeathSound.state)
             playerDeathSound.state = true;
-       // Debug.Log(playerDeathSound.state);
+        // Debug.Log(playerDeathSound.state);
         //if (Input.GetKeyDown(KeyCode.E))
         //{
         //    playerHealth.ApplyDamage(200);
@@ -110,22 +110,33 @@ public class Player : MonoBehaviour
             {
                 CollectResource();
                 resource = "Vine";
+                obj = other.gameObject;
+
             }
             if (other.gameObject.CompareTag("Rock"))
             {
                 CollectResource();
                 resource = "Rock";
+                obj = other.gameObject;
+
             }
             if (other.gameObject.CompareTag("Food"))
+            {
                 PickUpFood();
+                obj = other.gameObject;
+            }
 
             if (other.gameObject.CompareTag("Wood"))
+            {
                 CutWood();
-
+                obj = other.gameObject;
+            }
             if (other.gameObject.CompareTag("Weapon"))
+            {
                 PickUpWeapon();
+                obj = other.gameObject;
+            }
 
-            obj = other.gameObject;
         }
     }
     void OnTriggerExit(Collider other)

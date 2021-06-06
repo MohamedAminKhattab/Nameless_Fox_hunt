@@ -22,4 +22,4 @@ MonoBehaviour:
   pickUpWeapon: 119
   eatFood: 101
   crouch: 99
-  attack: 32
+  attack: 278
