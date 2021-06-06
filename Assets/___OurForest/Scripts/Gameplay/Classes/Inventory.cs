@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System;
-[Serializable]
 public class Inventory
 {
     public int Capacity;

@@ -756,7 +756,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1825271856592831850
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1043,6 +1043,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1001899056521931396}
         m_TargetAssemblyTypeName: Restart_Btn, Assembly-CSharp
         m_MethodName: Execute
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: e07554cc2993bb2489103a301de1ec1a, type: 2}
+        m_TargetAssemblyTypeName: EventSO, Assembly-CSharp
+        m_MethodName: Raise
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1392,6 +1404,7 @@ GameObject:
   - component: {fileID: 9104440089587064674}
   - component: {fileID: 8050696031585155435}
   - component: {fileID: 1310434040}
+  - component: {fileID: 6844153802186535730}
   m_Layer: 5
   m_Name: SoundsHeader
   m_TagString: Untagged
@@ -1528,9 +1541,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55680ce45875f5043aa3bd03b82b4bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
+  Audiomixer: {fileID: 24300002, guid: c94d04526468f08409c7cd480da89459, type: 2}
   sfxToggle: {fileID: 7800655955155614070}
   sfxSlider: {fileID: 7458487418784524045}
+--- !u!114 &6844153802186535730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5681350479347926131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f564d6ce0be49c943a561bfc80a57b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSo: {fileID: 11400000, guid: 4f66b16f9fe4584428f523303f5c83a6, type: 2}
+  OnRaise:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1310434040}
+        m_TargetAssemblyTypeName: SFXController, Assembly-CSharp
+        m_MethodName: FindSource
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5872803059197353830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1757,8 +1798,8 @@ MonoBehaviour:
   gamepaused: {fileID: 11400000, guid: 3ecb782c486c87647b380bd3cfe0b4d6, type: 2}
   pause: {fileID: 4907982498730964956}
   levelselection: {fileID: 0}
-  selectedLevel: {fileID: 0}
-  quitEvent: {fileID: 0}
+  selectedLevel: {fileID: 11400000, guid: 133a7d7efb8597c42a03ca7844681da8, type: 2}
+  quitEvent: {fileID: 11400000, guid: c93ed589859f41c4c80de903a0d43795, type: 2}
 --- !u!1 &6873710621594296608
 GameObject:
   m_ObjectHideFlags: 0

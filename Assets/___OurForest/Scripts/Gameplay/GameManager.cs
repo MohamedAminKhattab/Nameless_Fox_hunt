@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
             inv.AddItem(ItemTypes.Weapon);
             inv.AddItem(ItemTypes.Weapon);
             inv.AddItem(ItemTypes.Weapon);
+            save.Save(100, 100, Inv.Itemlist, false);
         }
         else if (instance != this)
         {
@@ -96,7 +97,7 @@ public class GameManager : MonoBehaviour
         cfollow.Target = player.transform;
         currentwave = 1;
         currentTroopCount = 0;
-        save.Load(playerhealth, foxhealth, Inv.Itemlist, selectedLevel);
+        save.Load(playerhealth.currentHealth, foxhealth.currentHealth, Inv.Itemlist, selectedLevel);
         foreach (var sp in spawnPoints)
         {
             sp.GM = this;
@@ -104,6 +105,13 @@ public class GameManager : MonoBehaviour
             sp.Yelena = player.transform;
         }
         StartCoroutine(WaitForWave());
+    }
+    public void Restart()
+    {
+        Debug.Log("Restarting");
+        save.Load(playerhealth.currentHealth, foxhealth.currentHealth, Inv.Itemlist, selectedLevel);
+        inv.OnInvItemsChangeHandler?.Invoke(this, EventArgs.Empty);
+        Debug.Log("Restarted");
     }
     public void SpawnEnemies()
     {
@@ -117,7 +125,7 @@ public class GameManager : MonoBehaviour
     {
         playerWon.state = false;
         gameOver.state = true;
-        save.Save(playerhealth, foxhealth, Inv.Itemlist, false);
+        save.Save(100, 100, Inv.Itemlist, false);
         onPlayerLost.Raise();
     }
     public void OnEnemyDied()
@@ -132,7 +140,7 @@ public class GameManager : MonoBehaviour
         {
             playerWon.state = true;
             gameOver.state = false;
-            save.Save(playerhealth, foxhealth, Inv.Itemlist, true);
+            save.Save(100, 100, Inv.Itemlist, true);
             onPlayerWon.Raise();
         }
     }
