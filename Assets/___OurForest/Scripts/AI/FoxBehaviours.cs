@@ -104,7 +104,7 @@ public class FoxBehaviours : MonoBehaviour
             if (PickUp.value)
             {
                 Target = (Transform)PickUp.value;
-                //agent.stoppingDistance = 3f; //Todo change elsewhere
+               // agent.stoppingDistance = 3f; //Todo change elsewhere
                 Task.current.Succeed();
             }
             else
@@ -129,11 +129,14 @@ public class FoxBehaviours : MonoBehaviour
             return;
 
         }
+        else
+            agent.stoppingDistance = 2;
         distance.x = transform.position.x - player.position.x;
         distance.y = transform.position.z - player.position.z;
         //Todo create my own vector2 class to calculate the distance and other things if needed
         if (foxState == FoxState.idle && Vector2.SqrMagnitude(distance) > followingRange * followingRange)
         {
+            //agent.stoppingDistance = 2;
             Target = player;
             Task.current.Succeed();
         }
@@ -152,7 +155,7 @@ public class FoxBehaviours : MonoBehaviour
             if (Enemy.value)
             {
                 Target = Enemy.value;
-                agent.stoppingDistance = 2; 
+               // agent.stoppingDistance = 2;
                 Task.current.Succeed();
             }
             else
