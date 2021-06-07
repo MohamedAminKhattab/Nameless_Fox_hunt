@@ -6,9 +6,8 @@ using Panda;
 public enum EnemyState
 {
     goingToHouse,
-    chasingFox,
+    chasing,
     shooting,
-    chasingYelena,
     dead
 }
 public class EnemyBehaviours : MonoBehaviour
@@ -25,17 +24,18 @@ public class EnemyBehaviours : MonoBehaviour
     [SerializeField] int shootingAngle = 45;
     [SerializeField] BoolSO isPlayerHidden;
     private EnemyState enemyState;
-     [SerializeField]Transform Gun;
+    [SerializeField] Transform Gun;
     [SerializeField] float raidingSpeed = 1;
     [SerializeField] BoolSO isenemyDeadSound;
     [SerializeField] BoolSO isenemymovingSound;
     Animator anim;
+    private Transform fovTarget;
 
-
+    private Vector3 direction;
     public Transform Fox { get => fox; set => fox = value; }
     public Transform Yelena { get => yelena; set => yelena = value; }
     public Transform DefaultGoal1 { get => DefaultGoal; set => DefaultGoal = value; }
-    
+
 
     void Start()
     {
@@ -44,14 +44,14 @@ public class EnemyBehaviours : MonoBehaviour
         enemyState = EnemyState.goingToHouse;
         soundSystem = GetComponent<SoundSystem>(); //GetInParent
         anim = GetComponent<Animator>();
-       
+
     }
     private void Update()
     {
         anim.SetBool("speed", !agent.isStopped);
-        anim.SetBool("chase", enemyState==EnemyState.chasingFox);
+        anim.SetBool("chase", enemyState == EnemyState.chasing);//change to global chasing
         isenemymovingSound.state = !agent.isStopped;
-        
+
 
     }
     private void OnDestroy()
@@ -68,9 +68,8 @@ public class EnemyBehaviours : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag.Equals("Arrow")|| other.tag.Equals("Trap")) 
+        if (other.tag.Equals("Arrow") || other.tag.Equals("Trap"))
         {
-
             Die();
         }
     }
@@ -78,79 +77,60 @@ public class EnemyBehaviours : MonoBehaviour
 
     #region Panda Leafs
     [Task]
-    public void canSeeTheFox()
+    public void FOV()
     {
-      if(isPlayerHidden.state||enemyState==EnemyState.dead)
+        if (isPlayerHidden.state || enemyState == EnemyState.dead)
         {
+            enemyState = EnemyState.goingToHouse;
             Task.current.Fail();
             return;
         }
-        if (Measurements.isInRange(transform,fox,VisionRange))
+
+
+        if (Measurements.isInRange(transform, fox, VisionRange)) // test distance
         {
-            if (Measurements.isInRange(transform, fox, (int)agent.stoppingDistance)) //can switch 
+            direction = fox.position - this.transform.position;
+            if (Vector3.Angle(this.transform.forward, direction) < shootingAngle) //test angle
             {
-                enemyState = EnemyState.shooting;
-                agent.isStopped = true;
-                Task.current.Fail();
-                return;
+                fovTarget = fox;
+                Task.current.Succeed();
+            }
+        }
+        else if (Measurements.isInRange(transform, yelena, VisionRange)) // test distance
+        {
+            direction = yelena.position - this.transform.position;
+            if (Vector3.Angle(this.transform.forward, direction) < shootingAngle) //test angle
+            {
+                fovTarget = yelena;
+                Task.current.Succeed();
             }
             else
             {
-                enemyState = EnemyState.chasingFox;
-                agent.speed = 3;
-                
-                //soundSystem.PlayEnemySound(enemyState);
-                Task.current.Succeed();
-                return;
+                enemyState = EnemyState.goingToHouse; // should be removed when the tree gets bigger
+                agent.speed = raidingSpeed;
+                anim.SetBool("shooting", false);
+                Task.current.Fail();
             }
         }
-        else
-        {
-            enemyState = EnemyState.goingToHouse; // should be removed when the tree gets bigger
-            agent.speed = raidingSpeed;
-            Task.current.Fail();
-        }
-    } [Task]
-    public void canSeeThePlayer()
+    }
+    [Task]
+    public void Chase()
     {
-      if(isPlayerHidden.state||enemyState==EnemyState.dead)
-        {
-            Task.current.Fail();
-            return;
-        }
-        if (Measurements.isInRange(transform,yelena,VisionRange))
-        {
-            if (Measurements.isInRange(transform, yelena, (int)agent.stoppingDistance)) //can switch 
-            {
-                enemyState = EnemyState.shooting;
-                agent.isStopped = true;
-                Task.current.Fail();
-                return;
-            }
-            else
-            {
-                enemyState = EnemyState.chasingYelena;
-                agent.speed = 3;
-                
-                //soundSystem.PlayEnemySound(enemyState);
-                Task.current.Succeed();
-                return;
-            }
-        }
-        else
-        {
-            enemyState = EnemyState.goingToHouse; // should be removed when the tree gets bigger
-            agent.speed = raidingSpeed;
-            Task.current.Fail();
-        }
+        enemyState = EnemyState.chasing; //should Chase
+        agent.speed = 3;
+        Task.current.Succeed();
     }
     [Task]
     public void ShouldShoot()
     {
-        if (enemyState == EnemyState.shooting)
+        if (Measurements.isInRange(transform, fox, (int)agent.stoppingDistance))
         {
-            Task.current.Succeed();
+            enemyState = EnemyState.shooting;
+            agent.isStopped = true;
             anim.SetBool("shooting", true);
+            Task.current.Succeed();
+
+
         }
         else
         {
@@ -168,12 +148,10 @@ public class EnemyBehaviours : MonoBehaviour
             case EnemyState.goingToHouse:
                 target = DefaultGoal;
                 break;
-            case EnemyState.chasingFox:
-                target = fox;
+            case EnemyState.chasing:
+                target = fovTarget;
                 break;
-            case EnemyState.chasingYelena:
-                target = yelena;
-                break;
+
         }
         //Debug.Log(agent.pathPending);
 
@@ -183,23 +161,22 @@ public class EnemyBehaviours : MonoBehaviour
             Task.current.Succeed();
             agent.isStopped = true;
         }
-        //else
-        //    Task.current.Fail();
+
     }
     [Task]
     public bool isIntrupted()// i don't like this method at all seems stupid 
     {
-        //  if (enemyState == EnemyState.goingToHouse)
-        //    soundSystem.PlayEnemySound(enemyState);
-        return enemyState !=EnemyState.goingToHouse;
+
+
+        return enemyState != EnemyState.goingToHouse;
 
     }
-   //[Task]
-   //public void LookAround()
-   // {
-   //     agent.isStopped = true;
-   //     if(anim.is().)
-   // }
+    //[Task]
+    //public void LookAround()
+    // {
+    //     agent.isStopped = true;
+    //     if(anim.is().)
+    // }
     [Task]
     public void Aim()
     {
@@ -207,9 +184,7 @@ public class EnemyBehaviours : MonoBehaviour
 
         transform.forward = direction;
 
-        //this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
-        //                                        Quaternion.LookRotation(direction),
-        //                                        Time.deltaTime * 5);
+
         if (Task.isInspected)
             Task.current.debugInfo = string.Format("angle={0}",
                 Vector3.Angle(this.transform.forward, direction));
@@ -220,11 +195,11 @@ public class EnemyBehaviours : MonoBehaviour
             Task.current.Succeed();
         }
     }
-   
+
     [Task]
     public void Fire()
     {
-        
+
         soundSystem.PlayEnemySound(enemyState);
         FindObjectOfType<AudioManager>().PlayeSound("Gun");
         GameObject go = Instantiate(bullet, Gun.position, transform.rotation);

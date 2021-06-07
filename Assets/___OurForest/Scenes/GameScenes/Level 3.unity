@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 279321743}
-  m_IndirectSpecularColor: {r: 0.16788375, g: 0.21073635, b: 0.28994125, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -177,14 +177,6 @@ PrefabInstance:
     - target: {fileID: 3109528212685813774, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
       propertyPath: m_Name
       value: Forest level
-      objectReference: {fileID: 0}
-    - target: {fileID: 5992026405892165210, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 5992026405892165211, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
-      propertyPath: m_Lightmapping
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a486ae4db7036243b978e229417eda4, type: 3}

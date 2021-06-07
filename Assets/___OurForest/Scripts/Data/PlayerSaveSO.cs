@@ -42,8 +42,7 @@ public class PlayerSaveSO : ScriptableObject
         {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file =
-                       File.Open(Application.persistentDataPath
-                       + "/PlayerInv.txt", FileMode.Open);
+                       File.Open("Assets/___OurForest/Resources/PlayerInv.txt", FileMode.Open);
             InventoryData data = new InventoryData();
             data = (InventoryData)bf.Deserialize(file);
             _items.Find(a => a.Type == ItemTypes.Food).Itemcount = data.foodcount;
