@@ -357,7 +357,7 @@ MonoBehaviour:
   OnRaise:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9151201594120318504, guid: f1600080c5d346a47bf9f3175b199541, type: 3}
+      - m_Target: {fileID: 3203102973015703108}
         m_TargetAssemblyTypeName: FoxBehaviours, Assembly-CSharp
         m_MethodName: Flee
         m_Mode: 1
@@ -385,7 +385,7 @@ MonoBehaviour:
   OnRaise:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9151201594120318504, guid: f1600080c5d346a47bf9f3175b199541, type: 3}
+      - m_Target: {fileID: 3203102973015703108}
         m_TargetAssemblyTypeName: FoxBehaviours, Assembly-CSharp
         m_MethodName: StartGathering
         m_Mode: 1
@@ -413,9 +413,9 @@ MonoBehaviour:
   OnRaise:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9151201594120318504, guid: f1600080c5d346a47bf9f3175b199541, type: 3}
+      - m_Target: {fileID: 3203102973015703108}
         m_TargetAssemblyTypeName: FoxBehaviours, Assembly-CSharp
-        m_MethodName: StartLuring
+        m_MethodName: shouldLure
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -436,8 +436,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.58, y: 1, z: 2.25}
-  m_Center: {x: 0, y: 0, z: -0.48}
+  m_Size: {x: 1.36, y: 1, z: 2.7938595}
+  m_Center: {x: 0, y: 0, z: 0.89692974}
 --- !u!114 &6213920479261908020
 MonoBehaviour:
   m_ObjectHideFlags: 0

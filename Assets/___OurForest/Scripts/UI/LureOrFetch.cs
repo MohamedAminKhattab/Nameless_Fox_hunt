@@ -14,14 +14,17 @@ public class LureOrFetch : MonoBehaviour
         if(target.value)
         {
             foxfetchevent.Raise();
+            Debug.Log("foxfetch");
         }
         if(enemytarget.value)
         {
             foxlureevent.Raise();
+            Debug.Log("foxlure");
         }
         if(enemytarget.value==null&&target.value==null)
         {
             foxfleeevent.Raise();
+            Debug.Log("foxflee");
         }
     }
 
