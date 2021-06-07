@@ -2410,7 +2410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0d1de9199acdf4097dea3c8f01665f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 4
   _GM: {fileID: 0}
   woodNeeded: {fileID: 8206137552612309216}
   rockNeeded: {fileID: 8206137552602756562}

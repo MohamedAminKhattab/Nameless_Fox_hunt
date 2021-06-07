@@ -439,6 +439,7 @@ GameObject:
   - component: {fileID: 3058781270502996517}
   - component: {fileID: 3082764205813555159}
   - component: {fileID: 83149710}
+  - component: {fileID: 1569442384}
   m_Layer: 5
   m_Name: HUD_Canvas
   m_TagString: UI
@@ -585,6 +586,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1569442384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3058781270502996516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c4621b28c77ab4cbf065af6df2bdf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeRemaining: {fileID: 11400000, guid: 36a1013db5bb7a740a43c4f9da5592e6, type: 2}
+  timerIsRunning: {fileID: 11400000, guid: 768e826939fd8e64394f7d61557b64c8, type: 2}
+  timeText: {fileID: 3058781272113031320}
 --- !u!1 &3058781270512662065
 GameObject:
   m_ObjectHideFlags: 0
@@ -3089,7 +3105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7732719102375011971
 RectTransform:
   m_ObjectHideFlags: 0

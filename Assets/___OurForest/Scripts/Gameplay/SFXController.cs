@@ -20,11 +20,14 @@ public class SFXController : MonoBehaviour
     }
     private void Update()
     {
-         //sfxSlider.value= Audiomixer.audioMixer ;
+        //sfxSlider.value= Audiomixer.audioMixer ;
+        Audiomixer.audioMixer.GetFloat("Volume",out float value);
+        sfxSlider.value = value;
     }
     public void SetSFXVolume()
     {
-       // Audiomixer.volume = sfxSlider.value;
+        // Audiomixer.volume = sfxSlider.value;
+        Audiomixer.audioMixer.SetFloat("Volume", sfxSlider.value);
     }
     public void ToggleSFX()
     {

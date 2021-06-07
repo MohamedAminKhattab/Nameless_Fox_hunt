@@ -14,6 +14,10 @@ public class Craftable : MonoBehaviour
     [SerializeField] TMP_Text rockNeeded;
     [SerializeField] TMP_Text vinesNeeded;
     [SerializeField] Button craft;
+    private void Start()
+    {
+        ShowRequired();
+    }
     public void SetTypeToWeapon()
     {
         type = ItemTypes.Weapon;

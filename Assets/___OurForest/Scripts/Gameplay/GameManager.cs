@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] BoolSO playerWon;
     [SerializeField] BoolSO gameOver;
     [SerializeField] BoolSO togamePlay;
+    [SerializeField] BoolSO timerisRunning;
+    [SerializeField] FloatSO RemainingTime;
     [SerializeField] GameObject foxPrefab;
     [SerializeField] GameObject fox;
     [SerializeField] GameObject playerPrefab;
@@ -71,10 +73,10 @@ public class GameManager : MonoBehaviour
         Player p = GetComponentInChildren<Player>();
         if (p != null && f != null)
         {
-            Debug.LogWarning("Found them");
+            //Debug.LogWarning("Found them");
             Destroy(p.gameObject);
             Destroy(f.gameObject);
-            Debug.LogWarning("deleted them");
+           // Debug.LogWarning("deleted them");
         }
     }
     public void StartLevel()
@@ -104,14 +106,15 @@ public class GameManager : MonoBehaviour
             sp.Fox = fox.transform;
             sp.Yelena = player.transform;
         }
+        changecountenemy.Raise();
         StartCoroutine(WaitForWave());
     }
     public void Restart()
     {
-        Debug.Log("Restarting");
+        //Debug.Log("Restarting");
         save.Load(playerhealth.currentHealth, foxhealth.currentHealth, Inv.Itemlist, selectedLevel);
         inv.OnInvItemsChangeHandler?.Invoke(this, EventArgs.Empty);
-        Debug.Log("Restarted");
+       // Debug.Log("Restarted");
     }
     public void SpawnEnemies()
     {
@@ -146,9 +149,11 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator WaitForWave()
     {
-        Debug.LogWarning("All enemies died making new ones");
+        //Debug.LogWarning("All enemies died making new ones");
+        timerisRunning.state = true;
+        RemainingTime.value = spawnrate * 60;
         yield return new WaitForSeconds(spawnrate * 60);
         SpawnEnemies();
-        Debug.LogWarning("new ones");
+       // Debug.LogWarning("new ones");
     }
 }

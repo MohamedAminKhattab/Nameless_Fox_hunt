@@ -686,10 +686,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD_Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 5810845644853351364, guid: 85539008418940d4d9c934ccccceacf1, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85539008418940d4d9c934ccccceacf1, type: 3}
 --- !u!114 &2830216777105329070 stripped
@@ -1305,10 +1301,6 @@ PrefabInstance:
     - target: {fileID: 6038648972489379783, guid: 8a311e655ce18b4478e94910a8720a0f, type: 3}
       propertyPath: m_Name
       value: Mainmenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 6038648972489379783, guid: 8a311e655ce18b4478e94910a8720a0f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7955290893087292146, guid: 8a311e655ce18b4478e94910a8720a0f, type: 3}
       propertyPath: next

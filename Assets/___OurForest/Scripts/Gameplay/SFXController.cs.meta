@@ -3,7 +3,10 @@ guid: 55680ce45875f5043aa3bd03b82b4bd3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Audiomixer: {fileID: 24300002, guid: c94d04526468f08409c7cd480da89459, type: 2}
+  - sfxToggle: {instanceID: 0}
+  - sfxSlider: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
