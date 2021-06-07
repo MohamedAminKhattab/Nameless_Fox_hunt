@@ -16,7 +16,7 @@ public class SoundSystem : MonoBehaviour
     {
         switch (state)
         {
-            case EnemyState.chasingFox:
+            case EnemyState.chasing:
                 source.clip = EnemyStatements[0];
                 if(!source.isPlaying)
                 source.Play();
