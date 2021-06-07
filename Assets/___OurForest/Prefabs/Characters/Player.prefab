@@ -47,7 +47,7 @@ MonoBehaviour:
   player: {fileID: 6845774844251762932}
   arrowPrefab: {fileID: 499904870389894429, guid: de92f26bdabde4046be467f5b0a6f090, type: 3}
   arrowSpawn: {fileID: 1759470589889199628}
-  shootForce: 5
+  shootForce: 20
   attack: {fileID: 11400000, guid: 260ff84e78d53af4ca8536bd4f8b6c50, type: 2}
   _GM: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
   attackAnim: {fileID: 11400000, guid: cbd281dd82f80d1478e42d7b658e3410, type: 2}

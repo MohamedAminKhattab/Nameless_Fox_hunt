@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8257266073022055684}
   m_Layer: 0
   m_Name: ArrowP
-  m_TagString: Untagged
+  m_TagString: Arrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,17 +124,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8073541158458680939, guid: c3b1573dddce6e649836d9602ea8ebbc, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8326726794858847085, guid: c3b1573dddce6e649836d9602ea8ebbc, type: 3}
       propertyPath: m_Name
       value: Arrow
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8073541158458680939, guid: c3b1573dddce6e649836d9602ea8ebbc, type: 3}
-    - {fileID: 6132095315199788422, guid: c3b1573dddce6e649836d9602ea8ebbc, type: 3}
+    - target: {fileID: 8326726794858847085, guid: c3b1573dddce6e649836d9602ea8ebbc, type: 3}
+      propertyPath: m_TagString
+      value: Arrow
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3b1573dddce6e649836d9602ea8ebbc, type: 3}
 --- !u!4 &2063335962688257263 stripped
 Transform:
