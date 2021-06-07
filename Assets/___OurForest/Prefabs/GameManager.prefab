@@ -94,7 +94,7 @@ MonoBehaviour:
   needTrap: {fileID: 11400000, guid: 06689c3572e4ed94aaabfa80f39cc508, type: 2}
   trapLocation: {fileID: 11400000, guid: 0a71e172541139944b0f924235fee262, type: 2}
   level: {fileID: 0}
-  trapPrefab: {fileID: 4586435710400259806, guid: 6c608c118fef457448c09c42b3eee2cf, type: 3}
+  trapPrefab: {fileID: 285521514259324736, guid: acaa9f05c827ea9479fd09f6a43f84bf, type: 3}
   _GM: {fileID: 8530145609774373358}
 --- !u!114 &8404798601930685678
 MonoBehaviour:
