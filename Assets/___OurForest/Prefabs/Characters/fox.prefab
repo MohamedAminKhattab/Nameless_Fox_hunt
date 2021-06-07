@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: -1197770406822406551}
   - component: {fileID: 1391084813055244160}
   - component: {fileID: -2583254906996918007}
+  - component: {fileID: -2358130392139941862}
   m_Layer: 0
   m_Name: fox
   m_TagString: Fox
@@ -282,3 +283,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &-2358130392139941862
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8232281656054683095}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aef29cdbf79bfd34ba3c148b136d8181, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
