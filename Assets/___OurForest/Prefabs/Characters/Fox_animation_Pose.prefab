@@ -340,6 +340,7 @@ MonoBehaviour:
   Enemy: {fileID: 11400000, guid: 6f00ffae9c325fc40b69e985447679d0, type: 2}
   isPlayerHidden: {fileID: 11400000, guid: 7187870772591e54f811f34aca372dc6, type: 2}
   isLuringSound: {fileID: 11400000, guid: 4209e8bc39a654946aadeda23ddf98f0, type: 2}
+  FoxDeath: {fileID: 11400000, guid: b0b55919835c4d04b93e5cfe4e44d932, type: 2}
   foxHealth: {fileID: 11400000, guid: cb84ffe3b29e677448a641a76784c73f, type: 2}
 --- !u!114 &-3625413279058749579
 MonoBehaviour:
