@@ -1150,6 +1150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 781850837068251774}
   - component: {fileID: 2083387710704299170}
+  - component: {fileID: 3807379727398257294}
   m_Layer: 5
   m_Name: SliderSFX
   m_TagString: Untagged
@@ -1230,6 +1231,23 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3807379727398257294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6538263582743563286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8381c3bda150ea64eb34aa547f81b39b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _volumeParameter: MasterVolume
+  _mixer: {fileID: 24100000, guid: c94d04526468f08409c7cd480da89459, type: 2}
+  _slider: {fileID: 2083387710704299170}
+  _multiplier: 30
+  _toggle: {fileID: 499813901115957878}
 --- !u!1 &7501242883060808090
 GameObject:
   m_ObjectHideFlags: 0
@@ -1608,7 +1626,6 @@ GameObject:
   - component: {fileID: 5829279783447597020}
   - component: {fileID: 6804484965733995601}
   - component: {fileID: 3498175301771384389}
-  - component: {fileID: 8517366997232552905}
   m_Layer: 5
   m_Name: BGM
   m_TagString: Untagged
@@ -1734,20 +1751,3 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &8517366997232552905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8945514835011515671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8381c3bda150ea64eb34aa547f81b39b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _volumeParameter: MasterVolume
-  _mixer: {fileID: 24100000, guid: c94d04526468f08409c7cd480da89459, type: 2}
-  _slider: {fileID: 2083387710704299170}
-  _multiplier: 30
-  _toggle: {fileID: 499813901115957878}

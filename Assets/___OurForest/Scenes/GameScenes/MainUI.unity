@@ -123,39 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &174732154 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9053862601527631122, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
-  m_PrefabInstance: {fileID: 1310434033}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &174732155 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4319218205555146150, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
-  m_PrefabInstance: {fileID: 1310434033}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 174732154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &174732156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 174732154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8381c3bda150ea64eb34aa547f81b39b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _volumeParameter: MasterVolume
-  _mixer: {fileID: 24100000, guid: c94d04526468f08409c7cd480da89459, type: 2}
-  _slider: {fileID: 174732155}
-  _multiplier: 30
-  _toggle: {fileID: 607112925}
 --- !u!114 &255608199 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2363840395412855820, guid: 5090474621cd98b40b6b24366f3125da, type: 3}
@@ -293,17 +260,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
---- !u!114 &607112925 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2447405264528454514, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
-  m_PrefabInstance: {fileID: 1310434033}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &610625923 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
@@ -487,6 +443,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 593303619413559903, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 593303619413559903, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 593303619413559903, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 976962946875106578, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
       propertyPath: _GM
       value: 
@@ -547,6 +515,34 @@ PrefabInstance:
       propertyPath: _GM
       value: 
       objectReference: {fileID: 610625923}
+    - target: {fileID: 4168909648135946117, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168909648135946117, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168909648135946117, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848594534304706231, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848594534304706231, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155069796381885916, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155069796381885916, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2817384227139073009, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
