@@ -20,8 +20,8 @@ public class FoxBehaviours : MonoBehaviour
     [SerializeField] BoolSO hasTargetSo;
     [SerializeField] TransformSO Enemy;
     [SerializeField] BoolSO isPlayerHidden;
-    [SerializeField] BoolSO isLuringSound
-        ;
+    [SerializeField] BoolSO isLuringSound;
+        Animator anim;
     
     [SerializeField] HealthSO foxHealth;
     private FoxState foxState;
@@ -43,6 +43,7 @@ public class FoxBehaviours : MonoBehaviour
         foxHealth.initialHealth = 100;
         foxHealth.currentHealth = 100;
         foxHealth.dead = false;
+        anim = GetComponent<Animator>();
     }
     private void Update()
     {
@@ -104,17 +105,23 @@ public class FoxBehaviours : MonoBehaviour
             if (PickUp.value)
             {
                 Target = (Transform)PickUp.value;
-               // agent.stoppingDistance = 3f; //Todo change elsewhere
+                anim.SetBool("run", true);
+
+                // agent.stoppingDistance = 3f; //Todo change elsewhere
                 Task.current.Succeed();
             }
             else
             {
                 Task.current.Fail();
+                anim.SetBool("run", false);
+
                 agent.isStopped = true;
             }
         }
         else
         {
+            anim.SetBool("run", false);
+
             Task.current.Fail();
         }
     }
@@ -125,6 +132,7 @@ public class FoxBehaviours : MonoBehaviour
         {
             Target = Player;
             agent.stoppingDistance = .1f;
+            anim.SetBool("walk", true);
             Task.current.Succeed();
             return;
 
@@ -138,12 +146,16 @@ public class FoxBehaviours : MonoBehaviour
         {
             //agent.stoppingDistance = 2;
             Target = player;
+            anim.SetBool("walk", true);
+
             Task.current.Succeed();
         }
         else
         {
-            Task.current.Fail();
+            anim.SetBool("walk", false);
+
             agent.isStopped = true;
+            Task.current.Fail();
         }
     }
 
@@ -155,18 +167,23 @@ public class FoxBehaviours : MonoBehaviour
             if (Enemy.value)
             {
                 Target = Enemy.value;
+                anim.SetBool("run", true);
                // agent.stoppingDistance = 2;
                 Task.current.Succeed();
             }
             else
             {
+                anim.SetBool("run", false);
+
                 Task.current.Fail();
             }
         }
         else
         {
-            Task.current.Fail();
+            anim.SetBool("run", false);
+
             agent.isStopped = true;
+            Task.current.Fail();
         }
     }
     #endregion
@@ -192,7 +209,7 @@ public class FoxBehaviours : MonoBehaviour
     {
         if (Task.isInspected)
             Task.current.debugInfo = string.Format("t={0:0.00}", Time.time);
-       
+      
             agent.isStopped = false;
         agent.SetDestination(Target.position);
         if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)

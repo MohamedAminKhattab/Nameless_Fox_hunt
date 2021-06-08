@@ -63,7 +63,7 @@ MonoBehaviour:
   togamePlay: {fileID: 11400000, guid: cea3b9addbb29e048bd07592e7796300, type: 2}
   timerisRunning: {fileID: 11400000, guid: 768e826939fd8e64394f7d61557b64c8, type: 2}
   RemainingTime: {fileID: 11400000, guid: 36a1013db5bb7a740a43c4f9da5592e6, type: 2}
-  foxPrefab: {fileID: 8232281656054683095, guid: f1600080c5d346a47bf9f3175b199541, type: 3}
+  foxPrefab: {fileID: 2006851311034963767, guid: 8b1f5052a99d09d4ea2e30e2bf77aff9, type: 3}
   fox: {fileID: 0}
   playerPrefab: {fileID: 6845774844251762932, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
   _EM: {fileID: 0}
