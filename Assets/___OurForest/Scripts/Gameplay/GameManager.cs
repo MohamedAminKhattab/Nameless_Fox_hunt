@@ -56,6 +56,17 @@ public class GameManager : MonoBehaviour
             inv.AddItem(ItemTypes.Weapon);
             inv.AddItem(ItemTypes.Weapon);
             inv.AddItem(ItemTypes.Weapon);
+            inv.AddItem(ItemTypes.Weapon);
+            inv.AddItem(ItemTypes.Weapon);
+            inv.AddItem(ItemTypes.Weapon);
+            inv.AddItem(ItemTypes.Weapon);
+            inv.AddItem(ItemTypes.Weapon);
+
+            inv.AddItem(ItemTypes.Food);
+            inv.AddItem(ItemTypes.Food);
+            inv.AddItem(ItemTypes.Food);
+            inv.AddItem(ItemTypes.Food);
+            inv.AddItem(ItemTypes.Food);
             save.Save(100, 100, Inv.Itemlist, false);
         }
         else if (instance != this)

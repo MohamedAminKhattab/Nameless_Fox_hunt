@@ -15,6 +15,8 @@ public class FoxInventory : MonoBehaviour
         foxHealth.initialHealth = 100;
         foxHealth.currentHealth = 100;
         foxHealth.dead = false;
+        Debug.LogWarning(_gm);
+        
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -65,10 +67,12 @@ public class FoxInventory : MonoBehaviour
     }
     public void Heal()
     {
-        if(_gm.Inv.GetItemCount(ItemTypes.Food)>0)
+        Debug.LogWarning(_gm);
+        if (GetComponentInParent<GameManager>().Inv.GetItemCount(ItemTypes.Food)>0)
         {
             if(foxHealth.currentHealth<foxHealth.initialHealth)
             {
+                _gm.Inv.UseItem(ItemTypes.Food, 1);
                 foxHealth.Healing(10);
             }
         }
