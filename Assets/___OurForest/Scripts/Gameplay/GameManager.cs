@@ -7,7 +7,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    Inventory inv;
+    Inventory inv = new Inventory();
 
     public Inventory Inv { get => inv; }
     public int CurrentTroopCount { get => currentTroopCount; set => currentTroopCount = value; }
@@ -45,7 +45,6 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            inv = new Inventory();
             inv.AddItem(ItemTypes.Trap);
             inv.AddItem(ItemTypes.Trap);
             inv.AddItem(ItemTypes.Trap);
@@ -56,6 +55,17 @@ public class GameManager : MonoBehaviour
             inv.AddItem(ItemTypes.Weapon);
             inv.AddItem(ItemTypes.Weapon);
             inv.AddItem(ItemTypes.Weapon);
+            inv.AddItem(ItemTypes.Weapon);
+            inv.AddItem(ItemTypes.Weapon);
+            inv.AddItem(ItemTypes.Weapon);
+            inv.AddItem(ItemTypes.Weapon);
+            inv.AddItem(ItemTypes.Weapon);
+
+            inv.AddItem(ItemTypes.Food);
+            inv.AddItem(ItemTypes.Food);
+            inv.AddItem(ItemTypes.Food);
+            inv.AddItem(ItemTypes.Food);
+            inv.AddItem(ItemTypes.Food);
             save.Save(100, 100, Inv.Itemlist, false);
         }
         else if (instance != this)
