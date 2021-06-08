@@ -415,7 +415,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3203102973015703108}
         m_TargetAssemblyTypeName: FoxBehaviours, Assembly-CSharp
-        m_MethodName: shouldLure
+        m_MethodName: StartLuring
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -453,6 +453,7 @@ MonoBehaviour:
   _gm: {fileID: 0}
   target: {fileID: 11400000, guid: bfac95677aa908f46a00deaf667768cf, type: 2}
   hastarget: {fileID: 11400000, guid: 0b5e8e33f6a1919438ef47f4a7b0482d, type: 2}
+  foxHealth: {fileID: 11400000, guid: cb84ffe3b29e677448a641a76784c73f, type: 2}
 --- !u!54 &6188049913215389560
 Rigidbody:
   m_ObjectHideFlags: 0

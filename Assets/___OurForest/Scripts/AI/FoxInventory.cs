@@ -7,9 +7,15 @@ public class FoxInventory : MonoBehaviour
     [SerializeField] GameManager _gm;
     [SerializeField] TransformSO target;
     [SerializeField] BoolSO hastarget;
-
+    [SerializeField] HealthSO foxHealth;
     public GameManager Gm { get => _gm; set => _gm = value; }
 
+    private void Start()
+    {
+        foxHealth.initialHealth = 100;
+        foxHealth.currentHealth = 100;
+        foxHealth.dead = false;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform == target.value)
@@ -54,6 +60,17 @@ public class FoxInventory : MonoBehaviour
                     break;
             }
 
+        }
+
+    }
+    public void Heal()
+    {
+        if(_gm.Inv.GetItemCount(ItemTypes.Food)>0)
+        {
+            if(foxHealth.currentHealth<foxHealth.initialHealth)
+            {
+                foxHealth.Healing(10);
+            }
         }
     }
 }
