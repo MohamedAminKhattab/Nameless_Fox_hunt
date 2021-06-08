@@ -21,18 +21,23 @@ public class FoxBehaviours : MonoBehaviour
     [SerializeField] TransformSO Enemy;
     [SerializeField] BoolSO isPlayerHidden;
     [SerializeField] BoolSO isLuringSound;
-        Animator anim;
-    
+    Animator anim;
+    [SerializeField] EventSO FoxDeath;
     [SerializeField] HealthSO foxHealth;
     private FoxState foxState;
-   
+
     public Transform Player { get => player; set => player = value; }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag.Equals("bullet"))
         {
+            
             foxHealth.ApplyDamage(5);
+            if (foxHealth.dead)
+                FoxDeath.Raise();
+
+
         }
     }
 
@@ -82,6 +87,7 @@ public class FoxBehaviours : MonoBehaviour
     {
         foxState = FoxState.luring;
         isLuringSound.state = true;
+        Debug.Log("luringgggg");
     }
     public void Flee() //be called from khattab after collecting the pickup
     {
@@ -107,7 +113,7 @@ public class FoxBehaviours : MonoBehaviour
                 Target = (Transform)PickUp.value;
                 anim.SetBool("run", true);
 
-                // agent.stoppingDistance = 3f; //Todo change elsewhere
+                 agent.stoppingDistance = .5f; //Todo change elsewhere
                 Task.current.Succeed();
             }
             else
@@ -132,7 +138,16 @@ public class FoxBehaviours : MonoBehaviour
         {
             Target = Player;
             agent.stoppingDistance = .1f;
-            anim.SetBool("walk", true);
+            agent.speed = 5;
+            anim.SetBool("run", true);
+            if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
+            {
+                agent.isStopped = true;
+                anim.SetBool("run", false);
+                agent.speed = 3.5f;
+
+
+            }
             Task.current.Succeed();
             return;
 
@@ -162,26 +177,31 @@ public class FoxBehaviours : MonoBehaviour
     [Task]
     public void shouldLure()
     {
+        Debug.Log(foxState);
         if (foxState == FoxState.luring && foxHealth.currentHealth >= 40f) //check if the enemy is valid 
         {
+            Debug.Log("it's true");
             if (Enemy.value)
             {
+                
                 Target = Enemy.value;
                 anim.SetBool("run", true);
-               // agent.stoppingDistance = 2;
+                agent.speed = 5;
+                // agent.stoppingDistance = 2;
                 Task.current.Succeed();
+                
             }
             else
             {
                 anim.SetBool("run", false);
-
+                agent.speed = 3.5f;
                 Task.current.Fail();
             }
         }
         else
         {
             anim.SetBool("run", false);
-
+            agent.speed = 3.5f;
             agent.isStopped = true;
             Task.current.Fail();
         }
@@ -195,7 +215,8 @@ public class FoxBehaviours : MonoBehaviour
         hasTargetSo.state = false;
         PickUp.value = null;
         Task.current.Succeed();
-    } [Task]
+    }
+    [Task]
     public void FinishLuring()
     {
         hasTargetSo.state = false;
@@ -209,18 +230,18 @@ public class FoxBehaviours : MonoBehaviour
     {
         if (Task.isInspected)
             Task.current.debugInfo = string.Format("t={0:0.00}", Time.time);
-      
-            agent.isStopped = false;
+
+        agent.isStopped = false;
         agent.SetDestination(Target.position);
         if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
         {
             Debug.Log("Arrived");
             Task.current.Succeed();
         }
-        
+
     }
 
-    [Task] //should be a task or not??
+    [Task] 
     public void ReturnToIdle() // better to be standing alone not in the end of followingtarget to be reused 
     {
         foxState = FoxState.idle;

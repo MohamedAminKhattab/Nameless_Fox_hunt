@@ -94,15 +94,21 @@ public class EnemyBehaviours : MonoBehaviour
             {
                 fovTarget = fox;
                 Task.current.Succeed();
+                return;
             }
         }
         else if (Measurements.isInRange(transform, yelena, VisionRange)) // test distance
         {
             direction = yelena.position - this.transform.position;
+
             if (Vector3.Angle(this.transform.forward, direction) < shootingAngle) //test angle
             {
                 fovTarget = yelena;
+
+
                 Task.current.Succeed();
+                return;
+
             }
             else
             {
@@ -110,7 +116,9 @@ public class EnemyBehaviours : MonoBehaviour
                 agent.speed = raidingSpeed;
                 anim.SetBool("shooting", false);
                 Task.current.Fail();
+                return;
             }
+            
         }
     }
     [Task]
@@ -123,7 +131,7 @@ public class EnemyBehaviours : MonoBehaviour
     [Task]
     public void ShouldShoot()
     {
-        if (Measurements.isInRange(transform, fox, (int)agent.stoppingDistance))
+        if (Measurements.isInRange(transform, fovTarget, (int)agent.stoppingDistance))
         {
             enemyState = EnemyState.shooting;
             agent.isStopped = true;
@@ -166,7 +174,7 @@ public class EnemyBehaviours : MonoBehaviour
     [Task]
     public bool isIntrupted()// i don't like this method at all seems stupid 
     {
-
+        Debug.Log(enemyState);
 
         return enemyState != EnemyState.goingToHouse;
 
