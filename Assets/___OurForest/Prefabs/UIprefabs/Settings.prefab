@@ -382,19 +382,7 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1310434037}
-        m_TargetAssemblyTypeName: SFXController, Assembly-CSharp
-        m_MethodName: ToggleSFX
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_IsOn: 1
 --- !u!1 &2626576241089382604
 GameObject:
@@ -1238,22 +1226,10 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1310434037}
-        m_TargetAssemblyTypeName: SFXController, Assembly-CSharp
-        m_MethodName: SetSFXVolume
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &7501242883060808090
 GameObject:
   m_ObjectHideFlags: 0
@@ -1632,7 +1608,7 @@ GameObject:
   - component: {fileID: 5829279783447597020}
   - component: {fileID: 6804484965733995601}
   - component: {fileID: 3498175301771384389}
-  - component: {fileID: 1310434037}
+  - component: {fileID: 8517366997232552905}
   m_Layer: 5
   m_Name: BGM
   m_TagString: Untagged
@@ -1758,7 +1734,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &1310434037
+--- !u!114 &8517366997232552905
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1767,9 +1743,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8945514835011515671}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55680ce45875f5043aa3bd03b82b4bd3, type: 3}
+  m_Script: {fileID: 11500000, guid: 8381c3bda150ea64eb34aa547f81b39b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Audiomixer: {fileID: 24300002, guid: c94d04526468f08409c7cd480da89459, type: 2}
-  sfxToggle: {fileID: 499813901115957878}
-  sfxSlider: {fileID: 2083387710704299170}
+  _volumeParameter: MasterVolume
+  _mixer: {fileID: 24100000, guid: c94d04526468f08409c7cd480da89459, type: 2}
+  _slider: {fileID: 2083387710704299170}
+  _multiplier: 30
+  _toggle: {fileID: 499813901115957878}
