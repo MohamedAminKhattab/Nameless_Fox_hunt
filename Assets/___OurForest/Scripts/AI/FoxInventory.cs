@@ -26,49 +26,31 @@ public class FoxInventory : MonoBehaviour
             switch (other.gameObject.tag)
             {
                 case "Food":
-                   // Debug.LogWarning("Food");
                     _gm.Inv.AddItem(ItemTypes.Food);
-                    //target.value = null;
-                   // hastarget.state = false;
-                   // Destroy(other.gameObject);
                     other.gameObject.SetActive(false);
 
                     break;
                 case "Wood":
-                    //Debug.LogWarning("Wood");
                     _gm.Inv.AddItem(ItemTypes.Wood);
-                   // target.value = null;
-                    //hastarget.state = false;
-                    //Destroy(other.gameObject);
                     other.gameObject.SetActive(false);
                     break;
                 case "Rock":
-                    //Debug.LogWarning("Rock");
                     _gm.Inv.AddItem(ItemTypes.Rock);
-                  //  target.value = null;
-                    //hastarget.state = false;
-                    //Destroy(other.gameObject);
                     other.gameObject.SetActive(false);
                     break;
                 case "Vine":
-                   // Debug.LogWarning("Vine");
                     _gm.Inv.AddItem(ItemTypes.Vine);
-                   // target.value = null;
-                   // hastarget.state = false;
-                    // Destroy(other.gameObject);
                     other.gameObject.SetActive(false);
                     break;
                 default:
                     break;
             }
-
         }
-
     }
     public void Heal()
     {
         Debug.LogWarning(_gm);
-        if (GetComponentInParent<GameManager>().Inv.GetItemCount(ItemTypes.Food)>0)
+        if (_gm.Inv.GetItemCount(ItemTypes.Food)>0)
         {
             if(foxHealth.currentHealth<foxHealth.initialHealth)
             {

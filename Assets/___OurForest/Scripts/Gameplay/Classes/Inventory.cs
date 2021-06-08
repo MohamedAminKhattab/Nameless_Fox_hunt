@@ -17,12 +17,12 @@ public class Inventory
     public Inventory()
     {
         itemlist = new List<Item>(maxCapacity);
-        itemlist.Add(new Rock() { Itemcount=0});
-        itemlist.Add(new Wood() { Itemcount = 0 });
-        itemlist.Add(new Weapon() { Itemcount = 0 });
-        itemlist.Add(new Vine() { Itemcount = 0 });
-        itemlist.Add(new Trap() { Itemcount = 0 });
-        itemlist.Add(new Food() { Itemcount = 0 });
+        itemlist.Add(new Rock());
+        itemlist.Add(new Wood());
+        itemlist.Add(new Weapon());
+        itemlist.Add(new Vine());
+        itemlist.Add(new Trap());
+        itemlist.Add(new Food());
     }
     public int GetWoodneeded(ItemTypes type)
     {
