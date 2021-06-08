@@ -54,7 +54,7 @@ MonoBehaviour:
   attackSound: {fileID: 11400000, guid: 92e55bdcd4691bd41a4af3ab53999aaf, type: 2}
   Enemy: {fileID: 11400000, guid: 6f00ffae9c325fc40b69e985447679d0, type: 2}
   HasTarget: {fileID: 11400000, guid: 78c6080c85526a04a92d8ea535447bc9, type: 2}
-  bow: {fileID: 0}
+  bow: {fileID: 5635510801140797979}
 --- !u!111 &6574650079704898651
 Animation:
   m_ObjectHideFlags: 0

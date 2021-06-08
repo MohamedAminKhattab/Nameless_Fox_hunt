@@ -59,6 +59,19 @@ BlendTree:
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 0
+--- !u!114 &-8241799888674768926
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b0d810f8cc9d81439a9ff80844b03ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDeathEvent: {fileID: 11400000, guid: bed96d6d2f8732b459a068d36f9f4c9b, type: 2}
 --- !u!1102 &-8149275647634031108
 AnimatorState:
   serializedVersion: 6
@@ -827,7 +840,8 @@ AnimatorState:
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: -8241799888674768926}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
