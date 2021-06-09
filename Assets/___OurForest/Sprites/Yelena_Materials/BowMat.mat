@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Yelena_Mat
+  m_Name: BowMat
   m_Shader: {fileID: 4800000, guid: 51507a5e1c0fc8c459b86db28723cd28, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -64,11 +64,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture0:
-        m_Texture: {fileID: 2800000, guid: 6e423378340f0f944a82c3a38fe64987, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9ddf3795da0f29141a396d3e576ac056, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureSample1:
-        m_Texture: {fileID: 2800000, guid: 09e687c1c386bd0479002327a4ec321c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9ddf3795da0f29141a396d3e576ac056, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -125,7 +125,7 @@ Material:
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _emmision: {r: 1.741176, g: 1.380392, b: 0.1568628, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &1617312719116912526
+--- !u!114 &543234201830467824
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
