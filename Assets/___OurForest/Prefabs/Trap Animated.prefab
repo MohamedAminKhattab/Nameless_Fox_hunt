@@ -64,6 +64,8 @@ MonoBehaviour:
   EnemyDied2: {fileID: 11400000, guid: 19bf913f3d9888c4fb2624e0e3d9d1b9, type: 2}
   EnemyDied3: {fileID: 11400000, guid: 1c53ced7765547b4e9f8a4e88e4063d2, type: 2}
   EnemyDied4: {fileID: 11400000, guid: ad5145a6b4b891044b810679720e2b02, type: 2}
+  _animator: {fileID: 7845958818566217072}
+  collider: {fileID: 1462173797568051951}
 --- !u!95 &7845958818566217072
 Animator:
   serializedVersion: 3

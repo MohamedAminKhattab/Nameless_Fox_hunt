@@ -410,8 +410,8 @@ MonoBehaviour:
   gamepaused: {fileID: 11400000, guid: 3ecb782c486c87647b380bd3cfe0b4d6, type: 2}
   pause: {fileID: 3036997140915910105}
   levelselection: {fileID: 0}
-  selectedLevel: {fileID: 0}
-  quitEvent: {fileID: 0}
+  selectedLevel: {fileID: 11400000, guid: 133a7d7efb8597c42a03ca7844681da8, type: 2}
+  quitEvent: {fileID: 11400000, guid: c93ed589859f41c4c80de903a0d43795, type: 2}
 --- !u!1 &7189589101797356453
 GameObject:
   m_ObjectHideFlags: 0
