@@ -10,12 +10,12 @@ public class trapBehaviour : MonoBehaviour
     [SerializeField] EventSO EnemyDied3;
     [SerializeField] EventSO EnemyDied4;
     [SerializeField] Animator _animator;
-    [SerializeField] BoxCollider collider;
+    [SerializeField] BoxCollider _collider;
     private void Start()
     {
         t = new Trap();
         _animator = GetComponent<Animator>();
-        collider = GetComponent<BoxCollider>();
+        _collider = GetComponent<BoxCollider>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -40,7 +40,7 @@ public class trapBehaviour : MonoBehaviour
                 default:
                     break;
             }
-            collider.enabled = false;
+            _collider.enabled = false;
             _animator.SetTrigger("Active");
         }
     }
