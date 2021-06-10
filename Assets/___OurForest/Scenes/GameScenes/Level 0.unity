@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 7653069079129772978}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18009827, g: 0.22549012, b: 0.30680817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -174,21 +174,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2270271428563954180, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967294
+      objectReference: {fileID: 0}
     - target: {fileID: 3109528212685813774, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
       propertyPath: m_Name
       value: Forest level
       objectReference: {fileID: 0}
-    - target: {fileID: 5862289117615207357, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
-      propertyPath: m_Layer
-      value: 3
+    - target: {fileID: 5992026405044241750, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967294
       objectReference: {fileID: 0}
-    - target: {fileID: 5862289117615207357, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
+    - target: {fileID: 5992026405892165208, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8700362
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992026405892165208, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.41219342
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992026405892165208, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.2443923
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992026405892165208, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.11578473
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992026405892165208, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 50.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992026405892165208, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -31.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992026405892165210, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5862289117615207357, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
-      propertyPath: m_TagString
-      value: Walkable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a486ae4db7036243b978e229417eda4, type: 3}

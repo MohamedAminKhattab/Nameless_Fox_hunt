@@ -97,7 +97,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1498097208807239870
 Transform:
@@ -639,9 +639,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5862289117615207298}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bushes
-  m_TagString: Untagged
+  m_TagString: Walkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1444,7 +1444,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5992026404382337753
 Transform:
@@ -1520,9 +1520,9 @@ GameObject:
   - component: {fileID: 5992026404727597182}
   - component: {fileID: 5992026404727597180}
   - component: {fileID: 5992026404727597183}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Walkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2654,7 +2654,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5992026405044241749
 Transform:
@@ -2729,9 +2729,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5992026405686676881}
   - component: {fileID: 5992026405686676880}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: Walkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2812,7 +2812,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -3231,6 +3231,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 5992026404727597182}
     m_Modifications:
     - target: {fileID: -8049949814041034988, guid: 5b8ec0e7f816ffa42b089be3eb4ef649, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8049949814041034988, guid: 5b8ec0e7f816ffa42b089be3eb4ef649, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -3281,6 +3285,10 @@ PrefabInstance:
     - target: {fileID: 2656843701568739036, guid: 5b8ec0e7f816ffa42b089be3eb4ef649, type: 3}
       propertyPath: m_Name
       value: R_tile2X2_Bush
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656843701568739036, guid: 5b8ec0e7f816ffa42b089be3eb4ef649, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2656843701568739036, guid: 5b8ec0e7f816ffa42b089be3eb4ef649, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -30493,6 +30501,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 5992026404727597182}
     m_Modifications:
     - target: {fileID: -8049949814041034988, guid: 5b8ec0e7f816ffa42b089be3eb4ef649, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8049949814041034988, guid: 5b8ec0e7f816ffa42b089be3eb4ef649, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -30543,6 +30555,10 @@ PrefabInstance:
     - target: {fileID: 2656843701568739036, guid: 5b8ec0e7f816ffa42b089be3eb4ef649, type: 3}
       propertyPath: m_Name
       value: R_tile2X2_Bush
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656843701568739036, guid: 5b8ec0e7f816ffa42b089be3eb4ef649, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2656843701568739036, guid: 5b8ec0e7f816ffa42b089be3eb4ef649, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -67391,6 +67407,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 5992026404727597182}
     m_Modifications:
     - target: {fileID: -8049949814041034988, guid: 5b8ec0e7f816ffa42b089be3eb4ef649, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8049949814041034988, guid: 5b8ec0e7f816ffa42b089be3eb4ef649, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -67441,6 +67461,10 @@ PrefabInstance:
     - target: {fileID: 2656843701568739036, guid: 5b8ec0e7f816ffa42b089be3eb4ef649, type: 3}
       propertyPath: m_Name
       value: R_tile2X2_Bush
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656843701568739036, guid: 5b8ec0e7f816ffa42b089be3eb4ef649, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2656843701568739036, guid: 5b8ec0e7f816ffa42b089be3eb4ef649, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -85565,6 +85589,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 5992026404727597182}
     m_Modifications:
     - target: {fileID: -8049949814041034988, guid: 5b8ec0e7f816ffa42b089be3eb4ef649, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8049949814041034988, guid: 5b8ec0e7f816ffa42b089be3eb4ef649, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -85615,6 +85643,10 @@ PrefabInstance:
     - target: {fileID: 2656843701568739036, guid: 5b8ec0e7f816ffa42b089be3eb4ef649, type: 3}
       propertyPath: m_Name
       value: R_tile2X2_Bush
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656843701568739036, guid: 5b8ec0e7f816ffa42b089be3eb4ef649, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2656843701568739036, guid: 5b8ec0e7f816ffa42b089be3eb4ef649, type: 3}
       propertyPath: m_StaticEditorFlags
