@@ -177,7 +177,6 @@ public class FoxBehaviours : MonoBehaviour
     [Task]
     public void shouldLure()
     {
-        Debug.Log(foxState);
         if (foxState == FoxState.luring && foxHealth.currentHealth >= 40f) //check if the enemy is valid 
         {
             Debug.Log("it's true");
@@ -235,7 +234,6 @@ public class FoxBehaviours : MonoBehaviour
         agent.SetDestination(Target.position);
         if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
         {
-            Debug.Log("Arrived");
             Task.current.Succeed();
         }
 

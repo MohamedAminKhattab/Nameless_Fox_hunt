@@ -77,8 +77,8 @@ public class Attack : MonoBehaviour
         attackAnim.state = true;
         //Debug.Log(attackAnim.state);
         var wait = new WaitForSeconds(1.5f);
-        yield return wait;
         instantiateArrow = true;
+        yield return wait;
         // attack.state = false;
     }
 }
