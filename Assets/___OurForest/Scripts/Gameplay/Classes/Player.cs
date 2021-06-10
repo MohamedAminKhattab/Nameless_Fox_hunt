@@ -104,8 +104,8 @@ public class Player : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (inInput.state)
-        {
+        //if (inInput.state)
+        //{
             if (other.gameObject.CompareTag("Vine"))
             {
                 CollectResource();
@@ -137,7 +137,7 @@ public class Player : MonoBehaviour
             }
 
 
-        }
+        //}
     }
     void OnTriggerExit(Collider other)
     {
@@ -158,8 +158,8 @@ public class Player : MonoBehaviour
     }
     void PickUpFood()
     {
-        if (pickUpFood.state)
-        {
+        //if (pickUpFood.state)
+        //{
             pickUpFood.state = false;
             inInput.state = false;
             FetchAnim.state = true;
@@ -168,25 +168,25 @@ public class Player : MonoBehaviour
             //Add to inventory
             _GM.Inv.AddItem(ItemTypes.Food);
             //Debug.Log("pick up Food");
-        }
+        //}
     }
     void CutWood()
     {
-        if (cutWood.state)
-        {
+        //if (cutWood.state)
+        //{
             cutWood.state = false;
             inInput.state = false;
-            CutAnim.state = true;
+            FetchAnim.state = true;
             fetchingSound.state = true;
-            StartCoroutine(CuttingWood());
+            StartCoroutine(Fetching());
             //Add to inventory
             _GM.Inv.AddItem(ItemTypes.Wood);
-        }
+        //}
     }
     void CollectResource()
     {
-        if (collectResource.state)
-        {
+        //if (collectResource.state)
+        //{
             collectResource.state = false;
             inInput.state = false;
             FetchAnim.state = true;
@@ -198,12 +198,12 @@ public class Player : MonoBehaviour
             else if (resource == "Rock")
                 _GM.Inv.AddItem(ItemTypes.Rock);
             resource = "";
-        }
+        //}
     }
     void PickUpWeapon()
     {
-        if (pickUpWeapon.state)
-        {
+        //if (pickUpWeapon.state)
+        //{
             pickUpWeapon.state = false;
             inInput.state = false;
             FetchAnim.state = true;
@@ -211,7 +211,7 @@ public class Player : MonoBehaviour
             //Add to inventory
             _GM.Inv.AddItem(ItemTypes.Weapon);
 
-        }
+        //}
     }
     void CanEat()
     {
