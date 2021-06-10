@@ -107,12 +107,12 @@ GameObject:
   - component: {fileID: 1498097208807239870}
   - component: {fileID: 2550608505979191067}
   - component: {fileID: 324650211922824145}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground Fog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 4294967294
   m_IsActive: 1
 --- !u!4 &1498097208807239870
 Transform:
@@ -1574,12 +1574,12 @@ GameObject:
   - component: {fileID: 5992026404382337753}
   - component: {fileID: 5992026404382337752}
   - component: {fileID: 5992026404382337755}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 4294967294
   m_IsActive: 1
 --- !u!4 &5992026404382337753
 Transform:
@@ -2784,12 +2784,12 @@ GameObject:
   - component: {fileID: 5992026405044241749}
   - component: {fileID: 5992026405044241748}
   - component: {fileID: 5992026405044241751}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BoarderFog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 4294967294
   m_IsActive: 1
 --- !u!4 &5992026405044241749
 Transform:
@@ -2799,7 +2799,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5992026405044241750}
   m_LocalRotation: {x: -0, y: -0.7264625, z: -0, w: -0.68720615}
-  m_LocalPosition: {x: 60.6, y: -0.70000005, z: -69.8}
+  m_LocalPosition: {x: 60.6, y: -0.4, z: -69.8}
   m_LocalScale: {x: 71, y: 1, z: 71}
   m_Children: []
   m_Father: {fileID: 75841244919979433}
@@ -2947,7 +2947,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
