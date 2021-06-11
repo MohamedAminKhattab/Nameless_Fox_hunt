@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1802643761478121150}
   - component: {fileID: 8257266073022055684}
   - component: {fileID: 8906459136493167697}
+  - component: {fileID: 6693411299410305777}
   m_Layer: 0
   m_Name: ArrowP
   m_TagString: Arrow
@@ -78,6 +79,19 @@ MonoBehaviour:
   EnemyDied2: {fileID: 11400000, guid: 19bf913f3d9888c4fb2624e0e3d9d1b9, type: 2}
   EnemyDied3: {fileID: 11400000, guid: 1c53ced7765547b4e9f8a4e88e4063d2, type: 2}
   EnemyDied4: {fileID: 11400000, guid: ad5145a6b4b891044b810679720e2b02, type: 2}
+--- !u!65 &6693411299410305777
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499904870389894429}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.045624696, y: 0.41989553, z: 0.03792877}
+  m_Center: {x: 0.002402801, y: 0.00927151, z: 0.0015235376}
 --- !u!1001 &4275554571300478600
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -149,7 +163,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Arrow
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 459406955693581779, guid: c3b1573dddce6e649836d9602ea8ebbc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c3b1573dddce6e649836d9602ea8ebbc, type: 3}
 --- !u!4 &2063335962688257263 stripped
 Transform:

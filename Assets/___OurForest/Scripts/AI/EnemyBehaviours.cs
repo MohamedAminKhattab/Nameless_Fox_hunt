@@ -12,10 +12,6 @@ public enum EnemyState
 }
 public class EnemyBehaviours : MonoBehaviour
 {
-    //Todo create world state
-    NavMeshAgent agent;
-    Transform target;
-    private SoundSystem soundSystem;
     [SerializeField] GameObject bullet;
     [SerializeField] Transform fox;
     [SerializeField] Transform yelena;
@@ -23,15 +19,20 @@ public class EnemyBehaviours : MonoBehaviour
     [SerializeField] int VisionRange = 4;
     [SerializeField] int shootingAngle = 45;
     [SerializeField] BoolSO isPlayerHidden;
-    private EnemyState enemyState;
     [SerializeField] Transform Gun;
     [SerializeField] float raidingSpeed = 1;
     [SerializeField] BoolSO isenemyDeadSound;
     [SerializeField] BoolSO isenemymovingSound;
-    Animator anim;
-    private Transform fovTarget;
+    [SerializeField] GameObject MuzlleVfx;
 
+    NavMeshAgent agent;
+    Transform target;
+    Animator anim;
+    private EnemyState enemyState;
+    private Transform fovTarget;
+    private bool canSeeFox;
     private Vector3 direction;
+
     public Transform Fox { get => fox; set => fox = value; }
     public Transform Yelena { get => yelena; set => yelena = value; }
     public Transform DefaultGoal1 { get => DefaultGoal; set => DefaultGoal = value; }
@@ -42,7 +43,6 @@ public class EnemyBehaviours : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         target = DefaultGoal;
         enemyState = EnemyState.goingToHouse;
-        soundSystem = GetComponent<SoundSystem>(); //GetInParent
         anim = GetComponent<Animator>();
 
     }
@@ -93,22 +93,39 @@ public class EnemyBehaviours : MonoBehaviour
             if (Vector3.Angle(this.transform.forward, direction) < shootingAngle) //test angle
             {
                 fovTarget = fox;
+                canSeeFox = true;
                 Task.current.Succeed();
                 return;
             }
-        }
-        else if (Measurements.isInRange(transform, yelena, VisionRange)) // test distance
-        {
-            direction = yelena.position - this.transform.position;
-
-            if (Vector3.Angle(this.transform.forward, direction) < shootingAngle) //test angle
+            else
             {
-                fovTarget = yelena;
+                canSeeFox = false;
+                anim.SetBool("shooting", false);
+                enemyState = EnemyState.goingToHouse; // should be removed when the tree gets bigger
+                agent.speed = raidingSpeed;
+            }
+        }
+        else { 
+            canSeeFox = false;
+            anim.SetBool("shooting", false);
+            enemyState = EnemyState.goingToHouse; // should be removed when the tree gets bigger
+            agent.speed = raidingSpeed;
+        }
+        if (!canSeeFox)
+        {
+            if (Measurements.isInRange(transform, yelena, VisionRange)) // test distance
+            {
+                direction = yelena.position - this.transform.position;
+
+                if (Vector3.Angle(this.transform.forward, direction) < shootingAngle) //test angle
+                {
+                    fovTarget = yelena;
 
 
-                Task.current.Succeed();
-                return;
+                    Task.current.Succeed();
+                    return;
 
+                }
             }
             else
             {
@@ -118,7 +135,7 @@ public class EnemyBehaviours : MonoBehaviour
                 Task.current.Fail();
                 return;
             }
-            
+
         }
     }
     [Task]
@@ -174,8 +191,6 @@ public class EnemyBehaviours : MonoBehaviour
     [Task]
     public bool isIntrupted()// i don't like this method at all seems stupid 
     {
-        Debug.Log(enemyState);
-
         return enemyState != EnemyState.goingToHouse;
 
     }
@@ -185,20 +200,21 @@ public class EnemyBehaviours : MonoBehaviour
     //     agent.isStopped = true;
     //     if(anim.is().)
     // }
+    Vector3 AimDirection;
     [Task]
     public void Aim()
     {
-        Vector3 direction = target.position - this.transform.position;
+         AimDirection = target.position - this.transform.position;
 
-        transform.forward = direction;
+        transform.forward = AimDirection;
 
 
         if (Task.isInspected)
             Task.current.debugInfo = string.Format("angle={0}",
-                Vector3.Angle(this.transform.forward, direction));
+                Vector3.Angle(this.transform.forward, AimDirection));
 
 
-        if (Vector3.Angle(this.transform.forward, direction) < shootingAngle)
+        if (Vector3.Angle(this.transform.forward, AimDirection) < shootingAngle)
         {
             Task.current.Succeed();
         }
@@ -208,10 +224,10 @@ public class EnemyBehaviours : MonoBehaviour
     public void Fire()
     {
 
-        soundSystem.PlayEnemySound(enemyState);
-        FindObjectOfType<AudioManager>().PlayeSound("Gun");
+       // FindObjectOfType<AudioManager>().PlayeSound("Gun");
         GameObject go = Instantiate(bullet, Gun.position, transform.rotation);
-        go.AddComponent<Rigidbody>().AddForce(Gun.transform.forward * 500);
+        go.AddComponent<Rigidbody>().AddForce(AimDirection * 500);
+        MuzlleVfx.GetComponent<ParticleSystem>().Play();
         Task.current.Succeed();
     }
     #endregion
