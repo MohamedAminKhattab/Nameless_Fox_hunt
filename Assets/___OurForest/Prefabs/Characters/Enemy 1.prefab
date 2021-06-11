@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 3637006437264765415}
   - component: {fileID: 3637006437264765412}
   - component: {fileID: 851266286609988088}
+  - component: {fileID: 1101723589133653975}
+  - component: {fileID: 6169973673948658851}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: enemy
@@ -154,6 +156,49 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1101723589133653975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3637006437264765420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d486d65f17816e4ab69775ae1e0abf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasTarget: {fileID: 11400000, guid: 78c6080c85526a04a92d8ea535447bc9, type: 2}
+  enemyTransform: {fileID: 11400000, guid: 6f00ffae9c325fc40b69e985447679d0, type: 2}
+--- !u!114 &6169973673948658851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3637006437264765420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1101723589133653975}
+          m_TargetAssemblyTypeName: EnemyTargeting, Assembly-CSharp
+          m_MethodName: EventPointerdown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &4508676866786608719
 PrefabInstance:
   m_ObjectHideFlags: 0

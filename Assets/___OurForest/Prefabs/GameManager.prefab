@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8530145609774373357}
   - component: {fileID: 8530145609774373358}
   - component: {fileID: 7342326961803000935}
-  - component: {fileID: 8404798601930685678}
   - component: {fileID: 582448560369363392}
   - component: {fileID: 746464935}
   - component: {fileID: 6329380623858850815}
@@ -63,7 +62,7 @@ MonoBehaviour:
   togamePlay: {fileID: 11400000, guid: cea3b9addbb29e048bd07592e7796300, type: 2}
   timerisRunning: {fileID: 11400000, guid: 768e826939fd8e64394f7d61557b64c8, type: 2}
   RemainingTime: {fileID: 11400000, guid: 36a1013db5bb7a740a43c4f9da5592e6, type: 2}
-  foxPrefab: {fileID: 2006851311034963767, guid: 8b1f5052a99d09d4ea2e30e2bf77aff9, type: 3}
+  foxPrefab: {fileID: 2006851311034963767, guid: 506fd1689a7d7ef4d86ec4796d213890, type: 3}
   fox: {fileID: 0}
   playerPrefab: {fileID: 6845774844251762932, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
   _EM: {fileID: 0}
@@ -96,21 +95,6 @@ MonoBehaviour:
   level: {fileID: 0}
   trapPrefab: {fileID: 285521514259324736, guid: acaa9f05c827ea9479fd09f6a43f84bf, type: 3}
   _GM: {fileID: 8530145609774373358}
---- !u!114 &8404798601930685678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8530145609774373359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16107bf2ed0454b4abe4033c4b149816, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemytargetSO: {fileID: 11400000, guid: 6f00ffae9c325fc40b69e985447679d0, type: 2}
-  hasEnemyTarget: {fileID: 11400000, guid: 78c6080c85526a04a92d8ea535447bc9, type: 2}
-  selectedLevel: {fileID: 11400000, guid: 133a7d7efb8597c42a03ca7844681da8, type: 2}
 --- !u!114 &582448560369363392
 MonoBehaviour:
   m_ObjectHideFlags: 0

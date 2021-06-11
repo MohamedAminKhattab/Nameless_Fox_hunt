@@ -18,6 +18,7 @@ public class FoxBehaviours : MonoBehaviour
     private Transform Target;
     [SerializeField] TransformSO PickUp;
     [SerializeField] BoolSO hasTargetSo;
+    [SerializeField] BoolSO hasEnemyTargetSo;
     [SerializeField] TransformSO Enemy;
     [SerializeField] BoolSO isPlayerHidden;
     [SerializeField] BoolSO isLuringSound;
@@ -218,7 +219,7 @@ public class FoxBehaviours : MonoBehaviour
     [Task]
     public void FinishLuring()
     {
-        hasTargetSo.state = false;
+        hasEnemyTargetSo.state = false;
         Enemy.value = null;
         isLuringSound.state = false;
         Task.current.Succeed();
