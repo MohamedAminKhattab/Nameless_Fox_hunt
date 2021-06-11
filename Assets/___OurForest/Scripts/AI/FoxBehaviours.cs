@@ -128,7 +128,6 @@ public class FoxBehaviours : MonoBehaviour
         else
         {
             anim.SetBool("run", false);
-
             Task.current.Fail();
         }
     }
