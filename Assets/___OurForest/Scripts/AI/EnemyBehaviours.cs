@@ -98,9 +98,19 @@ public class EnemyBehaviours : MonoBehaviour
                 return;
             }
             else
+            {
                 canSeeFox = false;
+                anim.SetBool("shooting", false);
+                enemyState = EnemyState.goingToHouse; // should be removed when the tree gets bigger
+                agent.speed = raidingSpeed;
+            }
         }
-        else canSeeFox = false;
+        else { 
+            canSeeFox = false;
+            anim.SetBool("shooting", false);
+            enemyState = EnemyState.goingToHouse; // should be removed when the tree gets bigger
+            agent.speed = raidingSpeed;
+        }
         if (!canSeeFox)
         {
             if (Measurements.isInRange(transform, yelena, VisionRange)) // test distance
@@ -190,20 +200,21 @@ public class EnemyBehaviours : MonoBehaviour
     //     agent.isStopped = true;
     //     if(anim.is().)
     // }
+    Vector3 AimDirection;
     [Task]
     public void Aim()
     {
-        Vector3 direction = target.position - this.transform.position;
+         AimDirection = target.position - this.transform.position;
 
-        transform.forward = direction;
+        transform.forward = AimDirection;
 
 
         if (Task.isInspected)
             Task.current.debugInfo = string.Format("angle={0}",
-                Vector3.Angle(this.transform.forward, direction));
+                Vector3.Angle(this.transform.forward, AimDirection));
 
 
-        if (Vector3.Angle(this.transform.forward, direction) < shootingAngle)
+        if (Vector3.Angle(this.transform.forward, AimDirection) < shootingAngle)
         {
             Task.current.Succeed();
         }
@@ -213,9 +224,9 @@ public class EnemyBehaviours : MonoBehaviour
     public void Fire()
     {
 
-        FindObjectOfType<AudioManager>().PlayeSound("Gun");
+       // FindObjectOfType<AudioManager>().PlayeSound("Gun");
         GameObject go = Instantiate(bullet, Gun.position, transform.rotation);
-        go.AddComponent<Rigidbody>().AddForce(Gun.transform.forward * 500);
+        go.AddComponent<Rigidbody>().AddForce(AimDirection * 500);
         MuzlleVfx.GetComponent<ParticleSystem>().Play();
         Task.current.Succeed();
     }

@@ -114,7 +114,7 @@ MonoBehaviour:
   VisionRange: 5
   shootingAngle: 45
   isPlayerHidden: {fileID: 11400000, guid: 7187870772591e54f811f34aca372dc6, type: 2}
-  Gun: {fileID: 8227694999909875326}
+  Gun: {fileID: 8373306612941266773}
   raidingSpeed: 1
   isenemyDeadSound: {fileID: 11400000, guid: ff71b8f5477a9df4384828e31932dfca, type: 2}
   isenemymovingSound: {fileID: 11400000, guid: 332b5356e478e684eb5424d9feef032f, type: 2}
@@ -360,5 +360,10 @@ PrefabInstance:
 --- !u!1 &8373306612941266776 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3446771063269602717, guid: 92bc5621c5f842447899cb5e0d60148d, type: 3}
+  m_PrefabInstance: {fileID: 6622140852326935237}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8373306612941266773 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3446771063269602704, guid: 92bc5621c5f842447899cb5e0d60148d, type: 3}
   m_PrefabInstance: {fileID: 6622140852326935237}
   m_PrefabAsset: {fileID: 0}
