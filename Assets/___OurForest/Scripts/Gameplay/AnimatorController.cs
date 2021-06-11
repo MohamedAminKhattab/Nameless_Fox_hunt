@@ -59,12 +59,12 @@ public class AnimatorController : MonoBehaviour
             movement.value.y = 0;
             movement.value.z = joyStickMove.value.y;
         }
-  
+
         bool pressForeward = movement.value.z > 0;
-        bool pressBackward = movement.value.z <0;
+        bool pressBackward = movement.value.z < 0;
         bool rightPressed = movement.value.x > 0;
-        bool leftPressed = movement.value.x <0;
-    
+        bool leftPressed = movement.value.x < 0;
+
         if (pressForeward || pressBackward || rightPressed || leftPressed)
         {
             velocity += Time.deltaTime * acceleration;
@@ -74,7 +74,7 @@ public class AnimatorController : MonoBehaviour
             velocity -= Time.deltaTime * deceleration;
         }
         velocity = Mathf.Clamp(velocity, 0.0f, 1.0f);
-    
+
 
         if (crouch.state)
             crouchAnim.state = true;
@@ -83,21 +83,17 @@ public class AnimatorController : MonoBehaviour
             crouchAnim.state = false;
 
         animator.SetFloat("Velocity", velocity);
-        animator.SetBool("PickUp", FetchAnim.state);
-        animator.SetBool("CutWood", CutAnim.state);
+
+        //animator.SetBool("CutWood", CutAnim.state);
         animator.SetBool("EatFood", EatAnim.state);
         animator.SetBool("Dead", playerHealth.dead);
         animator.SetBool("crouch", crouchAnim.state);
         animator.SetBool("Attack", attackAnim.state);
-        animator.SetBool("Hiding", HideAnim.state);
-        // Debug.Log(attackAnim.state);
 
-        FetchAnim.state = false;
-        CutAnim.state = false;
+        //CutAnim.state = false;
         EatAnim.state = false;
         attackAnim.state = false;
         crouch.state = false;
-
     }
     void OnTriggerEnter(Collider other)
     {
@@ -107,9 +103,43 @@ public class AnimatorController : MonoBehaviour
             animator.SetBool("Hiding", HideAnim.state);
             //Debug.Log("hiding");
         }
+
+        if (other.gameObject.CompareTag("Vine"))
+        {
+            FetchAnim.state = true;
+            animator.SetBool("PickUp", FetchAnim.state);
+        }
+        if (other.gameObject.CompareTag("Rock"))
+        {
+            FetchAnim.state = true;
+            animator.SetBool("PickUp", FetchAnim.state);
+
+        }
+        if (other.gameObject.CompareTag("Food"))
+        {
+            FetchAnim.state = true;
+            animator.SetBool("PickUp", FetchAnim.state);
+
+        }
+
+        if (other.gameObject.CompareTag("Wood"))
+        {
+            FetchAnim.state = true;
+            animator.SetBool("PickUp", FetchAnim.state);
+        }
+
+        if (other.gameObject.CompareTag("Weapon"))
+        {
+            FetchAnim.state = true;
+            animator.SetBool("PickUp", FetchAnim.state);
+        }
     }
     void OnTriggerExit(Collider other)
     {
         HideAnim.state = false;
+        FetchAnim.state = false;
+        animator.SetBool("PickUp", FetchAnim.state);
+        animator.SetBool("Hiding", HideAnim.state);
+
     }
 }
