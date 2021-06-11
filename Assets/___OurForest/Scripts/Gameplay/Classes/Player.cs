@@ -100,6 +100,26 @@ public class Player : MonoBehaviour
         {
             obstacle.enabled = false;
         }
+        if (other.gameObject.CompareTag("Vine"))
+        {
+     
+        }
+        if (other.gameObject.CompareTag("Rock"))
+        {
+
+        }
+        if (other.gameObject.CompareTag("Food"))
+        {
+
+        }
+        if (other.gameObject.CompareTag("Wood"))
+        {
+
+        }
+        if (other.gameObject.CompareTag("Weapon"))
+        {
+
+        }
     }
 
     void OnTriggerStay(Collider other)

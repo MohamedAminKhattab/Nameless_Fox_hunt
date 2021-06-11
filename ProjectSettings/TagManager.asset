@@ -20,6 +20,7 @@ TagManager:
   - Bush
   - UI
   - bullet
+  - Arrow
   layers:
   - Default
   - TransparentFX
@@ -28,9 +29,9 @@ TagManager:
   - Water
   - UI
   - Items
-  - 
-  - 
-  - 
+  - Characters
+  - Fox
+  - Hunters
   - 
   - 
   - 
