@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class HealthIndicator : MonoBehaviour
 {
     public Slider healthBar;
+
     [SerializeField] HealthSO health;
     Vector3 healthBarPos;
 
