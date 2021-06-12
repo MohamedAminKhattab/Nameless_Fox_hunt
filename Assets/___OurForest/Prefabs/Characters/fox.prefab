@@ -235,6 +235,7 @@ GameObject:
   - component: {fileID: -5673805180154931143}
   - component: {fileID: 6213920479261908020}
   - component: {fileID: 6188049913215389560}
+  - component: {fileID: 117214428391899314}
   m_Layer: 8
   m_Name: fox
   m_TagString: Fox
@@ -439,8 +440,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.36, y: 1, z: 2.7938595}
-  m_Center: {x: 0, y: 0, z: 0.89692974}
+  m_Size: {x: 1.36, y: 1, z: 2.07}
+  m_Center: {x: 0, y: 0, z: -0.37}
 --- !u!114 &6213920479261908020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,6 +474,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &117214428391899314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006851311034963767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f33adabecb6908f44b6909c057ed1c0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mySlider: {fileID: 4140525282163064587, guid: aa9bc1f36f439984f8c992b92226e85e, type: 3}
+  health: {fileID: 11400000, guid: cb84ffe3b29e677448a641a76784c73f, type: 2}
 --- !u!1 &2210217222624476233
 GameObject:
   m_ObjectHideFlags: 0

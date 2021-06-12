@@ -96,7 +96,7 @@ MonoBehaviour:
   - isFoldout: 1
     breakPoints: 
     breakPointStatuses: 
-    collapsedLines: 
+    collapsedLines: 0300000009000000
     btScript: 
 --- !u!114 &3637006437264765415
 MonoBehaviour:
