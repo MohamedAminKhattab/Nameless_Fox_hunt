@@ -45,11 +45,11 @@ public class FoxBehaviours : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         foxHealth.initialHealth = 100;
         foxHealth.currentHealth = 100;
         foxHealth.dead = false;
-        anim = GetComponent<Animator>();
     }
     private void Update()
     {
@@ -137,13 +137,14 @@ public class FoxBehaviours : MonoBehaviour
         if (isPlayerHidden.state)
         {
             Target = Player;
-            agent.stoppingDistance = .1f;
+            agent.stoppingDistance = 1f;
             agent.speed = 5;
             anim.SetBool("run", true);
             if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
             {
                 agent.isStopped = true;
                 anim.SetBool("run", false);
+                anim.SetBool("walk", false);
                 agent.speed = 3.5f;
 
 
@@ -186,7 +187,7 @@ public class FoxBehaviours : MonoBehaviour
                 Target = Enemy.value;
                 anim.SetBool("run", true);
                 agent.speed = 5;
-                // agent.stoppingDistance = 2;
+                 agent.stoppingDistance = 2;
                 Task.current.Succeed();
                 
             }
@@ -213,6 +214,7 @@ public class FoxBehaviours : MonoBehaviour
     {
         hasTargetSo.state = false;
         PickUp.value = null;
+        agent.stoppingDistance = 2;
         Task.current.Succeed();
     }
     [Task]
