@@ -46,7 +46,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7923563114064352346}
   - component: {fileID: 758877174897934937}
-  - component: {fileID: 1928201164840039698}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -89,7 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: -1
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -127,23 +126,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1928201164840039698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157113477195280865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8381c3bda150ea64eb34aa547f81b39b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _volumeParameter: MasterVolume
-  _mixer: {fileID: 24100000, guid: c94d04526468f08409c7cd480da89459, type: 2}
-  _slider: {fileID: 758877174897934937}
-  _multiplier: 30
-  _toggle: {fileID: 7342177898550783028}
 --- !u!1 &1557837637031562806
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,6 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5154917698749432573}
   - component: {fileID: 7342177898550783028}
+  - component: {fileID: 6042027178531717646}
   m_Layer: 5
   m_Name: Toggle
   m_TagString: Untagged
@@ -290,7 +273,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.69694966, y: 0.65229213}
   m_AnchorMax: {x: 0.7569374, y: 0.7646051}
-  m_AnchoredPosition: {x: 0.000061035, y: 0}
+  m_AnchoredPosition: {x: 0.000061035156, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7342177898550783028
@@ -341,6 +324,23 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
+--- !u!114 &6042027178531717646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3585451139258062679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8381c3bda150ea64eb34aa547f81b39b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _volumeParameter: MasterVolume
+  _mixer: {fileID: 24100000, guid: c94d04526468f08409c7cd480da89459, type: 2}
+  _slider: {fileID: 758877174897934937}
+  _multiplier: 30
+  _toggle: {fileID: 7342177898550783028}
 --- !u!1 &4979557753298125644
 GameObject:
   m_ObjectHideFlags: 0
