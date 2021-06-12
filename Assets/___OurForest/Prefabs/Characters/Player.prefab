@@ -540,6 +540,7 @@ MonoBehaviour:
   eatingSound: {fileID: 11400000, guid: 9702d34104401b5408fe06376a94c0dc, type: 2}
   fetchingSound: {fileID: 11400000, guid: aa8039585c2bd11478cda83e2ebf1b70, type: 2}
   playerDeathSound: {fileID: 11400000, guid: 8ebcb618a9928284699e895efe6e8201, type: 2}
+  freez: {fileID: 11400000, guid: 849475df2eefa874aa30f4661a535e53, type: 2}
 --- !u!114 &6845774844251762930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,6 +579,7 @@ MonoBehaviour:
   speed: {fileID: 11400000, guid: 40a5c7c9ea53a574881119d477ea6634, type: 2}
   rotationSpeed: 300
   joyStickMovement: {fileID: 11400000, guid: 8b4c0bf996bc8774cbfcccbf1c700fd5, type: 2}
+  freez: {fileID: 11400000, guid: 849475df2eefa874aa30f4661a535e53, type: 2}
 --- !u!54 &6845774844251762943
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -655,6 +657,7 @@ MonoBehaviour:
   attack: {fileID: 11400000, guid: 260ff84e78d53af4ca8536bd4f8b6c50, type: 2}
   deathAnim: {fileID: 11400000, guid: ae05d4ad6b51a8f46b34c25ab383c42b, type: 2}
   playerHealth: {fileID: 11400000, guid: 995eb8ff6ee44984f9945bb81080d729, type: 2}
+  freez: {fileID: 11400000, guid: 849475df2eefa874aa30f4661a535e53, type: 2}
 --- !u!33 &5501797777281361872
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -52,6 +52,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     BoolSO playerDeathSound;
     NavMeshObstacle obstacle;
+    [SerializeField]
+    BoolSO freez;
     public GameManager GM { get => _GM; set => _GM = value; }
 
     void Start()
@@ -65,6 +67,7 @@ public class Player : MonoBehaviour
         playerHealth.initialHealth = initialHealth;
         playerHealth.Death = playerDeath;
         playerHealth.dead = false;
+        freez.state = false;
         //_GM.Inv.Capacity = 0;
         obstacle = GetComponent<NavMeshObstacle>();
     }
@@ -109,7 +112,6 @@ public class Player : MonoBehaviour
             resource = "Rock";
             obj = other.gameObject;
             CollectResource();
-            Debug.Log("Rock");
         }
         if (other.gameObject.CompareTag("Food"))
         {
@@ -145,6 +147,7 @@ public class Player : MonoBehaviour
         {
             CanEat();
             eatFood.state = false;
+            freez.state = true;
             //Debug.Log(_GM.Inv.GetItemCount(ItemTypes.Food));
         }
 
@@ -181,8 +184,6 @@ public class Player : MonoBehaviour
     }
     void PickUpWeapon()
     {
-            pickUpWeapon.state = false;
-            inInput.state = false;
             FetchAnim.state = true;
             StartCoroutine(Fetching());
             //Add to inventory
@@ -190,7 +191,7 @@ public class Player : MonoBehaviour
 
     }
     void CanEat()
-    {
+    {  
         canEatFood = _GM.Inv.GetItemCount(ItemTypes.Food) > 0;
         // Debug.Log(playerHealth.currentHealth);
         if (canEatFood)
@@ -201,6 +202,7 @@ public class Player : MonoBehaviour
                 playerHealth.Healing(healingPoints);
                 EatAnim.state = true;
                 eatingSound.state = true;
+                freez.state = true;
                 StartCoroutine(Eating());
                 // Debug.Log(playerHealth.currentHealth);
             }
@@ -216,18 +218,21 @@ public class Player : MonoBehaviour
 
     IEnumerator Fetching()
     {
+        freez.state = true;
         var wait = new WaitForSeconds(5.0f);
         //Debug.Log("Wait");
         yield return wait;
         Destroy(obj);
+        freez.state = false;
         // Debug.Log(obj.tag);
 
     }
     IEnumerator Eating()
     {
+        freez.state = true;
         var wait = new WaitForSeconds(3.0f);
         yield return wait;
-
+        freez.state = false;
     }
     private void OnDrawGizmos()
     {
