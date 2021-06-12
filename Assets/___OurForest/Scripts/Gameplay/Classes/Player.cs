@@ -100,12 +100,6 @@ public class Player : MonoBehaviour
         {
             obstacle.enabled = false;
         }
-    }
-
-    void OnTriggerStay(Collider other)
-    {
-        //if (inInput.state)
-        //{
         if (other.gameObject.CompareTag("Vine"))
         {
             CollectResource();
@@ -135,13 +129,15 @@ public class Player : MonoBehaviour
             PickUpWeapon();
             obj = other.gameObject;
         }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
         if (other.gameObject.CompareTag("Bush"))
         {
             HideAnim.state = true;
             obstacle.enabled = false;
         }
-
-        //}
     }
     void OnTriggerExit(Collider other)
     {
