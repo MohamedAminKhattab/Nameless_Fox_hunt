@@ -10,13 +10,9 @@ public class Craftable : MonoBehaviour
     // Start is called before the first frame update
     public ItemTypes type;
     [SerializeField] GameManager _GM;
-    [SerializeField] TMP_Text woodNeeded;
-    [SerializeField] TMP_Text rockNeeded;
-    [SerializeField] TMP_Text vinesNeeded;
     [SerializeField] Button craft;
     private void Start()
     {
-        ShowRequired();
     }
     public void SetTypeToWeapon()
     {
@@ -25,12 +21,6 @@ public class Craftable : MonoBehaviour
     public void SetTypeToTrap()
     {
         type = ItemTypes.Trap;
-    }
-    public void ShowRequired()
-    {
-        woodNeeded.text = _GM.Inv.GetWoodneeded(type).ToString();
-        rockNeeded.text = _GM.Inv.GetRockneeded(type).ToString();
-        vinesNeeded.text = _GM.Inv.GetVineneeded(type).ToString();
     }
     public void ToggleCraftButton()
     {
