@@ -152,13 +152,15 @@ public class EnemyBehaviours : MonoBehaviour
         {
             enemyState = EnemyState.shooting;
             agent.isStopped = true;
-            anim.SetBool("shooting", true);
+            if(!anim.GetBool("shooting"))
+                anim.SetBool("shooting", true);
             Task.current.Succeed();
 
 
         }
         else
         {
+
             anim.SetBool("shooting", false);
             Task.current.Fail();
         }
@@ -206,7 +208,8 @@ public class EnemyBehaviours : MonoBehaviour
     {
          AimDirection = target.position - this.transform.position;
 
-        transform.forward = AimDirection;
+        // transform.forward = AimDirection;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction, Vector3.up), .5f);
 
 
         if (Task.isInspected)

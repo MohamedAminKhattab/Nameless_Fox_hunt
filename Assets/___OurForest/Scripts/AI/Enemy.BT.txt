@@ -23,5 +23,5 @@ tree("Shoot")
 			sequence
 				Aim
 				Fire
-				Wait 2.0
+				Wait 3.0
 				
