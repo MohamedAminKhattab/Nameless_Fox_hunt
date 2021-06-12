@@ -35,6 +35,8 @@ public class AnimatorController : MonoBehaviour
     [SerializeField]
     BoolSO attack;
     [SerializeField]
+    BoolSO freez;
+    [SerializeField]
     BoolSO deathAnim;
     [SerializeField]
     HealthSO playerHealth;
@@ -47,6 +49,7 @@ public class AnimatorController : MonoBehaviour
         attack.state = false;
         attackAnim.state = false;
         deathAnim.state = false;
+        freez.state = false;
         joyStickMove.value = Vector2.zero;
         movement.value = Vector3.zero;
     }
@@ -82,7 +85,11 @@ public class AnimatorController : MonoBehaviour
         else
             crouchAnim.state = false;
 
+        if(!freez.state)
+        {
         animator.SetFloat("Velocity", velocity);
+        }
+
         animator.SetBool("PickUp", FetchAnim.state);
         animator.SetBool("CutWood", CutAnim.state);
         animator.SetBool("EatFood", EatAnim.state);
