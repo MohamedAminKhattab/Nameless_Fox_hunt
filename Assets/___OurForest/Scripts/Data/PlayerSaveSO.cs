@@ -12,6 +12,12 @@ public class PlayerSaveSO : ScriptableObject
     [SerializeField] private float foxhealth;
     [SerializeField] private List<Item> inventoryItems = new List<Item>();
 
+    public void Clear()
+    {
+        lastClearedLevel = 0;
+        playerhealth = 100;
+        foxhealth = 100;
+    }
     public void Save(float _playerHealth, float _foxHealth, List<Item> _items, bool _levelCleared)
     {
         playerhealth = _playerHealth;

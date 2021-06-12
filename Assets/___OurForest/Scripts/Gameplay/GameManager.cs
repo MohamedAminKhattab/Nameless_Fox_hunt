@@ -90,6 +90,11 @@ public class GameManager : MonoBehaviour
            // Debug.LogWarning("deleted them");
         }
     }
+    public void ClearSave()
+    {
+        inv.ClearInventory();
+        save.Clear();
+    }
     public void StartLevel()
     {
         Removeoldinstance();

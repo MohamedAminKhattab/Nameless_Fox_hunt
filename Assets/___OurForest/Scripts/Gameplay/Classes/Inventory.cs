@@ -24,6 +24,16 @@ public class Inventory
         itemlist.Add(new Trap());
         itemlist.Add(new Food());
     }
+    public void ClearInventory()
+    {
+        itemlist = new List<Item>(maxCapacity);
+        itemlist.Add(new Rock());
+        itemlist.Add(new Wood());
+        itemlist.Add(new Weapon());
+        itemlist.Add(new Vine());
+        itemlist.Add(new Trap());
+        itemlist.Add(new Food());
+    }
     public int GetWoodneeded(ItemTypes type)
     {
         int woodneeded=0;
