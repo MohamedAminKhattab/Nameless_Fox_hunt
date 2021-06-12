@@ -182,6 +182,10 @@ PrefabInstance:
       propertyPath: m_ReflectionProbeUsage
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5862289117615207357, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5862289118102395284, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.22
