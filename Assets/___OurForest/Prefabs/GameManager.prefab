@@ -68,7 +68,7 @@ MonoBehaviour:
   _EM: {fileID: 0}
   spawnrate: 0.5
   _UM: {fileID: 0}
-  LevelWaveCount: 3
+  LevelWaveCount: 1
   currentwave: 1
   currentTroopCount: 0
   onPlayerWon: {fileID: 11400000, guid: 09cae5c3fe051434e9f6f6d669309f06, type: 2}
