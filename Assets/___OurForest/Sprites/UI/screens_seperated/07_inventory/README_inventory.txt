@@ -1,1 +1,0 @@
-Add a dimed screen effect by creating a Black screen (RGB: 0,0,0) with opacity 40%
