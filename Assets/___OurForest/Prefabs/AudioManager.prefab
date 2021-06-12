@@ -46,7 +46,7 @@ MonoBehaviour:
   sounds:
   - name: Background
     clip: {fileID: 8300000, guid: ae974498122cbba4f9f50e2d50ed85f6, type: 3}
-    volume: 0.992
+    volume: 0.589
     pitch: 1
     loop: 1
     spatialBlend: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: EnemyFoot
     clip: {fileID: 8300000, guid: fde4ecd1ef12c3940afe98ca82fd6baa, type: 3}
-    volume: 1
+    volume: 0.666
     pitch: 1
     loop: 0
     spatialBlend: 1
@@ -117,7 +117,7 @@ MonoBehaviour:
     volumeRolloff: 1
     source: {fileID: 0}
   - name: GameOver
-    clip: {fileID: 8300000, guid: ae974498122cbba4f9f50e2d50ed85f6, type: 3}
+    clip: {fileID: 8300000, guid: 635b19e1c101dbe44870f66da6b9bf99, type: 3}
     volume: 0.992
     pitch: 1
     loop: 0

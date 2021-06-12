@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 407347103129547562}
-  m_LocalRotation: {x: 0.49749258, y: -0.000000014918722, z: 0.0000000085558804, w: 0.86746824}
+  m_LocalRotation: {x: 0.49749258, y: -0.000000014925986, z: 0.000000008560044, w: 0.86746824}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -98,7 +98,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679630028894784698}
-  m_LocalRotation: {x: 0.5221337, y: 0.000000014673719, z: -0.000000008983432, w: 0.8528637}
+  m_LocalRotation: {x: 0.5221337, y: 0.000000014674696, z: -0.0000000089840295, w: 0.8528637}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -309,7 +309,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4985838670476888122}
-  m_LocalRotation: {x: 0.546506, y: 0.000000034363715, z: -0.000000022425052, w: 0.8374552}
+  m_LocalRotation: {x: 0.546506, y: 0.000000032749785, z: -0.000000021371832, w: 0.8374552}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -615,7 +615,7 @@ MonoBehaviour:
   HideAnim: {fileID: 11400000, guid: 7187870772591e54f811f34aca372dc6, type: 2}
   _GM: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
   playerHealth: {fileID: 11400000, guid: 995eb8ff6ee44984f9945bb81080d729, type: 2}
-  initialHealth: 100
+  initialHealth: 5
   healingPoints: 15
   damagePoints: 5
   playerDeath: {fileID: 11400000, guid: bed96d6d2f8732b459a068d36f9f4c9b, type: 2}

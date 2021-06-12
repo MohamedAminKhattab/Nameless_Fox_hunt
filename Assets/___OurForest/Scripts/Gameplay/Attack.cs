@@ -60,10 +60,7 @@ public class Attack : MonoBehaviour
                         rb.velocity = direction * shootForce;
                         Enemy.value = null;
                         HasTarget.state = false;
-                        if (attackAnim.state)
-                        {
-                            bow.GetComponent<Animation>().Play();
-                        }
+                     
                     }
                 }
             }
