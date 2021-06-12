@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     float rotationSpeed;
     [SerializeField]
     Vector2SO joyStickMovement;
+    [SerializeField] BoolSO freeze;
     Vector3 moveVec;
     Vector3 movementDirection;
     void Start()
@@ -25,22 +26,30 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        moveVec.x = joyStickMovement.value.x;
-        moveVec.z = joyStickMovement.value.y;
-        if (moveVec.x != 0 || moveVec.z != 0)
+        if(!freeze.state)
         {
-            rb.velocity = moveVec * speed.value;
-            movementDirection = moveVec.normalized;
+            moveVec.x = joyStickMovement.value.x;
+            moveVec.z = joyStickMovement.value.y;
+            if (moveVec.x != 0 || moveVec.z != 0)
+            {
+                rb.velocity = moveVec * speed.value;
+                movementDirection = moveVec.normalized;
+            }
+            else
+            {
+                rb.velocity = movement.value * speed.value;
+                movementDirection = movement.value.normalized;
+            }
+            if (movementDirection != Vector3.zero)
+            {
+                Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            }
         }
         else
         {
-            rb.velocity = movement.value * speed.value;
-            movementDirection = movement.value.normalized;
+            rb.velocity = Vector3.zero;
         }
-        if (movementDirection != Vector3.zero)
-        {
-            Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-        }
+
     }
 }

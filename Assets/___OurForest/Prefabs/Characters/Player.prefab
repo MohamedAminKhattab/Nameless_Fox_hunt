@@ -579,6 +579,7 @@ MonoBehaviour:
   speed: {fileID: 11400000, guid: 40a5c7c9ea53a574881119d477ea6634, type: 2}
   rotationSpeed: 300
   joyStickMovement: {fileID: 11400000, guid: 8b4c0bf996bc8774cbfcccbf1c700fd5, type: 2}
+  freeze: {fileID: 11400000, guid: 0e73d39c58860314093fd49923b8daa9, type: 2}
 --- !u!54 &6845774844251762943
 Rigidbody:
   m_ObjectHideFlags: 0
