@@ -10,7 +10,8 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - Sudbury Basin
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: de842de07cab6734a965eb9be1b2f60a, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

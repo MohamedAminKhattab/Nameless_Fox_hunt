@@ -84,8 +84,14 @@ public class AnimatorController : MonoBehaviour
 
         else
             crouchAnim.state = false;
-        if(!freez.state)
-         animator.SetFloat("Velocity", velocity);
+        if (!freez.state)
+        {
+            animator.SetFloat("Velocity", velocity);
+        }
+        else
+        {
+            animator.SetFloat("Velocity", 0.0f);
+        }
 
         //animator.SetBool("CutWood", CutAnim.state);
         animator.SetBool("EatFood", EatAnim.state);

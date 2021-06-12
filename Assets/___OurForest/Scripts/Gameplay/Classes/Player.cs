@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -76,7 +77,7 @@ public class Player : MonoBehaviour
     {
         if (playerHealth.dead && !playerDeathSound.state)
             playerDeathSound.state = true;
-  
+
     }
     void OnCollisionEnter(Collision collision)
     {
@@ -99,8 +100,6 @@ public class Player : MonoBehaviour
         {
             obstacle.enabled = false;
         }
-
-
         if (other.gameObject.CompareTag("Vine"))
         {
             resource = "Vine";
@@ -132,7 +131,14 @@ public class Player : MonoBehaviour
         }
 
     }
-
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Bush"))
+        {
+            obstacle.enabled = false;
+            HideAnim.state = true;
+        }
+    }
 
     void OnTriggerExit(Collider other)
     {
@@ -154,44 +160,44 @@ public class Player : MonoBehaviour
     }
     void PickUpFood()
     {
-            pickUpFood.state = false;
-            fetchingSound.state = true;
-            StartCoroutine(Fetching());
-            //Add to inventory
-            _GM.Inv.AddItem(ItemTypes.Food);
+        pickUpFood.state = false;
+        fetchingSound.state = true;
+        StartCoroutine(Fetching());
+        //Add to inventory
+        _GM.Inv.AddItem(ItemTypes.Food);
     }
     void CutWood()
     {
-            cutWood.state = false;
-            FetchAnim.state = true;
-            fetchingSound.state = true;
-            StartCoroutine(Fetching());
-            //Add to inventory
-            _GM.Inv.AddItem(ItemTypes.Wood);
+        cutWood.state = false;
+        FetchAnim.state = true;
+        fetchingSound.state = true;
+        StartCoroutine(Fetching());
+        //Add to inventory
+        _GM.Inv.AddItem(ItemTypes.Wood);
     }
     void CollectResource()
     {
-      
-            collectResource.state = false;
-            fetchingSound.state = true;
-            StartCoroutine(Fetching());
-            //Add to inventory
-            if (resource == "Vine")
-                _GM.Inv.AddItem(ItemTypes.Vine);
-            else if (resource == "Rock")
-                _GM.Inv.AddItem(ItemTypes.Rock);
-            resource = "";
+
+        collectResource.state = false;
+        fetchingSound.state = true;
+        StartCoroutine(Fetching());
+        //Add to inventory
+        if (resource == "Vine")
+            _GM.Inv.AddItem(ItemTypes.Vine);
+        else if (resource == "Rock")
+            _GM.Inv.AddItem(ItemTypes.Rock);
+        resource = "";
     }
     void PickUpWeapon()
     {
-            FetchAnim.state = true;
-            StartCoroutine(Fetching());
-            //Add to inventory
-            _GM.Inv.AddItem(ItemTypes.Weapon);
+        FetchAnim.state = true;
+        StartCoroutine(Fetching());
+        //Add to inventory
+        _GM.Inv.AddItem(ItemTypes.Weapon);
 
     }
     void CanEat()
-    {  
+    {
         canEatFood = _GM.Inv.GetItemCount(ItemTypes.Food) > 0;
         // Debug.Log(playerHealth.currentHealth);
         if (canEatFood)

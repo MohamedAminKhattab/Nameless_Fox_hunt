@@ -14,24 +14,20 @@ public class PlayerMovement : MonoBehaviour
     float rotationSpeed;
     [SerializeField]
     Vector2SO joyStickMovement;
-    [SerializeField]
-    BoolSO freez;
+    [SerializeField] BoolSO freeze;
     Vector3 moveVec;
     Vector3 movementDirection;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        freez.state = false;
         moveVec = Vector3.zero;
     }
 
 
     void FixedUpdate()
     {
-
-        if (!freez.state)
+        if(!freeze.state)
         {
-            //Debug.Log("Move");
             moveVec.x = joyStickMovement.value.x;
             moveVec.z = joyStickMovement.value.y;
             if (moveVec.x != 0 || moveVec.z != 0)
@@ -53,8 +49,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             rb.velocity = Vector3.zero;
-           // Debug.Log("Not Move");
-
         }
+
     }
 }
