@@ -100,62 +100,46 @@ public class Player : MonoBehaviour
         {
             obstacle.enabled = false;
         }
-        if (other.gameObject.CompareTag("Vine"))
-        {
-     
-        }
-        if (other.gameObject.CompareTag("Rock"))
-        {
-
-        }
-        if (other.gameObject.CompareTag("Food"))
-        {
-
-        }
-        if (other.gameObject.CompareTag("Wood"))
-        {
-
-        }
-        if (other.gameObject.CompareTag("Weapon"))
-        {
-
-        }
     }
 
     void OnTriggerStay(Collider other)
     {
         //if (inInput.state)
         //{
-            if (other.gameObject.CompareTag("Vine"))
-            {
-                CollectResource();
-                resource = "Vine";
-                obj = other.gameObject;
-            }
-            if (other.gameObject.CompareTag("Rock"))
-            {
-                CollectResource();
-                resource = "Rock";
-                obj = other.gameObject;
-            }
-            if (other.gameObject.CompareTag("Food"))
-            {
-                PickUpFood();
-                obj = other.gameObject;
-            }
+        if (other.gameObject.CompareTag("Vine"))
+        {
+            CollectResource();
+            resource = "Vine";
+            obj = other.gameObject;
+        }
+        if (other.gameObject.CompareTag("Rock"))
+        {
+            CollectResource();
+            resource = "Rock";
+            obj = other.gameObject;
+        }
+        if (other.gameObject.CompareTag("Food"))
+        {
+            PickUpFood();
+            obj = other.gameObject;
+        }
 
-            if (other.gameObject.CompareTag("Wood"))
-            {
-                CutWood();
-                obj = other.gameObject;
-            }
+        if (other.gameObject.CompareTag("Wood"))
+        {
+            CutWood();
+            obj = other.gameObject;
+        }
 
-            if (other.gameObject.CompareTag("Weapon"))
-            {
-                PickUpWeapon();
-                obj = other.gameObject;
-            }
-
+        if (other.gameObject.CompareTag("Weapon"))
+        {
+            PickUpWeapon();
+            obj = other.gameObject;
+        }
+        if (other.gameObject.CompareTag("Bush"))
+        {
+            HideAnim.state = true;
+            obstacle.enabled = false;
+        }
 
         //}
     }
@@ -180,56 +164,56 @@ public class Player : MonoBehaviour
     {
         //if (pickUpFood.state)
         //{
-            pickUpFood.state = false;
-            inInput.state = false;
-            FetchAnim.state = true;
-            fetchingSound.state = true;
-            StartCoroutine(Fetching());
-            //Add to inventory
-            _GM.Inv.AddItem(ItemTypes.Food);
-            //Debug.Log("pick up Food");
+        pickUpFood.state = false;
+        inInput.state = false;
+        FetchAnim.state = true;
+        fetchingSound.state = true;
+        StartCoroutine(Fetching());
+        //Add to inventory
+        _GM.Inv.AddItem(ItemTypes.Food);
+        //Debug.Log("pick up Food");
         //}
     }
     void CutWood()
     {
         //if (cutWood.state)
         //{
-            cutWood.state = false;
-            inInput.state = false;
-            FetchAnim.state = true;
-            fetchingSound.state = true;
-            StartCoroutine(Fetching());
-            //Add to inventory
-            _GM.Inv.AddItem(ItemTypes.Wood);
+        cutWood.state = false;
+        inInput.state = false;
+        FetchAnim.state = true;
+        fetchingSound.state = true;
+        StartCoroutine(Fetching());
+        //Add to inventory
+        _GM.Inv.AddItem(ItemTypes.Wood);
         //}
     }
     void CollectResource()
     {
         //if (collectResource.state)
         //{
-            collectResource.state = false;
-            inInput.state = false;
-            FetchAnim.state = true;
-            fetchingSound.state = true;
-            StartCoroutine(Fetching());
-            //Add to inventory
-            if (resource == "Vine")
-                _GM.Inv.AddItem(ItemTypes.Vine);
-            else if (resource == "Rock")
-                _GM.Inv.AddItem(ItemTypes.Rock);
-            resource = "";
+        collectResource.state = false;
+        inInput.state = false;
+        FetchAnim.state = true;
+        fetchingSound.state = true;
+        StartCoroutine(Fetching());
+        //Add to inventory
+        if (resource == "Vine")
+            _GM.Inv.AddItem(ItemTypes.Vine);
+        else if (resource == "Rock")
+            _GM.Inv.AddItem(ItemTypes.Rock);
+        resource = "";
         //}
     }
     void PickUpWeapon()
     {
         //if (pickUpWeapon.state)
         //{
-            pickUpWeapon.state = false;
-            inInput.state = false;
-            FetchAnim.state = true;
-            StartCoroutine(Fetching());
-            //Add to inventory
-            _GM.Inv.AddItem(ItemTypes.Weapon);
+        pickUpWeapon.state = false;
+        inInput.state = false;
+        FetchAnim.state = true;
+        StartCoroutine(Fetching());
+        //Add to inventory
+        _GM.Inv.AddItem(ItemTypes.Weapon);
 
         //}
     }
