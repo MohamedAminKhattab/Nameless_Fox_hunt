@@ -101,14 +101,14 @@ public class EnemyBehaviours : MonoBehaviour
             {
                 canSeeFox = false;
                 anim.SetBool("shooting", false);
-                enemyState = EnemyState.goingToHouse; // should be removed when the tree gets bigger
-                agent.speed = raidingSpeed;
+                //enemyState = EnemyState.goingToHouse; // should be removed when the tree gets bigger
+                //agent.speed = raidingSpeed;
             }
         }
         else { 
             canSeeFox = false;
             anim.SetBool("shooting", false);
-            enemyState = EnemyState.goingToHouse; // should be removed when the tree gets bigger
+            //enemyState = EnemyState.goingToHouse; // should be removed when the tree gets bigger
             agent.speed = raidingSpeed;
         }
         if (!canSeeFox)
