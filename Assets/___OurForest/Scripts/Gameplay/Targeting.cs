@@ -29,7 +29,7 @@ public class Targeting : MonoBehaviour
                         {
                             targetSO.value = hit.transform;
                             hasTarget.state = true;
-                            Debug.LogWarning($"{targetSO.value.gameObject.name}=>{targetSO.value.position}");
+                            //Debug.LogWarning($"{targetSO.value.gameObject.name}=>{targetSO.value.position}");
                         }
                     }
                 }

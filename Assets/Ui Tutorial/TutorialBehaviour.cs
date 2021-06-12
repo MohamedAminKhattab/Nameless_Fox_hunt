@@ -30,9 +30,6 @@ public class TutorialBehaviour : MonoBehaviour
         index++;
         }
         // else Finish the Scene 
-
-
-
     }
     
 }
