@@ -77,12 +77,12 @@ public class SoundController : MonoBehaviour
         {
             playerDeathSound.state = false;
             FindObjectOfType<AudioManager>().PlayeSound("YelenaDeath");
-            StartCoroutine("GameOver");
+            StartCoroutine(GameOver());
         }
         if (winningSound.state)
         {
             winningSound.state = false;
-            FindObjectOfType<AudioManager>().PlayeSound("win");
+            FindObjectOfType<AudioManager>().PlayeSound("Win");
         }
 
     }

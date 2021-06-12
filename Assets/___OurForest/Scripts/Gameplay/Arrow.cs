@@ -4,47 +4,17 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    Rigidbody rb;
-    [SerializeField]
-    bool hitSomething = false;
-    void Start()
+    private void OnCollisionEnter(Collision collision)
     {
-        rb = GetComponent<Rigidbody>();
-       transform.rotation = Quaternion.LookRotation(rb.velocity);
-        StartCoroutine(DestroyArrow());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //Debug.Log(rb.velocity);
-        if (!hitSomething)
-        {   
-            transform.rotation = Quaternion.LookRotation(rb.velocity.normalized);
-        }
-    }
-    void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log($"{collision.gameObject.name} arrow script");
-        if (collision.collider.tag!= "Arrow")
-        {
-            hitSomething = true;
-            Stick();
-        }
+        Destroy(gameObject);
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"{other.gameObject.name} arrow script");
+        Destroy(gameObject);
     }
-    void Stick()
+    private void OnBecameInvisible()
     {
-        rb.constraints = RigidbodyConstraints.FreezeAll;
+        Destroy(gameObject);
     }
 
-    IEnumerator DestroyArrow()
-    {
-        yield return new WaitForSeconds(4.0f);
-        if (!hitSomething)
-            Destroy(this.gameObject);
-    }
 }
