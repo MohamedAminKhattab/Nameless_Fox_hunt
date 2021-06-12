@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Cinemachine;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -12,10 +13,10 @@ public class GameManager : MonoBehaviour
     public Inventory Inv { get => inv; }
     public int CurrentTroopCount { get => currentTroopCount; set => currentTroopCount = value; }
     public List<SpawnPoint> SpawnPoints { get => spawnPoints; }
-    public CameraFollow Cfollow { get => cfollow; set => cfollow = value; }
+    public CinemachineFreeLook Cfollow { get => cfollow; set => cfollow = value; }
 
     [SerializeField] Player player;
-    [SerializeField] CameraFollow cfollow;
+    [SerializeField] CinemachineFreeLook cfollow;
     [SerializeField] List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
     [SerializeField] BoolSO playerWon;
     [SerializeField] BoolSO gameOver;
@@ -94,7 +95,6 @@ public class GameManager : MonoBehaviour
         Removeoldinstance();
         _EM = FindObjectOfType<EnvironmentManager>();
         _EM.GM = this;
-        cfollow = FindObjectOfType<CameraFollow>();
         playerWon.state = false;
         gameOver.state = false;
         togamePlay.state = true;
@@ -102,11 +102,13 @@ public class GameManager : MonoBehaviour
         player = Instantiate(playerPrefab, transform.position, Quaternion.identity, transform).GetComponent<Player>();
         player.GM = this;
         player.GetComponentInChildren<Attack>().GM = this;
+        cfollow = player.GetComponentInChildren<CinemachineFreeLook>();
         fox = Instantiate(foxPrefab, transform.position, Quaternion.identity, transform);
         fox.GetComponent<FoxBehaviours>().Player = player.transform;
         fox.GetComponent<FoxInventory>().Gm = this;
         spawnPoints = FindObjectsOfType<SpawnPoint>().ToList<SpawnPoint>();
-        cfollow.Target = player.transform;
+        cfollow.Follow = player.transform;
+        cfollow.LookAt = player.transform;
         currentwave = 1;
         currentTroopCount = 0;
         save.Load(playerhealth.currentHealth, foxhealth.currentHealth, Inv.Itemlist, selectedLevel);
