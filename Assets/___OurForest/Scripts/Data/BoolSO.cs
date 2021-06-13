@@ -5,4 +5,12 @@ using UnityEngine;
 public class BoolSO : ScriptableObject
 {
     public bool state = false;
+    public void setTrue()
+    {
+        state = true;
+    }
+    public void setFalse()
+    {
+        state = false;
+    }
 }

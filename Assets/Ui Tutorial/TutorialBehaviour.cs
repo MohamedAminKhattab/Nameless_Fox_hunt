@@ -19,13 +19,12 @@ public class TutorialBehaviour : MonoBehaviour
     };
     [SerializeField] private TMP_Text textHolder;
     [SerializeField] BoolSO tutorialstarted;
-    [SerializeField] EventSO ontutorialstarted;
     [SerializeField] BoolSO tutorialended;
-    [SerializeField] EventSO ontutorialended;
+    [SerializeField] EventSO OnTutorialEnded;
     private int index=0;
     private void Start()
     {
-        ontutorialstarted.Raise();
+        tutorialended.state = false;
     }
     public void ShowNext()
     {
@@ -40,10 +39,9 @@ public class TutorialBehaviour : MonoBehaviour
         else
         {
             tutorialstarted.state = false;
-            tutorialended.state = false;
-            ontutorialended.Raise();
+            tutorialended.state = true;
+            OnTutorialEnded.Raise();
         }
         // else Finish the Scene 
     }
-    
 }

@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] BoolSO gamePaused;
     [SerializeField] BoolSO toLevelSelection;
     [SerializeField] BoolSO togameplay;
+    [SerializeField] BoolSO tutorialstarted;
+    [SerializeField] BoolSO tutorialended;
     [Header("Panels")]
     [SerializeField] Canvas mainmenu;
     [SerializeField] Canvas clearCanvas;
@@ -22,6 +24,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] Canvas levelSelection;
     [SerializeField] Canvas storyBoard;
     [SerializeField] Canvas inventory;
+    [SerializeField] Canvas tutorial;
     [Header("SelectedLevel")]
     [SerializeField] IntegerSO selectedLevel;
     private static UIManager instance;
@@ -44,6 +47,8 @@ public class UIManager : MonoBehaviour
         gameOver.state = false;
         togameplay.state = false;
         toLevelSelection.state = false;
+        tutorialended.state = false;
+        tutorialstarted.state = false;
     }
     void Start()
     {
@@ -66,6 +71,7 @@ public class UIManager : MonoBehaviour
                 storyBoard.gameObject.SetActive(false);
                 gameUI.gameObject.SetActive(true);
                 inventory.gameObject.SetActive(false);
+                tutorial.gameObject.SetActive(false);
             }
         }
         else if (SceneManager.GetActiveScene().name == "MainUI")
@@ -81,8 +87,9 @@ public class UIManager : MonoBehaviour
                 storyBoard.gameObject.SetActive(false);
                 gameUI.gameObject.SetActive(false);
                 inventory.gameObject.SetActive(false);
+                tutorial.gameObject.SetActive(false);
             }
-            else if(togameplay.state==false)
+            else if(togameplay.state==false&&tutorialstarted.state==false)
             {
                 mainmenu.gameObject.SetActive(true);
                 levelSelection.gameObject.SetActive(false);
@@ -93,6 +100,33 @@ public class UIManager : MonoBehaviour
                 storyBoard.gameObject.SetActive(false);
                 gameUI.gameObject.SetActive(false);
                 inventory.gameObject.SetActive(false);
+                tutorial.gameObject.SetActive(false);
+            }
+            else if(tutorialstarted.state==true)
+            {
+                mainmenu.gameObject.SetActive(false);
+                levelSelection.gameObject.SetActive(false);
+                lostCanvas.gameObject.SetActive(false);
+                clearCanvas.gameObject.SetActive(false);
+                settingsMenu.gameObject.SetActive(false);
+                pausemenu.gameObject.SetActive(false);
+                storyBoard.gameObject.SetActive(false);
+                gameUI.gameObject.SetActive(false);
+                inventory.gameObject.SetActive(false);
+                tutorial.gameObject.SetActive(true);
+            }
+            else if(tutorialended.state==true)
+            {
+                mainmenu.gameObject.SetActive(false);
+                levelSelection.gameObject.SetActive(false);
+                lostCanvas.gameObject.SetActive(false);
+                clearCanvas.gameObject.SetActive(false);
+                settingsMenu.gameObject.SetActive(true);
+                pausemenu.gameObject.SetActive(false);
+                storyBoard.gameObject.SetActive(false);
+                gameUI.gameObject.SetActive(false);
+                inventory.gameObject.SetActive(false);
+                tutorial.gameObject.SetActive(false);
             }
         }
     }
