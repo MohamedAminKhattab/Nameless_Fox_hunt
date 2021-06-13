@@ -76,7 +76,7 @@ public class UIManager : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().name == "MainUI")
         {
-            if (toLevelSelection.state == true)
+            if (toLevelSelection.state == true && tutorialstarted.state == false)
             {
                 levelSelection.gameObject.SetActive(true);
                 lostCanvas.gameObject.SetActive(false);

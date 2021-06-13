@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
         fox.GetComponent<HealthIndicator>().healthBar = foxhealthslider;
         currentwave = 1;
         currentTroopCount = 0;
-        save.Load(playerhealth.currentHealth, foxhealth.currentHealth, Inv.Itemlist, selectedLevel);
+        save.Save(playerhealth.currentHealth, foxhealth.currentHealth, Inv.Itemlist, false);
         foreach (var sp in spawnPoints)
         {
             sp.GM = this;
