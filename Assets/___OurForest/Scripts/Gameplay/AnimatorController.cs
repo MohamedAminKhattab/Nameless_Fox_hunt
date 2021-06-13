@@ -98,11 +98,12 @@ public class AnimatorController : MonoBehaviour
         animator.SetBool("Dead", playerHealth.dead);
         animator.SetBool("crouch", crouchAnim.state);
         animator.SetBool("Attack", attackAnim.state);
-
+        animator.SetBool("PickUp", FetchAnim.state);
         //CutAnim.state = false;
         EatAnim.state = false;
         attackAnim.state = false;
         crouch.state = false;
+
     }
     void OnTriggerEnter(Collider other)
     {
@@ -142,12 +143,11 @@ public class AnimatorController : MonoBehaviour
             FetchAnim.state = true;
             animator.SetBool("PickUp", FetchAnim.state);
         }
+
     }
     void OnTriggerExit(Collider other)
     {
         HideAnim.state = false;
-        FetchAnim.state = false;
-        animator.SetBool("PickUp", FetchAnim.state);
         animator.SetBool("Hiding", HideAnim.state);
 
     }

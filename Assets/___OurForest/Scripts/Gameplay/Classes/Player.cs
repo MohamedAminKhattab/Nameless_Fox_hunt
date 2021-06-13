@@ -233,6 +233,7 @@ public class Player : MonoBehaviour
         yield return wait;
         Destroy(obj);
         freez.state = false;
+        FetchAnim.state = false;
         // Debug.Log(obj.tag);
 
     }
