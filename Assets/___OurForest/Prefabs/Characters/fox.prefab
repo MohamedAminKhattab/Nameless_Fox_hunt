@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f33adabecb6908f44b6909c057ed1c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mySlider: {fileID: 4140525282163064587, guid: aa9bc1f36f439984f8c992b92226e85e, type: 3}
+  healthBar: {fileID: 0}
   health: {fileID: 11400000, guid: cb84ffe3b29e677448a641a76784c73f, type: 2}
 --- !u!1 &2210217222624476233
 GameObject:
@@ -1500,7 +1500,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8d776a7cc4f31974e9d0ccae0b5dcc2d, type: 2}
+  - {fileID: 2100000, guid: f5a8990f3ebf64d41a008c3fc1e6b757, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1525,7 +1525,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 1967182805594429730, guid: 20ccea4af36cf0f469fbc31c61b26ebf, type: 3}
+  m_Mesh: {fileID: 1967182805594429730, guid: 4e62e869e03eb1e4c8ea029d44ecbf10, type: 3}
   m_Bones:
   - {fileID: 5796199838805184292}
   - {fileID: 2439928164670921249}
@@ -1732,16 +1732,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 1194038905560911245}
     m_Modifications:
     - target: {fileID: 121212964938303897, guid: 4313c32240a4633439a26edb0b2c1c27, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1f020d1befa989349bfb16be918debc0, type: 3}
+    - target: {fileID: 121212964938303897, guid: 4313c32240a4633439a26edb0b2c1c27, type: 3}
       propertyPath: m_Color.b
-      value: 0.9607843
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 121212964938303897, guid: 4313c32240a4633439a26edb0b2c1c27, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 121212964938303897, guid: 4313c32240a4633439a26edb0b2c1c27, type: 3}
       propertyPath: m_Color.r
-      value: 0.004719276
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 304511767602503808, guid: 4313c32240a4633439a26edb0b2c1c27, type: 3}
       propertyPath: m_Name
