@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -39,6 +40,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] int selectedLevel;
     [SerializeField] HealthSO foxhealth;
     [SerializeField] HealthSO playerhealth;
+    [SerializeField] Slider playerhealthslider;
+    [SerializeField] Slider foxhealthslider;
+
     private static GameManager instance;
     private void Awake()
     {
@@ -114,6 +118,8 @@ public class GameManager : MonoBehaviour
         spawnPoints = FindObjectsOfType<SpawnPoint>().ToList<SpawnPoint>();
         cfollow.Follow = player.transform;
         cfollow.LookAt = player.transform;
+        player.GetComponent<HealthIndicator>().healthBar = playerhealthslider;
+        fox.GetComponent<HealthIndicator>().healthBar = foxhealthslider;
         currentwave = 1;
         currentTroopCount = 0;
         save.Load(playerhealth.currentHealth, foxhealth.currentHealth, Inv.Itemlist, selectedLevel);
@@ -145,7 +151,7 @@ public class GameManager : MonoBehaviour
     {
         playerWon.state = false;
         gameOver.state = true;
-        save.Save(100, 100, Inv.Itemlist, false);
+        //save.Save(100, 100, Inv.Itemlist, false);
         onPlayerLost.Raise();
     }
     public void OnEnemyDied()

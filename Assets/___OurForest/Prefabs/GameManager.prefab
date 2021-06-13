@@ -78,6 +78,8 @@ MonoBehaviour:
   selectedLevel: 0
   foxhealth: {fileID: 11400000, guid: cb84ffe3b29e677448a641a76784c73f, type: 2}
   playerhealth: {fileID: 11400000, guid: 995eb8ff6ee44984f9945bb81080d729, type: 2}
+  playerhealthslider: {fileID: 0}
+  foxhealthslider: {fileID: 0}
 --- !u!114 &7342326961803000935
 MonoBehaviour:
   m_ObjectHideFlags: 0
