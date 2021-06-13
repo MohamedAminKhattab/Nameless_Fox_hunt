@@ -2,46 +2,55 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class StoryBoardSystem : MonoBehaviour
 {
-    [SerializeField] Image board;
-    [SerializeField] Button next;
-    [SerializeField] Button previous;
-    [SerializeField] Sprite[] storyboards;
-    int currentBoard;
-    void Start()
+    [SerializeField] VideoPlayer player;
+    [SerializeField] Sprite play;
+    [SerializeField] Sprite pause;
+    [SerializeField] Image playorpause;
+    [SerializeField] Button tostart;
+    [SerializeField] Button toend;
+    private void Start()
     {
-        board = GetComponent<Image>();
-        currentBoard = 0;
-        board.sprite = storyboards[currentBoard];
+        playorpause.sprite = play;
+        player.prepareCompleted += OnVideoPrepared;
+        player.Prepare();
     }
-    private void Update()
+
+    private void OnVideoPrepared(VideoPlayer videoPlayer)
     {
-        if(currentBoard==0)
+        player.Play();
+        playorpause.sprite = pause;
+    }
+    public void playorpausevid()
+    {
+        if (player.isPlaying == false)
         {
-            previous.interactable = false;
-            next.interactable = true;
+            player.Play();
+            playorpause.sprite = pause;
         }
-        else if(currentBoard>0&&currentBoard<storyboards.Length-1)
+        else if (player.isPaused==false)
         {
-            previous.interactable = true;
-            next.interactable = true;
-        }
-        else if(currentBoard==storyboards.Length-1)
-        {
-            previous.interactable = true;
-            next.interactable = false;
+            player.Pause();
+            playorpause.sprite = play;
         }
     }
-    public void Increment()
+    public void backframe()
     {
-        currentBoard++;
-        board.sprite = storyboards[currentBoard];
+        player.frame-=10;
+        player.Play();
+        playorpause.sprite = pause;
     }
-    public void Decrement()
+    public void forwardFrame()
     {
-        currentBoard--;
-        board.sprite = storyboards[currentBoard];
+        player.frame+=10;
+        player.Play();
+        playorpause.sprite = pause;
+    }
+    private void OnDisable()
+    {
+        player.frame = 0;
     }
 }
