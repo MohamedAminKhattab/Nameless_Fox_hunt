@@ -152,8 +152,6 @@ public class Player : MonoBehaviour
         if (eatFood.state)
         {
             CanEat();
-            eatFood.state = false;
-            freez.state = true;
             //Debug.Log(_GM.Inv.GetItemCount(ItemTypes.Food));
         }
 
@@ -212,6 +210,11 @@ public class Player : MonoBehaviour
                 StartCoroutine(Eating());
                 // Debug.Log(playerHealth.currentHealth);
             }
+            else
+            {
+                 Debug.Log(playerHealth.currentHealth);
+                eatFood.state = false;
+            }
         }
     }
     //IEnumerator CuttingWood()
@@ -235,9 +238,10 @@ public class Player : MonoBehaviour
     }
     IEnumerator Eating()
     {
-        freez.state = true;
+        Debug.Log("Eating");
         var wait = new WaitForSeconds(3.0f);
         yield return wait;
+        eatFood.state = false;
         freez.state = false;
     }
     private void OnDrawGizmos()
