@@ -18,7 +18,15 @@ public class TutorialBehaviour : MonoBehaviour
             "Oh no! The hunters are here!"
     };
     [SerializeField] private TMP_Text textHolder;
+    [SerializeField] BoolSO tutorialstarted;
+    [SerializeField] EventSO ontutorialstarted;
+    [SerializeField] BoolSO tutorialended;
+    [SerializeField] EventSO ontutorialended;
     private int index=0;
+    private void Start()
+    {
+        ontutorialstarted.Raise();
+    }
     public void ShowNext()
     {
         if (index < Panels.Length) // panels num must be equal to strings num
@@ -28,6 +36,12 @@ public class TutorialBehaviour : MonoBehaviour
             Panels[index].SetActive(true);
         textHolder.text = TextsToShow[index];
         index++;
+        }
+        else
+        {
+            tutorialstarted.state = false;
+            tutorialended.state = false;
+            ontutorialended.Raise();
         }
         // else Finish the Scene 
     }
