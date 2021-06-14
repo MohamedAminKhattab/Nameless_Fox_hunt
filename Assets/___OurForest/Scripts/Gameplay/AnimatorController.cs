@@ -53,7 +53,10 @@ public class AnimatorController : MonoBehaviour
         joyStickMove.value = Vector2.zero;
         movement.value = Vector3.zero;
     }
-
+    //private void OnAnimatorMove()
+    //{
+    //    freez.state = false;
+    //}
     void Update()
     {
         if (joyStickMove.value.x != 0 || joyStickMove.value.y != 0)
