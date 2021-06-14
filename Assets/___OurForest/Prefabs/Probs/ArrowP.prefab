@@ -111,6 +111,10 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0.00927151
       objectReference: {fileID: 0}
+    - target: {fileID: 2623373997072156232, guid: c3b1573dddce6e649836d9602ea8ebbc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a4664c71370f8b14ca17ee2166729b4a, type: 2}
     - target: {fileID: 2879949821282345575, guid: c3b1573dddce6e649836d9602ea8ebbc, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -155,6 +159,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4117558263651181273, guid: c3b1573dddce6e649836d9602ea8ebbc, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7929139438592967118, guid: d0117c11ed6928044bd7ef0b2e9a3f96, type: 3}
     - target: {fileID: 8326726794858847085, guid: c3b1573dddce6e649836d9602ea8ebbc, type: 3}
       propertyPath: m_Name
       value: Arrow
