@@ -228,7 +228,7 @@ public class Player : MonoBehaviour
     IEnumerator Fetching()
     {
         freez.state = true;
-        var wait = new WaitForSeconds(5.0f);
+        var wait = new WaitForSeconds(2.5f);
         //Debug.Log("Wait");
         yield return wait;
         Destroy(obj);
