@@ -11,14 +11,14 @@ GameObject:
   - component: {fileID: 743365419463647744}
   - component: {fileID: 6139275343956845038}
   - component: {fileID: 5485976788722516083}
-  - component: {fileID: -8051057547296914102}
   - component: {fileID: 7884325065979031844}
+  - component: {fileID: 5838674422227352595}
   m_Layer: 6
   m_Name: rock_collectable
   m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &743365419463647744
 Transform:
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2960727315653308341}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.10227631, y: 0.10227631, z: 0.10227631}
+  m_LocalScale: {x: 0.1022763, y: 0.1022763, z: 0.1022763}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2960727315653308341}
-  m_Mesh: {fileID: -7176078233714070305, guid: b102e52e861a74c4e9e02b7426f2bf98, type: 3}
+  m_Mesh: {fileID: 3462191554986578624, guid: d0117c11ed6928044bd7ef0b2e9a3f96, type: 3}
 --- !u!23 &5485976788722516083
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4d705a7c30bcbd64f9d8d4a270f5165d, type: 2}
+  - {fileID: 2100000, guid: bb7312fd8ed593d4b95795a6df809e59, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &-8051057547296914102
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2960727315653308341}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5.1731143, y: 3.256583, z: 4.741127}
-  m_Center: {x: 1.1402869, y: 0.050005436, z: 1.6883254}
 --- !u!114 &7884325065979031844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,3 +96,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectResource: {fileID: 11400000, guid: 6c7e708a05bfb214a9ab393a8beb93d8, type: 2}
+--- !u!65 &5838674422227352595
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2960727315653308341}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.173114, y: 3.2565827, z: 4.7411265}
+  m_Center: {x: 1.1402868, y: 0.050005432, z: 1.6883253}

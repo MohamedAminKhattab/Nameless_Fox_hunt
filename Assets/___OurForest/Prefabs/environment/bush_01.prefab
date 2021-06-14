@@ -18,7 +18,7 @@ GameObject:
   m_TagString: Bush
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &8588636610108797875
 Transform:
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5852188533858676539}
-  m_Mesh: {fileID: -2018266220411547852, guid: b102e52e861a74c4e9e02b7426f2bf98, type: 3}
+  m_Mesh: {fileID: -3274945667370063830, guid: d0117c11ed6928044bd7ef0b2e9a3f96, type: 3}
 --- !u!23 &5273039240305596923
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4d705a7c30bcbd64f9d8d4a270f5165d, type: 2}
+  - {fileID: 2100000, guid: a4664c71370f8b14ca17ee2166729b4a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
