@@ -130,6 +130,7 @@ public class GameManager : MonoBehaviour
             sp.Yelena = player.transform;
         }
         changecountenemy.Raise();
+        StopAllCoroutines();
         StartCoroutine(WaitForWave());
     }
     public void Restart()
@@ -159,6 +160,7 @@ public class GameManager : MonoBehaviour
         spawnPoints = FindObjectsOfType<SpawnPoint>().ToList<SpawnPoint>();
         if (currentTroopCount < 1 && currentwave < LevelWaveCount)
         {
+            StopAllCoroutines();
             StartCoroutine(WaitForWave());
             currentwave++;
         }
