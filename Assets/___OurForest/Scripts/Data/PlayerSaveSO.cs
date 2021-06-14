@@ -22,9 +22,25 @@ public class PlayerSaveSO : ScriptableObject
     {
         playerhealth = _playerHealth;
         foxhealth = _foxHealth;
+        if(File.Exists(Application.persistentDataPath + "/PlayerInv.txt"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/PlayerInv.txt",FileMode.Open);
+            InventoryData data = new InventoryData();
 
+            data.foodcount = _items.Find(a => a.Type == ItemTypes.Food).Itemcount;
+            data.woodcount = _items.Find(a => a.Type == ItemTypes.Wood).Itemcount;
+            data.rockcount = _items.Find(a => a.Type == ItemTypes.Rock).Itemcount;
+            data.vinecount = _items.Find(a => a.Type == ItemTypes.Vine).Itemcount;
+            data.weaponcount = _items.Find(a => a.Type == ItemTypes.Weapon).Itemcount;
+            data.trapcount = _items.Find(a => a.Type == ItemTypes.Trap).Itemcount;
+            bf.Serialize(file, data);
+            file.Close();
+        }
+        else
+        {
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create("Assets/___OurForest/Resources/PlayerInv.txt");
+        FileStream file = File.Create(Application.persistentDataPath+"/PlayerInv.txt");
         InventoryData data = new InventoryData();
 
         data.foodcount = _items.Find(a => a.Type == ItemTypes.Food).Itemcount;
@@ -35,6 +51,7 @@ public class PlayerSaveSO : ScriptableObject
         data.trapcount = _items.Find(a => a.Type == ItemTypes.Trap).Itemcount;
         bf.Serialize(file, data);
         file.Close();
+        }
         if (_levelCleared)
         {
             lastClearedLevel++;
@@ -44,11 +61,11 @@ public class PlayerSaveSO : ScriptableObject
     {
         _playerhealth = playerhealth;
         _foxHealth = foxhealth;
-        if (File.Exists("Assets/___OurForest/Resources/PlayerInv.txt"))
+        if (File.Exists(Application.persistentDataPath + "/PlayerInv.txt"))
         {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file =
-                       File.Open("Assets/___OurForest/Resources/PlayerInv.txt", FileMode.Open);
+                       File.Open(Application.persistentDataPath + "/PlayerInv.txt", FileMode.Open);
             InventoryData data = new InventoryData();
             data = (InventoryData)bf.Deserialize(file);
             _items.Find(a => a.Type == ItemTypes.Food).Itemcount = data.foodcount;

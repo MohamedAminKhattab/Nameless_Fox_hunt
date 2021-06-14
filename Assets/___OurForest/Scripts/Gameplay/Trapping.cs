@@ -21,7 +21,7 @@ public class Trapping : MonoBehaviour
     public void NeedTrap()
     {
         level = FindObjectOfType<Level>();
-        if (needTrap.state == true && _GM.Inv.GetItemCount(ItemTypes.Trap) > 0)
+        if (needTrap.state == true && _GM.Inv.GetItemCount(ItemTypes.Trap) > 0&&trapLocation.value!=Vector3.zero)
         {
             Instantiate(trapPrefab, trapLocation.value, Quaternion.identity,level.transform);
             _GM.Inv.UseItem(ItemTypes.Trap, 1);
