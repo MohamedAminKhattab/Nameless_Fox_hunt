@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] EventSO onPlayerWon;
     [SerializeField] EventSO onPlayerLost;
     [SerializeField] EventSO changecountenemy;
+    [SerializeField] EventSO enemiesspawned;
     [SerializeField] PlayerSaveSO save;
     [SerializeField] int selectedLevel;
     [SerializeField] HealthSO foxhealth;
@@ -169,7 +170,14 @@ public class GameManager : MonoBehaviour
         {
             playerWon.state = true;
             gameOver.state = false;
+            if(selectedLevel>save.LastClearedLevel)
+            {
             save.Save(100, 100, Inv.Itemlist, true);
+            }
+            else
+            {
+            save.Save(100, 100, Inv.Itemlist,false);
+            }
             onPlayerWon.Raise();
         }
     }
@@ -180,6 +188,7 @@ public class GameManager : MonoBehaviour
         RemainingTime.value = spawnrate * 60;
         yield return new WaitForSeconds(spawnrate * 60);
         SpawnEnemies();
+        enemiesspawned.Raise();
        Debug.LogWarning("new ones");
     }
 }

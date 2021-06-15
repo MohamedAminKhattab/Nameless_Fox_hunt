@@ -10,9 +10,9 @@ public class Trap : Item
         Craftable = true;
         Fooditem = false;
         Healthincrease = 0;
-        WoodNeeded = 2;
-        RockNeeded = 5;
-        VinesNeeded = 1;
+        WoodNeeded = 1;
+        RockNeeded = 1;
+        VinesNeeded = 0;
         Durability = 20;
         Type = ItemTypes.Trap;
     }

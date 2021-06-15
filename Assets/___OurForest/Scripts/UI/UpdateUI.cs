@@ -42,4 +42,12 @@ public class UpdateUI : MonoBehaviour
     {
         hunterCount.text = _GM.CurrentTroopCount.ToString();
     }
+    public void WaitforText()
+    {
+        StartCoroutine(Wait());
+    }
+     IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(2.0f);
+    }
 }
