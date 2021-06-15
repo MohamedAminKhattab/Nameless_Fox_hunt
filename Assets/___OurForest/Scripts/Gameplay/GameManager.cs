@@ -155,6 +155,7 @@ public class GameManager : MonoBehaviour
         playerWon.state = false;
         gameOver.state = true;
         //save.Save(100, 100, Inv.Itemlist, false);
+
         onPlayerLost.Raise();
     }
     public void OnEnemyDied()
