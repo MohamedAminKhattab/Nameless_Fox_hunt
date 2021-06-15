@@ -16,6 +16,7 @@ public class EnemyBehaviours : MonoBehaviour
     [SerializeField] Transform fox;
     [SerializeField] Transform yelena;
     [SerializeField] Transform DefaultGoal;
+    [SerializeField] Transform SpawnPoint;
     [SerializeField] int VisionRange = 4;
     [SerializeField] int shootingAngle = 45;
     [SerializeField] BoolSO isPlayerHidden;
@@ -32,7 +33,7 @@ public class EnemyBehaviours : MonoBehaviour
     private Transform fovTarget;
     private bool canSeeFox;
     private Vector3 direction;
-
+    private Transform CurrentGoal;
     public Transform Fox { get => fox; set => fox = value; }
     public Transform Yelena { get => yelena; set => yelena = value; }
     public Transform DefaultGoal1 { get => DefaultGoal; set => DefaultGoal = value; }
@@ -89,44 +90,32 @@ public class EnemyBehaviours : MonoBehaviour
 
         if (Measurements.isInRange(transform, fox, VisionRange)) // test distance
         {
-            direction = fox.position - this.transform.position;
-            if (Vector3.Angle(this.transform.forward, direction) < shootingAngle) //test angle
-            {
+            
+           
                 fovTarget = fox;
                 canSeeFox = true;
                 Task.current.Succeed();
                 return;
             }
-            else
-            {
-                canSeeFox = false;
-                anim.SetBool("shooting", false);
-                //enemyState = EnemyState.goingToHouse; // should be removed when the tree gets bigger
-                //agent.speed = raidingSpeed;
-            }
-        }
-        else { 
-            canSeeFox = false;
-            anim.SetBool("shooting", false);
-            //enemyState = EnemyState.goingToHouse; // should be removed when the tree gets bigger
-            agent.speed = raidingSpeed;
-        }
-        if (!canSeeFox)
-        {
-            if (Measurements.isInRange(transform, yelena, VisionRange)) // test distance
+            else if (Measurements.isInRange(transform, yelena, VisionRange)) // test distance
             {
                 direction = yelena.position - this.transform.position;
 
                 if (Vector3.Angle(this.transform.forward, direction) < shootingAngle) //test angle
                 {
                     fovTarget = yelena;
-
-
                     Task.current.Succeed();
                     return;
-
                 }
+            else
+            {
+                enemyState = EnemyState.goingToHouse; // should be removed when the tree gets bigger
+                agent.speed = raidingSpeed;
+                anim.SetBool("shooting", false);
+                Task.current.Fail();
+                return;
             }
+        }
             else
             {
                 enemyState = EnemyState.goingToHouse; // should be removed when the tree gets bigger
@@ -137,7 +126,7 @@ public class EnemyBehaviours : MonoBehaviour
             }
 
         }
-    }
+    
     [Task]
     public void Chase()
     {
@@ -166,6 +155,17 @@ public class EnemyBehaviours : MonoBehaviour
         }
     }
     [Task]
+    public void ReturnToSpawn()
+    {
+        CurrentGoal = SpawnPoint;
+        Task.current.Succeed();
+    } [Task]
+    public void TargetTheHouse()
+    {
+        CurrentGoal = DefaultGoal;
+        Task.current.Succeed();
+    }
+    [Task]
     public void MoveToTarget()
     {
 
@@ -173,14 +173,15 @@ public class EnemyBehaviours : MonoBehaviour
         switch (enemyState)
         {
             case EnemyState.goingToHouse:
-                target = DefaultGoal;
+                target = CurrentGoal;
                 break;
+        
             case EnemyState.chasing:
                 target = fovTarget;
                 break;
 
         }
-        //Debug.Log(agent.pathPending);
+        Debug.Log(target);
 
         agent.SetDestination(target.position);
         if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
@@ -196,6 +197,7 @@ public class EnemyBehaviours : MonoBehaviour
         return enemyState != EnemyState.goingToHouse;
 
     }
+    
     //[Task]
     //public void LookAround()
     // {
