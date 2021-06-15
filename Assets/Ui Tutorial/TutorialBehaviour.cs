@@ -21,10 +21,19 @@ public class TutorialBehaviour : MonoBehaviour
     [SerializeField] BoolSO tutorialstarted;
     [SerializeField] BoolSO tutorialended;
     [SerializeField] EventSO OnTutorialEnded;
-    private int index=0;
+    [SerializeField]private int index=0;
     private void Start()
     {
         tutorialended.state = false;
+        index = 0;
+        Restarttut();
+    }
+    public void Restarttut()
+    {
+        index = 0;
+        Panels[Panels.Length-1].SetActive(false);
+        Panels[index].SetActive(true);
+        textHolder.text = TextsToShow[index];
     }
     public void ShowNext()
     {

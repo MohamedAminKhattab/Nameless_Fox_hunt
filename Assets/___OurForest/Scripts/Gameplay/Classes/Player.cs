@@ -128,8 +128,7 @@ public class Player : MonoBehaviour
         {
             obj = other.gameObject;
             PickUpWeapon();
-        }
-
+        } 
     }
     private void OnTriggerStay(Collider other)
     {
