@@ -20,7 +20,7 @@ public class EnemyIndicator : MonoBehaviour
     {
         foreach (var item in arrows)
         {
-            item.SetActive(false);
+           item.SetActive(false);
         }
         arrows.Clear();
         enemies = FindObjectsOfType<EnemyBehaviours>().ToList();

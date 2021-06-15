@@ -137,10 +137,10 @@ public class GameManager : MonoBehaviour
     }
     public void Restart()
     {
-        Debug.Log("Restarting");
+       // Debug.Log("Restarting");
         save.Load(playerhealth.currentHealth, foxhealth.currentHealth, Inv.Itemlist, selectedLevel);
         inv.OnInvItemsChangeHandler?.Invoke(this, EventArgs.Empty);
-        Debug.Log("Restarted");
+       // Debug.Log("Restarted");
     }
     public void SpawnEnemies()
     {
@@ -170,7 +170,7 @@ public class GameManager : MonoBehaviour
         {
             playerWon.state = true;
             gameOver.state = false;
-            if(selectedLevel>save.LastClearedLevel)
+            if(selectedLevel>=save.LastClearedLevel)
             {
             save.Save(100, 100, Inv.Itemlist, true);
             }
@@ -183,12 +183,12 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator WaitForWave()
     {
-        Debug.LogWarning("All enemies died making new ones");
+       // Debug.LogWarning("All enemies died making new ones");
         timerisRunning.state = true;
         RemainingTime.value = spawnrate * 60;
         yield return new WaitForSeconds(spawnrate * 60);
         SpawnEnemies();
         enemiesspawned.Raise();
-       Debug.LogWarning("new ones");
+      // Debug.LogWarning("new ones");
     }
 }
