@@ -45,6 +45,7 @@ public class EnemyBehaviours : MonoBehaviour
         target = DefaultGoal;
         enemyState = EnemyState.goingToHouse;
         anim = GetComponent<Animator>();
+        SpawnPoint = GetComponentInParent<SpawnPoint>().transform;
 
     }
     private void Update()
