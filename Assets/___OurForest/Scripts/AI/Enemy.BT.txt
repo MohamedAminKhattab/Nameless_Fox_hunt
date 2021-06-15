@@ -8,7 +8,16 @@ tree("Root")
 tree("RaidHouse")
 	while
 		not isIntrupted
-		MoveToTarget
+
+		repeat
+			sequence
+				TargetTheHouse
+				MoveToTarget
+				Wait 5.0
+				ReturnToSpawn
+				MoveToTarget
+				Wait 5.0
+
 
 tree("ChaseFox")
 		while

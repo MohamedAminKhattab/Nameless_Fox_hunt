@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.AI;
 using Panda;
@@ -15,6 +16,7 @@ public class EnemyBehaviours : MonoBehaviour
     [SerializeField] Transform fox;
     [SerializeField] Transform yelena;
     [SerializeField] Transform DefaultGoal;
+    [SerializeField] Transform SpawnPoint;
     [SerializeField] int VisionRange = 4;
     [SerializeField] int shootingAngle = 45;
     [SerializeField] BoolSO isPlayerHidden;
@@ -31,7 +33,7 @@ public class EnemyBehaviours : MonoBehaviour
     private Transform fovTarget;
     private bool canSeeFox;
     private Vector3 direction;
-
+    private Transform CurrentGoal;
     public Transform Fox { get => fox; set => fox = value; }
     public Transform Yelena { get => yelena; set => yelena = value; }
     public Transform DefaultGoal1 { get => DefaultGoal; set => DefaultGoal = value; }
@@ -88,23 +90,23 @@ public class EnemyBehaviours : MonoBehaviour
 
         if (Measurements.isInRange(transform, fox, VisionRange)) // test distance
         {
-
-
-            fovTarget = fox;
-            canSeeFox = true;
-            Task.current.Succeed();
-            return;
-        }
-        else if (Measurements.isInRange(transform, yelena, VisionRange)) // test distance
-        {
-            direction = yelena.position - this.transform.position;
-
-            if (Vector3.Angle(this.transform.forward, direction) < shootingAngle) //test angle
-            {
-                fovTarget = yelena;
+            
+           
+                fovTarget = fox;
+                canSeeFox = true;
                 Task.current.Succeed();
                 return;
             }
+            else if (Measurements.isInRange(transform, yelena, VisionRange)) // test distance
+            {
+                direction = yelena.position - this.transform.position;
+
+                if (Vector3.Angle(this.transform.forward, direction) < shootingAngle) //test angle
+                {
+                    fovTarget = yelena;
+                    Task.current.Succeed();
+                    return;
+                }
             else
             {
                 enemyState = EnemyState.goingToHouse; // should be removed when the tree gets bigger
@@ -114,17 +116,17 @@ public class EnemyBehaviours : MonoBehaviour
                 return;
             }
         }
-        else
-        {
-            enemyState = EnemyState.goingToHouse; // should be removed when the tree gets bigger
-            agent.speed = raidingSpeed;
-            anim.SetBool("shooting", false);
-            Task.current.Fail();
-            return;
+            else
+            {
+                enemyState = EnemyState.goingToHouse; // should be removed when the tree gets bigger
+                agent.speed = raidingSpeed;
+                anim.SetBool("shooting", false);
+                Task.current.Fail();
+                return;
+            }
+
         }
-
-    }
-
+    
     [Task]
     public void Chase()
     {
@@ -139,7 +141,7 @@ public class EnemyBehaviours : MonoBehaviour
         {
             enemyState = EnemyState.shooting;
             agent.isStopped = true;
-            if (!anim.GetBool("shooting"))
+            if(!anim.GetBool("shooting"))
                 anim.SetBool("shooting", true);
             Task.current.Succeed();
 
@@ -153,6 +155,17 @@ public class EnemyBehaviours : MonoBehaviour
         }
     }
     [Task]
+    public void ReturnToSpawn()
+    {
+        CurrentGoal = SpawnPoint;
+        Task.current.Succeed();
+    } [Task]
+    public void TargetTheHouse()
+    {
+        CurrentGoal = DefaultGoal;
+        Task.current.Succeed();
+    }
+    [Task]
     public void MoveToTarget()
     {
 
@@ -160,14 +173,15 @@ public class EnemyBehaviours : MonoBehaviour
         switch (enemyState)
         {
             case EnemyState.goingToHouse:
-                target = DefaultGoal;
+                target = CurrentGoal;
                 break;
+        
             case EnemyState.chasing:
                 target = fovTarget;
                 break;
 
         }
-        //Debug.Log(agent.pathPending);
+        Debug.Log(target);
 
         agent.SetDestination(target.position);
         if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
@@ -183,6 +197,7 @@ public class EnemyBehaviours : MonoBehaviour
         return enemyState != EnemyState.goingToHouse;
 
     }
+    
     //[Task]
     //public void LookAround()
     // {
@@ -193,7 +208,7 @@ public class EnemyBehaviours : MonoBehaviour
     [Task]
     public void Aim()
     {
-        AimDirection = target.position - this.transform.position;
+         AimDirection = target.position - this.transform.position;
 
         // transform.forward = AimDirection;
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction, Vector3.up), .5f);
@@ -214,7 +229,7 @@ public class EnemyBehaviours : MonoBehaviour
     public void Fire()
     {
 
-        // FindObjectOfType<AudioManager>().PlayeSound("Gun");
+       // FindObjectOfType<AudioManager>().PlayeSound("Gun");
         GameObject go = Instantiate(bullet, Gun.position, transform.rotation);
         go.AddComponent<Rigidbody>().AddForce(AimDirection * 500);
         MuzlleVfx.GetComponent<ParticleSystem>().Play();
