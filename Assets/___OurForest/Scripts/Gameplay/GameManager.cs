@@ -155,7 +155,7 @@ public class GameManager : MonoBehaviour
         playerWon.state = false;
         gameOver.state = true;
         //save.Save(100, 100, Inv.Itemlist, false);
-
+        StartCoroutine(WaitforDead());
         onPlayerLost.Raise();
     }
     public void OnEnemyDied()
@@ -191,5 +191,9 @@ public class GameManager : MonoBehaviour
         SpawnEnemies();
         enemiesspawned.Raise();
       // Debug.LogWarning("new ones");
+    }
+    IEnumerator WaitforDead()
+    {
+        yield return new WaitForSeconds(3.0f);
     }
 }

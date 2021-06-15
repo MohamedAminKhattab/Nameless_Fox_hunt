@@ -180,6 +180,6 @@ public class UIManager : MonoBehaviour
     }
     IEnumerator WaitforDead()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(3.0f);
     }
 }
