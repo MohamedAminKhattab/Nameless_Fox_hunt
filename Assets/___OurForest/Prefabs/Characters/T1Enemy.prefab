@@ -114,6 +114,7 @@ MonoBehaviour:
   fox: {fileID: 0}
   yelena: {fileID: 0}
   DefaultGoal: {fileID: 0}
+  SpawnPoint: {fileID: 0}
   VisionRange: 5
   shootingAngle: 90
   isPlayerHidden: {fileID: 11400000, guid: 7187870772591e54f811f34aca372dc6, type: 2}

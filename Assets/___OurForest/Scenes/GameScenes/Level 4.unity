@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 209188912}
+  m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 2d60605dabc30f2408c2374664fcdab5, type: 2}
---- !u!1001 &209188911
+--- !u!1001 &2019009288
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -174,14 +174,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2270271428563954180, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3109528212685813774, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
       propertyPath: m_Name
       value: Forest level
       objectReference: {fileID: 0}
+    - target: {fileID: 3274811003656977845, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992026404382337754, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992026405044241750, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
---- !u!108 &209188912 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 5992026405892165211, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
-  m_PrefabInstance: {fileID: 209188911}
-  m_PrefabAsset: {fileID: 0}

@@ -18,7 +18,7 @@ GameObject:
   m_TagString: Vine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 19
+  m_StaticEditorFlags: 126
   m_IsActive: 1
 --- !u!4 &328224366192626745
 Transform:
@@ -94,7 +94,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9557471, y: 0.078872666, z: 0.5457666}
+  m_Size: {x: 0.9557471, y: 0.39, z: 0.5457666}
   m_Center: {x: 0, y: 0.014480328, z: 0}
 --- !u!114 &1123261067120718210
 MonoBehaviour:

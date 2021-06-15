@@ -9,16 +9,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4550053023370866732}
-  - component: {fileID: 9174269012753200338}
-  - component: {fileID: 194912345311016443}
-  - component: {fileID: -6752742392393428403}
-  - component: {fileID: 2369292320474468958}
+  - component: {fileID: 3205235701591466840}
+  - component: {fileID: 3744030001316342164}
+  - component: {fileID: 244698278088949379}
+  - component: {fileID: 2454643398779660288}
   m_Layer: 6
   m_Name: branch01
   m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 126
   m_IsActive: 1
 --- !u!4 &4550053023370866732
 Transform:
@@ -28,21 +28,21 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2955740203514363699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &9174269012753200338
+--- !u!33 &3205235701591466840
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2955740203514363699}
-  m_Mesh: {fileID: -3120184789612213409, guid: d0117c11ed6928044bd7ef0b2e9a3f96, type: 3}
---- !u!23 &194912345311016443
+  m_Mesh: {fileID: -3120184789612213409, guid: 9c8e1b7a5cc402d43abcc918d05b29a5, type: 3}
+--- !u!23 &3744030001316342164
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -83,7 +83,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-6752742392393428403
+--- !u!65 &244698278088949379
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2955740203514363699}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3168286, y: 0.21744123, z: 0.57381105}
+  m_Center: {x: -0.043547187, y: 0.0058194175, z: 0.01662843}
+--- !u!114 &2454643398779660288
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,16 +109,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutWood: {fileID: 11400000, guid: 8cccd1807e390d24383e196f4a3a9155, type: 2}
---- !u!65 &2369292320474468958
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2955740203514363699}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.3168286, y: 0.21744123, z: 0.57381153}
-  m_Center: {x: 0.19247916, y: 0.07176888, z: -10.884071}

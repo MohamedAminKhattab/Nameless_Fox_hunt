@@ -1773,7 +1773,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6845774844251762932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.16, y: -0.15, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3979935776987378992}
@@ -1904,7 +1904,7 @@ CapsuleCollider:
   m_Radius: 0.22
   m_Height: 1.68
   m_Direction: 1
-  m_Center: {x: 0, y: 0.8, z: 0}
+  m_Center: {x: 0, y: 0.85, z: 0}
 --- !u!114 &6845774844251762940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1993,11 +1993,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 0
-  m_Extents: {x: 0.24, y: 0.895, z: 0.24}
+  m_Extents: {x: 0.22, y: 0.84, z: 0.22}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
-  m_Center: {x: -0.03, y: 0.81, z: 0}
+  m_Center: {x: 0, y: 0.85, z: 0}
   m_TimeToStationary: 0.5
 --- !u!114 &-5174629986372226722
 MonoBehaviour:
