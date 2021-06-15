@@ -7,7 +7,7 @@ using TMPro;
 public class TutorialBehaviour : MonoBehaviour
 {
     [SerializeField] GameObject[] Panels;
-    string[] TextsToShow = { "We can view Greedy hunter intruders’ waves here",
+    string[] TextsToShow = {"We can view Greedy hunter intruders’ waves here",
     "To defend our forest, we need to be prepared for greedy hunters by crafting traps and weapons.  For that, we need to gather resources from the forest by walking near them or sending the fox to collect them for you.." ,
             "We now have enough resources to craft! by clicking this icon you can see your inventory",
             " you need to make sure that the resources you have are enough to craft the item you need..",
@@ -26,12 +26,11 @@ public class TutorialBehaviour : MonoBehaviour
     {
         tutorialended.state = false;
         index = 0;
-        Restarttut();
     }
     public void Restarttut()
     {
         index = 0;
-        Panels[Panels.Length-1].SetActive(false);
+        Panels[Panels.Length-2].SetActive(false);
         Panels[index].SetActive(true);
         textHolder.text = TextsToShow[index];
     }
@@ -52,5 +51,9 @@ public class TutorialBehaviour : MonoBehaviour
             OnTutorialEnded.Raise();
         }
         // else Finish the Scene 
+    }
+    private void OnDisable()
+    {
+        Restarttut();
     }
 }
