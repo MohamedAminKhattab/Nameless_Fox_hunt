@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
             if (moveVec.x != 0 || moveVec.z != 0)
             {
                 rb.velocity = moveVec * speed.value;
+                rb.velocity += Physics.gravity * Time.fixedDeltaTime;
                 movementDirection = moveVec.normalized;
             }
             else

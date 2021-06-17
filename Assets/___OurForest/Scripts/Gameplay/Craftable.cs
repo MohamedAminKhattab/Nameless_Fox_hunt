@@ -10,9 +10,23 @@ public class Craftable : MonoBehaviour
     // Start is called before the first frame update
     public ItemTypes type;
     [SerializeField] GameManager _GM;
+    [SerializeField] Scrollbar scrollview;
     [SerializeField] Button craft;
     private void Start()
     {
+    }
+    public void settype()
+    {
+        if (scrollview.value <= 0.5f)
+        {
+            SetTypeToWeapon();
+            ToggleCraftButton();
+        }
+        else if(scrollview.value>=0.5f)
+        {
+        SetTypeToTrap();
+        ToggleCraftButton();
+        }
     }
     public void SetTypeToWeapon()
     {
@@ -24,7 +38,7 @@ public class Craftable : MonoBehaviour
     }
     public void ToggleCraftButton()
     {
-        if(_GM.Inv.GetItemCount(ItemTypes.Wood) >= _GM.Inv.GetWoodneeded(type)&& _GM.Inv.GetItemCount(ItemTypes.Rock) >= _GM.Inv.GetRockneeded(type)&& _GM.Inv.GetItemCount(ItemTypes.Vine) >= _GM.Inv.GetVineneeded(type))
+        if (_GM.Inv.GetItemCount(ItemTypes.Wood) >= _GM.Inv.GetWoodneeded(type) && _GM.Inv.GetItemCount(ItemTypes.Rock) >= _GM.Inv.GetRockneeded(type) && _GM.Inv.GetItemCount(ItemTypes.Vine) >= _GM.Inv.GetVineneeded(type))
         {
             craft.interactable = true;
         }
