@@ -8,6 +8,8 @@ public class FetchResource : MonoBehaviour
     Vine v;
     [SerializeField]
     BoolSO collectResource;
+    [SerializeField] TransformSO target;
+    [SerializeField] BoolSO hastarget;
     float timerCount = 0.1f;
 
     void Start()
@@ -29,6 +31,14 @@ public class FetchResource : MonoBehaviour
         {
             collectResource.state = false;
             timerCount = 0.1f;
+        }
+    }
+    public void EventPointerDown()
+    {
+        if(hastarget.state==false)
+        {
+            target.value = transform;
+            hastarget.state = true;
         }
     }
 }

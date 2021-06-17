@@ -10,6 +10,8 @@ public class PickUpFood : MonoBehaviour
     float timerCount = 0.1f;
     //[SerializeField]
     //BoolSO canPick;
+    [SerializeField] TransformSO target;
+    [SerializeField] BoolSO hastarget;
     void Start()
     {
         f = new Food();
@@ -25,5 +27,12 @@ public class PickUpFood : MonoBehaviour
             timerCount = 0.1f;
         }
     }
- 
+    public void EventPointerDown()
+    {
+        if (hastarget.state == false)
+        {
+            target.value = transform;
+            hastarget.state = true;
+        }
+    }
 }

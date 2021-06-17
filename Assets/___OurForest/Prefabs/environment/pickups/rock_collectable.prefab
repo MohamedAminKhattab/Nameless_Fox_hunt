@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5485976788722516083}
   - component: {fileID: 7884325065979031844}
   - component: {fileID: 5838674422227352595}
+  - component: {fileID: 9204847720435554778}
   m_Layer: 6
   m_Name: rock_collectable
   m_TagString: Rock
@@ -96,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectResource: {fileID: 11400000, guid: 6c7e708a05bfb214a9ab393a8beb93d8, type: 2}
+  target: {fileID: 11400000, guid: bfac95677aa908f46a00deaf667768cf, type: 2}
+  hastarget: {fileID: 11400000, guid: 0b5e8e33f6a1919438ef47f4a7b0482d, type: 2}
 --- !u!65 &5838674422227352595
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -109,3 +112,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.173114, y: 3.2565827, z: 4.7411265}
   m_Center: {x: 1.1402868, y: 0.050005432, z: 1.6883253}
+--- !u!114 &9204847720435554778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2960727315653308341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7884325065979031844}
+          m_TargetAssemblyTypeName: FetchResource, Assembly-CSharp
+          m_MethodName: EventPointerDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

@@ -8,6 +8,8 @@ public class CutWood : MonoBehaviour
     [SerializeField]
     BoolSO cutWood;
     float timerCount = 0.1f;
+    [SerializeField] TransformSO target;
+    [SerializeField] BoolSO hastarget;
     void Start()
     {
         wood = new Wood();
@@ -22,5 +24,12 @@ public class CutWood : MonoBehaviour
             timerCount = 0.1f;
         }
     }
-
+    public void EventPointerDown()
+    {
+        if (hastarget.state == false)
+        {
+            target.value = transform;
+            hastarget.state = true;
+        }
+    }
 }

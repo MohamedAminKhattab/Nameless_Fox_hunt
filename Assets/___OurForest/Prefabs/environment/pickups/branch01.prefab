@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3744030001316342164}
   - component: {fileID: 244698278088949379}
   - component: {fileID: 2454643398779660288}
+  - component: {fileID: -7182860043890044321}
   m_Layer: 6
   m_Name: branch01
   m_TagString: Wood
@@ -109,3 +110,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutWood: {fileID: 11400000, guid: 8cccd1807e390d24383e196f4a3a9155, type: 2}
+  target: {fileID: 11400000, guid: bfac95677aa908f46a00deaf667768cf, type: 2}
+  hastarget: {fileID: 11400000, guid: 0b5e8e33f6a1919438ef47f4a7b0482d, type: 2}
+--- !u!114 &-7182860043890044321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2955740203514363699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2454643398779660288}
+          m_TargetAssemblyTypeName: CutWood, Assembly-CSharp
+          m_MethodName: EventPointerDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
