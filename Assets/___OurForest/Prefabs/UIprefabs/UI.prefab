@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1539454907}
   - component: {fileID: 8565741886028739269}
   - component: {fileID: 3713978145339393689}
+  - component: {fileID: 347646710}
   m_Layer: 5
   m_Name: UI
   m_TagString: UI
@@ -66,10 +67,13 @@ MonoBehaviour:
   togameplay: {fileID: 11400000, guid: cea3b9addbb29e048bd07592e7796300, type: 2}
   tutorialstarted: {fileID: 11400000, guid: 32004316b343f24428165bfac5fb8a2f, type: 2}
   tutorialended: {fileID: 11400000, guid: fade617bbcd21a74181af2b9b6950e43, type: 2}
+  IntroStarted: {fileID: 11400000, guid: 00686c33569fc754fb321b291a9d931b, type: 2}
+  IntroEnded: {fileID: 11400000, guid: 2ec38c1551fd5b949a4552f9cbd87034, type: 2}
   mainmenu: {fileID: 7249740503368577833}
   clearCanvas: {fileID: 7296418254801207973}
   lostCanvas: {fileID: 5608900795837026912}
   gameUI: {fileID: 2881221582775807578}
+  IntroFullScreen: {fileID: 0}
   pausemenu: {fileID: 7605223457861281261}
   settingsMenu: {fileID: 6049728355754169307}
   levelSelection: {fileID: 4275354290387356125}
@@ -175,7 +179,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedLevel: {fileID: 11400000, guid: 133a7d7efb8597c42a03ca7844681da8, type: 2}
   VideoIntro: {fileID: 117993045771149197}
+  hud: {fileID: 2881221582775807578}
   introEnded: {fileID: 11400000, guid: 0322d0b7b67dc3f419966f4fe521a75e, type: 2}
+--- !u!114 &347646710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976962947146515692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f564d6ce0be49c943a561bfc80a57b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSo: {fileID: 11400000, guid: 0322d0b7b67dc3f419966f4fe521a75e, type: 2}
+  OnRaise:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2881221582775807581}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &976962947552977214
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +275,34 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
+--- !u!114 &1310434035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3549853327267621915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f564d6ce0be49c943a561bfc80a57b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSo: {fileID: 11400000, guid: 0283a39c2d5ec7f499c7657bd419e540, type: 2}
+  OnRaise:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3549853327267621915}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1001 &3636130173759839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -349,20 +410,40 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8748604311327752887, guid: a8c1e9231a3d27f4f86965d9283504cc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8748604311327752887, guid: a8c1e9231a3d27f4f86965d9283504cc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 3549853327267621915}
+    - target: {fileID: 8748604311327752887, guid: a8c1e9231a3d27f4f86965d9283504cc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 8748604311327752887, guid: a8c1e9231a3d27f4f86965d9283504cc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8748604311327752887, guid: a8c1e9231a3d27f4f86965d9283504cc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8816365100723828562, guid: a8c1e9231a3d27f4f86965d9283504cc, type: 3}
       propertyPath: settingsmenu
       value: 
       objectReference: {fileID: 6049728355754169307}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8c1e9231a3d27f4f86965d9283504cc, type: 3}
---- !u!223 &4275354290387356125 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 4276721011134969986, guid: a8c1e9231a3d27f4f86965d9283504cc, type: 3}
-  m_PrefabInstance: {fileID: 3636130173759839}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6981135396668530916 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6984259132702871995, guid: a8c1e9231a3d27f4f86965d9283504cc, type: 3}
+  m_PrefabInstance: {fileID: 3636130173759839}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &4275354290387356125 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 4276721011134969986, guid: a8c1e9231a3d27f4f86965d9283504cc, type: 3}
   m_PrefabInstance: {fileID: 3636130173759839}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &2963499698751994871 stripped
@@ -963,6 +1044,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 976962947146515695}
     m_Modifications:
+    - target: {fileID: 4808183194278983519, guid: 6d98d3ecf2a4a304a9808bbda7f8efe7, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6352044271877566175, guid: 6d98d3ecf2a4a304a9808bbda7f8efe7, type: 3}
       propertyPath: m_Name
       value: TutorialCanvas
@@ -1057,14 +1142,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d98d3ecf2a4a304a9808bbda7f8efe7, type: 3}
---- !u!223 &7342289311306076789 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 5074819435514370215, guid: 6d98d3ecf2a4a304a9808bbda7f8efe7, type: 3}
-  m_PrefabInstance: {fileID: 2560415520480217810}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5714656817406964249 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7838205366877862091, guid: 6d98d3ecf2a4a304a9808bbda7f8efe7, type: 3}
+  m_PrefabInstance: {fileID: 2560415520480217810}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &7342289311306076789 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 5074819435514370215, guid: 6d98d3ecf2a4a304a9808bbda7f8efe7, type: 3}
   m_PrefabInstance: {fileID: 2560415520480217810}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2817384228246917380
@@ -1262,6 +1347,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 976962947146515695}
     m_Modifications:
+    - target: {fileID: 1053120518044374722, guid: 2354abdb499697e42a93fa2fe636fb40, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1957314978886837610, guid: 2354abdb499697e42a93fa2fe636fb40, type: 3}
       propertyPath: m_Name
       value: VideoFullScreen
@@ -1316,14 +1405,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2354abdb499697e42a93fa2fe636fb40, type: 3}
---- !u!4 &2233901732120399099 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3848944474599523722, guid: 2354abdb499697e42a93fa2fe636fb40, type: 3}
-  m_PrefabInstance: {fileID: 3056355701893859697}
-  m_PrefabAsset: {fileID: 0}
 --- !u!223 &117993045771149197 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 3155168864346068732, guid: 2354abdb499697e42a93fa2fe636fb40, type: 3}
+  m_PrefabInstance: {fileID: 3056355701893859697}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3549853327267621915 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1957314978886837610, guid: 2354abdb499697e42a93fa2fe636fb40, type: 3}
+  m_PrefabInstance: {fileID: 3056355701893859697}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2233901732120399099 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3848944474599523722, guid: 2354abdb499697e42a93fa2fe636fb40, type: 3}
   m_PrefabInstance: {fileID: 3056355701893859697}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3285242221204034097
