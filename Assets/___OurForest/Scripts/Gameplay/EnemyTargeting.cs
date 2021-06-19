@@ -12,7 +12,7 @@ public class EnemyTargeting : MonoBehaviour
     }
     public void EventPointerdown()
     {
-        //Debug.LogWarning("CheckingTile");
+        Debug.LogWarning("CheckingTile");
         if (/*Can_Trap == true&&*/hasTarget.state == false)
         {
             enemyTransform.value = transform;

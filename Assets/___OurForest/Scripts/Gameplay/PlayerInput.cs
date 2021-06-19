@@ -89,6 +89,7 @@ public class PlayerInput : MonoBehaviour
         }
         if (inputManager.SteelthAttack())
         {
+
             attack.state =true;
             //Debug.LogWarning("Attacking");
         }

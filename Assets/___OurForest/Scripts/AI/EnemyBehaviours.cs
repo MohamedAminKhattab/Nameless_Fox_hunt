@@ -45,7 +45,7 @@ public class EnemyBehaviours : MonoBehaviour
         target = DefaultGoal;
         enemyState = EnemyState.goingToHouse;
         anim = GetComponent<Animator>();
-        SpawnPoint = GetComponentInParent<SpawnPoint>().transform;
+      //  SpawnPoint = GetComponentInParent<SpawnPoint>().transform;
 
     }
     private void Update()
@@ -67,6 +67,7 @@ public class EnemyBehaviours : MonoBehaviour
         enemyState = EnemyState.dead;
         anim.SetTrigger("die");
         isenemyDeadSound.state = true;
+        agent.speed = 0;
     }
     private void OnTriggerEnter(Collider other)
     {
