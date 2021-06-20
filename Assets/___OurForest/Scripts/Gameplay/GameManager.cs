@@ -14,10 +14,10 @@ public class GameManager : MonoBehaviour
     public Inventory Inv { get => inv; }
     public int CurrentTroopCount { get => currentTroopCount; set => currentTroopCount = value; }
     public List<SpawnPoint> SpawnPoints { get => spawnPoints; }
-    public CinemachineFreeLook Cfollow { get => cfollow; set => cfollow = value; }
+    public CameraFollow Cfollow { get => cfollow; set => cfollow = value; }
 
     [SerializeField] Player player;
-    [SerializeField] CinemachineFreeLook cfollow;
+    [SerializeField] CameraFollow cfollow;
     [SerializeField] List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
     [SerializeField] BoolSO playerWon;
     [SerializeField] BoolSO gameOver;
@@ -112,13 +112,12 @@ public class GameManager : MonoBehaviour
         player = Instantiate(playerPrefab, transform.position, Quaternion.identity, transform).GetComponent<Player>();
         player.GM = this;
         player.GetComponentInChildren<Attack>().GM = this;
-        cfollow = player.GetComponentInChildren<CinemachineFreeLook>();
+        cfollow = FindObjectOfType<CameraFollow>();
         fox = Instantiate(foxPrefab, transform.position, Quaternion.identity, transform);
         fox.GetComponent<FoxBehaviours>().Player = player.transform;
         fox.GetComponent<FoxInventory>().Gm = this;
         spawnPoints = FindObjectsOfType<SpawnPoint>().ToList<SpawnPoint>();
-        cfollow.Follow = player.transform;
-        cfollow.LookAt = player.transform;
+        cfollow.Target = player.transform;
         player.GetComponent<HealthIndicator>().healthBar = playerhealthslider;
         fox.GetComponent<HealthIndicator>().healthBar = foxhealthslider;
         currentwave = 1;
