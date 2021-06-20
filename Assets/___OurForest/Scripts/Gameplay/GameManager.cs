@@ -47,7 +47,6 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     private void Awake()
     {
-        Camera.main.aspect = (16 / 9);
         if (instance == null)
         {
             instance = this;

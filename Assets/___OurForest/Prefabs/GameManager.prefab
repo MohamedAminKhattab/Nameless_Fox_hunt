@@ -66,7 +66,7 @@ MonoBehaviour:
   fox: {fileID: 0}
   playerPrefab: {fileID: 6845774844251762932, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
   _EM: {fileID: 0}
-  spawnrate: 0
+  spawnrate: 1
   _UM: {fileID: 0}
   LevelWaveCount: 1
   currentwave: 1

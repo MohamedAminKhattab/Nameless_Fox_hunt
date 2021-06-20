@@ -14,11 +14,15 @@ public class UIManager : MonoBehaviour
     [SerializeField] BoolSO togameplay;
     [SerializeField] BoolSO tutorialstarted;
     [SerializeField] BoolSO tutorialended;
+    [SerializeField] BoolSO IntroStarted;
+    [SerializeField] BoolSO IntroEnded;
+
     [Header("Panels")]
     [SerializeField] Canvas mainmenu;
     [SerializeField] Canvas clearCanvas;
     [SerializeField] Canvas lostCanvas;
     [SerializeField] Canvas gameUI;
+    [SerializeField] Canvas IntroFullScreen;
     [SerializeField] Canvas pausemenu;
     [SerializeField] Canvas settingsMenu;
     [SerializeField] Canvas levelSelection;

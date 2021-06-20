@@ -65,7 +65,7 @@ MonoBehaviour:
   EnemyDied3: {fileID: 11400000, guid: 1c53ced7765547b4e9f8a4e88e4063d2, type: 2}
   EnemyDied4: {fileID: 11400000, guid: ad5145a6b4b891044b810679720e2b02, type: 2}
   _animator: {fileID: 7845958818566217072}
-  _collider: {fileID: 0}
+  _collider: {fileID: 1462173797568051951}
 --- !u!95 &7845958818566217072
 Animator:
   serializedVersion: 3
@@ -75,7 +75,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 285521514259324736}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 1eb01c172d106b8429b5e9ffa0005995, type: 3}
   m_Controller: {fileID: 9100000, guid: da8644d5fc871ab478ef2e024e15822c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -319,7 +319,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a4664c71370f8b14ca17ee2166729b4a, type: 2}
+  - {fileID: 2100000, guid: 196f36651f34f5147891156492a0a5a1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -344,7 +344,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 3672847454968563935, guid: 0d875756ff843d7489f451e6697f28f1, type: 3}
+  m_Mesh: {fileID: 3672847454968563935, guid: b55b999785d5f334382ab007898ded34, type: 3}
   m_Bones:
   - {fileID: 3092389661905827632}
   - {fileID: 6317482084437553402}
