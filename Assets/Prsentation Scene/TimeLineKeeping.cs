@@ -9,7 +9,7 @@ public class TimeLineKeeping : MonoBehaviour
 {
   [SerializeField]  List<TimelineAsset> timelines;
   [SerializeField]  PlayableDirector director;
-    int index=0;
+    int index=-1;
     private void Start()
     {
         Debug.Log(timelines.Count);
@@ -26,7 +26,7 @@ public class TimeLineKeeping : MonoBehaviour
     private void PlayNext()
     { //check for outOfBoundsExceptino
         if(index<timelines.Count)
-        director.Play(timelines[index++]);
+        director.Play(timelines[++index]);
     }
     private void PlayPrevious()
     {
