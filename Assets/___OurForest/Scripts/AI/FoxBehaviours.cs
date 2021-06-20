@@ -19,14 +19,15 @@ public class FoxBehaviours : MonoBehaviour
     [SerializeField] TransformSO PickUp;
     [SerializeField] BoolSO hasTargetSo;
     [SerializeField] BoolSO hasEnemyTargetSo;
-    [SerializeField] TransformSO Enemy;
+    //[SerializeField] TransformSO Enemy;
     [SerializeField] BoolSO isPlayerHidden;
     [SerializeField] BoolSO isLuringSound;
     Animator anim;
     [SerializeField] EventSO FoxDeath;
     [SerializeField] HealthSO foxHealth;
     private FoxState foxState;
-
+    [SerializeField] Transform enemy;
+    [SerializeField] Transform pickUp;
     public Transform Player { get => player; set => player = value; }
 
     private void OnTriggerEnter(Collider other)
@@ -50,6 +51,8 @@ public class FoxBehaviours : MonoBehaviour
         foxHealth.initialHealth = 100;
         foxHealth.currentHealth = 100;
         foxHealth.dead = false;
+       // Enemy.value = enemy;
+        PickUp.value = pickUp;
     }
     private void Update()
     {
@@ -181,10 +184,10 @@ public class FoxBehaviours : MonoBehaviour
         if (foxState == FoxState.luring && foxHealth.currentHealth >= 40f) //check if the enemy is valid 
         {
             Debug.Log("it's true");
-            if (Enemy.value)
+            if (enemy)
             {
                 
-                Target = Enemy.value;
+                Target = enemy;
                 anim.SetBool("run", true);
                 agent.speed = 5;
                  agent.stoppingDistance = 2;
@@ -213,7 +216,7 @@ public class FoxBehaviours : MonoBehaviour
     public void FinishFetching()
     {
         hasTargetSo.state = false;
-        PickUp.value = null;
+      //  PickUp.value = null;
         agent.stoppingDistance = 2;
         Task.current.Succeed();
     }
@@ -221,7 +224,7 @@ public class FoxBehaviours : MonoBehaviour
     public void FinishLuring()
     {
         hasEnemyTargetSo.state = false;
-        Enemy.value = null;
+       // Enemy.value = null;
         isLuringSound.state = false;
         Task.current.Succeed();
     }

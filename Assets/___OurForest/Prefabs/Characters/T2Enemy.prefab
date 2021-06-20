@@ -114,6 +114,7 @@ MonoBehaviour:
   fox: {fileID: 0}
   yelena: {fileID: 0}
   DefaultGoal: {fileID: 0}
+  SpawnPoint: {fileID: 0}
   VisionRange: 5
   shootingAngle: 90
   isPlayerHidden: {fileID: 11400000, guid: 7187870772591e54f811f34aca372dc6, type: 2}
@@ -354,6 +355,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3446771063269602707, guid: 92bc5621c5f842447899cb5e0d60148d, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3446771063269602717, guid: 92bc5621c5f842447899cb5e0d60148d, type: 3}
       propertyPath: m_Name
       value: Muzzel
@@ -361,6 +366,14 @@ PrefabInstance:
     - target: {fileID: 3446771063269602717, guid: 92bc5621c5f842447899cb5e0d60148d, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5999020773751819001, guid: 92bc5621c5f842447899cb5e0d60148d, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698417285328457594, guid: 92bc5621c5f842447899cb5e0d60148d, type: 3}
+      propertyPath: looping
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7303089943862427819, guid: 92bc5621c5f842447899cb5e0d60148d, type: 3}
       propertyPath: m_Layer

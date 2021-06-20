@@ -10,7 +10,10 @@ public class TimeLineKeeping : MonoBehaviour
   [SerializeField]  List<TimelineAsset> timelines;
   [SerializeField]  PlayableDirector director;
     int index=0;
-    float h;
+    private void Start()
+    {
+        Debug.Log(timelines.Count);
+    }
     void Update()
     {
         

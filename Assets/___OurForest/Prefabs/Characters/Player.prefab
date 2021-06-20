@@ -949,6 +949,7 @@ MonoBehaviour:
   Enemy: {fileID: 11400000, guid: 6f00ffae9c325fc40b69e985447679d0, type: 2}
   HasTarget: {fileID: 11400000, guid: 78c6080c85526a04a92d8ea535447bc9, type: 2}
   bow: {fileID: 5635510801140797979}
+  myEnemy: {fileID: 0}
 --- !u!1 &3651866820955558045
 GameObject:
   m_ObjectHideFlags: 0
@@ -1747,7 +1748,6 @@ GameObject:
   - component: {fileID: 6845774844251762928}
   - component: {fileID: 6845774844251762929}
   - component: {fileID: 6845774844251762930}
-  - component: {fileID: 6845774844251762931}
   - component: {fileID: 6845774844251762943}
   - component: {fileID: 6845774844251762942}
   - component: {fileID: 6845774844251762941}
@@ -1758,6 +1758,7 @@ GameObject:
   - component: {fileID: -5174629986372226722}
   - component: {fileID: 8516171610115060309}
   - component: {fileID: 5920118634243201799}
+  - component: {fileID: 4264379161284462544}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -1839,23 +1840,6 @@ MonoBehaviour:
   crouch: {fileID: 11400000, guid: 128a9cd780d740048b301994ad707d73, type: 2}
   attack: {fileID: 11400000, guid: 260ff84e78d53af4ca8536bd4f8b6c50, type: 2}
   inInput: {fileID: 11400000, guid: 95ead26868e851644a1773ca7ddb2107, type: 2}
---- !u!114 &6845774844251762931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6845774844251762932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3aef104e7ca2ec641849608057dff2b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movement: {fileID: 11400000, guid: 7d1d8042393840e439338507860fbe0f, type: 2}
-  speed: {fileID: 11400000, guid: 40a5c7c9ea53a574881119d477ea6634, type: 2}
-  rotationSpeed: 300
-  joyStickMovement: {fileID: 11400000, guid: 8b4c0bf996bc8774cbfcccbf1c700fd5, type: 2}
-  freeze: {fileID: 11400000, guid: 0e73d39c58860314093fd49923b8daa9, type: 2}
 --- !u!54 &6845774844251762943
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2047,6 +2031,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
   health: {fileID: 11400000, guid: 995eb8ff6ee44984f9945bb81080d729, type: 2}
+--- !u!114 &4264379161284462544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6845774844251762932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7732ccb83a2a0a64a8ac89d90038610d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 11400000, guid: 7d1d8042393840e439338507860fbe0f, type: 2}
+  speed: {fileID: 11400000, guid: 40a5c7c9ea53a574881119d477ea6634, type: 2}
+  rotationSpeed: 0
+  joyStickMovement: {fileID: 11400000, guid: 8b4c0bf996bc8774cbfcccbf1c700fd5, type: 2}
+  freeze: {fileID: 11400000, guid: 0e73d39c58860314093fd49923b8daa9, type: 2}
 --- !u!1 &6909815128707399672
 GameObject:
   m_ObjectHideFlags: 0

@@ -103,6 +103,7 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _AlphaCutoff: 0.5
+    - _Alphatheshold: 0
     - _Blend: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
@@ -113,6 +114,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _Disolver: 0
     - _Disolvescale: 0.47
+    - _Dither: 0.9
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
@@ -135,6 +137,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SeeColor: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _emmision: {r: 1.9766746, g: 1.5730604, b: 0.18628347, a: 0}
   m_BuildTextureStacks: []
