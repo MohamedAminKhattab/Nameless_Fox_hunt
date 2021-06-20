@@ -66,6 +66,7 @@ public class EnemyBehaviours : MonoBehaviour
         agent.isStopped = true;
         enemyState = EnemyState.dead;
         anim.SetTrigger("die");
+        agent.speed = 0;
         isenemyDeadSound.state = true;
     }
     private void OnTriggerEnter(Collider other)

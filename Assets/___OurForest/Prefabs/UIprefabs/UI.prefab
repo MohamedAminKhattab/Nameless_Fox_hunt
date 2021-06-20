@@ -67,13 +67,13 @@ MonoBehaviour:
   togameplay: {fileID: 11400000, guid: cea3b9addbb29e048bd07592e7796300, type: 2}
   tutorialstarted: {fileID: 11400000, guid: 32004316b343f24428165bfac5fb8a2f, type: 2}
   tutorialended: {fileID: 11400000, guid: fade617bbcd21a74181af2b9b6950e43, type: 2}
-  IntroStarted: {fileID: 11400000, guid: 00686c33569fc754fb321b291a9d931b, type: 2}
-  IntroEnded: {fileID: 11400000, guid: 2ec38c1551fd5b949a4552f9cbd87034, type: 2}
+  IntroStarted: {fileID: 0}
+  IntroEnded: {fileID: 0}
   mainmenu: {fileID: 7249740503368577833}
   clearCanvas: {fileID: 7296418254801207973}
   lostCanvas: {fileID: 5608900795837026912}
   gameUI: {fileID: 2881221582775807578}
-  IntroFullScreen: {fileID: 0}
+  IntroFullScreen: {fileID: 117993045771149197}
   pausemenu: {fileID: 7605223457861281261}
   settingsMenu: {fileID: 6049728355754169307}
   levelSelection: {fileID: 4275354290387356125}
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f564d6ce0be49c943a561bfc80a57b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventSo: {fileID: 11400000, guid: 0283a39c2d5ec7f499c7657bd419e540, type: 2}
+  eventSo: {fileID: 11400000, guid: 4f66b16f9fe4584428f523303f5c83a6, type: 2}
   OnRaise:
     m_PersistentCalls:
       m_Calls:
