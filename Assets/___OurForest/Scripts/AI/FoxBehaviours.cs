@@ -181,11 +181,9 @@ public class FoxBehaviours : MonoBehaviour
     [Task]
     public void shouldLure()
     {
-        if (foxState == FoxState.luring && foxHealth.currentHealth >= 40f) //check if the enemy is valid 
+        if (foxState == FoxState.luring ) //check if the enemy is valid 
         {
-            Debug.Log("it's true");
-            if (enemy)
-            {
+            
                 
                 Target = enemy;
                 anim.SetBool("run", true);
@@ -193,13 +191,7 @@ public class FoxBehaviours : MonoBehaviour
                  agent.stoppingDistance = 2;
                 Task.current.Succeed();
                 
-            }
-            else
-            {
-                anim.SetBool("run", false);
-                agent.speed = 3.5f;
-                Task.current.Fail();
-            }
+            
         }
         else
         {

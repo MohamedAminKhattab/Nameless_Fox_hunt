@@ -183,7 +183,7 @@ public class EnemyBehaviours : MonoBehaviour
                 break;
 
         }
-        Debug.Log(target);
+
 
         agent.SetDestination(target.position);
         if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
