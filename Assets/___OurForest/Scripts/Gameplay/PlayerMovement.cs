@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 rb.velocity = movement.value * speed.value;
+                rb.velocity += Physics.gravity * Time.fixedDeltaTime;
                 movementDirection = movement.value.normalized;
             }
             if (movementDirection != Vector3.zero)
@@ -51,6 +52,5 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = Vector3.zero;
         }
-
     }
 }
