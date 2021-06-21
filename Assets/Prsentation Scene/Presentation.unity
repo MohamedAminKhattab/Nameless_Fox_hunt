@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1908337283}
-  m_IndirectSpecularColor: {r: 0.56244165, g: 0.4487455, b: 0.5737838, a: 1}
+  m_IndirectSpecularColor: {r: 0.56244135, g: 0.4487462, b: 0.57378566, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3745,7 +3745,7 @@ PlayableDirector:
   m_GameObject: {fileID: 855273836}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 3a3698e9f7163c54f9c88291fd02e3ef, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: a0bac37e8bdcee04abe5a89a02008f65, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -3857,6 +3857,22 @@ PlayableDirector:
     value: {fileID: 1170181526}
   - key: {fileID: -3937847163037276865, guid: 3a3698e9f7163c54f9c88291fd02e3ef, type: 2}
     value: {fileID: 24398269}
+  - key: {fileID: -7863816609548344853, guid: f50cf22a721384543be82ce575d484ba, type: 2}
+    value: {fileID: 2038256151}
+  - key: {fileID: -7863816609548344853, guid: e10c7f15fd5656445aa2436cab38d599, type: 2}
+    value: {fileID: 2038256151}
+  - key: {fileID: -7863816609548344853, guid: 3a20d0fc6120ad44c8ca73293dff3346, type: 2}
+    value: {fileID: 2038256151}
+  - key: {fileID: -7863816609548344853, guid: 6b3b3b09cd610514fb8249f5526c19b2, type: 2}
+    value: {fileID: 2038256151}
+  - key: {fileID: -7863816609548344853, guid: 3c490d8d4ac9d03478858a80b337a810, type: 2}
+    value: {fileID: 2038256151}
+  - key: {fileID: -7863816609548344853, guid: cb1573717a465c94ca83432f6dc5e37f, type: 2}
+    value: {fileID: 2038256151}
+  - key: {fileID: -7863816609548344853, guid: 0329b790715a88f468c04756ef0b5f76, type: 2}
+    value: {fileID: 2038256151}
+  - key: {fileID: 2892037444699342081, guid: 6b0274ef23bd9a44a9a963a2186638c1, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - 6a78f607e305f3844b89f5eb37e512f5: {fileID: 2038256146}
@@ -4057,6 +4073,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 720f58d086db5654b9cbae4a7086a473, type: 2}
   - {fileID: 11400000, guid: 5c715584f680c5b439d78c9f51771a2f, type: 2}
   - {fileID: 11400000, guid: a79f434e235517a4aa22d75300acaba6, type: 2}
+  - {fileID: 11400000, guid: f50cf22a721384543be82ce575d484ba, type: 2}
+  - {fileID: 11400000, guid: e10c7f15fd5656445aa2436cab38d599, type: 2}
+  - {fileID: 11400000, guid: 3a20d0fc6120ad44c8ca73293dff3346, type: 2}
+  - {fileID: 11400000, guid: 6b3b3b09cd610514fb8249f5526c19b2, type: 2}
+  - {fileID: 11400000, guid: 3c490d8d4ac9d03478858a80b337a810, type: 2}
+  - {fileID: 11400000, guid: cb1573717a465c94ca83432f6dc5e37f, type: 2}
+  - {fileID: 11400000, guid: 0329b790715a88f468c04756ef0b5f76, type: 2}
   - {fileID: 11400000, guid: 6b0274ef23bd9a44a9a963a2186638c1, type: 2}
   director: {fileID: 855273837}
 --- !u!4 &1164257754
@@ -5531,7 +5554,7 @@ PlayableDirector:
   - key: {fileID: -8959714122157635497, guid: a79f434e235517a4aa22d75300acaba6, type: 2}
     value: {fileID: 0}
   - key: {fileID: -5574017676306084723, guid: a0bac37e8bdcee04abe5a89a02008f65, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 2038256151}
   - key: {fileID: -4057535269091921314, guid: a0bac37e8bdcee04abe5a89a02008f65, type: 2}
     value: {fileID: 0}
   - key: {fileID: -1629771244566542752, guid: a0bac37e8bdcee04abe5a89a02008f65, type: 2}
