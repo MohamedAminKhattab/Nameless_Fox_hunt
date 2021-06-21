@@ -21,6 +21,7 @@ public class EnemyIndicator : MonoBehaviour
         foreach (var item in arrows)
         {
            item.SetActive(false);
+            Destroy(item);
         }
         arrows.Clear();
         enemies = FindObjectsOfType<EnemyBehaviours>().ToList();

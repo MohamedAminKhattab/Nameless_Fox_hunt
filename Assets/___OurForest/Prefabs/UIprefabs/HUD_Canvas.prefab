@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 3082764205813555159}
   - component: {fileID: 83149710}
   - component: {fileID: 1569442384}
+  - component: {fileID: 8545869547440532318}
   m_Layer: 5
   m_Name: HUD_Canvas
   m_TagString: UI
@@ -312,6 +313,34 @@ MonoBehaviour:
   timeRemaining: {fileID: 11400000, guid: 36a1013db5bb7a740a43c4f9da5592e6, type: 2}
   timerIsRunning: {fileID: 11400000, guid: 768e826939fd8e64394f7d61557b64c8, type: 2}
   timeText: {fileID: 3058781272113031320}
+--- !u!114 &8545869547440532318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3058781270502996516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f564d6ce0be49c943a561bfc80a57b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSo: {fileID: 11400000, guid: 6888d11157e125e448b38638d8b64d65, type: 2}
+  OnRaise:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 628307915343434482}
+        m_TargetAssemblyTypeName: TargetIndicator, Assembly-CSharp
+        m_MethodName: GetCharcters
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3058781270512662065
 GameObject:
   m_ObjectHideFlags: 0
@@ -3005,6 +3034,7 @@ GameObject:
   - component: {fileID: 3621077023672068232}
   - component: {fileID: 7341068165129859413}
   - component: {fileID: 6557279428900162798}
+  - component: {fileID: 628307915343434482}
   m_Layer: 5
   m_Name: EnemyIndicator
   m_TagString: Untagged
@@ -3112,6 +3142,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &628307915343434482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8899914124151322574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ff154ea5ecb9e44ad1e7e9dc571697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetPrefab: {fileID: 5931529489576045794, guid: ef7375ccce93f7a4989ee7321b5cc47b, type: 3}
+  Targets:
+  - {fileID: 11400000, guid: 6f00ffae9c325fc40b69e985447679d0, type: 2}
+  - {fileID: 11400000, guid: bfac95677aa908f46a00deaf667768cf, type: 2}
+  - {fileID: 0}
+  Indicatortargets: []
 --- !u!1001 &1726108965895478358
 PrefabInstance:
   m_ObjectHideFlags: 0

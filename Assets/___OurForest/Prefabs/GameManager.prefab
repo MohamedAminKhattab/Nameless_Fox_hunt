@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 534292265}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   fox: {fileID: 0}
   playerPrefab: {fileID: 6845774844251762932, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
   _EM: {fileID: 0}
-  spawnrate: 1
+  spawnrate: 0
   _UM: {fileID: 0}
   LevelWaveCount: 1
   currentwave: 1
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needTrap: {fileID: 11400000, guid: 06689c3572e4ed94aaabfa80f39cc508, type: 2}
-  trapLocation: {fileID: 11400000, guid: 0a71e172541139944b0f924235fee262, type: 2}
+  trapLocation: {fileID: 11400000, guid: 39c75f4db60317e44a2ab53ce9f58a2f, type: 2}
   level: {fileID: 0}
   trapPrefab: {fileID: 285521514259324736, guid: acaa9f05c827ea9479fd09f6a43f84bf, type: 3}
   _GM: {fileID: 8530145609774373358}

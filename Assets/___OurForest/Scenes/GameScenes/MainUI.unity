@@ -202,10 +202,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 582448560369363392, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
-      propertyPath: main
-      value: 
-      objectReference: {fileID: 1211036843}
     - target: {fileID: 8530145609774373357, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -259,10 +255,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1567165433}
     - target: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
-      propertyPath: spawnrate
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
       propertyPath: foxhealthslider
       value: 
       objectReference: {fileID: 626835343}
@@ -273,10 +265,6 @@ PrefabInstance:
     - target: {fileID: 8530145609774373359, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
       propertyPath: m_Name
       value: GameManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 8530145609774373359, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
-      propertyPath: m_TagString
-      value: MainCamera
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
@@ -592,10 +580,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
-    - target: {fileID: 976962947146515692, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 976962947146515695, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -656,14 +640,14 @@ PrefabInstance:
       propertyPath: _GM
       value: 
       objectReference: {fileID: 610625923}
-    - target: {fileID: 7525066403956057388, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
-      propertyPath: main
-      value: 
-      objectReference: {fileID: 1211036843}
     - target: {fileID: 7932137036816111036, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
       propertyPath: _GM
       value: 
       objectReference: {fileID: 610625923}
+    - target: {fileID: 8869797190499696423, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+      propertyPath: eventSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f66b16f9fe4584428f523303f5c83a6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
 --- !u!114 &1365193509 stripped
@@ -677,6 +661,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1468218869 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 375747275322033803, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+  m_PrefabInstance: {fileID: 1310434033}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ff154ea5ecb9e44ad1e7e9dc571697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1567165433 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6990555674532635714, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
@@ -688,6 +683,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c4ae0f5df58914a86c67a198385428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1646275210 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2881221582775807581, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+  m_PrefabInstance: {fileID: 1310434033}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1646275211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646275210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f564d6ce0be49c943a561bfc80a57b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSo: {fileID: 11400000, guid: 6888d11157e125e448b38638d8b64d65, type: 2}
+  OnRaise:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1468218869}
+        m_TargetAssemblyTypeName: TargetIndicator, Assembly-CSharp
+        m_MethodName: GetCharcters
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2135727611
 PrefabInstance:
   m_ObjectHideFlags: 0

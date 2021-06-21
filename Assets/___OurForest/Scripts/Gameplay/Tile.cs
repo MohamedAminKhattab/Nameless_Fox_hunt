@@ -6,7 +6,8 @@ public class Tile : MonoBehaviour
 {
     [SerializeField] private Vector3 location;
     [SerializeField] BoolSO needTrap;
-    [SerializeField] Vector3SO trapLocation;
+    [SerializeField] TransformSO trapLocation;
+
     //[SerializeField] private bool has_resource = false;
     //[SerializeField] private bool can_Trap = false;
     //[SerializeField] private bool can_Hide = false;
@@ -47,7 +48,7 @@ public class Tile : MonoBehaviour
         //Debug.LogWarning("CheckingTile");
         if (/*Can_Trap == true&&*/needTrap.state==false)
         {
-            trapLocation.value = location;
+            trapLocation.value = transform;
             needTrap.state = true;
         }
     }

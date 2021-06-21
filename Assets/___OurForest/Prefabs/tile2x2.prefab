@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   location: {x: 0, y: 0, z: 0}
   needTrap: {fileID: 11400000, guid: 06689c3572e4ed94aaabfa80f39cc508, type: 2}
-  trapLocation: {fileID: 11400000, guid: 0a71e172541139944b0f924235fee262, type: 2}
+  trapLocation: {fileID: 11400000, guid: 39c75f4db60317e44a2ab53ce9f58a2f, type: 2}
 --- !u!114 &6921250404063750837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +119,18 @@ MonoBehaviour:
         - m_Target: {fileID: 1070379069510757856}
           m_TargetAssemblyTypeName: Tile, Assembly-CSharp
           m_MethodName: EventPointerdown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 11400000, guid: 6888d11157e125e448b38638d8b64d65, type: 2}
+          m_TargetAssemblyTypeName: EventSO, Assembly-CSharp
+          m_MethodName: Raise
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
