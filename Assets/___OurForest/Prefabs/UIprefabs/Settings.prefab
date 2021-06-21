@@ -750,8 +750,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Clear Save
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3603d8d1356c1354b962e24fb3306211, type: 2}
-  m_sharedMaterial: {fileID: -4990132855391939455, guid: 3603d8d1356c1354b962e24fb3306211, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: adb3fa43ecdc01b4db672c7714fa41d0, type: 2}
+  m_sharedMaterial: {fileID: 7937179212615494195, guid: adb3fa43ecdc01b4db672c7714fa41d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -775,7 +775,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.15
+  m_fontSize: 53.9
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1029,8 +1029,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: tutorial
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3603d8d1356c1354b962e24fb3306211, type: 2}
-  m_sharedMaterial: {fileID: -4990132855391939455, guid: 3603d8d1356c1354b962e24fb3306211, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: adb3fa43ecdc01b4db672c7714fa41d0, type: 2}
+  m_sharedMaterial: {fileID: 7937179212615494195, guid: adb3fa43ecdc01b4db672c7714fa41d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1106,6 +1106,14 @@ PrefabInstance:
     - target: {fileID: 3000811553324502934, guid: 8787b6ec0fea35b449ff3497361a054b, type: 3}
       propertyPath: m_Name
       value: VoiceControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972424092616096426, guid: 8787b6ec0fea35b449ff3497361a054b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052143828595669827, guid: 8787b6ec0fea35b449ff3497361a054b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7434651009403140396, guid: 8787b6ec0fea35b449ff3497361a054b, type: 3}
       propertyPath: m_Pivot.x
