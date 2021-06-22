@@ -76,6 +76,7 @@ public class UIManager : MonoBehaviour
                 gameUI.gameObject.SetActive(true);
                 inventory.gameObject.SetActive(false);
                 tutorial.gameObject.SetActive(false);
+                IntroFullScreen.gameObject.SetActive(false);
             }
         }
         else if (SceneManager.GetActiveScene().name == "MainUI")
@@ -92,6 +93,7 @@ public class UIManager : MonoBehaviour
                 gameUI.gameObject.SetActive(false);
                 inventory.gameObject.SetActive(false);
                 tutorial.gameObject.SetActive(false);
+                IntroFullScreen.gameObject.SetActive(false);
             }
             else if(togameplay.state==false&&tutorialstarted.state==false)
             {
@@ -105,6 +107,7 @@ public class UIManager : MonoBehaviour
                 gameUI.gameObject.SetActive(false);
                 inventory.gameObject.SetActive(false);
                 tutorial.gameObject.SetActive(false);
+                IntroFullScreen.gameObject.SetActive(false);
             }
             else if(tutorialstarted.state==true)
             {
@@ -118,6 +121,7 @@ public class UIManager : MonoBehaviour
                 gameUI.gameObject.SetActive(false);
                 inventory.gameObject.SetActive(false);
                 tutorial.gameObject.SetActive(true);
+                IntroFullScreen.gameObject.SetActive(false);
             }
             else if(tutorialended.state==true)
             {
@@ -131,6 +135,7 @@ public class UIManager : MonoBehaviour
                 gameUI.gameObject.SetActive(false);
                 inventory.gameObject.SetActive(false);
                 tutorial.gameObject.SetActive(false);
+                IntroFullScreen.gameObject.SetActive(false);
             }
         }
     }

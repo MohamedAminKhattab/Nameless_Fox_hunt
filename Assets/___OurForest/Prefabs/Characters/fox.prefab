@@ -236,8 +236,6 @@ GameObject:
   - component: {fileID: 6213920479261908020}
   - component: {fileID: 6188049913215389560}
   - component: {fileID: 117214428391899314}
-  - component: {fileID: 3224114226894967750}
-  - component: {fileID: 7741375755404866011}
   m_Layer: 8
   m_Name: fox
   m_TagString: Fox
@@ -490,48 +488,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
   health: {fileID: 11400000, guid: cb84ffe3b29e677448a641a76784c73f, type: 2}
---- !u!114 &3224114226894967750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006851311034963767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9b7f602f6a911e41b37dca0a271aaab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 1664270774180601326}
-  ragdoll: {fileID: 0}
---- !u!114 &7741375755404866011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006851311034963767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f564d6ce0be49c943a561bfc80a57b78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventSo: {fileID: 11400000, guid: b0b55919835c4d04b93e5cfe4e44d932, type: 2}
-  OnRaise:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3224114226894967750}
-        m_TargetAssemblyTypeName: FoxDie, Assembly-CSharp
-        m_MethodName: foxdying
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &2210217222624476233
 GameObject:
   m_ObjectHideFlags: 0
