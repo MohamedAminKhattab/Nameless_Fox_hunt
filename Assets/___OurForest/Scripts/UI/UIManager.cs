@@ -3,9 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+public enum UIStates
+{
+    InMenu,
+    InLevelSelection,
+    InSettingsMenu,
+    InStoryBoard,
+    InFullscreenVideo,
+    InTutorial,
+    InGamePlay,
+    InPauseMenu,
+    InWinGame,
+    InLoseGame,
+    InInventory
+};
 public class UIManager : MonoBehaviour
 {
+
+    [Header("States")]
+    [SerializeField] UIStates state;
     [Header("StateBooleans")]
     [SerializeField] BoolSO playerWon;
     [SerializeField] BoolSO gameOver;
@@ -32,6 +48,54 @@ public class UIManager : MonoBehaviour
     [Header("SelectedLevel")]
     [SerializeField] IntegerSO selectedLevel;
     private static UIManager instance;
+
+    public UIStates State { get => state; set => state = value; }
+
+    public void SETUILevelSelection()
+    {
+        state = UIStates.InLevelSelection;
+    } 
+    public void SETUIMainMenu()
+    {
+        state = UIStates.InMenu;
+    } 
+    public void SETUISettings()
+    {
+        state = UIStates.InSettingsMenu;
+    }
+    public void SETUITutorial()
+    {
+        state = UIStates.InTutorial;
+    }  
+    public void SETUIStoryBoard()
+    {
+        state = UIStates.InStoryBoard;
+    }  
+    public void SETUIFullscreenvideo()
+    {
+        state = UIStates.InFullscreenVideo;
+    }  
+    public void SETUIGameplay()
+    {
+        state = UIStates.InGamePlay;
+    }   
+    public void SETUIPauseMenu()
+    {
+        state = UIStates.InPauseMenu;
+    }   
+    public void SETUILoseGame()
+    {
+        state = UIStates.InLoseGame;
+    }   
+    public void SETUIWinGame()
+    {
+        state = UIStates.InWinGame;
+    }
+    public void SETUIInventory()
+    {
+        state = UIStates.InInventory;
+    }
+
     void Awake()
     {
         if (instance == null)
@@ -53,6 +117,8 @@ public class UIManager : MonoBehaviour
         toLevelSelection.state = false;
         tutorialended.state = false;
         tutorialstarted.state = false;
+        IntroEnded.state = false;
+        IntroStarted.state = false;
     }
     void Start()
     {
@@ -139,6 +205,157 @@ public class UIManager : MonoBehaviour
             }
         }
     }
+    public void SetUIByState()
+    {
+        switch (state)
+        {
+            case UIStates.InMenu:
+                levelSelection.gameObject.SetActive(false);
+                lostCanvas.gameObject.SetActive(false);
+                clearCanvas.gameObject.SetActive(false);
+                mainmenu.gameObject.SetActive(true);
+                settingsMenu.gameObject.SetActive(false);
+                pausemenu.gameObject.SetActive(false);
+                storyBoard.gameObject.SetActive(false);
+                gameUI.gameObject.SetActive(false);
+                inventory.gameObject.SetActive(false);
+                tutorial.gameObject.SetActive(false);
+                IntroFullScreen.gameObject.SetActive(false);
+                break;
+            case UIStates.InLevelSelection:
+                levelSelection.gameObject.SetActive(true);
+                lostCanvas.gameObject.SetActive(false);
+                clearCanvas.gameObject.SetActive(false);
+                mainmenu.gameObject.SetActive(false);
+                settingsMenu.gameObject.SetActive(false);
+                pausemenu.gameObject.SetActive(false);
+                storyBoard.gameObject.SetActive(false);
+                gameUI.gameObject.SetActive(false);
+                inventory.gameObject.SetActive(false);
+                tutorial.gameObject.SetActive(false);
+                IntroFullScreen.gameObject.SetActive(false);
+                break;
+            case UIStates.InSettingsMenu:
+                levelSelection.gameObject.SetActive(false);
+                lostCanvas.gameObject.SetActive(false);
+                clearCanvas.gameObject.SetActive(false);
+                mainmenu.gameObject.SetActive(false);
+                settingsMenu.gameObject.SetActive(true);
+                pausemenu.gameObject.SetActive(false);
+                storyBoard.gameObject.SetActive(false);
+                gameUI.gameObject.SetActive(false);
+                inventory.gameObject.SetActive(false);
+                tutorial.gameObject.SetActive(false);
+                IntroFullScreen.gameObject.SetActive(false);
+                break;
+            case UIStates.InStoryBoard:
+                levelSelection.gameObject.SetActive(false);
+                lostCanvas.gameObject.SetActive(false);
+                clearCanvas.gameObject.SetActive(false);
+                mainmenu.gameObject.SetActive(false);
+                settingsMenu.gameObject.SetActive(false);
+                pausemenu.gameObject.SetActive(false);
+                storyBoard.gameObject.SetActive(true);
+                gameUI.gameObject.SetActive(false);
+                inventory.gameObject.SetActive(false);
+                tutorial.gameObject.SetActive(false);
+                IntroFullScreen.gameObject.SetActive(false);
+                break;
+            case UIStates.InFullscreenVideo:
+                levelSelection.gameObject.SetActive(false);
+                lostCanvas.gameObject.SetActive(false);
+                clearCanvas.gameObject.SetActive(false);
+                mainmenu.gameObject.SetActive(false);
+                settingsMenu.gameObject.SetActive(false);
+                pausemenu.gameObject.SetActive(false);
+                storyBoard.gameObject.SetActive(false);
+                gameUI.gameObject.SetActive(false);
+                inventory.gameObject.SetActive(false);
+                tutorial.gameObject.SetActive(false);
+                IntroFullScreen.gameObject.SetActive(true);
+                break;
+            case UIStates.InTutorial:
+                levelSelection.gameObject.SetActive(false);
+                lostCanvas.gameObject.SetActive(false);
+                clearCanvas.gameObject.SetActive(false);
+                mainmenu.gameObject.SetActive(false);
+                settingsMenu.gameObject.SetActive(false);
+                pausemenu.gameObject.SetActive(false);
+                storyBoard.gameObject.SetActive(false);
+                gameUI.gameObject.SetActive(false);
+                inventory.gameObject.SetActive(false);
+                tutorial.gameObject.SetActive(true);
+                IntroFullScreen.gameObject.SetActive(false);
+                break;
+            case UIStates.InGamePlay:
+                levelSelection.gameObject.SetActive(false);
+                lostCanvas.gameObject.SetActive(false);
+                clearCanvas.gameObject.SetActive(false);
+                mainmenu.gameObject.SetActive(false);
+                settingsMenu.gameObject.SetActive(false);
+                pausemenu.gameObject.SetActive(false);
+                storyBoard.gameObject.SetActive(false);
+                gameUI.gameObject.SetActive(true);
+                inventory.gameObject.SetActive(false);
+                tutorial.gameObject.SetActive(false);
+                IntroFullScreen.gameObject.SetActive(false);
+                break;
+            case UIStates.InPauseMenu:
+                levelSelection.gameObject.SetActive(false);
+                lostCanvas.gameObject.SetActive(false);
+                clearCanvas.gameObject.SetActive(false);
+                mainmenu.gameObject.SetActive(false);
+                settingsMenu.gameObject.SetActive(false);
+                pausemenu.gameObject.SetActive(true);
+                storyBoard.gameObject.SetActive(false);
+                gameUI.gameObject.SetActive(false);
+                inventory.gameObject.SetActive(false);
+                tutorial.gameObject.SetActive(false);
+                IntroFullScreen.gameObject.SetActive(false);
+                break;
+            case UIStates.InWinGame:
+                levelSelection.gameObject.SetActive(false);
+                lostCanvas.gameObject.SetActive(false);
+                clearCanvas.gameObject.SetActive(true);
+                mainmenu.gameObject.SetActive(false);
+                settingsMenu.gameObject.SetActive(false);
+                pausemenu.gameObject.SetActive(false);
+                storyBoard.gameObject.SetActive(false);
+                gameUI.gameObject.SetActive(false);
+                inventory.gameObject.SetActive(false);
+                tutorial.gameObject.SetActive(false);
+                IntroFullScreen.gameObject.SetActive(false);
+                break;
+            case UIStates.InLoseGame:
+                levelSelection.gameObject.SetActive(false);
+                lostCanvas.gameObject.SetActive(true);
+                clearCanvas.gameObject.SetActive(false);
+                mainmenu.gameObject.SetActive(false);
+                settingsMenu.gameObject.SetActive(false);
+                pausemenu.gameObject.SetActive(false);
+                storyBoard.gameObject.SetActive(false);
+                gameUI.gameObject.SetActive(false);
+                inventory.gameObject.SetActive(false);
+                tutorial.gameObject.SetActive(false);
+                IntroFullScreen.gameObject.SetActive(false);
+                break;
+            case UIStates.InInventory:
+                levelSelection.gameObject.SetActive(false);
+                lostCanvas.gameObject.SetActive(false);
+                clearCanvas.gameObject.SetActive(false);
+                mainmenu.gameObject.SetActive(false);
+                settingsMenu.gameObject.SetActive(false);
+                pausemenu.gameObject.SetActive(false);
+                storyBoard.gameObject.SetActive(false);
+                gameUI.gameObject.SetActive(false);
+                inventory.gameObject.SetActive(true);
+                tutorial.gameObject.SetActive(false);
+                IntroFullScreen.gameObject.SetActive(false);
+                break;
+            default:
+                break;
+        }
+    }
 
     void Update()
     {
@@ -156,8 +373,8 @@ public class UIManager : MonoBehaviour
                 }
                 if (SceneManager.GetActiveScene().name.Contains("Level"))
                 {
-                    gameUI.gameObject.SetActive(false);
-                    pausemenu.gameObject.SetActive(true);
+                    state = UIStates.InPauseMenu;
+                    SetUIByState();
                     Time.timeScale = 0.0f;
                     gamePaused.state = true;
                 }
@@ -171,8 +388,8 @@ public class UIManager : MonoBehaviour
             StartCoroutine(WaitforDead());
             Time.timeScale = 0.0f;
             gamePaused.state = true;
-            clearCanvas.gameObject.SetActive(true);
-            gameUI.gameObject.SetActive(false);
+            state = UIStates.InWinGame;
+            SetUIByState();
 
         }
     }
@@ -183,8 +400,8 @@ public class UIManager : MonoBehaviour
             StartCoroutine(WaitforDead());
             Time.timeScale = 0.0f;
             gamePaused.state = true;
-            lostCanvas.gameObject.SetActive(true);
-            gameUI.gameObject.SetActive(false);
+            state = UIStates.InLoseGame;
+            SetUIByState();
         }
     }
     IEnumerator WaitforDead()
