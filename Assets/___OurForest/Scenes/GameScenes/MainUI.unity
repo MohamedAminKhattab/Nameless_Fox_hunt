@@ -186,31 +186,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1567165433}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: SETUIGameplay
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1567165433}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: SetUIByState
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 610625923}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: StartTutorialWave
+        m_MethodName: OnTutorialEnded
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1079,6 +1055,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 610625923}
     - target: {fileID: 5206458033892248718, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+      propertyPath: _GM
+      value: 
+      objectReference: {fileID: 610625923}
+    - target: {fileID: 6990555674532635714, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
       propertyPath: _GM
       value: 
       objectReference: {fileID: 610625923}

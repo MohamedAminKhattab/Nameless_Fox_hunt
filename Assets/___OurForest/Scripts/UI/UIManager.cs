@@ -47,6 +47,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] Canvas tutorial;
     [Header("SelectedLevel")]
     [SerializeField] IntegerSO selectedLevel;
+    [SerializeField] GameManager _GM;
     private static UIManager instance;
 
     public UIStates State { get => state; set => state = value; }
@@ -356,7 +357,20 @@ public class UIManager : MonoBehaviour
                 break;
         }
     }
-
+    public void OnTutorialEnded()
+    {
+        if(SceneManager.sceneCount==1)
+        {
+            SETUISettings();
+            SetUIByState();
+        }
+        else
+        {
+            SETUIGameplay();
+            SetUIByState();
+            _GM.StartTutorialWave();
+        }
+    }
     void Update()
     {
         if (Application.platform == RuntimePlatform.Android)
