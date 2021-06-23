@@ -45,7 +45,7 @@ public class Tile : MonoBehaviour
     }
     public void EventPointerdown()
     {
-        //Debug.LogWarning("CheckingTile");
+        Debug.LogWarning("CheckingTile");
         if (/*Can_Trap == true&&*/needTrap.state==false)
         {
             trapLocation.value = transform;

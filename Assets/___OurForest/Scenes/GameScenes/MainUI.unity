@@ -339,6 +339,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7342326961803000935, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
+      propertyPath: selectedLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: 133a7d7efb8597c42a03ca7844681da8, type: 2}
+    - target: {fileID: 7342326961803000935, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
+      propertyPath: targetselected
+      value: 
+      objectReference: {fileID: 11400000, guid: 6888d11157e125e448b38638d8b64d65, type: 2}
+    - target: {fileID: 7342326961803000935, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
+      propertyPath: joystickbackground
+      value: 
+      objectReference: {fileID: 1079992746}
     - target: {fileID: 8530145609774373357, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -544,6 +556,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VideoIntro: {fileID: 692729340}
   introEnded: {fileID: 11400000, guid: 0322d0b7b67dc3f419966f4fe521a75e, type: 2}
+--- !u!224 &1079992746 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 866903878230708404, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+  m_PrefabInstance: {fileID: 1310434033}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1101158206 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7342326961803000935, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
