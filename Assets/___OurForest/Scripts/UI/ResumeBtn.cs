@@ -11,7 +11,5 @@ public class ResumeBtn : MonoBehaviour,IExecutable
     {
         gamepaused.state = false;
         Time.timeScale = 1.0f;
-        pause.gameObject.SetActive(false);
-        hud.gameObject.SetActive(true);
     }
 }

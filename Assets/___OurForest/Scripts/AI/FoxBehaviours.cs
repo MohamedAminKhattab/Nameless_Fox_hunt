@@ -88,7 +88,7 @@ public class FoxBehaviours : MonoBehaviour
     {
         foxState = FoxState.luring;
         isLuringSound.state = true;
-        Debug.Log("luringgggg");
+        //Debug.Log("luringgggg");
     }
     public void Flee() //be called from khattab after collecting the pickup
     {
@@ -180,7 +180,8 @@ public class FoxBehaviours : MonoBehaviour
     {
         if (foxState == FoxState.luring && foxHealth.currentHealth >= 40f) //check if the enemy is valid 
         {
-            Debug.Log("it's true");
+            //
+            //Debug.Log("it's true");
             if (Enemy.value)
             {
                 

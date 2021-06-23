@@ -16,8 +16,6 @@ public class PauseQuit : MonoBehaviour, IExecutable
         SceneManager.UnloadSceneAsync($"Level {selectedLevel.value}");
         Time.timeScale = 1.0f;
         quitEvent.Raise();
-        pause.gameObject.SetActive(false);
         tolevelSelection.state = true;
-        levelselection.gameObject.SetActive(true);
     }
 }

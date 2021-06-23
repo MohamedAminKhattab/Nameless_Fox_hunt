@@ -122,89 +122,89 @@ public class UIManager : MonoBehaviour
     }
     void Start()
     {
-        SetUI();
+        SetUIByState();
     }
 
-    public void SetUI()
-    {
-        if (SceneManager.GetSceneByName($"Level {selectedLevel.value}").isLoaded)
-        {
-            togameplay.state = true;
-            if (togameplay.state == true)
-            {
-                levelSelection.gameObject.SetActive(false);
-                lostCanvas.gameObject.SetActive(false);
-                clearCanvas.gameObject.SetActive(false);
-                mainmenu.gameObject.SetActive(false);
-                settingsMenu.gameObject.SetActive(false);
-                pausemenu.gameObject.SetActive(false);
-                storyBoard.gameObject.SetActive(false);
-                gameUI.gameObject.SetActive(true);
-                inventory.gameObject.SetActive(false);
-                tutorial.gameObject.SetActive(false);
-                IntroFullScreen.gameObject.SetActive(false);
-            }
-        }
-        else if (SceneManager.GetActiveScene().name == "MainUI")
-        {
-            if (toLevelSelection.state == true && tutorialstarted.state == false)
-            {
-                levelSelection.gameObject.SetActive(true);
-                lostCanvas.gameObject.SetActive(false);
-                clearCanvas.gameObject.SetActive(false);
-                mainmenu.gameObject.SetActive(false);
-                settingsMenu.gameObject.SetActive(false);
-                pausemenu.gameObject.SetActive(false);
-                storyBoard.gameObject.SetActive(false);
-                gameUI.gameObject.SetActive(false);
-                inventory.gameObject.SetActive(false);
-                tutorial.gameObject.SetActive(false);
-                IntroFullScreen.gameObject.SetActive(false);
-            }
-            else if(togameplay.state==false&&tutorialstarted.state==false)
-            {
-                mainmenu.gameObject.SetActive(true);
-                levelSelection.gameObject.SetActive(false);
-                lostCanvas.gameObject.SetActive(false);
-                clearCanvas.gameObject.SetActive(false);
-                settingsMenu.gameObject.SetActive(false);
-                pausemenu.gameObject.SetActive(false);
-                storyBoard.gameObject.SetActive(false);
-                gameUI.gameObject.SetActive(false);
-                inventory.gameObject.SetActive(false);
-                tutorial.gameObject.SetActive(false);
-                IntroFullScreen.gameObject.SetActive(false);
-            }
-            else if(tutorialstarted.state==true)
-            {
-                mainmenu.gameObject.SetActive(false);
-                levelSelection.gameObject.SetActive(false);
-                lostCanvas.gameObject.SetActive(false);
-                clearCanvas.gameObject.SetActive(false);
-                settingsMenu.gameObject.SetActive(false);
-                pausemenu.gameObject.SetActive(false);
-                storyBoard.gameObject.SetActive(false);
-                gameUI.gameObject.SetActive(false);
-                inventory.gameObject.SetActive(false);
-                tutorial.gameObject.SetActive(true);
-                IntroFullScreen.gameObject.SetActive(false);
-            }
-            else if(tutorialended.state==true)
-            {
-                mainmenu.gameObject.SetActive(false);
-                levelSelection.gameObject.SetActive(false);
-                lostCanvas.gameObject.SetActive(false);
-                clearCanvas.gameObject.SetActive(false);
-                settingsMenu.gameObject.SetActive(true);
-                pausemenu.gameObject.SetActive(false);
-                storyBoard.gameObject.SetActive(false);
-                gameUI.gameObject.SetActive(false);
-                inventory.gameObject.SetActive(false);
-                tutorial.gameObject.SetActive(false);
-                IntroFullScreen.gameObject.SetActive(false);
-            }
-        }
-    }
+    //public void SetUI()
+    //{
+    //    if (SceneManager.GetSceneByName($"Level {selectedLevel.value}").isLoaded)
+    //    {
+    //        togameplay.state = true;
+    //        if (togameplay.state == true)
+    //        {
+    //            levelSelection.gameObject.SetActive(false);
+    //            lostCanvas.gameObject.SetActive(false);
+    //            clearCanvas.gameObject.SetActive(false);
+    //            mainmenu.gameObject.SetActive(false);
+    //            settingsMenu.gameObject.SetActive(false);
+    //            pausemenu.gameObject.SetActive(false);
+    //            storyBoard.gameObject.SetActive(false);
+    //            gameUI.gameObject.SetActive(true);
+    //            inventory.gameObject.SetActive(false);
+    //            tutorial.gameObject.SetActive(false);
+    //            IntroFullScreen.gameObject.SetActive(false);
+    //        }
+    //    }
+    //    else if (SceneManager.GetActiveScene().name == "MainUI")
+    //    {
+    //        if (toLevelSelection.state == true && tutorialstarted.state == false)
+    //        {
+    //            levelSelection.gameObject.SetActive(true);
+    //            lostCanvas.gameObject.SetActive(false);
+    //            clearCanvas.gameObject.SetActive(false);
+    //            mainmenu.gameObject.SetActive(false);
+    //            settingsMenu.gameObject.SetActive(false);
+    //            pausemenu.gameObject.SetActive(false);
+    //            storyBoard.gameObject.SetActive(false);
+    //            gameUI.gameObject.SetActive(false);
+    //            inventory.gameObject.SetActive(false);
+    //            tutorial.gameObject.SetActive(false);
+    //            IntroFullScreen.gameObject.SetActive(false);
+    //        }
+    //        else if(togameplay.state==false&&tutorialstarted.state==false)
+    //        {
+    //            mainmenu.gameObject.SetActive(true);
+    //            levelSelection.gameObject.SetActive(false);
+    //            lostCanvas.gameObject.SetActive(false);
+    //            clearCanvas.gameObject.SetActive(false);
+    //            settingsMenu.gameObject.SetActive(false);
+    //            pausemenu.gameObject.SetActive(false);
+    //            storyBoard.gameObject.SetActive(false);
+    //            gameUI.gameObject.SetActive(false);
+    //            inventory.gameObject.SetActive(false);
+    //            tutorial.gameObject.SetActive(false);
+    //            IntroFullScreen.gameObject.SetActive(false);
+    //        }
+    //        else if(tutorialstarted.state==true)
+    //        {
+    //            mainmenu.gameObject.SetActive(false);
+    //            levelSelection.gameObject.SetActive(false);
+    //            lostCanvas.gameObject.SetActive(false);
+    //            clearCanvas.gameObject.SetActive(false);
+    //            settingsMenu.gameObject.SetActive(false);
+    //            pausemenu.gameObject.SetActive(false);
+    //            storyBoard.gameObject.SetActive(false);
+    //            gameUI.gameObject.SetActive(false);
+    //            inventory.gameObject.SetActive(false);
+    //            tutorial.gameObject.SetActive(true);
+    //            IntroFullScreen.gameObject.SetActive(false);
+    //        }
+    //        else if(tutorialended.state==true)
+    //        {
+    //            mainmenu.gameObject.SetActive(false);
+    //            levelSelection.gameObject.SetActive(false);
+    //            lostCanvas.gameObject.SetActive(false);
+    //            clearCanvas.gameObject.SetActive(false);
+    //            settingsMenu.gameObject.SetActive(true);
+    //            pausemenu.gameObject.SetActive(false);
+    //            storyBoard.gameObject.SetActive(false);
+    //            gameUI.gameObject.SetActive(false);
+    //            inventory.gameObject.SetActive(false);
+    //            tutorial.gameObject.SetActive(false);
+    //            IntroFullScreen.gameObject.SetActive(false);
+    //        }
+    //    }
+    //}
     public void SetUIByState()
     {
         switch (state)

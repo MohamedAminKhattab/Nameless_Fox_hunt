@@ -9,7 +9,6 @@ public class StoryBtn : MonoBehaviour,IExecutable
 
     public void Execute()
     {
-        settings.gameObject.SetActive(false);
-        storyBoard.gameObject.SetActive(true);
+
     }
 }

@@ -16,7 +16,5 @@ public class NextLevel_Btn : MonoBehaviour, IExecutable
         selectedLevel.value++;
         SceneManager.LoadScene($"Level {selectedLevel.value}", LoadSceneMode.Additive);
         Time.timeScale = 1.0f;
-        clear.gameObject.SetActive(false);
-        hud.gameObject.SetActive(true);
     }
 }

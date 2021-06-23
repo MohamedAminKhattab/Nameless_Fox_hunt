@@ -54,10 +54,10 @@ public class FoxInventory : MonoBehaviour
         //Debug.LogWarning(_gm);
         if (_gm.Inv.GetItemCount(ItemTypes.Food)>0)
         {
-                Debug.Log($"Fox"+foxHealth.currentHealth);
+                ///Debug.Log($"Fox"+foxHealth.currentHealth);
             if(foxHealth.currentHealth<foxHealth.initialHealth)
             {
-                Debug.Log($"Fox" + foxHealth.currentHealth);
+               // Debug.Log($"Fox" + foxHealth.currentHealth);
                 _gm.Inv.UseItem(ItemTypes.Food, 1);
                 foxHealth.Healing(10);
             }

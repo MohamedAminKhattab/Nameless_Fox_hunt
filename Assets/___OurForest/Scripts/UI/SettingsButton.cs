@@ -8,7 +8,6 @@ public class SettingsButton : MonoBehaviour,IExecutable
     [SerializeField] Canvas settingsmenu;
     public void Execute()
     {
-        mainmenu.gameObject.SetActive(false);
-        settingsmenu.gameObject.SetActive(true);
+
     }
 }

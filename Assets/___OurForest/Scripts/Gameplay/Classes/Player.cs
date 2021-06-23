@@ -84,7 +84,8 @@ public class Player : MonoBehaviour
         if (collision.collider.gameObject.CompareTag("bullet"))
         {
             playerHealth.ApplyDamage(damagePoints);
-            //Debug.Log(playerHealth.currentHealth);
+            //
+            //.Log(playerHealth.currentHealth);
         }
     }
 
@@ -211,7 +212,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                 Debug.Log(playerHealth.currentHealth);
+                 //Debug.Log(playerHealth.currentHealth);
                 eatFood.state = false;
             }
         }
@@ -238,7 +239,7 @@ public class Player : MonoBehaviour
     }
     IEnumerator Eating()
     {
-        Debug.Log("Eating");
+        //Debug.Log("Eating");
         var wait = new WaitForSeconds(3.0f);
         yield return wait;
         eatFood.state = false;

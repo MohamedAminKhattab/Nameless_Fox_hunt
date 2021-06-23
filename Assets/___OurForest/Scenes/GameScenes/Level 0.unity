@@ -194,6 +194,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7653069079129772980, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
+      propertyPath: levelLoadedEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 944d3d46f6972f446ba0686a8bed92ab, type: 2}
     - target: {fileID: 8367819192945679561, guid: 4a486ae4db7036243b978e229417eda4, type: 3}
       propertyPath: m_IsActive
       value: 1

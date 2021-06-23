@@ -15,7 +15,7 @@ public class EnemyHealth : MonoBehaviour
         if(other.tag.Equals("bullet"))
         {
             health -= 20;
-            Debug.Log(health);
+            //Debug.Log(health);
             if (health <= 1)
                 this.gameObject.SetActive(false);
         }

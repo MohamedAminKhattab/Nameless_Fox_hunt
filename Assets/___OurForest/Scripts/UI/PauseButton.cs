@@ -11,13 +11,9 @@ public class PauseButton : MonoBehaviour,IExecutable
     void Start()
     {
         gamepause.state = false;
-        gameUI.gameObject.SetActive(true);
-        pausemenu.gameObject.SetActive(false);
     }
     public void Execute()
     {
-        gameUI.gameObject.SetActive(false);
-        pausemenu.gameObject.SetActive(true);
         gamepause.state = true;
         Time.timeScale = 0.0f;
     }

@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        _UM.SetUI();
+        _UM.SetUIByState();
     }
     public void Removeoldinstance()
     {
@@ -98,7 +98,64 @@ public class GameManager : MonoBehaviour
     public void ClearSave()
     {
         inv.ClearInventory();
+        inv.AddItem(ItemTypes.Trap);
+        inv.AddItem(ItemTypes.Trap);
+        inv.AddItem(ItemTypes.Trap);
+        inv.AddItem(ItemTypes.Trap);
+        inv.AddItem(ItemTypes.Trap);
+        inv.AddItem(ItemTypes.Weapon);
+        inv.AddItem(ItemTypes.Weapon);
+        inv.AddItem(ItemTypes.Weapon);
+        inv.AddItem(ItemTypes.Weapon);
+        inv.AddItem(ItemTypes.Weapon);
+        inv.AddItem(ItemTypes.Weapon);
+        inv.AddItem(ItemTypes.Weapon);
+        inv.AddItem(ItemTypes.Weapon);
+        inv.AddItem(ItemTypes.Weapon);
+        inv.AddItem(ItemTypes.Weapon);
+
+        inv.AddItem(ItemTypes.Food);
+        inv.AddItem(ItemTypes.Food);
+        inv.AddItem(ItemTypes.Food);
+        inv.AddItem(ItemTypes.Food);
+        inv.AddItem(ItemTypes.Food);
         save.Clear();
+    }
+    public void StartTutorialLevel()
+    {
+        Removeoldinstance();
+        _EM = FindObjectOfType<EnvironmentManager>();
+        _EM.GM = this;
+        playerWon.state = false;
+        gameOver.state = false;
+        togamePlay.state = true;
+        _UM.SetUIByState();
+        player = Instantiate(playerPrefab, transform.position, Quaternion.identity, transform).GetComponent<Player>();
+        player.GM = this;
+        player.GetComponentInChildren<Attack>().GM = this;
+        cfollow = FindObjectOfType<CameraFollow>();
+        fox = Instantiate(foxPrefab, transform.position, Quaternion.identity, transform);
+        fox.GetComponent<FoxBehaviours>().Player = player.transform;
+        fox.GetComponent<FoxInventory>().Gm = this;
+        spawnPoints = FindObjectsOfType<SpawnPoint>().ToList<SpawnPoint>();
+        cfollow.Target = player.transform;
+        player.GetComponent<HealthIndicator>().healthBar = playerhealthslider;
+        fox.GetComponent<HealthIndicator>().healthBar = foxhealthslider;
+        currentwave = 1;
+        currentTroopCount = 0;
+        save.Save(playerhealth.currentHealth, foxhealth.currentHealth, Inv.Itemlist, false);
+        foreach (var sp in spawnPoints)
+        {
+            sp.GM = this;
+            sp.Fox = fox.transform;
+            sp.Yelena = player.transform;
+        }
+        changecountenemy.Raise();
+        StopAllCoroutines();
+    }
+    public void StartTutorialWave()
+    {
+        StartCoroutine(WaitForWave());
     }
     public void StartLevel()
     {
@@ -108,7 +165,7 @@ public class GameManager : MonoBehaviour
         playerWon.state = false;
         gameOver.state = false;
         togamePlay.state = true;
-        _UM.SetUI();
+        _UM.SetUIByState();
         player = Instantiate(playerPrefab, transform.position, Quaternion.identity, transform).GetComponent<Player>();
         player.GM = this;
         player.GetComponentInChildren<Attack>().GM = this;
@@ -152,10 +209,10 @@ public class GameManager : MonoBehaviour
     {
         if (Inv.GetItemCount(ItemTypes.Food) > 0)
         {
-            Debug.Log($"Fox" + foxhealth.currentHealth);
+            //Debug.Log($"Fox" + foxhealth.currentHealth);
             if (foxhealth.currentHealth < foxhealth.initialHealth)
             {
-                Debug.Log($"Fox" + foxhealth.currentHealth);
+              //  Debug.Log($"Fox" + foxhealth.currentHealth);
                 Inv.UseItem(ItemTypes.Food, 1);
                 foxhealth.Healing(10);
             }

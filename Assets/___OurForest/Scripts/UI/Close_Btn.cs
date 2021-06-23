@@ -10,7 +10,6 @@ public class Close_Btn : MonoBehaviour,IExecutable
 
     public void Execute()
     {
-        previous.SetActive(true);
-        current.SetActive(false);
+
     }
 }

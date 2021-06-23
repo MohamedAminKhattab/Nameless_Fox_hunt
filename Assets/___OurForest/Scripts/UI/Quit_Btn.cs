@@ -16,8 +16,6 @@ public class Quit_Btn : MonoBehaviour,IExecutable
         SceneManager.UnloadSceneAsync($"Level {selectedLevel.value}");
         Time.timeScale = 1.0f;
         quitevent.Raise();
-        current.gameObject.SetActive(false);
         toLevelSelection.state = true;
-        levelselection.gameObject.SetActive(true);
     }
 }
