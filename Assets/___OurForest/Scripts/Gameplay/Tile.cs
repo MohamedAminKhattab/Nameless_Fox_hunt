@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-public class Tile : MonoBehaviour
+public class Tile : MonoBehaviour,IPointerDownHandler
 {
     [SerializeField] private Vector3 location;
     [SerializeField] BoolSO needTrap;
     [SerializeField] TransformSO trapLocation;
+    [SerializeField] EventSO targetselected;
 
     //[SerializeField] private bool has_resource = false;
     //[SerializeField] private bool can_Trap = false;
@@ -45,11 +46,17 @@ public class Tile : MonoBehaviour
     }
     public void EventPointerdown()
     {
+
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
         Debug.LogWarning("CheckingTile");
         if (/*Can_Trap == true&&*/needTrap.state == false)
         {
             trapLocation.value = transform;
             needTrap.state = true;
+            targetselected.Raise();
         }
     }
 }

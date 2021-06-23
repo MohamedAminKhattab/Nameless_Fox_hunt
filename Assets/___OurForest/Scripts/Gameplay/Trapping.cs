@@ -60,7 +60,7 @@ public class Trapping : MonoBehaviour
         level = FindObjectOfType<Level>();
         if (needTrap.state == true && _GM.Inv.GetItemCount(ItemTypes.Trap) > 0 && trapLocation.value.position != gameObject.transform.position)
         {
-            Instantiate(trapPrefab, trapLocation.value.position, Quaternion.identity);
+            Instantiate(trapPrefab, trapLocation.value.position, Quaternion.identity,level.transform);
             _GM.Inv.UseItem(ItemTypes.Trap, 1);
             trapLocation.value.position = gameObject.transform.position;
             needTrap.state = false;
