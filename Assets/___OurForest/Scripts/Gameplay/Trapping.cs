@@ -34,7 +34,7 @@ public class Trapping : MonoBehaviour
     //                Ray ray = Camera.main.ScreenPointToRay(touch.position);
     //                if (Physics.Raycast(ray, out RaycastHit hit))
     //                {
-    //                    if (FCompareTag(hit.collider.gameObject.tag)&&!joystickbackground.rect.Contains(touch.position))
+    //                    if (FCompareTag(hit.collider.gameObject.tag) && !joystickbackground.rect.Contains(touch.position))
     //                    {
     //                        needTrap.state = true;
     //                        trapLocation.value = hit.transform;
