@@ -39,7 +39,7 @@ public class TutorialBehaviour : MonoBehaviour
         if (index < Panels.Length) // panels num must be equal to strings num
         {
             if (index > 0)
-                Panels[index - 1].SetActive(false);
+                Panels[index-1].SetActive(false);
             Panels[index].SetActive(true);
         textHolder.text = TextsToShow[index];
         index++;

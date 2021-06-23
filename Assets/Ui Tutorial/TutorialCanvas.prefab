@@ -107,10 +107,10 @@ RectTransform:
   m_Father: {fileID: 3884568258316791080}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.23947607, y: 0.14889546}
-  m_AnchorMax: {x: 0.71251696, y: 0.33725116}
+  m_AnchorMin: {x: 0.2634802, y: 0.19283764}
+  m_AnchorMax: {x: 0.73652107, y: 0.38119334}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -0.0000076293945, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2792371466866282025
 CanvasRenderer:
@@ -353,7 +353,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3c7901d31192e72478121b9a050d9790, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 771c762541e78364a95b5567c9930f49, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -395,10 +395,10 @@ RectTransform:
   m_Father: {fileID: 7000791771181124529}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 236, y: 0.0000095367}
-  m_SizeDelta: {x: 425.4819, y: 272.2158}
+  m_AnchorMin: {x: 0.5121141, y: 0.37397417}
+  m_AnchorMax: {x: 0.7337192, y: 0.62602586}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -0.000015258789, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7432065635302658270
 CanvasRenderer:
@@ -431,15 +431,15 @@ MonoBehaviour:
   m_text: You need to make sure that the resources you have are enough to craft the
     item you need..
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0e636fca7bb468a44ba9560704992360, type: 2}
-  m_sharedMaterial: {fileID: 3992168109072791113, guid: 0e636fca7bb468a44ba9560704992360, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: adb3fa43ecdc01b4db672c7714fa41d0, type: 2}
+  m_sharedMaterial: {fileID: 7937179212615494195, guid: adb3fa43ecdc01b4db672c7714fa41d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
-  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -495,7 +495,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2958445061761765898
@@ -831,10 +831,10 @@ RectTransform:
   m_Father: {fileID: 7000791771181124529}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -468.4169, y: -19.8036}
-  m_SizeDelta: {x: 518.9114, y: 523.415}
+  m_AnchorMin: {x: 0.11122099, y: 0.21415973}
+  m_AnchorMax: {x: 0.38148734, y: 0.69880325}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8194122559061894782
 CanvasRenderer:
@@ -878,8 +878,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.13803609, y: 0.71018}
   m_AnchorMax: {x: 0.86198056, y: 0.95830566}
-  m_AnchoredPosition: {x: -0.000015258789, y: 0}
-  m_SizeDelta: {x: -0.000015258789, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0.0000038146973, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2810679793129896478
 CanvasRenderer:
@@ -1163,10 +1163,10 @@ RectTransform:
   m_Father: {fileID: 7838205366877862091}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.38919744, y: 0.31123626}
-  m_AnchorMax: {x: 0.6108026, y: 0.6640093}
+  m_AnchorMin: {x: 0.37982243, y: 0.34202486}
+  m_AnchorMax: {x: 0.6014276, y: 0.6159021}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0.0000009536743}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &527416204394691488
 CanvasRenderer:
@@ -1199,15 +1199,15 @@ MonoBehaviour:
   m_text: Eversince I vowed to giveup the urban life and live here, I oathed to protect
     this hidden beauty.. Our forest and the magical foxes that inhabit it..
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0e636fca7bb468a44ba9560704992360, type: 2}
-  m_sharedMaterial: {fileID: 3992168109072791113, guid: 0e636fca7bb468a44ba9560704992360, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: adb3fa43ecdc01b4db672c7714fa41d0, type: 2}
+  m_sharedMaterial: {fileID: 7937179212615494195, guid: adb3fa43ecdc01b4db672c7714fa41d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
-  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1224,10 +1224,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
+  m_fontSize: 33.7
   m_fontSizeBase: 25
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 3
@@ -1331,7 +1331,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9750e2ad346052409a9a292c7a682d5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b99fd6a713d58604590da77676361f2a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1375,10 +1375,10 @@ RectTransform:
   m_Father: {fileID: 7838205366877862091}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 778.50006, y: 121}
-  m_SizeDelta: {x: 363, y: 104}
+  m_AnchorMin: {x: 0.028885428, y: 0.0747963}
+  m_AnchorMax: {x: 0.21742709, y: 0.17109258}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7256442196217173615
 CanvasRenderer:
