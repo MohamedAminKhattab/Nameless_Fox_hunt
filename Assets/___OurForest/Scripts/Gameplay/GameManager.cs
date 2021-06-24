@@ -72,7 +72,8 @@ public class GameManager : MonoBehaviour
             inv.AddItem(ItemTypes.Food);
             inv.AddItem(ItemTypes.Food);
             inv.AddItem(ItemTypes.Food);
-            save.Save(100, 100, Inv.Itemlist, false);
+            //save.Save(100, 100, Inv.Itemlist, false);
+            save.Load(playerhealth.currentHealth, foxhealth.currentHealth, inv.Itemlist, selectedLevel.value);
         }
         else if (instance != this)
         {

@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "050732503H006820",
         "name": "com.TeamForest.FoxForest",
-        "processId": 27687,
+        "processId": 17160,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -48,6 +48,12 @@
             "deviceId": "050732503H006820",
             "name": "com.TeamForest.FoxForest",
             "processId": 27687,
+            "exited": false
+        },
+        {
+            "deviceId": "050732503H006820",
+            "name": "com.TeamForest.FoxForest",
+            "processId": 17160,
             "exited": false
         }
     ],
