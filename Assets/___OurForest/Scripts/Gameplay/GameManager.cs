@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] EventSO changecountenemy;
     [SerializeField] EventSO enemiesspawned;
     [SerializeField] PlayerSaveSO save;
-    [SerializeField] int selectedLevel;
+    [SerializeField] IntegerSO selectedLevel;
     [SerializeField] HealthSO foxhealth;
     [SerializeField] HealthSO playerhealth;
     [SerializeField] Slider playerhealthslider;
@@ -194,7 +194,7 @@ public class GameManager : MonoBehaviour
     {
         // Debug.Log("Restarting");
         changecountenemy.Raise();
-        save.Load(playerhealth.currentHealth, foxhealth.currentHealth, Inv.Itemlist, selectedLevel);
+        save.Load(playerhealth.currentHealth, foxhealth.currentHealth, Inv.Itemlist, selectedLevel.value);
         inv.OnInvItemsChangeHandler?.Invoke(this, EventArgs.Empty);
         // Debug.Log("Restarted");
     }
@@ -202,7 +202,7 @@ public class GameManager : MonoBehaviour
     {
         // Debug.Log("Restarting");
         changecountenemy.Raise();
-        save.Load(playerhealth.currentHealth, foxhealth.currentHealth, Inv.Itemlist, selectedLevel);
+        save.Load(playerhealth.currentHealth, foxhealth.currentHealth, Inv.Itemlist, selectedLevel.value);
         inv.OnInvItemsChangeHandler?.Invoke(this, EventArgs.Empty);
         // Debug.Log("Restarted");
     }
@@ -248,12 +248,13 @@ public class GameManager : MonoBehaviour
         {
             playerWon.state = true;
             gameOver.state = false;
-            if (selectedLevel >= save.LastClearedLevel)
+            if (selectedLevel.value >= save.LastClearedLevel)
             {
                 save.Save(100, 100, Inv.Itemlist, true);
             }
             else
             {
+                Debug.Log("Shit here");
                 save.Save(100, 100, Inv.Itemlist, false);
             }
             onPlayerWon.Raise();

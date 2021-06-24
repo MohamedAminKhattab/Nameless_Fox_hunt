@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "050732503H006820",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "050732503H006820",
+        "name": "com.TeamForest.FoxForest",
+        "processId": 27687,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -42,6 +42,12 @@
             "deviceId": "050732503H006820",
             "name": "com.transsion.XOSLauncher",
             "processId": 2943,
+            "exited": false
+        },
+        {
+            "deviceId": "050732503H006820",
+            "name": "com.TeamForest.FoxForest",
+            "processId": 27687,
             "exited": false
         }
     ],
