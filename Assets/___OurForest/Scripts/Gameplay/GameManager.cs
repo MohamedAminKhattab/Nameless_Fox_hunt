@@ -99,6 +99,7 @@ public class GameManager : MonoBehaviour
     public void ClearSave()
     {
         inv.ClearInventory();
+        save.Clear();
         inv.AddItem(ItemTypes.Trap);
         inv.AddItem(ItemTypes.Trap);
         inv.AddItem(ItemTypes.Trap);
@@ -120,7 +121,7 @@ public class GameManager : MonoBehaviour
         inv.AddItem(ItemTypes.Food);
         inv.AddItem(ItemTypes.Food);
         inv.AddItem(ItemTypes.Food);
-        save.Clear();
+        save.Save(playerhealth.currentHealth, foxhealth.currentHealth, Inv.Itemlist, false);
     }
     public void StartTutorialLevel()
     {
