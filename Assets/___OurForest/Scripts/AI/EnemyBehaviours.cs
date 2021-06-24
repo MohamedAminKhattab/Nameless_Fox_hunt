@@ -82,9 +82,14 @@ public class EnemyBehaviours : MonoBehaviour
     [Task]
     public void FOV()
     {
-        if (isPlayerHidden.state || enemyState == EnemyState.dead)
+        if (isPlayerHidden.state  )
         {
             enemyState = EnemyState.goingToHouse;
+            Task.current.Fail();
+            return;
+        }
+        if(enemyState == EnemyState.dead)
+        {
             Task.current.Fail();
             return;
         }
