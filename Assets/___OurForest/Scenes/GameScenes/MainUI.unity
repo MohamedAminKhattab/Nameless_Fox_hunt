@@ -384,6 +384,10 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
+      propertyPath: selectedLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: 133a7d7efb8597c42a03ca7844681da8, type: 2}
+    - target: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
       propertyPath: foxhealthslider
       value: 
       objectReference: {fileID: 626835343}
