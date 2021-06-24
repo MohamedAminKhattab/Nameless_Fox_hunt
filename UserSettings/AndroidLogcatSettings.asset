@@ -1,41 +1,47 @@
 {
     "m_SelectedDeviceId": "050732503H006820",
     "m_SelectedPackage": {
-        "deviceId": "050732503H006820",
-        "name": "com.TeamForest.FoxForest",
-        "processId": 23793,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
         {
             "deviceId": "050732503H006820",
-            "name": "com.TeamForest.FoxForest",
-            "processId": 19129,
-            "exited": true
-        },
-        {
-            "deviceId": "050732503H006820",
             "name": "com.transsion.XOSLauncher",
             "processId": 2021,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "050732503H006820",
             "name": "com.TeamForest.FoxForest",
             "processId": 20775,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "050732503H006820",
             "name": "com.TeamForest.FoxForest",
             "processId": 21462,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "050732503H006820",
             "name": "com.TeamForest.FoxForest",
             "processId": 23793,
+            "exited": true
+        },
+        {
+            "deviceId": "050732503H006820",
+            "name": "com.TeamForest.FoxForest",
+            "processId": 23418,
+            "exited": true
+        },
+        {
+            "deviceId": "050732503H006820",
+            "name": "com.transsion.XOSLauncher",
+            "processId": 2943,
             "exited": false
         }
     ],

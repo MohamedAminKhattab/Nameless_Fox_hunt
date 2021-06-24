@@ -17,6 +17,18 @@ public class UpdateUI : MonoBehaviour
 
     public GameManager GM { get => _GM; set => _GM = value; }
 
+    private void Awake()
+    {
+        UpdateHunterCount();
+    }
+    private void OnDisable()
+    {
+        UpdateHunterCount();
+    }
+    private void OnEnable()
+    {
+        UpdateHunterCount();
+    }
     private void Start()
     {
         GM = FindObjectOfType<GameManager>();
@@ -28,6 +40,7 @@ public class UpdateUI : MonoBehaviour
         FoodCount.text = _GM.Inv.GetItemCount(ItemTypes.Food).ToString();
         hunterCount.text = _GM.CurrentTroopCount.ToString();
         _GM.Inv.OnInvItemsChangeHandler +=UpdateInGameUI;
+        UpdateHunterCount();
     }
     public void UpdateInGameUI(object sender,EventArgs e)
     {

@@ -536,6 +536,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VideoIntro: {fileID: 692729340}
   introEnded: {fileID: 11400000, guid: 0322d0b7b67dc3f419966f4fe521a75e, type: 2}
+--- !u!114 &972420272 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2830216777105329070, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+  m_PrefabInstance: {fileID: 1310434033}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6ad4ad4f89fbc44ae1652df761f589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1079992746 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 866903878230708404, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
@@ -1066,6 +1077,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: SetUIByState
       objectReference: {fileID: 0}
+    - target: {fileID: 4760987304918617582, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+      propertyPath: eventSo
+      value: 
+      objectReference: {fileID: 11400000, guid: e07554cc2993bb2489103a301de1ec1a, type: 2}
+    - target: {fileID: 4760987304918617582, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+      propertyPath: OnRaise.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760987304918617582, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+      propertyPath: OnRaise.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 972420272}
+    - target: {fileID: 4760987304918617582, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+      propertyPath: OnRaise.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateHunterCount
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760987304918617582, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+      propertyPath: OnRaise.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpdateUI, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5135660789834585564, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1093,6 +1124,26 @@ PrefabInstance:
     - target: {fileID: 5513351759801297505, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924700800277734085, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+      propertyPath: eventSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 9401c7051ce13a84ea77aa91aa416aa2, type: 2}
+    - target: {fileID: 6924700800277734085, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+      propertyPath: OnRaise.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924700800277734085, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+      propertyPath: OnRaise.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 972420272}
+    - target: {fileID: 6924700800277734085, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+      propertyPath: OnRaise.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateHunterCount
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924700800277734085, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
+      propertyPath: OnRaise.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpdateUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6990555674532635714, guid: a81b3a6941263cf4db09c4d565419d23, type: 3}
       propertyPath: _GM
@@ -1270,6 +1321,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1567165433}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: SetUIByState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 610625923}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: RestartTut
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -193,6 +193,15 @@ public class GameManager : MonoBehaviour
     public void Restart()
     {
         // Debug.Log("Restarting");
+        changecountenemy.Raise();
+        save.Load(playerhealth.currentHealth, foxhealth.currentHealth, Inv.Itemlist, selectedLevel);
+        inv.OnInvItemsChangeHandler?.Invoke(this, EventArgs.Empty);
+        // Debug.Log("Restarted");
+    }
+    public void RestartTut()
+    {
+        // Debug.Log("Restarting");
+        changecountenemy.Raise();
         save.Load(playerhealth.currentHealth, foxhealth.currentHealth, Inv.Itemlist, selectedLevel);
         inv.OnInvItemsChangeHandler?.Invoke(this, EventArgs.Empty);
         // Debug.Log("Restarted");
