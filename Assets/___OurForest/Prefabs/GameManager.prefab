@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 847930812}
   - component: {fileID: 853755422}
   - component: {fileID: 534292265}
+  - component: {fileID: 2124210270}
+  - component: {fileID: 2124210271}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: MainCamera
@@ -60,13 +62,16 @@ MonoBehaviour:
   playerWon: {fileID: 11400000, guid: 5bba911e0fcb0f94185c7c1b054f4eb6, type: 2}
   gameOver: {fileID: 11400000, guid: 9f64f56becb26a24da4d1af74e89493b, type: 2}
   togamePlay: {fileID: 11400000, guid: cea3b9addbb29e048bd07592e7796300, type: 2}
+  needtrap: {fileID: 11400000, guid: 06689c3572e4ed94aaabfa80f39cc508, type: 2}
+  hastarget: {fileID: 11400000, guid: 0b5e8e33f6a1919438ef47f4a7b0482d, type: 2}
+  hasenemytarget: {fileID: 11400000, guid: 78c6080c85526a04a92d8ea535447bc9, type: 2}
   timerisRunning: {fileID: 11400000, guid: 768e826939fd8e64394f7d61557b64c8, type: 2}
   RemainingTime: {fileID: 11400000, guid: 36a1013db5bb7a740a43c4f9da5592e6, type: 2}
   foxPrefab: {fileID: 2006851311034963767, guid: 506fd1689a7d7ef4d86ec4796d213890, type: 3}
   fox: {fileID: 0}
   playerPrefab: {fileID: 6845774844251762932, guid: 26dc89bd2319b034fadf8fe8588f2e3d, type: 3}
   _EM: {fileID: 0}
-  spawnrate: 0
+  spawnrate: 0.5
   _UM: {fileID: 0}
   LevelWaveCount: 1
   currentwave: 1
@@ -76,7 +81,7 @@ MonoBehaviour:
   changecountenemy: {fileID: 11400000, guid: 3410f905c6c90834b9cfb0496dd05f4d, type: 2}
   enemiesspawned: {fileID: 11400000, guid: 21d9b46321d079a4082f6fed2a33a46a, type: 2}
   save: {fileID: 11400000, guid: 877d53cba0375a04a866fea1a8c523bb, type: 2}
-  selectedLevel: 0
+  selectedLevel: {fileID: 11400000, guid: 133a7d7efb8597c42a03ca7844681da8, type: 2}
   foxhealth: {fileID: 11400000, guid: cb84ffe3b29e677448a641a76784c73f, type: 2}
   playerhealth: {fileID: 11400000, guid: 995eb8ff6ee44984f9945bb81080d729, type: 2}
   playerhealthslider: {fileID: 0}
@@ -95,9 +100,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   needTrap: {fileID: 11400000, guid: 06689c3572e4ed94aaabfa80f39cc508, type: 2}
   trapLocation: {fileID: 11400000, guid: 39c75f4db60317e44a2ab53ce9f58a2f, type: 2}
+  selectedLevel: {fileID: 11400000, guid: 133a7d7efb8597c42a03ca7844681da8, type: 2}
   level: {fileID: 0}
   trapPrefab: {fileID: 285521514259324736, guid: acaa9f05c827ea9479fd09f6a43f84bf, type: 3}
   _GM: {fileID: 8530145609774373358}
+  targetselected: {fileID: 11400000, guid: 6888d11157e125e448b38638d8b64d65, type: 2}
+  joystickbackground: {fileID: 0}
 --- !u!114 &582448560369363392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +252,86 @@ MonoBehaviour:
       - m_Target: {fileID: 8530145609774373358}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2124210270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8530145609774373359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f564d6ce0be49c943a561bfc80a57b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSo: {fileID: 11400000, guid: 944d3d46f6972f446ba0686a8bed92ab, type: 2}
+  OnRaise:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8530145609774373358}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: StartTutorialLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2124210271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8530145609774373359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f564d6ce0be49c943a561bfc80a57b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSo: {fileID: 11400000, guid: 9401c7051ce13a84ea77aa91aa416aa2, type: 2}
+  OnRaise:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: SETUIFullscreenvideo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: SetUIByState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8530145609774373358}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: RestartTut
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

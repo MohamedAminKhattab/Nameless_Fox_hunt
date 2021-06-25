@@ -315,14 +315,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7342326961803000935, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
-      propertyPath: selectedLevel
+    - target: {fileID: 2124210271, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
+      propertyPath: OnRaise.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11400000, guid: 133a7d7efb8597c42a03ca7844681da8, type: 2}
-    - target: {fileID: 7342326961803000935, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
-      propertyPath: targetselected
+      objectReference: {fileID: 1567165433}
+    - target: {fileID: 2124210271, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
+      propertyPath: OnRaise.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 11400000, guid: 6888d11157e125e448b38638d8b64d65, type: 2}
+      objectReference: {fileID: 1567165433}
     - target: {fileID: 7342326961803000935, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
       propertyPath: joystickbackground
       value: 
@@ -380,14 +380,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1567165433}
     - target: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
-      propertyPath: spawnrate
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
-      propertyPath: selectedLevel
-      value: 
-      objectReference: {fileID: 11400000, guid: 133a7d7efb8597c42a03ca7844681da8, type: 2}
-    - target: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
       propertyPath: foxhealthslider
       value: 
       objectReference: {fileID: 626835343}
@@ -406,7 +398,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8530145609774373358, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
   m_PrefabInstance: {fileID: 464188457}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2124210269}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e06697e6d7ee8c94185bfab8b0820b8d, type: 3}
@@ -440,7 +432,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &677528663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,7 +553,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7342326961803000935, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
   m_PrefabInstance: {fileID: 464188457}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2124210269}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eeaac5b70431388409b1f5b0a58e6b16, type: 3}
@@ -1261,91 +1253,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c4ae0f5df58914a86c67a198385428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2124210269 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8530145609774373359, guid: 91ec73748db5fd64cbbe3d8168e15af6, type: 3}
-  m_PrefabInstance: {fileID: 464188457}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2124210270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2124210269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f564d6ce0be49c943a561bfc80a57b78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventSo: {fileID: 11400000, guid: 944d3d46f6972f446ba0686a8bed92ab, type: 2}
-  OnRaise:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 610625923}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: StartTutorialLevel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2124210271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2124210269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f564d6ce0be49c943a561bfc80a57b78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventSo: {fileID: 11400000, guid: 9401c7051ce13a84ea77aa91aa416aa2, type: 2}
-  OnRaise:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1567165433}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: SETUIFullscreenvideo
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1567165433}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: SetUIByState
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 610625923}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: RestartTut
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &2135727611
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] BoolSO playerWon;
     [SerializeField] BoolSO gameOver;
     [SerializeField] BoolSO togamePlay;
+    [SerializeField] BoolSO needtrap;
+    [SerializeField] BoolSO hastarget;
+    [SerializeField] BoolSO hasenemytarget;
     [SerializeField] BoolSO timerisRunning;
     [SerializeField] FloatSO RemainingTime;
     [SerializeField] GameObject foxPrefab;
@@ -130,6 +133,9 @@ public class GameManager : MonoBehaviour
         _EM.GM = this;
         playerWon.state = false;
         gameOver.state = false;
+        needtrap.state = false;
+        hastarget.state = false;
+        hasenemytarget.state = false;
         togamePlay.state = true;
         _UM.SetUIByState();
         player = Instantiate(playerPrefab, transform.position, Quaternion.identity, transform).GetComponent<Player>();
@@ -166,6 +172,9 @@ public class GameManager : MonoBehaviour
         _EM.GM = this;
         playerWon.state = false;
         gameOver.state = false;
+        needtrap.state = false;
+        hastarget.state = false;
+        hasenemytarget.state = false;
         togamePlay.state = true;
         _UM.SetUIByState();
         player = Instantiate(playerPrefab, transform.position, Quaternion.identity, transform).GetComponent<Player>();

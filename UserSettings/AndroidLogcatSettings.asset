@@ -3,76 +3,52 @@
     "m_SelectedPackage": {
         "deviceId": "050732503H006820",
         "name": "com.TeamForest.FoxForest",
-        "processId": 21087,
-        "exited": false
+        "processId": 30916,
+        "exited": true
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
         {
             "deviceId": "050732503H006820",
-            "name": "com.transsion.XOSLauncher",
-            "processId": 2021,
-            "exited": true
-        },
-        {
-            "deviceId": "050732503H006820",
-            "name": "com.TeamForest.FoxForest",
-            "processId": 20775,
-            "exited": true
-        },
-        {
-            "deviceId": "050732503H006820",
-            "name": "com.TeamForest.FoxForest",
-            "processId": 21462,
-            "exited": true
-        },
-        {
-            "deviceId": "050732503H006820",
-            "name": "com.TeamForest.FoxForest",
-            "processId": 23793,
-            "exited": true
-        },
-        {
-            "deviceId": "050732503H006820",
-            "name": "com.TeamForest.FoxForest",
-            "processId": 23418,
-            "exited": true
-        },
-        {
-            "deviceId": "050732503H006820",
-            "name": "com.transsion.XOSLauncher",
-            "processId": 2943,
-            "exited": false
-        },
-        {
-            "deviceId": "050732503H006820",
-            "name": "com.TeamForest.FoxForest",
-            "processId": 27687,
-            "exited": false
-        },
-        {
-            "deviceId": "050732503H006820",
             "name": "com.TeamForest.FoxForest",
             "processId": 17160,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "050732503H006820",
             "name": "com.TeamForest.FoxForest",
             "processId": 18449,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "050732503H006820",
             "name": "com.TeamForest.FoxForest",
             "processId": 19192,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "050732503H006820",
             "name": "com.TeamForest.FoxForest",
             "processId": 21087,
+            "exited": true
+        },
+        {
+            "deviceId": "050732503H006820",
+            "name": "com.google.android.packageinstaller",
+            "processId": 23143,
             "exited": false
+        },
+        {
+            "deviceId": "050732503H006820",
+            "name": "com.TeamForest.FoxForest",
+            "processId": 28948,
+            "exited": true
+        },
+        {
+            "deviceId": "050732503H006820",
+            "name": "com.TeamForest.FoxForest",
+            "processId": 30916,
+            "exited": true
         }
     ],
     "m_Tags": {
@@ -111,7 +87,7 @@
         "MemoryWindowHeight": 300.0,
         "MemoryWindowWidth": 170.0,
         "MemoryTypeEnabled": [
-            true,
+            false,
             true,
             true,
             true,
@@ -122,8 +98,8 @@
             true,
             true
         ],
-        "MemoryGroup": 2,
-        "Behavior": 0
+        "MemoryGroup": 3,
+        "Behavior": 1
     },
     "m_Filter": "",
     "m_FilterIsRegularExpression": false,

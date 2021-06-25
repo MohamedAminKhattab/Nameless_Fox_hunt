@@ -47,6 +47,7 @@ public class FoxInventory : MonoBehaviour
                 default:
                     break;
             }
+            hastarget.state = false;
         }
     }
     public void Heal()

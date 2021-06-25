@@ -18,5 +18,6 @@ public class EnemyTargeting : MonoBehaviour
             enemyTransform.value = transform;
             hasTarget.state = true;
         }
+        hasTarget.state = false;
     }
 }
