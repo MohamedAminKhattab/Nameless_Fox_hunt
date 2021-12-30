@@ -8,6 +8,7 @@ public enum UIStates
     InMenu,
     InLevelSelection,
     InSettingsMenu,
+    InCreditsPage,
     InStoryBoard,
     InFullscreenVideo,
     InTutorial,
@@ -35,6 +36,7 @@ public class UIManager : MonoBehaviour
 
     [Header("Panels")]
     [SerializeField] Canvas mainmenu;
+    [SerializeField] Canvas creditsPage;
     [SerializeField] Canvas clearCanvas;
     [SerializeField] Canvas lostCanvas;
     [SerializeField] Canvas gameUI;
@@ -59,7 +61,11 @@ public class UIManager : MonoBehaviour
     public void SETUIMainMenu()
     {
         state = UIStates.InMenu;
-    } 
+    }
+    public void SETUICreditsPage()
+    {
+        state = UIStates.InCreditsPage;
+    }
     public void SETUISettings()
     {
         state = UIStates.InSettingsMenu;
@@ -222,6 +228,7 @@ public class UIManager : MonoBehaviour
                 inventory.gameObject.SetActive(false);
                 tutorial.gameObject.SetActive(false);
                 IntroFullScreen.gameObject.SetActive(false);
+                creditsPage.gameObject.SetActive(false);
                 break;
             case UIStates.InLevelSelection:
                 levelSelection.gameObject.SetActive(true);
@@ -235,6 +242,7 @@ public class UIManager : MonoBehaviour
                 inventory.gameObject.SetActive(false);
                 tutorial.gameObject.SetActive(false);
                 IntroFullScreen.gameObject.SetActive(false);
+                creditsPage.gameObject.SetActive(false);
                 break;
             case UIStates.InSettingsMenu:
                 levelSelection.gameObject.SetActive(false);
@@ -248,6 +256,7 @@ public class UIManager : MonoBehaviour
                 inventory.gameObject.SetActive(false);
                 tutorial.gameObject.SetActive(false);
                 IntroFullScreen.gameObject.SetActive(false);
+                creditsPage.gameObject.SetActive(false);
                 break;
             case UIStates.InStoryBoard:
                 levelSelection.gameObject.SetActive(false);
@@ -261,6 +270,7 @@ public class UIManager : MonoBehaviour
                 inventory.gameObject.SetActive(false);
                 tutorial.gameObject.SetActive(false);
                 IntroFullScreen.gameObject.SetActive(false);
+                creditsPage.gameObject.SetActive(false);
                 break;
             case UIStates.InFullscreenVideo:
                 levelSelection.gameObject.SetActive(false);
@@ -274,6 +284,7 @@ public class UIManager : MonoBehaviour
                 inventory.gameObject.SetActive(false);
                 tutorial.gameObject.SetActive(false);
                 IntroFullScreen.gameObject.SetActive(true);
+                creditsPage.gameObject.SetActive(false);
                 break;
             case UIStates.InTutorial:
                 levelSelection.gameObject.SetActive(false);
@@ -287,6 +298,7 @@ public class UIManager : MonoBehaviour
                 inventory.gameObject.SetActive(false);
                 tutorial.gameObject.SetActive(true);
                 IntroFullScreen.gameObject.SetActive(false);
+                creditsPage.gameObject.SetActive(false);
                 break;
             case UIStates.InGamePlay:
                 levelSelection.gameObject.SetActive(false);
@@ -300,6 +312,7 @@ public class UIManager : MonoBehaviour
                 inventory.gameObject.SetActive(false);
                 tutorial.gameObject.SetActive(false);
                 IntroFullScreen.gameObject.SetActive(false);
+                creditsPage.gameObject.SetActive(false);
                 break;
             case UIStates.InPauseMenu:
                 levelSelection.gameObject.SetActive(false);
@@ -313,6 +326,7 @@ public class UIManager : MonoBehaviour
                 inventory.gameObject.SetActive(false);
                 tutorial.gameObject.SetActive(false);
                 IntroFullScreen.gameObject.SetActive(false);
+                creditsPage.gameObject.SetActive(false);
                 break;
             case UIStates.InWinGame:
                 levelSelection.gameObject.SetActive(false);
@@ -326,6 +340,7 @@ public class UIManager : MonoBehaviour
                 inventory.gameObject.SetActive(false);
                 tutorial.gameObject.SetActive(false);
                 IntroFullScreen.gameObject.SetActive(false);
+                creditsPage.gameObject.SetActive(false);
                 break;
             case UIStates.InLoseGame:
                 levelSelection.gameObject.SetActive(false);
@@ -339,6 +354,7 @@ public class UIManager : MonoBehaviour
                 inventory.gameObject.SetActive(false);
                 tutorial.gameObject.SetActive(false);
                 IntroFullScreen.gameObject.SetActive(false);
+                creditsPage.gameObject.SetActive(false);
                 break;
             case UIStates.InInventory:
                 levelSelection.gameObject.SetActive(false);
@@ -352,6 +368,21 @@ public class UIManager : MonoBehaviour
                 inventory.gameObject.SetActive(true);
                 tutorial.gameObject.SetActive(false);
                 IntroFullScreen.gameObject.SetActive(false);
+                creditsPage.gameObject.SetActive(false);
+                break;
+            case UIStates.InCreditsPage:
+                levelSelection.gameObject.SetActive(false);
+                lostCanvas.gameObject.SetActive(false);
+                clearCanvas.gameObject.SetActive(false);
+                mainmenu.gameObject.SetActive(false);
+                settingsMenu.gameObject.SetActive(false);
+                pausemenu.gameObject.SetActive(false);
+                storyBoard.gameObject.SetActive(false);
+                gameUI.gameObject.SetActive(false);
+                inventory.gameObject.SetActive(false);
+                tutorial.gameObject.SetActive(false);
+                IntroFullScreen.gameObject.SetActive(false);
+                creditsPage.gameObject.SetActive(true);
                 break;
             default:
                 break;
